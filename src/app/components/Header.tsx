@@ -100,7 +100,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-4 px-6 lg:px-8 max-w-7xl">
+      <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-4 px-6 lg:px-8">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex justify-center items-center">
@@ -244,13 +244,9 @@ export default function Header() {
 
                 <details className="group">
                   <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between">
-                    Find Us
-                    
+                    Find Us                   
                   </summary>
-                  <div className="mt-2 ml-4 space-y-2">
-                    
-                     
-                   
+                  <div className="mt-2 ml-4 space-y-2">         
                   </div>
                 </details>
 

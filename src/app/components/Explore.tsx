@@ -26,7 +26,7 @@ function Explore() {
         </p>
         {/* start 3 cards */}
         <div className="flex sm:flex-col md:flex-row gap-6 justify-center md:mx-auto py-10 sm:w-full sm:px-8 sm:flex-wrap md:flex-nowrap">
-          <Card className="sm:w-full sm:w-[300px] sm:mx-auto md:w-1/3 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto md:w-1/3 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 Our Catering
@@ -52,7 +52,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full sm:w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">The Food</CardTitle>
               <CardDescription>
@@ -76,7 +76,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full sm:w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 The Gelato

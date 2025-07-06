@@ -7,8 +7,8 @@ function Apps() {
   return (
     <>
       <div className="bg-white md:pt-5 mx-auto md:mb-20">
-        <div className="flex sm:flex-col sm:pl-6 md:flex-row md:pl-12">
-          <div className="md:w-1/2 md:max-w-[300px] md:px-12">
+        <div className="flex sm:flex-col pl-6 md:flex-row w-3xl">
+          <div className="md:w-[300px]">
             <h1 className="text-4xl font-bold sm:w-full sm:mx-auto sm:justify-center sm:px-6 text-left leading-11 mt-8">
               Instant coffee at your home<br />
             </h1>
@@ -26,17 +26,17 @@ function Apps() {
             <div className="order-2 md:flex InstantCoffee_col relative mx-auto aos-init aos-animate">
               <Image
                 width={250}
-                height={250}
-                className="border-2 rounded-2xl border-gray-100 absolute top-0 left-20 z-20 md:w-[14rem] w-[10rem] max-h-[350px]"
+                height={350}
+                className="border-2 rounded-2xl border-gray-100 absolute top-0 left-20 z-20 "
                 src={Banner}
                 alt="banner"
               />
               <Image
-                className="border-2 rounded-2xl border-gray-100 -rotate-12 z-10 md:w-[14rem] w-[10rem] max-h-[350px]"
+                className="border-2 rounded-2xl border-gray-100 -rotate-12 z-10 "
                 alt="banner"
                 src={Banner}
                 width={230}
-                height={250}
+                height={350}
               />
             </div>
           </div>
