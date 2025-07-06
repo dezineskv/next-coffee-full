@@ -249,13 +249,7 @@ export default function Header() {
                   </summary>
                   <div className="mt-2 ml-4 space-y-2">
                     
-                      <Link
-                       
-                        href={item.href}
-                        className="block text-gray-600 hover:text-gray-900"
-                      >
-                      
-                      </Link>
+                     
                    
                   </div>
                 </details>
