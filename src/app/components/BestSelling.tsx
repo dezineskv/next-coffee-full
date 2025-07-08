@@ -11,25 +11,24 @@ import Image from "next/image";
 import Mid1 from "../images/mid1.png";
 import Mid2 from "../images/mid2.png";
 import Mid3 from "../images/mid3.png";
+import "../globals.css";
 
 function BestSelling() {
   return (
     <>
-      <div className="flex flex-col gap-6 justify-center mx-auto pt-5 pb-10">
-        <h1 className="text-4xl text-center font-bold">
-          Best Selling Coffee
-        </h1>
+      <div className="my-container flex flex-col gap-6 justify-center mx-auto md:pt-4 md:pb-20">
+        <h1 className="text-4xl text-center font-bold">Best Selling Coffee</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
           lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
           dolor sit amet, consectetur adipiscing elit
         </p>
         {/* start 3 cards */}
-        <div className="flex flex-row gap-8 justify-center mx-auto py-10 sm:flex-wrap ">
-          <Card className="w-1/3 max-w-80 shadow-lg">
+        <div className="flex flex-col md:flex-row gap-8 justify-center mx-auto py-10 sm:flex-wrap ">
+          <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
             <div className="flex flex-row mx-auto justify-center">
               <div className="flex flex-col justify-end ml-2rem pl-7">
                 <CardDescription>
-                  <p className="text-gray-900">#1 Selling</p>
+                  <p className="text-red-500 font-bold">#1 Selling</p>
                 </CardDescription>
                 <CardTitle className="text-lg font-extrabold">
                   Double Espresso
@@ -56,11 +55,11 @@ function BestSelling() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="w-1/3 max-w-80 shadow-lg">
+          <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
             <div className="flex flex-row mx-auto justify-center">
               <div className="flex flex-col justify-end ml-2rem pl-7">
                 <CardDescription>
-                  <p className="text-gray-900">#1 Selling</p>
+                  <p className="text-red-500 font-bold">#1 Selling</p>
                 </CardDescription>
                 <CardTitle className="text-lg font-extrabold">
                   Double Espresso
@@ -87,11 +86,11 @@ function BestSelling() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="w-1/3 max-w-80 shadow-lg">
+          <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
             <div className="flex flex-row mx-auto justify-center">
               <div className="flex flex-col justify-end ml-2rem pl-7">
                 <CardDescription>
-                  <p className="text-gray-900">#1 Selling</p>
+                  <p className="text-red-500 font-bold">#1 Selling</p>
                 </CardDescription>
                 <CardTitle className="text-lg font-extrabold">
                   Double Espresso

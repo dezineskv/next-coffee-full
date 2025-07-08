@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import "../globals.css";
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
@@ -127,7 +127,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation -customized removed buttons and svg arrows*/}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className="flex space-x-2">
             <NavigationMenuItem>

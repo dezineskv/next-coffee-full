@@ -1,4 +1,3 @@
-
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Explore from "./components/Explore";
@@ -11,18 +10,17 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <>
-      <div className="w-screen bg-gray-200 opacity-90 flex flex-col items-center justify-between pt-4">
-        <div className="flex flex-col w-full sm:items-start md:justify-start sm:mx-auto md:px-12 md:pt-10 pb-5 gap-16 font-[family-name:var(--font-geist-sans)] md:max-w-7xl">
+      <div className=" bg-gray-200 opacity-90 flex flex-col items-center justify-between pt-4">
+        <div className="flex flex-col w-full sm:items-start md:justify-start sm:mx-auto md:px-12 md:pt-10 pb-5 gap-16 font-[family-name:var(--font-geist-sans)]">
           <Header />
           <Hero />
         </div>
       </div>
-      <main className="flex flex-col justify-center sm:px-4 mx-auto md:px-6 md:pt-10 pb-20 gap-16 font-[family-name:var(--font-geist-sans)] md:max-w-6xl">
+      <main className="font-[family-name:var(--font-geist-sans)]">
         <Explore />
         <Favorite />
         <BestSelling />
-        <Apps
-         />
+        <Apps />
         <Testimonials />
       </main>
       <Footer />

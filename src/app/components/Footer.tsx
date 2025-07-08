@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Image from "next/image";
 import Logo from "../images/logo2.png";
 import Subscribe from "./Subscribe";
@@ -9,23 +9,22 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import "../globals.css";
+import "../globals.css";
 
 export default function Footer() {
   return (
     <>
-    <div className="w-full flex sm:flex-col md:flex-row mx-auto justify-between max-w-7xl">
-      <div className="w-7/12 flex flex-col sm:h-full md:justify-start gap-6 sm:py-10 pl-14 py-4 max-w[65%]">
-        <div className="flex justify-start text-left pl-4">
+      <div className="my-container flex flex-col md:flex-row justify-between mt-20">
+        <div className="text-left pl-4">
           <Image
             src={Logo}
             alt="Logo"
             width={200}
             height={120}
-            className="max-w-[200px] md:pl-14"
+            className="max-w-[200px] md:px-5"
           />
         </div>
-
-        <NavigationMenu className="flex flex-row justify-start items-start sm:pl-1 md:pl-14 max-w-full font-medium text-xl">
+        <NavigationMenu className="flex flex-row justify-center items-start sm:pl-1 sm:pb-10md:px-10 font-medium text-xl">
           <NavigationMenuList className="pointer-events-none">
             <NavigationMenuItem className="pointer-events-none">
               <NavigationMenuTrigger className="text-xl">
@@ -49,12 +48,11 @@ export default function Footer() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-   </div>
-   <Subscribe/>
+        <Subscribe />
       </div>
-      <div className="w-full flex justify-center items-center mx-auto max-w-6xl text-sm h-25 border-t-2 border-gray">
+      <div className="my-container flex justify-center items-center mx-auto text-sm h-25 border-t-2 border-gray">
         Copyright &copy; 2025 KimV
-        </div>
+      </div>
     </>
   );
 }

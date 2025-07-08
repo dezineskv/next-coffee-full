@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Card,
   CardContent,
@@ -12,21 +12,22 @@ import Image from "next/image";
 import Icon1 from "../images/icon1.png";
 import Icon2 from "../images/icon2.png";
 import Icon3 from "../images/icon3.png";
+import "../globals.css";
 
 function Explore() {
   return (
     <>
-      <div className="flex flex-col gap-6 justify-center mx-auto py-10 w-full md:max-w-2xl">
+      <div className="my-container flex flex-col gap-6 justify-center py-10">
         <h1 className="text-4xl text-center font-bold">
           Explore Kimbotic Coffee
         </h1>
-        <p className="flex justify-center mx-auto text-gray-900 text-center max-w-2xl">
+        <p className="mx-auto text-gray-900 text-center max-w-2xl">
           lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
           dolor sit amet, consectetur adipiscing elit
         </p>
-        {/* start 3 cards */}
-        <div className="flex sm:flex-col md:flex-row gap-6 justify-center md:mx-auto py-10 sm:w-full sm:px-8 sm:flex-wrap md:flex-nowrap">
-          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto md:w-1/3 md:max-w-80 shadow-lg">
+        {/* start cards */}
+        <div className="flex flex-col md:flex-row gap-4 justify-center xs:flex-wrap md:flex-nowrap py-10 ">
+          <Card className="sm:w-full md:w-1/4 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 Our Catering
@@ -52,7 +53,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full md:w-1/4 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">The Food</CardTitle>
               <CardDescription>
@@ -76,7 +77,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full sm:min-w-[300px] sm:mx-auto sm:px-8 md:w-1/3 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full  md:w-1/4 md:max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 The Gelato
@@ -102,10 +103,36 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
+          <Card className="sm:w-full  md:w-1/4 md:max-w-80 shadow-lg">
+            <CardHeader>
+              <CardTitle className="text-lg font-extrabold">
+                Our Catering
+              </CardTitle>
+              <CardDescription>
+                <p className="text-gray-900 text-left max-w-2xl">
+                  lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                </p>
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Image
+                src={Icon1}
+                alt="icon"
+                width={200}
+                height={200}
+                className="mx-auto"
+              />
+            </CardContent>
+            <CardFooter className="text-center mx-auto">
+              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                Order Catering
+              </Button>
+            </CardFooter>
+          </Card>
         </div>
       </div>
     </>
   );
 }
 
-export default Explore
+export default Explore;

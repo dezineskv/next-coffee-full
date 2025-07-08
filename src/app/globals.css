@@ -119,47 +119,35 @@
   body {
     @apply bg-background text-foreground;
   }
+  .my-container {
+    @apply w-full md:w-7xl lg:w-7xl mx-auto px-3 md:px-0;
+  }
 }
+/* remove toggle arrows from navigation menu & remove nav buttons */
 .NavigationMenuTrigger {
   display: none;
 }
-.button  {
-  
-display: inline-flex;
-cursor: default;
+.button {
+  display: inline-flex;
+  cursor: default;
 }
 button.bg-background {
-background-color: transparent;
-} 
+  background-color: transparent;
+}
 button > svg {
   display: none;
 }
-.button:hover {
-  @apply bg-accent text-accent-foreground
-}
-.button[data-state="open"] {
-  @apply bg-accent text-accent-foreground
-}
-.button[data-state="open"]:hover {
-  @apply bg-accent text-accent-foreground
-}
-.button[data-state="open"]:focus-visible {
-  @apply bg-accent text-accent-foreground
-}
-.button[data-state="open"]:disabled {
-  @apply bg-background text-foreground
-}
-.button[data-state="open"]:disabled:hover {
-  @apply bg-background text-foreground
-}
-.button[data-state="open"]:disabled:focus-visible {  @apply bg-background text-foreground
+
+.button[data-state="open"]:disabled:focus-visible {
+  @apply bg-background text-foreground;
 }
 .NavigationMenuIndicator {
-	display: none;
+  display: none;
 }
 .NavigationMenuIndicator[data-state="hidden"] {
-	animation: fadeOut 200ms ease;
+  animation: fadeOut 200ms ease;
 }
 .CaretDown {
   display: none;
 }
+
