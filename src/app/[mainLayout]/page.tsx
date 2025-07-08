@@ -1,6 +1,4 @@
-
 import Header from "../components/Header";
-import Hero from "../components/Hero";
 import Explore from "../components/Explore";
 import Favorite from "../components/Favorite";
 import BestSelling from "../components/BestSelling";
@@ -20,8 +18,7 @@ export default function Home() {
         <Explore />
         <Favorite />
         <BestSelling />
-        <Apps
-         />
+        <Apps />
         <Testimonials />
       </main>
       <Footer />
