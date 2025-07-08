@@ -16,7 +16,7 @@ import "../globals.css";
 function BestSelling() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center mx-auto md:pt-4 md:pb-20">
+      <div className="my-container flex flex-col gap-6 justify-center mx-auto md:pt-10 md:pb-20">
         <h1 className="text-4xl text-center font-bold">Best Selling Coffee</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
           lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum

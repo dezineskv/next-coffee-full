@@ -14,17 +14,17 @@ import "../globals.css";
 export default function Footer() {
   return (
     <>
-      <div className="my-container flex flex-col md:flex-row justify-between mt-20">
+      <div className="my-container flex flex-col md:flex-row justify-between">
         <div className="text-left pl-4">
           <Image
             src={Logo}
             alt="Logo"
-            width={200}
-            height={120}
-            className="max-w-[200px] md:px-5"
+            width={180}
+            height={110}
+            className="max-w-[180px] md:px-5"
           />
         </div>
-        <NavigationMenu className="flex flex-row justify-center items-start sm:pl-1 sm:pb-10md:px-10 font-medium text-xl">
+        <NavigationMenu className="flex flex-col md:flex-row justify-center items-start sm:pl-1 sm:pb-10 md:px-10 font-medium text-xl">
           <NavigationMenuList className="pointer-events-none">
             <NavigationMenuItem className="pointer-events-none">
               <NavigationMenuTrigger className="text-xl">
@@ -50,7 +50,7 @@ export default function Footer() {
         </NavigationMenu>
         <Subscribe />
       </div>
-      <div className="my-container flex justify-center items-center mx-auto text-sm h-25 border-t-2 border-gray">
+      <div className="my-container flex justify-center items-center mx-auto text-sm h-25 border-t-2 border-white">
         Copyright &copy; 2025 KimV
       </div>
     </>

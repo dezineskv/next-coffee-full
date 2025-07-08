@@ -28,7 +28,7 @@ function Apps() {
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-            <Button className="bg-gray-900 text-white sm:mx-6 py-4 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+            <Button className="bg-gray-900 text-white sm:mx-6 py-4 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
               Download App
             </Button>
           </div>
@@ -37,7 +37,7 @@ function Apps() {
               <Image
                 width={250}
                 height={350}
-                className="border-2 rounded-2xl border-gray-100 absolute top-0 left-20 z-20 "
+                className="border-2 rounded-2xl border-gray-100 absolute top-0 left-10 z-20 "
                 src={Banner}
                 alt="banner"
               />

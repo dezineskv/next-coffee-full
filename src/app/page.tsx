@@ -23,7 +23,9 @@ export default function Home() {
         <Apps />
         <Testimonials />
       </main>
-      <Footer />
+      <div className="bg-gray-200 pt-16 mt-20">
+        <Footer />
+      </div>
     </>
   );
 }

@@ -17,7 +17,7 @@ import "../globals.css";
 function Explore() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center py-10">
+      <div className="my-container flex flex-col gap-6 justify-center py-12">
         <h1 className="text-4xl text-center font-bold">
           Explore Kimbotic Coffee
         </h1>

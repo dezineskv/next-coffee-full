@@ -110,7 +110,7 @@ export default function Header() {
             alt="Logo"
             width={300}
             height={180}
-            className="w-auto max-w-[300px] sm:mx-auto md:pl-12 pb-4 pr-10"
+            className="w-auto max-w-[300px] sm:mx-auto md:pl-12 pb-4 pr-10 border-0"
           />
 
             </Link>
