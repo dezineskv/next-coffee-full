@@ -73,11 +73,11 @@ function Testimonials() {
             </div>
           </div>
         </div>
-        {/* start 3 cards */}
-        <Carousel className="w-2xl flex-row justify-center items-center mx-auto pb-5">
-          <CarouselContent className="w-[400px] mx-auto text-center">
-            <CarouselItem className="w-[400px] mx-auto">
-              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+        {/* start 3 cards carousel*/}
+        <Carousel className="md:w-2xl flex flex-row justify-center gap-6 items-center mx-auto pb-5">
+          <CarouselContent className="mx-auto">
+            <CarouselItem className="basis-full mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
                     src={Girl1}
@@ -118,8 +118,8 @@ function Testimonials() {
                 </CardContent>
               </Card>
             </CarouselItem>
-            <CarouselItem className="w-[400px] mx-auto">
-              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+            <CarouselItem className="basis-full mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
                     src={Girl2}
@@ -160,8 +160,8 @@ function Testimonials() {
                 </CardContent>
               </Card>
             </CarouselItem>
-            <CarouselItem className="w-[400px] mx-auto">
-              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 ">
+            <CarouselItem className="basis-full mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
                     src={Man}
@@ -203,7 +203,6 @@ function Testimonials() {
           <CarouselPrevious style={{ backgroundColor: "#000000" }} />
           <CarouselNext style={{ backgroundColor: "#000000" }} />
         </Carousel>
-       
       </div>
     </>
   );
