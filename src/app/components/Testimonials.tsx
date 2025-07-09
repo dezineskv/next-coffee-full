@@ -5,9 +5,15 @@ import Man from "../images/man.jpg";
 import Girl1 from "../images/girl1.png";
 import Girl2 from "../images/girl2.png";
 import Avatar1 from "../images/avatar1.jpg";
-import Avatar2 from "../images/avatar2.jpg";
 import Avatar3 from "../images/avatar3.jpg";
 import Avatar4 from "../images/avatar4.jpg";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 function Testimonials() {
   return (
@@ -68,119 +74,136 @@ function Testimonials() {
           </div>
         </div>
         {/* start 3 cards */}
-        <div className="flex flex-col md:flex-row gap-8 justify-center sm:mx-auto pb-5 sm:flex-wrap">
-          <Card className="sm:w-1/2 md:w-1/3 md:max-w-80 shadow-lg py-0 rounded-xl overflow-hidden pb-5">
-            <div className="m-0 p-0 w-full h-full">
-              <Image
-                src={Girl1}
-                alt="Girl1"
-                width={250}
-                height={250}
-                className="w-full md:max-h-[250px]"
-              />
-            </div>
-            <CardFooter className="flex flex-row justify-between gap-4 ">
-              <h3 className="text-left font-bold text-lg">About Customer</h3>
-              <div className="flex justify-center sm:justify-start items-center">
-                <h3 className="text-2xl font-semibold mr-2">4.6</h3>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-star text-yellow-400"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-            </CardFooter>
-            <CardContent>
-              <p className="text-gray-900 text-left max-w-2xl">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="sm:w-1/2 md:w-1/3 md:max-w-80 shadow-lg py-0 rounded-xl overflow-hidden pb-5">
-            <div className="m-0 p-0 w-full h-full">
-              <Image
-                src={Girl2}
-                alt="Girl2"
-                width={250}
-                height={250}
-                className="w-full md:max-h-[250px]"
-              />
-            </div>
-            <CardFooter className="flex flex-row justify-between gap-4 ">
-              <h3 className="text-left font-bold text-lg">About Customer</h3>
-              <div className="flex justify-center sm:justify-start items-center">
-                <h3 className="text-2xl font-semibold mr-2">4.0</h3>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-star text-yellow-400"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-            </CardFooter>
-            <CardContent>
-              <p className="text-gray-900 text-left max-w-2xl">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="sm:w-1/2 md:w-1/3 md:max-w-80 shadow-lg py-0 rounded-xl overflow-hidden pb-5">
-            <div className="m-0 p-0 w-full h-full">
-              <Image
-                src={Man}
-                alt="Man"
-                width={250}
-                height={250}
-                className="w-full min-h-[250px]"
-              />
-            </div>
-            <CardFooter className="flex flex-row justify-between gap-4 ">
-              <h3 className="text-left font-bold text-lg">About Customer</h3>
-              <div className="flex justify-center sm:justify-start items-center">
-                <h3 className="text-2xl font-semibold mr-2">4.1</h3>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-star text-yellow-400"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-              </div>
-            </CardFooter>
-            <CardContent>
-              <p className="text-gray-900 text-left max-w-2xl">
-                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+        <Carousel className="w-2xl flex-row justify-center items-center mx-auto pb-5">
+          <CarouselContent className="w-[400px] mx-auto text-center">
+            <CarouselItem className="w-[400px] mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+                <div className="mx-auto p-0 h-full">
+                  <Image
+                    src={Girl1}
+                    alt="Girl1"
+                    width={350}
+                    height={300}
+                    className="md:max-h-[280px]"
+                  />
+                </div>
+                <CardFooter className="flex flex-row justify-between gap-4 px-8">
+                  <h3 className="text-left font-bold text-lg">
+                    About Customer
+                  </h3>
+                  <div className="flex justify-center sm:justify-start items-center">
+                    <h3 className="text-2xl font-semibold mr-2">4.6</h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-star text-yellow-400"
+                    >
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                </CardFooter>
+                <CardContent>
+                  <p className="text-gray-900 text-left max-w-2xl px-2">
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="w-[400px] mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+                <div className="mx-auto p-0 h-full">
+                  <Image
+                    src={Girl2}
+                    alt="Girl2"
+                    width={350}
+                    height={300}
+                    className="w-full md:max-h-[280px]"
+                  />
+                </div>
+                <CardFooter className="flex flex-row justify-between gap-4 px-8">
+                  <h3 className="text-left font-bold text-lg">
+                    About Customer
+                  </h3>
+                  <div className="flex justify-center sm:justify-start items-center">
+                    <h3 className="text-2xl font-semibold mr-2">4.0</h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-star text-yellow-400"
+                    >
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                </CardFooter>
+                <CardContent>
+                  <p className="text-gray-900 text-left max-w-2xl px-3">
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                </CardContent>
+              </Card>
+            </CarouselItem>
+            <CarouselItem className="w-[400px] mx-auto">
+              <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 ">
+                <div className="mx-auto p-0 h-full">
+                  <Image
+                    src={Man}
+                    alt="Man"
+                    width={350}
+                    height={250}
+                    className="w-full min-h-[250px]"
+                  />
+                </div>
+                <CardFooter className="flex flex-row justify-between gap-4 px-8">
+                  <h3 className="text-left font-bold text-lg">
+                    About Customer
+                  </h3>
+                  <div className="flex justify-center sm:justify-start items-center">
+                    <h3 className="text-2xl font-semibold mr-2">4.1</h3>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-star text-yellow-400"
+                    >
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </div>
+                </CardFooter>
+                <p className="text-gray-900 text-left px-8">
+                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+              </Card>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious style={{ backgroundColor: "#000000" }} />
+          <CarouselNext style={{ backgroundColor: "#000000" }} />
+        </Carousel>
+       
       </div>
     </>
   );

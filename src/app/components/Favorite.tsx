@@ -33,7 +33,7 @@ function Favorite() {
               Order your favorite coffee<br></br>
             </h1>
             <p className="text-white font-bold sm:px-6 m:px-6 md:px-8 py-6 text-lg">
-              It's the best!
+              The best in town!
             </p>
 
             <Button className="bg-red-500 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">

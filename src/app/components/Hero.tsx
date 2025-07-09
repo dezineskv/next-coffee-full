@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <>
-      <section className=" bg-yellow-100 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 ">
+      <section className=" bg-yellow-50 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 ">
         {/* container */}
         <div className="my-container mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
           {/* TEXT SIDE */}
