@@ -29,7 +29,7 @@ function Favorite() {
             />
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:mr-8">
-            <h1 className="text-5xl font-bold sm:w-full sm:mx-auto sm:justify-center sm:px-6 md:justify-start text-left md: pr-10 leading-11 text-white">
+            <h1 className="text-5xl font-bold sm:px-6 md:justify-start text-left md: pr-10 leading-11 text-white">
               Order your favorite coffee<br></br>
             </h1>
             <p className="text-white font-bold sm:px-6 m:px-6 md:px-8 py-6 text-lg">

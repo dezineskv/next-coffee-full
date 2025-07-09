@@ -68,7 +68,7 @@ function BestSelling() {
               <div className="flex flex-row mx-auto justify-center">
                 <div className="flex flex-col justify-end ">
                   <CardDescription>
-                    <p className="text-red-500 font-bold">#1 Selling</p>
+                    <p className="text-red-500 font-bold">#2 Selling</p>
                   </CardDescription>
                   <CardTitle className="text-lg font-extrabold">
                     Latte
@@ -99,7 +99,7 @@ function BestSelling() {
               <div className="flex flex-row mx-auto justify-center">
                 <div className="flex flex-col justify-end ">
                   <CardDescription>
-                    <p className="text-red-500 font-bold">#1 Selling</p>
+                    <p className="text-red-500 font-bold">#3 Selling</p>
                   </CardDescription>
                   <CardTitle className="text-lg font-extrabold">
                     Cold Brew

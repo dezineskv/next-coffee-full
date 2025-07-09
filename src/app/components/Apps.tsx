@@ -32,12 +32,12 @@ function Apps() {
               Download App
             </Button>
           </div>
-          <div className="flex flex-row sm:w-full sm:justify-center md:items-center md:w-1/2 mt-0 pt-0 pb-10 mb-10 ">
+          <div className="flex flex-row sm:w-full sm:justify-center md:items-center md:w-1/2 sm:pt-10 pt-10 pb-10 mb-10 ">
             <div className="order-2 md:flex InstantCoffee_col relative mx-auto aos-init aos-animate">
               <Image
                 width={250}
                 height={350}
-                className="border-2 rounded-2xl border-gray-100 absolute top-0 left-10 z-20 "
+                className="border-2 rounded-2xl border-gray-100 absolute sm:top-10 top-0 left-10 z-20 "
                 src={Banner}
                 alt="banner"
               />

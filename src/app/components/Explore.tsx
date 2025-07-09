@@ -26,8 +26,8 @@ function Explore() {
           dolor sit amet, consectetur adipiscing elit
         </p>
         {/* start cards */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center xs:flex-wrap md:flex-nowrap py-10 ">
-          <Card className="sm:w-full md:w-1/4 md:max-w-80 shadow-lg">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
+          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 Our Catering
@@ -53,7 +53,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full md:w-1/4 md:max-w-80 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">The Food</CardTitle>
               <CardDescription>
@@ -77,7 +77,7 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full  md:w-1/4 md:max-w-80 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">
                 The Gelato
