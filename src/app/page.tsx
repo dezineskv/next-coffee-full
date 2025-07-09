@@ -1,3 +1,4 @@
+'use client'
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Explore from "./components/Explore";
@@ -6,7 +7,8 @@ import BestSelling from "./components/BestSelling";
 import Footer from "./components/Footer";
 import Apps from "./components/Apps";
 import Testimonials from "./components/Testimonials";
-// import styles from "./components/Hero.module.css";
+import Menu from "./components/Menu";
+import DataTableDemo from "./components/DataTableDemo";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
         <Favorite />
         <BestSelling />
         <Apps />
+        <Menu/>
+        <DataTableDemo/>
         <Testimonials />
       </main>
       <div className="bg-white pt-16 mt-20">

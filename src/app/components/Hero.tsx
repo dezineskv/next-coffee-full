@@ -14,7 +14,7 @@ export default function Hero() {
           {/* TEXT SIDE */}
           <div className="w-full md:w-1/2 sm:px-6">
             {/* <div className={styles.slideIn}> */}
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, x: -150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -22,15 +22,15 @@ export default function Hero() {
               <h1 className="text-left text-4xl font-extrabold leading-[1.40] sm:text-5xl lg:text-6xl">
                 Delicious Kimbotic
               </h1>
-            </motion.h1>
+            </motion.div>
             {/* </div> */}
-            <h1 className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
+            <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
               <span className="mt-4 inline-flex items-center text-coffee-700">
                 Coffee&nbsp;
                 <Image src={Cafe} alt="Cafe badge" width={50} height={40} />
               </span>
-            </h1>
-            <motion.p
+            </div>
+            <motion.div
               initial={{ opacity: 0, x: -150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
@@ -41,23 +41,23 @@ export default function Hero() {
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat.
               </p>
-            </motion.p>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-              <Button className="h-12  bg-gray-900 text-lg sm:w-auto">
-                Download&nbsp;App
-              </Button>
-              <Button
-                variant="outline"
-                className="h-12  border-gray-900 text-lg text-gray-900 sm:w-auto bg-transparent"
-              >
-                Shop&nbsp;Coffee
-              </Button>
-            </div>
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+                <Button className="h-12  bg-gray-900 text-lg sm:w-auto">
+                  Download&nbsp;App
+                </Button>
+                <Button
+                  variant="outline"
+                  className="h-12  border-gray-900 text-lg text-gray-900 sm:w-auto bg-transparent"
+                >
+                  Shop&nbsp;Coffee
+                </Button>
+              </div>
             </motion.div>
           </div>
           {/* IMAGE SIDE */}

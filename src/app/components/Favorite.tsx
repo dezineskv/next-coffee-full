@@ -11,7 +11,7 @@ function Favorite() {
         style={{
           backgroundImage:
             "url('https://cdn.pixabay.com/photo/2021/01/07/03/58/coffee-5896116_1280.jpg')",
-          opacity: 0.7,
+          opacity: 0.9,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -29,11 +29,11 @@ function Favorite() {
             />
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:mr-8">
-            <h1 className="text-5xl font-bold sm:px-6 md:justify-start text-left md: pr-10 leading-11 text-white">
-              Order your favorite coffee<br></br>
+            <h1 className="text-5xl font-bold sm:px-6 md:justify-start text-left md: pr-10 leading-11 text-yellow-50">
+              Order your <br/>favorite coffee today<br></br>
             </h1>
             <p className="text-white font-bold sm:px-6 m:px-6 md:px-8 py-6 text-lg">
-              The best in town!
+              Best in town!
             </p>
 
             <Button className="bg-red-500 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">

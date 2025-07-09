@@ -24,7 +24,7 @@ function BestSelling() {
         transition={{ duration: 0.5 }}
       >
         <div className="my-container flex flex-col gap-6 justify-center mx-auto pt-10 md:pb-10 mt-5">
-          <h1 className="text-4xl text-center font-bold">
+          <h1 className="text-4xl text-center font-bold ">
             Best Selling Coffee
           </h1>
           <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
