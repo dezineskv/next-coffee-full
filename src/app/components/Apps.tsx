@@ -28,6 +28,13 @@ function Apps() {
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
+            <p className="text-gray-900 sm:mx-6 py-4 md:pl-1 text-base">
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
             <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
               Download App
             </Button>
