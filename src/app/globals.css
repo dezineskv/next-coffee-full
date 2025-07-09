@@ -45,7 +45,7 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(100% 0.00011 271.152);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -124,28 +124,14 @@
   }
 }
 /* remove toggle arrows from navigation menu & remove nav buttons */
-.NavigationMenuTrigger {
-  display: none;
-}
-.button {
-  display: inline-flex;
-  cursor: default;
-}
 button.bg-background {
   background-color: transparent;
 }
 button > svg {
   display: none;
 }
-
-.button[data-state="open"]:disabled:focus-visible {
-  @apply bg-background text-foreground;
-}
 .NavigationMenuIndicator {
   display: none;
-}
-.NavigationMenuIndicator[data-state="hidden"] {
-  animation: fadeOut 200ms ease;
 }
 .CaretDown {
   display: none;

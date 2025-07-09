@@ -11,8 +11,8 @@ import Testimonials from "./components/Testimonials";
 export default function Home() {
   return (
     <>
-      <div className=" bg-gray-200 opacity-90 flex flex-col items-center justify-between pt-4">
-        <div className="flex flex-col w-full sm:items-start md:justify-start sm:mx-auto md:px-12 md:pt-10 pb-5 gap-16 font-[family-name:var(--font-geist-sans)]">
+      <div className=" bg-yellow-100 w-screen opacity-90 ">
+        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16 font-[family-name:var(--font-geist-sans)]">
           <Header />
           <Hero />
         </div>
@@ -24,7 +24,7 @@ export default function Home() {
         <Apps />
         <Testimonials />
       </main>
-      <div className="bg-gray-200 pt-16 mt-20">
+      <div className="bg-white pt-16 mt-20">
         <Footer />
       </div>
     </>

@@ -50,7 +50,7 @@ export default function Footer() {
         </NavigationMenu>
         <Subscribe />
       </div>
-      <div className="my-container flex justify-center items-center mx-auto text-sm h-25 border-t-2 border-white">
+      <div className="my-container flex justify-center items-center mx-auto text-sm h-25 border-t-2 border-gray-200 text-gray-900">
         Copyright &copy; 2025 KimV
       </div>
     </>

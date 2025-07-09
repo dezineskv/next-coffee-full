@@ -100,7 +100,9 @@ export default function Header() {
 
   return (
     <>
-      <div className="w-full flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-4 px-6 lg:px-8">
+          {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
+
+      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-4 px-6 lg:px-8">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex justify-center items-center">
@@ -192,7 +194,7 @@ export default function Header() {
           </Link>
           <Button
             asChild
-            className="bg-gray-900 text-white px-6 py-7 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"
+            className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"
           >
             <Link href="/gift-vouchers">Buy Gift Cards</Link>
           </Button>
@@ -295,6 +297,7 @@ export default function Header() {
           </div>
         )}
       </div>
+      {/* </header> */}
     </>
   )
 }

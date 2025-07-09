@@ -7,7 +7,7 @@ import "../globals.css";
 function Apps() {
   return (
     <>
-      <div className="my-container bg-white md:pb-10">
+      <div className="my-container md:pb-2 pt-10">
         <div className="flex flex-col pl-6 md:flex-row mx-auto">
           <div className="md:w-1/2 md:px-10 md:ml-20">
             <h1 className="text-4xl font-bold sm:w-full sm:mx-auto sm:justify-center sm:px-6 text-left leading-11 mt-8">
@@ -28,7 +28,7 @@ function Apps() {
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-            <Button className="bg-gray-900 text-white sm:mx-6 py-4 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+            <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
               Download App
             </Button>
           </div>

@@ -12,14 +12,14 @@ import Avatar4 from "../images/avatar4.jpg";
 function Testimonials() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center mx-auto pt-5 pb-10">
+      <div className="my-container flex flex-col gap-6 justify-center pt-10 ">
         <h1 className="text-4xl text-center font-bold">Client Testimonials</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
           lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
           dolor sit amet, consectetur adipiscing elit
         </p>
         {/* avatars section */}
-        <div className="my-4 flex items-center justify-center gap-x-6 pb-4">
+        <div className="my-4 flex items-center justify-center gap-x-6 ">
           <div className="hidden sm:block -space-x-2 overflow-hidden">
             <Image
               className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
@@ -28,13 +28,7 @@ function Testimonials() {
               height={25}
               alt="avatars"
             />
-            <Image
-              className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src={Avatar2}
-              width={25}
-              height={25}
-              alt="avatars"
-            />
+
             <Image
               className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
               src={Avatar3}
@@ -74,7 +68,7 @@ function Testimonials() {
           </div>
         </div>
         {/* start 3 cards */}
-        <div className="flex flex-col md:flex-row  gap-8 justify-center sm:mx-auto pb-10 sm:flex-wrap bg-white">
+        <div className="flex flex-col md:flex-row gap-8 justify-center sm:mx-auto pb-5 sm:flex-wrap">
           <Card className="sm:w-1/2 md:w-1/3 md:max-w-80 shadow-lg py-0 rounded-xl overflow-hidden pb-5">
             <div className="m-0 p-0 w-full h-full">
               <Image

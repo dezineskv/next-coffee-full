@@ -2,7 +2,7 @@
 
 const Subscribe = () => {
   return (
-    <div className="bg-gray-200 sm:max-w-60 md:max-w-90 h-full flex flex-col items-flex-start justify-start sm:mx-auto md:pt-0 md:mx-auto md:mb-auto md:pb-10">
+    <div className="sm:max-w-60 md:max-w-90 h-full flex flex-col items-flex-start justify-start sm:mx-auto md:pt-0 md:mx-auto md:mb-auto md:pb-10">
       <form className="sm:pl-6">
         <h1 className="text-xl md:text-2xl font-bold sm: ml-4 mb-4 ">
           Subscribe to our Newsletter
