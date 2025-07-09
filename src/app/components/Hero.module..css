@@ -1,0 +1,17 @@
+/* slide in css */
+/* Component.module.css */
+.slideIn {
+    animation: slideIn 0.5s ease-out forwards;
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  

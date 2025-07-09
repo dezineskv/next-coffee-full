@@ -6,6 +6,7 @@ import BestSelling from "./components/BestSelling";
 import Footer from "./components/Footer";
 import Apps from "./components/Apps";
 import Testimonials from "./components/Testimonials";
+// import styles from "./components/Hero.module.css";
 
 export default function Home() {
   return (
