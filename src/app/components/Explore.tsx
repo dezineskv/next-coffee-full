@@ -29,9 +29,7 @@ function Explore() {
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
           <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold">
-                Our Catering
-              </CardTitle>
+              <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
                   lorem ipsum dolor sit amet lorem ipsum dolor sit amet
@@ -47,18 +45,19 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center mx-auto">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+            <CardFooter className="text-center w-full">
+              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
                 Order Catering
               </Button>
             </CardFooter>
           </Card>
           <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold">The Food</CardTitle>
+              <CardTitle className="text-lg font-extrabold"> Food</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                  Alongside our delicious coffee, we also offer a variety of
+                  pastries and breakfast foods and other snacks.
                 </p>
               </CardDescription>
             </CardHeader>
@@ -71,9 +70,9 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center mx-auto">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                Food Menu
+            <CardFooter className="text-center w-full">
+              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+                Menu
               </Button>
             </CardFooter>
           </Card>
@@ -97,20 +96,18 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center mx-auto">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+            <CardFooter className="text-center w-full">
+              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
                 Discover More
               </Button>
             </CardFooter>
           </Card>
           <Card className="sm:w-full  md:w-1/4 md:max-w-80 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold">
-                Our Catering
-              </CardTitle>
+              <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                  Order beverages for delivery from your local location.
                 </p>
               </CardDescription>
             </CardHeader>
@@ -123,9 +120,9 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center mx-auto">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                Order Catering
+            <CardFooter className="text-center w-full">
+              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+                Delivery
               </Button>
             </CardFooter>
           </Card>

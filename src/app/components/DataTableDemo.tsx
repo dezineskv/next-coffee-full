@@ -40,40 +40,88 @@ const data: Payment[] = [
   {
     id: "m5gr84i9",
     amount: 316,
-    status: "success",
-    email: "ken99@example.com",
+    quantity: "bulk",
+    products: "latte",
   },
   {
     id: "3u1reuv4",
     amount: 242,
-    status: "success",
-    email: "Abe45@example.com",
+    quantity: "bulk",
+    products: "double espresso",
   },
   {
     id: "derv1ws0",
     amount: 837,
-    status: "processing",
-    email: "Monserrat44@example.com",
+    quantity: "1",
+    products: "cappucino",
   },
   {
     id: "5kma53ae",
     amount: 874,
-    status: "success",
-    email: "Silas22@example.com",
+    quantity: "bulk",
+    products: "espresso",
   },
   {
     id: "bhqecj4p",
     amount: 721,
-    status: "failed",
-    email: "carmella@example.com",
+    quantity: "2",
+    products: "coffee beans",
+  },
+  {
+    id: "bhqecj4p",
+    amount: 123,
+    quantity: "bulk",
+    products: "coffee",
+  },
+  {
+    id: "gbhqecj4p",
+    amount: 500,
+    quantity: "3",
+    products: "coffee cake",
+  },
+  {
+    id: "bhqecj4pj",
+    amount: 250,
+    quantity: "bulk",
+    products: "breakfast sandwich",
+  },
+  {
+    id: "gbhq5ecj4p",
+    amount: 500,
+    quantity: "bulk",
+    products: "donut",
+  },
+  {
+    id: "bhq7ecj4pj",
+    amount: 250,
+    quantity: "bulk",
+    products: "drip coffee",
+  },
+  {
+    id: "bhqecj49pj",
+    amount: 250,
+    quantity: "bulk",
+    products: "iced coffee",
+  },
+  {
+    id: "b0hqecj49pj",
+    amount: 250,
+    quantity: "bulk",
+    products: "americano",
+  },
+  {
+    id: "b8hqecj49pj",
+    amount: 250,
+    quantity: "bulk",
+    products: "tea",
   },
 ];
 
 export type Payment = {
   id: string;
   amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+  quantity: "1" | "2" | "3" | "bulk";
+  products: string;
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -100,30 +148,33 @@ export const columns: ColumnDef<Payment>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "status",
-    header: "Status",
+    accessorKey: "quantity",
+    header: "Quantity",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
+      <div className="capitalize ">{row.getValue("quantity")}</div>
     ),
   },
   {
-    accessorKey: "email",
+    accessorKey: "products",
     header: ({ column }) => {
       return (
         <Button
           variant="ghost"
+          className="font-extrabold"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          Products
           <ArrowUpDown />
         </Button>
       );
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    cell: ({ row }) => (
+      <div className="lowercase pl-4">{row.getValue("products")}</div>
+    ),
   },
   {
     accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
+    header: () => <div className="text-right font-extrabold">Amount</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"));
 
@@ -196,21 +247,23 @@ export default function DataTableDemo() {
   });
 
   return (
-    <div className="my-container mx-auto max-w-3xl my-8">
-      <h1 className="font-bold text-4xl">Trending</h1>
+    <div className="my-container mx-auto md:max-w-4xl my-8">
+      <h1 className="font-bold text-4xl">Catering</h1>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          placeholder="Filter by products..."
+          value={
+            (table.getColumn("products")?.getFilterValue() as string) ?? ""
+          }
           onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
+            table.getColumn("products")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto">
-              Columns <ChevronDown />
+              Columns View <ChevronDown />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">

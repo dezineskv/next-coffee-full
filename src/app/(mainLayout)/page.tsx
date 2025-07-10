@@ -1,27 +1,35 @@
 import Header from "../components/Header";
+import Hero from "../components/Hero";
 import Explore from "../components/Explore";
 import Favorite from "../components/Favorite";
 import BestSelling from "../components/BestSelling";
 import Footer from "../components/Footer";
 import Apps from "../components/Apps";
 import Testimonials from "../components/Testimonials";
+import Menus from "../components/Menus";
+import DataTableDemo from "../components/DataTableDemo";
 
 export default function Home() {
   return (
     <>
-      <div className="w-screen bg-gray-200 opacity-90 flex flex-col items-center justify-between pt-4">
-        <div className="flex flex-col w-full sm:items-start md:justify-start sm:mx-auto md:px-12 md:pt-10 pb-5 gap-16 font-[family-name:var(--font-geist-sans)] md:max-w-7xl">
+      <div className=" bg-yellow-50 w-screen opacity-90 ">
+        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16 font-[family-name:var(--font-geist-sans)]">
           <Header />
+          <Hero />
         </div>
       </div>
-      <main className="flex flex-col justify-center sm:px-4 mx-auto md:px-6 md:pt-10 pb-20 gap-16 font-[family-name:var(--font-geist-sans)] md:max-w-6xl">
+      <main className="font-[family-name:var(--font-geist-sans)]">
         <Explore />
         <Favorite />
         <BestSelling />
         <Apps />
+        <Menus />
+        <DataTableDemo />
         <Testimonials />
       </main>
-      <Footer />
+      <div className="bg-white pt-16 mt-20">
+        <Footer />
+      </div>
     </>
   );
 }

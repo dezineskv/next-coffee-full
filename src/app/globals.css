@@ -127,14 +127,12 @@
 button.bg-background {
   background-color: transparent;
 }
-button > svg {
+/* button > svg {
   display: none;
-}
-.NavigationMenuIndicator {
+} */
+/* .NavigationMenuIndicator {
   display: none;
-}
-.CaretDown {
+} */
+/* .CaretDown {
   display: none;
-}
-
-
+} */

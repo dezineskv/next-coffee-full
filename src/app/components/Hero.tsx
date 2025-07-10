@@ -22,7 +22,7 @@ export default function Hero() {
               <h1 className="text-left text-4xl font-extrabold leading-[1.40] sm:text-5xl lg:text-6xl">
                 Delicious Kimbotic
               </h1>
-            </motion.div>
+            
             {/* </div> */}
             <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
               <span className="mt-4 inline-flex items-center text-coffee-700">
@@ -30,11 +30,7 @@ export default function Hero() {
                 <Image src={Cafe} alt="Cafe badge" width={50} height={40} />
               </span>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: -150 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+           
               <p className="mt-6 max-sm:w-full text-balance text-lg leading-relaxed sm:text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
