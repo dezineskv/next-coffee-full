@@ -20,22 +20,22 @@ import Logo from "../images/logo2.png";
 const menuItems = [
   {
     title: "Coffee",
-    href: "/menu/coffee",
+    href: "/cafe-menu",
     description: "Espresso, cappuccino, latte and more",
   },
   {
     title: "Food",
-    href: "/menu/food",
+    href: "/cafe-menu",
     description: "Sandwiches, pastries, and light meals",
   },
   {
     title: "Beverages",
-    href: "/menu/beverages",
+    href: "/cafe-menu",
     description: "Teas, smoothies, and cold drinks",
   },
   {
     title: "Desserts",
-    href: "/menu/desserts",
+    href: "/cafe-menu",
     description: "Cakes, cookies, and sweet treats",
   },
 ];
@@ -43,17 +43,17 @@ const menuItems = [
 const aboutItems = [
   {
     title: "Our Story",
-    href: "/about/story",
+    href: "/about",
     description: "Learn about our journey and mission",
   },
   {
     title: "Team",
-    href: "/about/team",
+    href: "/about",
     description: "Meet the people behind Kimbotic",
   },
   {
     title: "Sustainability",
-    href: "/about/sustainability",
+    href: "/about",
     description: "Our commitment to the environment",
   },
 ];

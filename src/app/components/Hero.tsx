@@ -32,10 +32,7 @@ export default function Hero() {
               </div>
 
               <p className="mt-6 max-sm:w-full text-balance text-lg leading-relaxed sm:text-xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Our roaster starts with 100% Arabica coffee beans from Mexico
               </p>
             </motion.div>
             <motion.div

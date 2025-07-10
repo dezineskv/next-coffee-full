@@ -22,17 +22,17 @@ function Explore() {
           Explore Kimbotic Coffee
         </h1>
         <p className="mx-auto text-gray-900 text-center max-w-2xl">
-          lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
-          dolor sit amet, consectetur adipiscing elit
+          Our roaster starts with 100% Arabica coffee beans from Mexico
         </p>
         {/* start cards */}
         <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
-          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                  Make your next event a success with our fresh coffee and
+                  breakfast.
                 </p>
               </CardDescription>
             </CardHeader>
@@ -51,9 +51,9 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold"> Food</CardTitle>
+              <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
                   Alongside our delicious coffee, we also offer a variety of
@@ -76,14 +76,12 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:mx-auto md:w-1/4 max-w-80 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold">
-                The Gelato
-              </CardTitle>
+              <CardTitle className="text-lg font-extrabold">The Cafe</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+                  Our roaster starts with 100% Arabica coffee beans from Mexico
                 </p>
               </CardDescription>
             </CardHeader>
@@ -102,9 +100,9 @@ function Explore() {
               </Button>
             </CardFooter>
           </Card>
-          <Card className="sm:w-full  md:w-1/4 md:max-w-80 shadow-lg">
+          <Card className="sm:w-full  md:w-1/4 md:max-w-70 shadow-lg">
             <CardHeader>
-              <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
+              <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
                   Order beverages for delivery from your local location.

@@ -15,25 +15,26 @@ function Apps() {
               <br />
             </h1>
             <p className="text-gray-900 sm:mx-6 py-4 md:pl-1 text-base">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+              Coffee production begins when the seeds from coffee cherries (the
+              Coffea plant's fruits) are separated to produce unroasted green
+              coffee beans. The "beans" are roasted and then ground into fine
+              particles. Coffee is brewed from the ground roasted beans, which
+              are typically steeped in hot water before being filtered out.
             </p>
             <p className="text-gray-900 sm:mx-6 py-4 md:pl-1 text-base">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+              Though coffee is now a global commodity, it has a long history
+              tied closely to food traditions around the Red Sea. Credible
+              evidence of coffee drinking as the modern beverage subsequently
+              appears in modern-day Yemen in southern Arabia in the middle of
+              the 15th century in Sufi shrines, where coffee seeds were first
+              roasted and brewed in a manner similar to how it is now prepared
+              for drinking.
             </p>
             <p className="text-gray-900 sm:mx-6 py-4 md:pl-1 text-base">
-              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.
+              The coffee beans were procured by the Yemenis from the Ethiopian
+              Highlands via coastal Somali intermediaries, and cultivated in
+              Yemen. By the 16th century, the drink had reached the rest of the
+              Middle East and North Africa, later spreading to Europe.
             </p>
             <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
               Download App

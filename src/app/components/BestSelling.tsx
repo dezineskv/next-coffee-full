@@ -28,8 +28,7 @@ function BestSelling() {
             Best Selling Coffee
           </h1>
           <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
-            lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
-            dolor sit amet, consectetur adipiscing elit
+            Order the best coffee in town!
           </p>
           {/* start 3 cards */}
           <div className="flex flex-col md:flex-row gap-8 justify-center mx-auto py-10 sm:flex-wrap ">
@@ -53,11 +52,11 @@ function BestSelling() {
               </div>
               <CardContent>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  It's known for its intense flavor, small serving size, and the
+                  crema, a layer of foam on top.
                 </p>
               </CardContent>
-              <CardFooter className="flex flex-row justify-between gap-4 ">
+              <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
                 <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now
@@ -84,11 +83,12 @@ function BestSelling() {
               </div>
               <CardContent>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Known for its smooth, creamy texture and a balance of coffee
+                  and milk flavors. The word "latte" itself means "milk" in
+                  Italian
                 </p>
               </CardContent>
-              <CardFooter className="flex flex-row justify-between gap-4 ">
+              <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
                 <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now
@@ -115,11 +115,11 @@ function BestSelling() {
               </div>
               <CardContent>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Our roaster starts with 100% Arabica coffee beans from Mexico
+                  (80%) and Colombia
                 </p>
               </CardContent>
-              <CardFooter className="flex flex-row justify-between gap-4 ">
+              <CardFooter className="flex flex-row justify-between gap-4 items-end mt-auto">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
                 <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now

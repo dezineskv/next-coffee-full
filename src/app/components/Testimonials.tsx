@@ -21,8 +21,7 @@ function Testimonials() {
       <div className="my-container flex flex-col gap-6 justify-center pt-24 pb-10">
         <h1 className="text-4xl text-center font-bold">Client Testimonials</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
-          lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
-          dolor sit amet, consectetur adipiscing elit
+          Check out what our customers have to say about us. We are rocking it.
         </p>
         {/* avatars section */}
         <div className="my-4 flex items-center justify-center gap-x-6 ">
@@ -111,9 +110,8 @@ function Testimonials() {
                 </CardFooter>
                 <CardContent>
                   <p className="text-gray-900 text-left max-w-2xl px-2">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Check out what our customers have to say about us. We are
+                    rocking it.
                   </p>
                 </CardContent>
               </Card>
@@ -153,9 +151,8 @@ function Testimonials() {
                 </CardFooter>
                 <CardContent>
                   <p className="text-gray-900 text-left max-w-2xl px-3">
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Check out what our customers have to say about us. We are
+                    rocking it.
                   </p>
                 </CardContent>
               </Card>
@@ -194,8 +191,8 @@ function Testimonials() {
                   </div>
                 </CardFooter>
                 <p className="text-gray-900 text-left px-8">
-                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Check out what our customers have to say about us. We are
+                  rocking it.
                 </p>
               </Card>
             </CarouselItem>
