@@ -35,7 +35,7 @@ function Apps() {
               adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-            <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+            <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
               Download App
             </Button>
           </div>

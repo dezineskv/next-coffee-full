@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <>
-      <section className=" bg-yellow-50 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 ">
+      <section className="[family-name:var(--font-geist-sans)]  bg-yellow-50 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 ">
         {/* container */}
         <div className="my-container mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
           {/* TEXT SIDE */}
@@ -22,15 +22,15 @@ export default function Hero() {
               <h1 className="text-left text-4xl font-extrabold leading-[1.40] sm:text-5xl lg:text-6xl">
                 Delicious Kimbotic
               </h1>
-            
-            {/* </div> */}
-            <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
-              <span className="mt-4 inline-flex items-center text-coffee-700">
-                Coffee&nbsp;
-                <Image src={Cafe} alt="Cafe badge" width={50} height={40} />
-              </span>
-            </div>
-           
+
+              {/* </div> */}
+              <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
+                <span className="mt-4 inline-flex items-center text-coffee-700">
+                  Coffee&nbsp;
+                  <Image src={Cafe} alt="Cafe badge" width={50} height={40} />
+                </span>
+              </div>
+
               <p className="mt-6 max-sm:w-full text-balance text-lg leading-relaxed sm:text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

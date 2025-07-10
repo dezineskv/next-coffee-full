@@ -18,7 +18,7 @@ import {
 function Testimonials() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center pt-24">
+      <div className="my-container flex flex-col gap-6 justify-center pt-24 pb-10">
         <h1 className="text-4xl text-center font-bold">Client Testimonials</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
           lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum
@@ -200,8 +200,12 @@ function Testimonials() {
               </Card>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious style={{ backgroundColor: "#000000" }} />
-          <CarouselNext style={{ backgroundColor: "#000000" }} />
+          <CarouselPrevious
+            style={{ backgroundColor: "#000000", marginLeft: "64px" }}
+          />
+          <CarouselNext
+            style={{ backgroundColor: "#000000", marginRight: "64px" }}
+          />
         </Carousel>
       </div>
     </>

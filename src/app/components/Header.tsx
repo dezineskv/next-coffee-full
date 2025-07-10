@@ -101,7 +101,7 @@ export default function Header() {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-10 px-6 lg:px-8">
+      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-10 px-0">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex justify-center items-center">
@@ -136,7 +136,7 @@ export default function Header() {
           <NavigationMenuList className="flex space-x-2">
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
-                <Link href="/cafe-menu">Cafe Menu</Link>
+                <Link href="/cafe-menu">Menu</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">

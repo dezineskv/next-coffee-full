@@ -117,22 +117,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground w-screen;
   }
   .my-container {
     @apply w-full md:w-7xl lg:w-7xl mx-auto px-3 md:px-0;
   }
 }
-/* remove toggle arrows from navigation menu & remove nav buttons */
+/* remove button style from navigation menu*/
 button.bg-background {
   background-color: transparent;
 }
-/* button > svg {
-  display: none;
-} */
-/* .NavigationMenuIndicator {
-  display: none;
-} */
-/* .CaretDown {
-  display: none;
-} */
+

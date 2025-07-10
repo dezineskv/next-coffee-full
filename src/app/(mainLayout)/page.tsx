@@ -12,13 +12,9 @@ import DataTableDemo from "../components/DataTableDemo";
 export default function Home() {
   return (
     <>
-      <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16 font-[family-name:var(--font-geist-sans)]">
-          <Header />
-          <Hero />
-        </div>
-      </div>
-      <main className="font-[family-name:var(--font-geist-sans)]">
+        <Header />
+      <div className=" bg-yellow-50 w-screen opacity-90 px-0 mx-0">
+        <Hero />
         <Explore />
         <Favorite />
         <BestSelling />
@@ -26,10 +22,9 @@ export default function Home() {
         <Menus />
         <DataTableDemo />
         <Testimonials />
-      </main>
-      <div className="bg-white pt-16 mt-20">
-        <Footer />
       </div>
+        <Footer />
+      
     </>
   );
 }
