@@ -127,4 +127,6 @@
 button.bg-background {
   background-color: transparent;
 }
-
+html, body {
+  overflow-x: hidden;
+}
