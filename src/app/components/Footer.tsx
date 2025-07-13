@@ -11,7 +11,7 @@ export default function Footer() {
     <>
       <div className="bg-white mt-10 flex flex-col justify-center md:h-25">
         <div className="my-container flex flex-col md:flex-row justify-between items-center">
-          <div className="text-left pl-4">
+          <div className="text-left pl-4 sm:mb-6">
             <Link href="/">
               <Image
                 src={Logo}
@@ -22,18 +22,18 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <div className="flex flex-row justify-between gap-4 items-center sm:pl-1 sm:pb-10 md:px-20 font-medium text-md">
+          <div className="flex flex-row justify-between gap-4 items-center sm:pl-1 sm:py-10 md:px-20 font-medium text-md">
             <Link href="/cafe-menu">
               <p>Menu</p>
             </Link>
             <Link href="/about">
               <p>About</p>
             </Link>
-            <Link href="/">
+            <Link href="/find">
               <p>Find Us</p>
             </Link>
-            <Link href="/">
-              <p>Catering</p>
+            <Link href="/services">
+              <p>Servicesg</p>
             </Link>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center sm:pl-1 sm:pb-10 md:px-10 font-medium text-xl">

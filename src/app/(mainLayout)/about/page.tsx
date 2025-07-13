@@ -5,9 +5,7 @@ import Testimonials from "../../components/Testimonials";
 import Menus from "../../components/Menus";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Icon1 from "../../images/icon1.png";
-import Icon2 from "../../images/icon2.png";
-import Icon3 from "../../images/icon3.png";
+import Girl1 from "../../images/girl1.png";
 import {
   Card,
   CardContent,
@@ -42,89 +40,57 @@ export default function About() {
             with a friendly and welcoming atmosphere. The staff is knowledgeable
             and friendly, and they are always happy to answer any questions or
             provide recommendations. Kimbotic Coffee is a great place to enjoy a
-            cup of coffee or if you can't make it in,  delicious coffee products can be delivered to you for delivery.
+            cup of coffee or if you can't make it in, delicious coffee products
+            can be delivered to you for delivery.
           </p>
+          <h2 className="text-center font-bold text-2xl">Meet the team</h2>
           {/* start cards */}
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
-            <Card className="sm:mx-auto md:w-1/3 max-w-80 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  Catering
-                </CardTitle>
-                <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
-                    Make your next event a success with our fresh coffee and
-                    breakfast.
-                  </p>
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap pt-2">
+            <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+              <div className="mx-auto p-0 h-full">
                 <Image
-                  src={Icon1}
-                  alt="icon"
-                  width={200}
-                  height={200}
-                  className="mx-auto"
+                  src={Girl1}
+                  alt="Girl1"
+                  width={350}
+                  height={300}
+                  className="md:max-h-[280px]"
                 />
-              </CardContent>
-              <CardFooter className="text-center w-full">
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                  Order Catering
-                </Button>
+              </div>
+              <CardFooter className="flex flex-col justify-center px-8">
+                <h3 className="text-lg">CEO, COO</h3>
+                <p className="font-bold ">Kim</p>
               </CardFooter>
+              <CardContent>
+                <p className="text-gray-900 text-left max-w-2xl px-2">
+                  Kim is the CEO and COO of Kimbotic Coffee. She is the head of the project and also responsible for day to day functioning.
+                </p>
+              </CardContent>
             </Card>
-            <Card className="sm:mx-auto md:w-1/2 max-w-100 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
-                <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
-                    Alongside our delicious coffee, we also offer a variety of
-                    pastries and breakfast foods and other snacks.
-                  </p>
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
+            <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
+              <div className="mx-auto p-0 h-full">
                 <Image
-                  src={Icon2}
-                  alt="icon"
-                  width={200}
-                  height={200}
-                  className="mx-auto"
+                  src={Girl1}
+                  alt="Girl1"
+                  width={350}
+                  height={300}
+                  className="md:max-h-[280px]"
                 />
-              </CardContent>
-              <CardFooter className="text-center w-full">
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                  Food Menu
-                </Button>
+              </div>
+              <CardFooter className="flex flex-col justify-center px-8">
+                <h3 className="text-lg">CMO</h3>
+                <p className="font-bold ">Chelsea</p>
               </CardFooter>
-            </Card>
-            <Card className="sm:mx-auto md:w-1/3 max-w-80 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  Delivery
-                </CardTitle>
-                <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
-                    Order beverages for delivery from your local location.
-                  </p>
-                </CardDescription>
-              </CardHeader>
               <CardContent>
-                <Image
-                  src={Icon3}
-                  alt="icon"
-                  width={200}
-                  height={200}
-                  className="mx-auto"
-                />
+                <p className="text-gray-900 text-left max-w-2xl px-2">
+                  Chelsea is our Chief Marketing Officer and plays an important
+                  role in shaping the marketing strategy and brand identity of
+                  the company.
+                </p>
               </CardContent>
-              <CardFooter className="text-center w-full">
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                  Discover More
-                </Button>
-              </CardFooter>
             </Card>
           </div>
+        </div>
         </div>
       </main>
       <div className="bg-white pt-16 mt-20">

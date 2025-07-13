@@ -51,27 +51,23 @@ const aboutItems = [
     href: "/about",
     description: "Meet the people behind Kimbotic",
   },
-  {
-    title: "Sustainability",
-    href: "/about",
-    description: "Our commitment to the environment",
-  },
+
 ];
 
 const locationItems = [
   {
-    title: "Downtown Location",
-    href: "/locations/downtown",
+    title: "Headquarters",
+    href: "/find",
     description: "123 Main St, Downtown",
   },
   {
     title: "Mall Location",
-    href: "/locations/mall",
+    href: "/find",
     description: "456 Shopping Center Blvd",
   },
   {
     title: "Airport Location",
-    href: "/locations/airport",
+    href: "/find",
     description: "Terminal 2, Gate Area",
   },
 ];
@@ -79,18 +75,18 @@ const locationItems = [
 const cateringItems = [
   {
     title: "Corporate Events",
-    href: "/catering/corporate",
+    href: "/services",
     description: "Professional catering for meetings and events",
   },
   {
     title: "Private Parties",
-    href: "/catering/private",
+    href: "/services",
     description: "Custom catering for special occasions",
   },
   {
-    title: "Wedding Catering",
-    href: "/catering/weddings",
-    description: "Beautiful coffee and dessert stations",
+    title: "Delivery",
+    href: "/services",
+    description: "Order online for delivery",
   },
 ];
 
@@ -104,14 +100,14 @@ export default function Header() {
       <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-10 px-0">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center sm:pl-6">
             <Link href="/">
               <Image
                 src={Logo}
                 alt="Logo"
                 width={300}
                 height={180}
-                className="w-auto max-w-[300px] sm:mx-auto md:pl-12 pb-4 pr-10 border-0"
+                className="w-auto max-w-[250px] sm:mx-auto sm:ml-6 md:pl-12 pb-4 pr-10 border-0"
               />
             </Link>
           </div>
@@ -124,9 +120,9 @@ export default function Header() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-8 w-8" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-8 w-8" />
             )}
           </Button>
         </div>
@@ -173,7 +169,7 @@ export default function Header() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
-                <Link href="/about">Find Us</Link>
+                <Link href="/find">Find Us</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
@@ -191,7 +187,7 @@ export default function Header() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
-                Catering
+              <Link href="/services">Services</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
@@ -236,8 +232,8 @@ export default function Header() {
               {/* Mobile Menu Items */}
               <div className="space-y-3">
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between">
-                    Cafe Menu
+                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
+                    Menu
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
                   <div className="mt-2 ml-4 space-y-2">
@@ -254,7 +250,7 @@ export default function Header() {
                   </div>
                 </details>
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between">
+                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     About
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
@@ -273,14 +269,14 @@ export default function Header() {
                 </details>
 
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between">
+                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     Find Us
                   </summary>
                   <div className="mt-2 ml-4 space-y-2"></div>
                 </details>
 
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between">
+                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     Catering
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
@@ -300,14 +296,14 @@ export default function Header() {
               </div>
 
               {/* Mobile Actions */}
-              <div className="flex flex-col space-y-4 pt-4 border-t">
+              <div className="flex flex-col space-y-4 pt-4 border-t ">
                 <Link
                   href="/cart"
                   className="flex items-center space-x-3 text-xl font-medium text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <div className="relative">
-                    <ShoppingBag className="h-6 w-6" />
+                  <div className="relative pl-6">
+                    <ShoppingBag className="h-6 w-6 " />
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
                       2
                     </span>
