@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Testimonials from "./Testimonials";
-import ReactStars from "react-stars";
+// import ReactStars from "react-stars";
 import {
   Breadcrumb,
   BreadcrumbItem,
