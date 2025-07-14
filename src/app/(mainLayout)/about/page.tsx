@@ -67,7 +67,7 @@ export default function About() {
                 </p>
               </CardContent>
             </Card>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
+          {/* <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
             <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
               <div className="mx-auto p-0 h-full">
                 <Image
@@ -90,7 +90,7 @@ export default function About() {
                 </p>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
         </div>
         </div>
       </main>

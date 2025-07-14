@@ -51,7 +51,7 @@ function Testimonials() {
           </div>
           <div className="boder-none sm:border-l-2 border-black sm:pl-8">
             <div className="flex justify-center sm:justify-start items-center">
-              <h3 className="text-2xl font-semibold mr-2">4.6</h3>
+              <h3 className="text-2xl font-semibold mr-2">4.9</h3>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -91,7 +91,7 @@ function Testimonials() {
                     About Customer
                   </h3>
                   <div className="flex justify-center sm:justify-start items-center">
-                    <h3 className="text-2xl font-semibold mr-2">4.6</h3>
+                    <h3 className="text-2xl font-semibold mr-2">4.9</h3>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"

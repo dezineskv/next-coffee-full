@@ -4,10 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Testimonials from "./Testimonials";
-// import ReactStars from "react-stars";
+import React from "react";
+import ReactStars from "react-stars";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,6 +21,9 @@ import Link from "next/link";
 const SingleProduct = ({ id }: { id: number }) => {
   const [singleTodo, setSingleTodo] = useState<TTodo>();
 
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+  };
   const fetchTodo = async () => {
     try {
       const res = await axios.get(`http://localhost:3000/products/${id}`);
@@ -71,8 +74,9 @@ const SingleProduct = ({ id }: { id: number }) => {
               <h2 className="text-2xl font-bold mb-6">{singleTodo?.name}</h2>
               <p>
                 <span className="font-bold text-gray-700">
-                  Product Description:&nbsp;</span> 
-                 {singleTodo?.description}
+                  Product Description:&nbsp;
+                </span>
+                {singleTodo?.description}
               </p>
               <p>
                 <span className="font-bold text-gray-700">Origin: </span>
@@ -99,7 +103,13 @@ const SingleProduct = ({ id }: { id: number }) => {
         </div>
         <div className="flex flex-col justify-center mx-auto text-center mt-8">
           <p className="font-bold">Rate this product</p>
-          <ReactStars count={5} size={24} color2={"#ffd700"} />
+          {/* <ReactStars count={5} size={24} color2={"#ffd700"} /> */}
+          <ReactStars
+            count={5}
+            onChange={ratingChanged}
+            size={24}
+            color2={"#ffd700"}
+          />
         </div>
       </div>
       <Testimonials />
