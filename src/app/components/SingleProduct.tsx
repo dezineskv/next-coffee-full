@@ -1,12 +1,11 @@
 "use client";
 import { TTodo } from "../types";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Button } from "@/components/ui/button";
 import Testimonials from "./Testimonials";
-import React from "react";
 import ReactStars from "react-stars";
 import {
   Breadcrumb,
@@ -103,7 +102,6 @@ const SingleProduct = ({ id }: { id: number }) => {
         </div>
         <div className="flex flex-col justify-center mx-auto text-center mt-8">
           <p className="font-bold">Rate this product</p>
-          {/* <ReactStars count={5} size={24} color2={"#ffd700"} /> */}
           <ReactStars
             count={5}
             // onChange={ratingChanged}
