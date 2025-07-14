@@ -86,7 +86,7 @@ function Explore() {
               />
             </CardContent>
           </Card>
-          <Card className="sm:w-full  md:w-1/4 md:max-w-70 shadow-lg">
+          <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
               <CardDescription>

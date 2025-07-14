@@ -182,7 +182,7 @@ export default function Header() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
-              <Link href="/services">Services</Link>
+                <Link href="/services">Services</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
@@ -223,9 +223,9 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t pt-4 mt-4">
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 space-x-3">
               {/* Mobile Menu Items */}
-              <div className="space-y-3">
+              <div className="space-y-3 ">
                 <details className="group">
                   <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     Menu
@@ -305,7 +305,7 @@ export default function Header() {
                   </div>
                   <span>Shopping Cart</span>
                 </Link>
-                <Button asChild className="bg-gray-900 text-white text-xl py-6">
+                <Button asChild className="bg-gray-900 text-white text-xl py-6 mx-6">
                   <Link
                     href="/gift-cards"
                     onClick={() => setIsMobileMenuOpen(false)}

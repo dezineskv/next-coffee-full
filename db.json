@@ -11,7 +11,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-1.jpg"
+      "image_url": "/coffee-1.jpg",
+      "sale": "yes"
     },
     {
       "id": "002",
@@ -24,7 +25,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-2.jpg"
+      "image_url": "/coffee-2.jpg",
+      "sale": "yes"
     },
     {
       "id": "003",
@@ -37,7 +39,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "false",
-      "image_url": "/coffee-3.jpg"
+      "image_url": "/coffee-3.jpg",
+      "sale": "no"
     },
     {
       "id": "004",
@@ -50,7 +53,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-4.jpg"
+      "image_url": "/coffee-4.jpg",
+      "sale": "no"
     },
     {
       "id": "005",
@@ -63,7 +67,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-5.jpg"
+      "image_url": "/coffee-5.jpg",
+      "sale": "no"
     },
     {
       "id": "006",
@@ -76,7 +81,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-6.jpg"
+      "image_url": "/coffee-6.jpg",
+      "sale": "no"
     },
     {
       "id": "007",
@@ -89,7 +95,8 @@
       "currency": "USD",
       "weight_oz": 12,
       "in_stock": "true",
-      "image_url": "/coffee-7.jpg"
+      "image_url": "/coffee-7.jpg",
+      "sale": "yes"
     },
     {
       "id": "008",
@@ -104,7 +111,8 @@
       "in_stock": "true",
       "decaf": "true",
       "certifications": ["Organic", "Fair Trade"],
-      "image_url": "/coffe-w.jpg"
+      "image_url": "/coffe-w.jpg",
+      "sale": "no"
     }
   ]
 }

@@ -36,7 +36,7 @@ function Apps() {
               Yemen. By the 16th century, the drink had reached the rest of the
               Middle East and North Africa, later spreading to Europe.
             </p>
-            <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
+            <Button className="bg-gray-900 text-white sm:px-6 sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
               Download App
             </Button>
           </div>

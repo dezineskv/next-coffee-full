@@ -9,4 +9,5 @@ export type TTodo = {
   weight_oz: number;
   in_stock: string;
   decaf: boolean;
+  sale: string;
 };

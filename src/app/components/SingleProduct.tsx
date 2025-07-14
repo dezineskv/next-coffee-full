@@ -102,7 +102,7 @@ const SingleProduct = ({ id }: { id: number }) => {
         </div>
         <div className="flex flex-col justify-center mx-auto text-center mt-8">
           <p className="font-bold">Rate this product</p>
-          <ReactStars
+          <ReactStars className="ml-4"
             count={5}
             // onChange={ratingChanged}
             size={24}

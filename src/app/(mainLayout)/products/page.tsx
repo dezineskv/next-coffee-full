@@ -96,7 +96,10 @@ function Products() {
                   <Card className="min-w-[200px] min-h-[400px] max-h-[400px] rounded-lg shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-sm">
-                        Inventory: {product?.id}
+                        <div className="flex flex-row justify-between items-center">
+                          <div>Inventory: {product?.id}</div>
+                          {product.sale == "yes" && (<div className="bg-amber-400 p-1">ON SALE</div>)}
+                        </div>
                       </CardTitle>
                       <CardDescription>
                         <p className="text-gray-900 text-2xl font-bold text-left h-[80px]">

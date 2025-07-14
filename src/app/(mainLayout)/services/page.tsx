@@ -20,7 +20,7 @@ export default function Services() {
   return (
     <>
       <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16">
+        <div className="bg-white flex flex-col md:pt-10 mb-6 gap-16">
           <Header />
         </div>
       </div>
