@@ -17,6 +17,35 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 function BestSelling() {
+  const selling = [
+    {
+      id: 1,
+      title: "Espresso",
+      href: "/products",
+      description:
+        "Known for its intense flavor, small serving size, and the crema, a layer of foam on top.",
+      price: "4.99",
+      thumb: "/mid1.png",
+    },
+    {
+      id: 2,
+      title: "Latte",
+      href: "/products",
+      description:
+        "Known for its smooth, creamy texture and a balance of coffee and milk flavors. The word 'latte' itself means 'milk' in Italian.",
+      price: "5.99",
+      thumb: "/mid2.png",
+    },
+    {
+      id: 3,
+      title: "Cold Brew",
+      href: "/products",
+      description:
+        "Our roaster starts with 100% Arabica coffee beans from Mexico (80%) and Colombia",
+      price: "5.00",
+      thumb: "/mid3.png",
+    },
+  ];
   return (
     <>
       <motion.div
@@ -33,100 +62,47 @@ function BestSelling() {
           </p>
           {/* start 3 cards */}
           <div className="flex flex-col md:flex-row gap-8 justify-center mx-auto py-10 sm:flex-wrap ">
-            <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
-              <div className="flex flex-row mx-auto justify-center">
-                <div className="flex flex-col justify-end ">
-                  <CardDescription>
-                    <p className="text-red-500 font-bold">#1 Selling</p>
-                  </CardDescription>
-                  <CardTitle className="text-lg font-extrabold">
-                    Espresso
-                  </CardTitle>
-                </div>
-                <Image
-                  src={Mid1}
-                  alt="Mid"
-                  width={150}
-                  height={200}
-                  className="w-[150px] h-[150px]"
-                />
-              </div>
-              <CardContent>
-                <p className="text-gray-900 text-left max-w-2xl">
-                  It's known for its intense flavor, small serving size, and the
-                  crema, a layer of foam on top.
-                </p>
-              </CardContent>
-              <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
-                <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                  Order Now
-                </Button></Link>
-              </CardFooter>
-            </Card>
-            <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
-              <div className="flex flex-row mx-auto justify-center">
-                <div className="flex flex-col justify-end ">
-                  <CardDescription>
-                    <p className="text-red-500 font-bold">#2 Selling</p>
-                  </CardDescription>
-                  <CardTitle className="text-lg font-extrabold">
-                    Latte
-                  </CardTitle>
-                </div>
-                <Image
-                  src={Mid2}
-                  alt="Mid"
-                  width={150}
-                  height={200}
-                  className="w-[150px] h-[150px]"
-                />
-              </div>
-              <CardContent>
-                <p className="text-gray-900 text-left max-w-2xl">
-                  Known for its smooth, creamy texture and a balance of coffee
-                  and milk flavors. The word "latte" itself means "milk" in
-                  Italian
-                </p>
-              </CardContent>
-              <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
-                <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                  Order Now
-                </Button></Link>
-              </CardFooter>
-            </Card>
-            <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
-              <div className="flex flex-row mx-auto justify-center">
-                <div className="flex flex-col justify-end ">
-                  <CardDescription>
-                    <p className="text-red-500 font-bold">#3 Selling</p>
-                  </CardDescription>
-                  <CardTitle className="text-lg font-extrabold">
-                    Cold Brew
-                  </CardTitle>
-                </div>
-                <Image
-                  src={Mid3}
-                  alt="Mid"
-                  width={150}
-                  height={200}
-                  className="w-[150px] h-[150px]"
-                />
-              </div>
-              <CardContent>
-                <p className="text-gray-900 text-left max-w-2xl">
-                  Our roaster starts with 100% Arabica coffee beans from Mexico
-                  (80%) and Colombia
-                </p>
-              </CardContent>
-              <CardFooter className="flex flex-row justify-between gap-4 items-end mt-auto">
-                <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                  Order Now
-                </Button></Link>
-              </CardFooter>
-            </Card>
+            {selling.map((item) => (
+              <Card
+                key={item.id}
+                className="sm:w-full md:w-1/3 max-w-80 shadow-lg"
+              >
+                  <div className="flex flex-row mx-auto justify-center">
+                    <div className="flex flex-col justify-end ">
+                      <CardDescription>
+                        <p className="text-red-500 font-bold">
+                          #{item.id} Selling
+                        </p>
+                      </CardDescription>
+                      <CardTitle className="text-lg font-extrabold">
+                        {item.title}
+                      </CardTitle>
+                    </div>
+                    <img
+                      src={item.thumb}
+                      alt="image"
+                      width={150}
+                      height={200}
+                      className="w-[150px] h-[150px]"
+                    />
+                  </div>
+                  <CardContent>
+                    <p className="text-gray-900 text-left max-w-2xl">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                  <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
+                    <h3 className="text-left font-bold text-lg">
+                      ${item.price}
+                    </h3>
+                    <Link href="/products">
+                      <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                        Order Now
+                      </Button>
+                    </Link>
+                  </CardFooter>
+              </Card>
+            ))}
           </div>
         </div>
       </motion.div>
