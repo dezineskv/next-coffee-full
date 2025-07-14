@@ -3,10 +3,9 @@ import Explore from "../../components/Explore";
 import Footer from "../../components/Footer";
 import Testimonials from "../../components/Testimonials";
 import Menus from "../../components/Menus";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Girl1 from "../../images/girl1.png";
-import Girl2 from "../../images/girl2.png";
+import Girl from "../../images/girl0.jpg";
 import {
   Card,
   CardContent,
@@ -48,13 +47,13 @@ export default function About() {
           {/* start cards */}
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap pt-2">
             <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
-              <div className="mx-auto p-0 h-full">
+              <div className="mx-auto p-0">
                 <Image
-                  src={Girl2}
-                  alt="Girl2"
-                  width={350}
-                  height={300}
-                  className="md:max-h-[280px]"
+                  src={Girl}
+                  alt="Girl"
+                  width={2000}
+                  height={200}
+                  className="max-h-[200px] max-w-[200px] rounded-full mt-6"
                 />
               </div>
               <CardFooter className="flex flex-col justify-center px-8">
@@ -63,11 +62,12 @@ export default function About() {
               </CardFooter>
               <CardContent>
                 <p className="text-gray-900 text-left max-w-2xl px-2">
-                  Kim is the CEO and COO of Kimbotic Coffee. She is the head of the project and also responsible for day to day functioning.
+                  Kim is the CEO and COO of Kimbotic Coffee. She is the head of
+                  the project and also responsible for day to day functioning.
                 </p>
               </CardContent>
             </Card>
-          {/* <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
+            {/* <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
             <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
               <div className="mx-auto p-0 h-full">
                 <Image
@@ -91,7 +91,7 @@ export default function About() {
               </CardContent>
             </Card>
           </div> */}
-        </div>
+          </div>
         </div>
       </main>
       <div className="bg-white pt-16 mt-20">
