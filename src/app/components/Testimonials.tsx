@@ -73,7 +73,7 @@ function Testimonials() {
           </div>
         </div>
         {/* start 3 cards carousel*/}
-        <Carousel className="md:w-2xl md:mx-auto ">
+        <Carousel className="md:w-2xl md:mx-auto mb-8">
           <CarouselContent className="mx-auto">
             <CarouselItem className="basis-full mx-auto">
               <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">

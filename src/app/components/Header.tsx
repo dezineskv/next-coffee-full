@@ -34,9 +34,9 @@ const menuItems = [
     description: "Teas, smoothies, and cold drinks",
   },
   {
-    title: "Desserts",
-    href: "/cafe-menu",
-    description: "Cakes, cookies, and sweet treats",
+    title: "All Products",
+    href: "/products",
+    description: "Cakes, cookies, sweet treats and more",
   },
 ];
 
@@ -116,13 +116,13 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="sm:border-4 sm:border-gray-400 lg:hidden"
+            className="sm:border-4 sm:border-gray-400 lg:hidden mr-8"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="h-8 w-8" />
+              <X className="h-8 w-8 " />
             ) : (
-              <Menu className="h-8 w-8" />
+              <Menu className="h-8 w-8 " />
             )}
           </Button>
         </div>

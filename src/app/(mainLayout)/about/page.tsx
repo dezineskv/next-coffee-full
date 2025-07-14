@@ -6,6 +6,7 @@ import Menus from "../../components/Menus";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Girl1 from "../../images/girl1.png";
+import Girl2 from "../../images/girl2.png";
 import {
   Card,
   CardContent,
@@ -49,8 +50,8 @@ export default function About() {
             <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
               <div className="mx-auto p-0 h-full">
                 <Image
-                  src={Girl1}
-                  alt="Girl1"
+                  src={Girl2}
+                  alt="Girl2"
                   width={350}
                   height={300}
                   className="md:max-h-[280px]"

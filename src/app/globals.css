@@ -120,7 +120,7 @@
     @apply bg-background text-foreground w-screen;
   }
   .my-container {
-    @apply w-full md:w-7xl lg:w-7xl mx-auto px-3 md:px-0;
+    @apply w-full md:w-7xl lg:w-7xl mx-auto px-3 md:px-0 py-4 md:py-12;
   }
 }
 /* remove button style from navigation menu*/
@@ -129,6 +129,9 @@ button.bg-background {
 }
 html,
 body {
-  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  /* overflow-x: hidden; */
   /* overflow-y: hidden; */
 }

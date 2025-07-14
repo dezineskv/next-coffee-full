@@ -56,8 +56,8 @@ function Explore() {
               <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  Alongside our delicious coffee, we also offer a variety of
-                  pastries and breakfast foods and other snacks.
+                  Alongside delicious coffee, we offer 
+                  pastries, breakfast foods and more.
                 </p>
               </CardDescription>
             </CardHeader>

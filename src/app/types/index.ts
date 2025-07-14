@@ -1,6 +1,12 @@
-export type TPayment = {
-  id: string;
-  amount: number;
-  status: "pending" | "processing" | "success" | "failed";
-  email: string;
+export type TTodo = {
+  id: number;
+  name: string;
+  description: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: number;
+  in_stock: string;
+  decaf: boolean;
 };

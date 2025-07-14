@@ -1,0 +1,110 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "name": "Ethiopian Yirgacheffe",
+      "description": "A light-bodied coffee with floral and citrus notes, perfect for pour-over brewing.",
+      "origin": "Ethiopia",
+      "roast_level": "Light",
+      "flavor_notes": ["Floral", "Citrus", "Honey"],
+      "price": 18.99,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-1.jpg"
+    },
+    {
+      "id": "002",
+      "name": "Colombian Supremo",
+      "description": "Well-balanced coffee with a smooth body and hints of chocolate and caramel.",
+      "origin": "Colombia",
+      "roast_level": "Medium",
+      "flavor_notes": ["Chocolate", "Caramel", "Nutty"],
+      "price": 16.5,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-2.jpg"
+    },
+    {
+      "id": "003",
+      "name": "Sumatra Mandheling",
+      "description": "Full-bodied and earthy, this dark roast is low in acidity with a syrupy finish.",
+      "origin": "Indonesia",
+      "roast_level": "Dark",
+      "flavor_notes": ["Earthy", "Spicy", "Cocoa"],
+      "price": 17.25,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "false",
+      "image_url": "/coffee-3.jpg"
+    },
+    {
+      "id": "004",
+      "name": "Guatemala Antigua",
+      "description": "A smooth and rich medium roast with notes of cocoa and spice.",
+      "origin": "Guatemala",
+      "roast_level": "Medium",
+      "flavor_notes": ["Cocoa", "Spice", "Orange Peel"],
+      "price": 17.75,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-4.jpg"
+    },
+    {
+      "id": "005",
+      "name": "Kenya AA",
+      "description": "Bright and vibrant with bold acidity and fruity overtones.",
+      "origin": "Kenya",
+      "roast_level": "Medium-Light",
+      "flavor_notes": ["Blackcurrant", "Grapefruit", "Tomato"],
+      "price": 19.5,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-5.jpg"
+    },
+    {
+      "id": "006",
+      "name": "Brazil Santos",
+      "description": "A mellow, nutty coffee with a low acidity, perfect for drip brewing.",
+      "origin": "Brazil",
+      "roast_level": "Medium",
+      "flavor_notes": ["Nutty", "Chocolate", "Sweet"],
+      "price": 15.25,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-6.jpg"
+    },
+    {
+      "id": "007",
+      "name": "House Blend Espresso",
+      "description": "A bold and balanced blend perfect for espresso lovers, with a caramel crema.",
+      "origin": "Blend (South America & Asia)",
+      "roast_level": "Dark",
+      "flavor_notes": ["Caramel", "Molasses", "Dark Chocolate"],
+      "price": 18.0,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "image_url": "/coffee-7.jpg"
+    },
+    {
+      "id": "008",
+      "name": "Decaf Peru Organic",
+      "description": "An organic decaf with smooth body and sweet nutty notes, processed using Swiss Water.",
+      "origin": "Peru",
+      "roast_level": "Medium",
+      "flavor_notes": ["Hazelnut", "Brown Sugar", "Apple"],
+      "price": 17.95,
+      "currency": "USD",
+      "weight_oz": 12,
+      "in_stock": "true",
+      "decaf": "true",
+      "certifications": ["Organic", "Fair Trade"],
+      "image_url": "/coffe-w.jpg"
+    }
+  ]
+}
