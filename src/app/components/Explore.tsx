@@ -107,9 +107,9 @@ function Explore() {
           </Card>
         </div>
         <div className="text-center">
-          <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+        <Link href="/services"><Button className="h-12 bg-gray-900 text-lg sm:w-auto">
             Services
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </>

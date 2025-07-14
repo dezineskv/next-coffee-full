@@ -15,6 +15,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -23,6 +32,23 @@ export default function Services() {
         <div className="bg-white flex flex-col md:pt-10 mb-6 gap-16">
           <Header />
         </div>
+      </div>
+      <div className="my-container md:pl-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/services">Services</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
       <main className="">
         <div className="my-container flex flex-col gap-6 justify-center py-12">
@@ -41,7 +67,8 @@ export default function Services() {
             with a friendly and welcoming atmosphere. The staff is knowledgeable
             and friendly, and they are always happy to answer any questions or
             provide recommendations. Kimbotic Coffee is a great place to enjoy a
-            cup of coffee or if you can't make it in,  delicious coffee products can be delivered to you for delivery.
+            cup of coffee or if you can't make it in, delicious coffee products
+            can be delivered to you for delivery.
           </p>
           {/* start cards */}
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">

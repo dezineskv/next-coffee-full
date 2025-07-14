@@ -14,7 +14,7 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
-
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -394,9 +394,9 @@ export default function DataTableDemo() {
               Next
             </Button>
           </div>
-          <Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all max-w-1/2">
+          <Link href="/products"><Button className="bg-gray-900 text-white sm:mx-6 py-6 md:px-10 rounded-md text-md shadow-lg hover:scale-105 transition-all max-w-1/2">
             Order Now
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </div>

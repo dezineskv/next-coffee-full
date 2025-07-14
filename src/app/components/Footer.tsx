@@ -32,7 +32,7 @@ export default function Footer() {
               <p>Products</p>
             </Link>
             <Link href="/services">
-              <p>Servicesg</p>
+              <p>Services</p>
             </Link>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center sm:pl-1 sm:pb-10 md:px-10 font-medium text-xl">

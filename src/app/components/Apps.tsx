@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../images/coffee-banner.webp";
 import Image from "next/image";
+import Downloads from "../images/download-buttons.png";
 import { Button } from "@/components/ui/button";
 import "../globals.css";
 
@@ -36,9 +37,10 @@ function Apps() {
               Yemen. By the 16th century, the drink had reached the rest of the
               Middle East and North Africa, later spreading to Europe.
             </p>
-            <Button className="bg-gray-900 text-white sm:px-6 sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
+            <Image alt="download buttons" width={350} height={200} className="ml-5" src={Downloads}/>
+            {/* <Button className="bg-gray-900 text-white sm:px-6 sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
               Download App
-            </Button>
+            </Button> */}
           </div>
           <div className="flex flex-row sm:w-full sm:justify-center md:items-center md:w-1/2 sm:pt-10 pt-10 pb-10 mb-10 ">
             <div className="order-2 md:flex InstantCoffee_col relative mx-auto aos-init aos-animate">

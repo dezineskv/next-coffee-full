@@ -23,23 +23,6 @@ export default function Home() {
     <>
       <Header />
       <div className=" bg-yellow-50 w-screen opacity-90 px-0 mx-0">
-        <div className="my-container md:pl-24">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/">Home</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator />
-              <BreadcrumbItem>
-                <BreadcrumbLink asChild>
-                  <Link href="/products">Products</Link>
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
-        </div>
         <Hero />
         <Explore />
         <Favorite />

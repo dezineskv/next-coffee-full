@@ -14,6 +14,7 @@ import Mid2 from "../images/mid2.png";
 import Mid3 from "../images/mid3.png";
 import "../globals.css";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 function BestSelling() {
   return (
@@ -58,9 +59,9 @@ function BestSelling() {
               </CardContent>
               <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now
-                </Button>
+                </Button></Link>
               </CardFooter>
             </Card>
             <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
@@ -90,9 +91,9 @@ function BestSelling() {
               </CardContent>
               <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now
-                </Button>
+                </Button></Link>
               </CardFooter>
             </Card>
             <Card className="sm:w-full md:w-1/3 max-w-80 shadow-lg">
@@ -121,9 +122,9 @@ function BestSelling() {
               </CardContent>
               <CardFooter className="flex flex-row justify-between gap-4 items-end mt-auto">
                 <h3 className="text-left font-bold text-lg">$59.99</h3>
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                <Link href="/products"><Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
                   Order Now
-                </Button>
+                </Button></Link>
               </CardFooter>
             </Card>
           </div>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import HeroImg from "../images/hero1.png";
 import Cafe from "../images/cafe-1.png";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -41,15 +42,19 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-                <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
-                  Download&nbsp;App
+              <Link href="/services">
+               <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+                  Catering Services
                 </Button>
-                <Button
-                  variant="outline"
-                  className="h-12  border-gray-900 text-lg text-gray-900 sm:w-auto bg-transparent"
-                >
-                  Shop&nbsp;Coffee
-                </Button>
+                </Link>
+                <Link href="/products">
+                  <Button
+                    variant="outline"
+                    className="h-12  border-gray-900 text-lg text-gray-900 sm:w-auto bg-transparent"
+                  >
+                    Shop&nbsp;Coffee
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>

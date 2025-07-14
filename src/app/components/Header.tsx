@@ -216,7 +216,7 @@ export default function Header() {
             asChild
             className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"
           >
-            <Link href="/gift-vouchers">Buy Gift Cards</Link>
+            <Link href="/products">Buy Gift Cards</Link>
           </Button>
         </div>
 

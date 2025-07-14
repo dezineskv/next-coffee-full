@@ -33,7 +33,7 @@ export default function CafeMenu() {
               <BreadcrumbSeparator />
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
-                  <Link href="/products">Products</Link>
+                  <Link href="/cafe-menu">Menu</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
             </BreadcrumbList>

@@ -4,7 +4,15 @@ import Footer from "../../components/Footer";
 import Testimonials from "../../components/Testimonials";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -18,9 +26,27 @@ export default function FindUs() {
   return (
     <>
       <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16">
+        <div className="bg-white flex flex-col md:pt-10 mb-5 gap-16">
           <Header />
         </div>
+      </div>
+
+      <div className="my-container md:pl-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/find">Find Us</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </div>
       <main className="">
         <div className="my-container flex flex-col gap-6 justify-center py-12">
@@ -45,7 +71,7 @@ export default function FindUs() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <img 
+                <img
                   src="https://th.bing.com/th/id/R.89186bdbc92213089a2ca2f38b55a040?rik=tKvWrJjv1lfseg&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2facq%2fLAa%2facqLAa9Ki.png&ehk=9L0a3CvQLNFrjB%2btFPzKg2rmY%2bC9rE9gqEZI4dhMe%2fQ%3d&risl=&pid=ImgRaw&r=0"
                   alt="icon"
                   width={130}
