@@ -21,9 +21,9 @@ import Link from "next/link";
 const SingleProduct = ({ id }: { id: number }) => {
   const [singleTodo, setSingleTodo] = useState<TTodo>();
 
-  const ratingChanged = (newRating) => {
-    console.log(newRating);
-  };
+  // const ratingChanged = (newRating) => {
+  //   console.log(newRating);
+  // };
   const fetchTodo = async () => {
     try {
       const res = await axios.get(`http://localhost:3000/products/${id}`);
@@ -106,7 +106,7 @@ const SingleProduct = ({ id }: { id: number }) => {
           {/* <ReactStars count={5} size={24} color2={"#ffd700"} /> */}
           <ReactStars
             count={5}
-            onChange={ratingChanged}
+            // onChange={ratingChanged}
             size={24}
             color2={"#ffd700"}
           />
