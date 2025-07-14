@@ -5,7 +5,6 @@ import Subscribe from "./Subscribe";
 import "../globals.css";
 import Link from "next/link";
 
-
 export default function Footer() {
   return (
     <>
@@ -29,8 +28,8 @@ export default function Footer() {
             <Link href="/about">
               <p>About</p>
             </Link>
-            <Link href="/find">
-              <p>Find Us</p>
+            <Link href="/products">
+              <p>Products</p>
             </Link>
             <Link href="/services">
               <p>Servicesg</p>

@@ -281,7 +281,8 @@ export default function DataTableDemo() {
   return (
     <div className="mx-auto bg-white">
       <div className="my-container bg-white mx-auto px-10 mb-8">
-        <h1 className="font-bold text-4xl">Catering</h1>
+        <h1 className="font-bold text-4xl mb-4">Catering</h1>
+        <p>Put in your order now while supplies last!</p>
         <div className="flex items-center py-4">
           <Input
             placeholder="Filter by products..."

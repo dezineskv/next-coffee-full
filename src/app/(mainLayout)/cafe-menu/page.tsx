@@ -1,21 +1,17 @@
 import Header from "../../components/Header";
 import Explore from "../../components/Explore";
 import Footer from "../../components/Footer";
-import Testimonials from "../../components/Testimonials";
 import Menus from "../../components/Menus";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import Icon1 from "../../images/icon1.png";
-import Icon2 from "../../images/icon2.png";
-import Icon3 from "../../images/icon3.png";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 export default function CafeMenu() {
   return (
@@ -26,11 +22,34 @@ export default function CafeMenu() {
         </div>
       </div>
       <main className="font-[family-name:var(--font-geist-sans)]">
+        <div className="my-container bg-white md:pl-24 md:pt-0 md:mt-0">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/products">Products</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
         <div className="flex flex-col md:pt-10 mb-5 gap-4">
-          <h1 className="text-4xl text-center font-bold">Kimbotic Coffee Cafe Menu</h1>
+          <h1 className="text-4xl text-center font-bold">
+            Kimbotic Coffee Cafe Menu
+          </h1>
         </div>
         <Menus />
       </main>
+      <div className="text-center">
+        <Button>See Catering Inventory</Button>
+      </div>
+
       <div className="bg-white pt-16 mt-20">
         <Footer />
       </div>

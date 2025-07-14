@@ -7,6 +7,16 @@ import Footer from "./Footer";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Testimonials from "./Testimonials";
+import ReactStars from "react-stars";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 const SingleProduct = ({ id }: { id: number }) => {
   const [singleTodo, setSingleTodo] = useState<TTodo>();
@@ -26,6 +36,23 @@ const SingleProduct = ({ id }: { id: number }) => {
   return (
     <>
       <Header />
+      <div className="my-container md:pl-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/products">Products</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       <h2 className="mx-auto text-center pt-5 text-3xl font-bold header">
         Product Details
       </h2>
@@ -44,12 +71,11 @@ const SingleProduct = ({ id }: { id: number }) => {
               <h2 className="text-2xl font-bold mb-6">{singleTodo?.name}</h2>
               <p>
                 <span className="font-bold text-gray-700">
-                  Product Description:
-                </span>
-                {singleTodo?.description}
+                  Product Description:&nbsp;</span> 
+                 {singleTodo?.description}
               </p>
               <p>
-                <span className="font-bold text-gray-700">Origin </span>
+                <span className="font-bold text-gray-700">Origin: </span>
                 {singleTodo?.origin}
               </p>
               <p>
@@ -57,7 +83,7 @@ const SingleProduct = ({ id }: { id: number }) => {
                 {singleTodo?.roast_level}
               </p>
               <p>
-                <span className="font-bold text-gray-700">Weight:</span>
+                <span className="font-bold text-gray-700">Weight: </span>
                 {singleTodo?.weight_oz} oz.
               </p>
               <p>
@@ -70,6 +96,10 @@ const SingleProduct = ({ id }: { id: number }) => {
               <Button className="btn btn-primary">Buy Now</Button>
             </div>
           </div>
+        </div>
+        <div className="flex flex-col justify-center mx-auto text-center mt-8">
+          <p className="font-bold">Rate this product</p>
+          <ReactStars count={5} size={24} color2={"#ffd700"} />
         </div>
       </div>
       <Testimonials />

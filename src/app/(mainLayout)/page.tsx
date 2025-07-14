@@ -8,23 +8,48 @@ import Apps from "../components/Apps";
 import Testimonials from "../components/Testimonials";
 import Menus from "../components/Menus";
 import DataTableDemo from "../components/DataTableDemo";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-        <Header />
+      <Header />
       <div className=" bg-yellow-50 w-screen opacity-90 px-0 mx-0">
+        <div className="my-container md:pl-24">
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/">Home</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link href="/products">Products</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
         <Hero />
         <Explore />
         <Favorite />
-        <BestSelling />
         <Apps />
+        <BestSelling />
         <Menus />
         <DataTableDemo />
         <Testimonials />
       </div>
-        <Footer />
-      
+      <Footer />
     </>
   );
 }

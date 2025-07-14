@@ -3,6 +3,7 @@ import Cups from "../images/coffee-mid.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import "../globals.css";
+import Link from "next/link";
 
 function Favorite() {
   return (
@@ -30,15 +31,17 @@ function Favorite() {
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:mr-8">
             <h1 className="text-5xl font-bold sm:px-6 md:justify-start text-left md: pr-10 leading-11 text-yellow-50">
-              Order your <br/>favorite coffee today<br></br>
+              Order your <br />
+              favorite coffee today<br></br>
             </h1>
             <p className="text-white font-bold sm:px-6 m:px-6 md:px-8 py-6 text-lg">
               Best in town!
             </p>
-
-            <Button className="bg-red-500 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
-              Order Now
-            </Button>
+            <Link href="/products">
+              <Button className="bg-red-500 text-white sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
+                Order Now
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

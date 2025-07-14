@@ -51,8 +51,9 @@ function Menu() {
 
   return (
     <>
-      <div className="mx-auto bg-white">
-        <div className="my-container bg-white flex flex-col md:flex-row sm:px-6 md:mt-20">
+      <div className=" bg-white">
+   
+        <div className="my-container bg-white flex flex-col md:flex-row sm:px-6 md:mt-10">
           <div className="sm:w-full sm:min-w[300px] md:w-1/2 md:max-w-[400px] md:ml-6 md:mr-10">
             <Image
               src={Cup}
@@ -62,7 +63,6 @@ function Menu() {
               className="min-w-80 z-30"
             />
           </div>
-
           <div className="flex flex-col justify-center md:w-1/2 md:max-w-[600px]">
             <h3 className="font-bold text-4xl pb-3 text-center">
               This Season's Specials
@@ -72,7 +72,7 @@ function Menu() {
             </p>
             <Table className="bg-white p-3 rounded-lg shadow-lg">
               <TableCaption className="text-gray-700 font-xs">
-                *Prices vary by location
+                *Prices varFy by location
               </TableCaption>
               <TableHeader>
                 <TableRow>

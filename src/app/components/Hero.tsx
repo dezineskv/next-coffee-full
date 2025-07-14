@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <>
-      <section className="[family-name:var(--font-geist-sans)]  bg-yellow-50 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 ">
+      <section className="[family-name:var(--font-geist-sans)]  bg-yellow-50 w-full sm:pt-5 md:pt-4 sm:pb-8 md:pl-2 ">
         {/* container */}
         <div className="my-container mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
           {/* TEXT SIDE */}
-          <div className="w-full md:w-1/2 sm:px-6">
+          <div className="w-full md:w-1/2 sm:px-10">
             {/* <div className={styles.slideIn}> */}
             <motion.div
               initial={{ opacity: 0, x: -150 }}
@@ -41,7 +41,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-                <Button className="h-12  bg-gray-900 text-lg sm:w-auto">
+                <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
                   Download&nbsp;App
                 </Button>
                 <Button

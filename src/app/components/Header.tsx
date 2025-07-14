@@ -51,25 +51,20 @@ const aboutItems = [
     href: "/about",
     description: "Meet the people behind Kimbotic",
   },
-
+  {
+    title: "Locations",
+    href: "/find",
+    description: "Kimbotic Coffee Headquarters",
+  },
 ];
 
 const locationItems = [
   {
-    title: "Headquarters",
-    href: "/find",
-    description: "123 Main St, Downtown",
+    title: "All Products",
+    href: "/products",
+    description: "Kimbotic Coffee Products",
   },
-  {
-    title: "Mall Location",
-    href: "/find",
-    description: "456 Shopping Center Blvd",
-  },
-  {
-    title: "Airport Location",
-    href: "/find",
-    description: "Terminal 2, Gate Area",
-  },
+  
 ];
 
 const cateringItems = [
@@ -97,7 +92,7 @@ export default function Header() {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 pt-4 pb-10 px-0">
+      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-10 px-0">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex justify-center items-center sm:pl-6">
@@ -169,7 +164,7 @@ export default function Header() {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
-                <Link href="/find">Find Us</Link>
+                <Link href="/products">Products</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
@@ -270,7 +265,7 @@ export default function Header() {
 
                 <details className="group">
                   <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
-                    Find Us
+                    Products
                   </summary>
                   <div className="mt-2 ml-4 space-y-2"></div>
                 </details>

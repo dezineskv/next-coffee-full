@@ -13,19 +13,20 @@ import Icon1 from "../images/icon1.png";
 import Icon2 from "../images/icon2.png";
 import Icon3 from "../images/icon3.png";
 import "../globals.css";
+import Link from "next/link";
 
 function Explore() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center py-12">
+      <div className="my-container flex flex-col gap-6 justify-center pt-12 md:pb-18">
         <h1 className="text-4xl text-center font-bold">
-          Explore Kimbotic Coffee
+          Explore Kimbotic Coffee Services
         </h1>
         <p className="mx-auto text-gray-900 text-center max-w-2xl">
           Our roaster starts with 100% Arabica coffee beans from Mexico
         </p>
         {/* start cards */}
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap pt-10 pb-2">
           <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
@@ -45,19 +46,14 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center w-full">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                Order Catering
-              </Button>
-            </CardFooter>
           </Card>
           <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
               <CardDescription>
                 <p className="text-gray-900 text-left max-w-2xl">
-                  Alongside delicious coffee, we offer 
-                  pastries, breakfast foods and more.
+                  Alongside delicious coffee, we offer pastries, breakfast foods
+                  and more.
                 </p>
               </CardDescription>
             </CardHeader>
@@ -70,11 +66,6 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center w-full">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                Menu
-              </Button>
-            </CardFooter>
           </Card>
           <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
             <CardHeader>
@@ -94,11 +85,6 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center w-full">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                Discover More
-              </Button>
-            </CardFooter>
           </Card>
           <Card className="sm:w-full  md:w-1/4 md:max-w-70 shadow-lg">
             <CardHeader>
@@ -118,12 +104,12 @@ function Explore() {
                 className="mx-auto"
               />
             </CardContent>
-            <CardFooter className="text-center w-full">
-              <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
-                Delivery
-              </Button>
-            </CardFooter>
           </Card>
+        </div>
+        <div className="text-center">
+          <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+            Services
+          </Button>
         </div>
       </div>
     </>

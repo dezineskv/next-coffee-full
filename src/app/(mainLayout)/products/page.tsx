@@ -12,11 +12,17 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import "../../globals.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import data from "../../../../db.json";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 function Products() {
   const [allTodos, setAllTodos] = useState<TTodo[]>([]);
@@ -33,7 +39,24 @@ function Products() {
   return (
     <>
       <Header />
-      <div className="w-screen border-b-2 border-gray-900 mb-5">
+      <div className="my-container md:pl-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/products">Products</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+      <div className="w-screen border-b-2 border-gray-900 my-5">
         <div className="my-container flex flex-col gap-6 justify-center py-12">
           <h1 className="text-4xl text-center font-bold">
             Kimbotic Coffee Products
