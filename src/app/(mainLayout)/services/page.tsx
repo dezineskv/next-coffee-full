@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Icon1 from "../../images/icon1.png";
 import Icon2 from "../../images/icon2.png";
-import Icon3 from "../../images/icon3.png";
+import Delivery from "../../images/delivery.webp";
 import {
   Card,
   CardContent,
@@ -131,17 +131,17 @@ export default function Services() {
                 </CardTitle>
                 <CardDescription>
                   <p className="text-gray-900 text-left max-w-2xl">
-                    Order beverages for delivery from your local location.
+                    Order beverages for delivery.
                   </p>
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <Image
-                  src={Icon3}
+                  src={Delivery}
                   alt="icon"
                   width={200}
-                  height={200}
-                  className="mx-auto"
+                  height={170}
+                  className="mx-auto max-h-[200px] max-w-[170px]"
                 />
               </CardContent>
               <CardFooter className="text-center w-full">

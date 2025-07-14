@@ -12,6 +12,7 @@ import Image from "next/image";
 import Icon1 from "../images/icon1.png";
 import Icon2 from "../images/icon2.png";
 import Icon3 from "../images/icon3.png";
+import Delivery from "../images/delivery.webp";
 import "../globals.css";
 import Link from "next/link";
 
@@ -97,19 +98,21 @@ function Explore() {
             </CardHeader>
             <CardContent>
               <Image
-                src={Icon1}
+                src={Delivery}
                 alt="icon"
                 width={200}
-                height={200}
-                className="mx-auto"
+                height={170}
+                className="mx-auto max-h-[200px] max-w-[170px]"
               />
             </CardContent>
           </Card>
         </div>
         <div className="text-center">
-        <Link href="/services"><Button className="h-12 bg-gray-900 text-lg sm:w-auto">
-            Services
-          </Button></Link>
+          <Link href="/services">
+            <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+              Services
+            </Button>
+          </Link>
         </div>
       </div>
     </>
