@@ -93,6 +93,11 @@ const cateringItems = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [cartQuantity, setCartQuantity] = useState(0);
+
+  const incrementQuantity = () => setCartQuantity(cartQuantity + 1);
+  const decrementQuantity = () =>
+    setCartQuantity(Math.max(0, cartQuantity - 1));
 
   return (
     <>
@@ -208,23 +213,42 @@ export default function Header() {
         </NavigationMenu>
         {/* Desktop Actions */}
         <div className="hidden lg:flex lg:flex-1 justify-end items-center gap-x-5">
-          <Link
-            href="/cart"
-            className="relative text-xl font-medium text-gray-900"
-          >
+          <span className="relative text-xl font-medium text-gray-900">
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <ShoppingBag className="w-11 h-10 bg-white hover:bg-gray-100 text-black rounded-full p-2 shadow-lg shadow-gray-300 hover:scale-105 transition-all" />
                 {/* Cart badge*/}
                 <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  2
+                  {cartQuantity}
                 </span>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <div className="flex flex-row w-full items-center">
-                    <div>
-                      <a href="/">
+                  <div className="flex flex-col gap-4w-full items-center">
+                    <div className="pl-2 pb-1 flex flex-row ">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        className="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+                      >
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                      </svg>
+                      &nbsp; Items&nbsp;
+                      <span className="bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {cartQuantity}
+                      </span>
+                    </div>
+                    <div className="pl-2 pb-1 flex flex-row ">
+                      <button onClick={incrementQuantity}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -235,22 +259,38 @@ export default function Header() {
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          className="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+                          className="lucide lucide-plus-icon lucide-plus"
                         >
-                          <circle cx="8" cy="21" r="1" />
-                          <circle cx="19" cy="21" r="1" />
-                          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                          <path d="M5 12h14" />
+                          <path d="M12 5v14" />
                         </svg>
-                      </a>
+                      </button>{" "}
+                      <span className="font-bold text-black">1</span>
                     </div>
-                    <div className="pl-2 pb-1">
-                      <a href="/">Cart</a>
+                    <div className="pl-2 pb-1 flex flex-row ">
+                      <button onClick={decrementQuantity}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          className="lucide lucide-minus-icon lucide-minus"
+                        >
+                          <path d="M5 12h14" />
+                        </svg>
+                      </button>
+                      <span className="font-bold text-black">1</span>
                     </div>
                   </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-          </Link>
+          </span>
           <Button
             asChild
             className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"

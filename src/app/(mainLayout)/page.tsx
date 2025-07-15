@@ -8,15 +8,6 @@ import Apps from "../components/Apps";
 import Testimonials from "../components/Testimonials";
 import Menus from "../components/Menus";
 import DataTableDemo from "../components/DataTableDemo";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Link from "next/link";
 
 export default function Home() {
   return (
