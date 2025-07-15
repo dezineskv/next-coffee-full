@@ -8,8 +8,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <div className="bg-white mt-10 flex flex-col items-center justify-center md:h-25 pt-12">
-        <div className="my-container flex flex-col md:flex-row justify-between items-center">
+      <div className="bg-white mt-10 flex flex-col items-center justify-center pt-12">
+        <div className="my-container flex flex-col md:flex-row justify-between items-center md:h-20">
           <div className="text-left pl-4 sm:mb-6">
             <Link href="/">
               <Image
@@ -21,7 +21,7 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <div className="flex flex-row justify-between gap-4 items-center sm:pl-1 sm:py-10 md:px-20 font-medium text-md">
+          <div className="flex flex-row justify-between gap-4 items-start sm:pl-1 sm:py-10 md:px-20 md:pb-20 font-medium text-md">
             <Link href="/cafe-menu">
               <p>Menu</p>
             </Link>
@@ -39,7 +39,7 @@ export default function Footer() {
             <Subscribe />
           </div>
         </div>
-        <div className="my-container flex justify-center items-center text-sm h-25 border-t-2 border-gray-200 text-gray-900 pt-4 pb-8">
+        <div className="my-container flex justify-center items-center text-sm border-t-2 border-gray-200 text-gray-900 pt-4 pb-8">
           Copyright &copy; 2025 KimV
         </div>
       </div>

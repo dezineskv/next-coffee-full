@@ -18,7 +18,7 @@ import {
 function Testimonials() {
   return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center pt-24 pb-10">
+      <div className="my-container flex flex-col gap-6 justify-center pt-12 pb-10">
         <h1 className="text-4xl text-center font-bold">Client Testimonials</h1>
         <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
           Check out what our customers have to say about us. We are rocking it.
