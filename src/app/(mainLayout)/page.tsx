@@ -12,8 +12,8 @@ import DataTableDemo from "../components/DataTableDemo";
 export default function Home() {
   return (
     <>
-      <Header />
-      <div className=" bg-yellow-50 w-screen opacity-90 px-0 mx-0">
+      <Header/>
+      <div className="bg-yellow-50 w-screen opacity-90 px-0 mx-0">
         <Hero />
         <Explore />
         <Favorite />

@@ -1,20 +1,22 @@
 import type { NextConfig } from "next";
 
-module.exports = {
-  images: {
-    domains: ["via.placeholder.com"],
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ["mongoose", "@typegoose/typegoose"],
   },
 };
 
-// images: {
-//   remotePatterns: [
-//     {
-//       protocol: "https",
-//       hostname: "via.placeholder.com",
-//       port: "",
-//       pathname: "/**",
-//     },
-//   ],
-// },
+module.exports = {
+  images: {
+    domains: ["ibb.co/"],
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "*",
+        },
+      ],
+  },
+};
 
-// module.exports = nextConfig;
+

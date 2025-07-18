@@ -1,4 +1,4 @@
-export type TTodo = {
+export type TProduct = {
   id: number;
   name: string;
   description: string;

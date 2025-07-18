@@ -1,5 +1,5 @@
 "use client";
-import { TTodo } from "../types";
+import { TCoffee } from "../types";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
@@ -18,22 +18,22 @@ import {
 import Link from "next/link";
 
 const SingleProduct = ({ id }: { id: number }) => {
-  const [singleTodo, setSingleTodo] = useState<TTodo>();
+  const [singleProduct, setSingleProduct] = useState<TCoffee>();
 
   // const ratingChanged = (newRating) => {
   //   console.log(newRating);
   // };
-  const fetchTodo = async () => {
+  const fetchProduct = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/products/${id}`);
-      setSingleTodo(res.data);
+      const res = await axios.get(`http://localhost:5000/api/data/${id}`);
+      setSingleProduct(res.data);
     } catch (error) {}
   };
 
   useEffect(() => {
-    fetchTodo();
+    fetchProduct();
   }, [id]);
-  console.log(singleTodo);
+  console.log(singleProduct);
 
   return (
     <>
@@ -63,39 +63,39 @@ const SingleProduct = ({ id }: { id: number }) => {
           <div className="flex flex-col md:flex-row justify-center  gap-3">
             <figure className="max-w-[480px] mx-auto">
               <img
-                src={singleTodo?.image_url}
+                src={singleProduct?.image_url}
                 alt="Product Image"
                 width={400}
                 height={300}
               />
             </figure>
             <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">
-              <h2 className="text-2xl font-bold mb-6">{singleTodo?.name}</h2>
+              <h2 className="text-2xl font-bold mb-6">{singleProduct?.name}</h2>
               <p>
                 <span className="font-bold text-gray-700">
                   Product Description:&nbsp;
                 </span>
-                {singleTodo?.description}
+                {singleProduct?.description}
               </p>
               <p>
                 <span className="font-bold text-gray-700">Origin: </span>
-                {singleTodo?.origin}
+                {singleProduct?.origin}
               </p>
               <p>
                 <span className="font-bold text-gray-700">Roast Level: </span>
-                {singleTodo?.roast_level}
+                {singleProduct?.roast_level}
               </p>
               <p>
                 <span className="font-bold text-gray-700">Weight: </span>
-                {singleTodo?.weight_oz} oz.
+                {singleProduct?.weight_oz} oz.
               </p>
               <p>
                 <span className="font-bold text-gray-700">Product ID: </span>
-                {singleTodo?.id}
+                {singleProduct?.id}
               </p>
             </div>
             <div className="card-actions mt-auto flex flex-row justify-between items-end">
-              <h3 className="font-bold text-3xl mr-4">${singleTodo?.price}</h3>
+              <h3 className="font-bold text-3xl mr-4">${singleProduct?.price}</h3>
               <Button className="btn btn-primary">Buy Now</Button>
             </div>
           </div>

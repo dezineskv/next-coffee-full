@@ -1,6 +1,6 @@
 "use client";
-import { TTodo } from "../../types";
-import axios from "axios";
+// import { TCoffee } from "../../types";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
@@ -24,18 +24,44 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
+type TProduct = {
+  _id: number;
+  title: string;
+  completed: boolean;
+  description: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: string;
+  in_stock: string;
+  decaf: boolean;
+  sale: string;
+};
 function Products() {
-  const [allTodos, setAllTodos] = useState<TTodo[]>([]);
-  const fetchTodos = async () => {
-    try {
-      const res = await axios.get("http://localhost:3000/products");
-      setAllTodos(res.data);
-    } catch (error) {}
-  };
+  const [coffees, setCoffees] = useState<TProduct[]>([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    fetchTodos();
+
+    fetch("http://localhost:5000/api/data")
+      .then((res) => res.json())
+      .then((data) => {
+        setCoffees(data.products);
+        console.log(data.products);
+        
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("API error:", err);
+        setLoading(false);
+      });
   }, []);
-  console.log(allTodos);
+
+  if (loading) return <p>Loading...</p>;
+  if (!coffees) return <p>No data found.</p>;
+  console.log(coffees);
+
   return (
     <>
       <Header />
@@ -67,9 +93,10 @@ function Products() {
           {/* start cards */}
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap py-10 ">
             {/* map through data */}
-            {allTodos.map((product: TTodo) => (
-              <div key={product.id}>
-                {product.in_stock == "false" ? (
+            {coffees.map((item: TProduct, index) => 
+            
+              <div key={item?.index}>
+                {item.in_stock == "false" ? (
                   <Card className="min-w-[200px] min-h-[400px] max-h-[400px] rounded-lg shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-sm text-red-500">
@@ -77,14 +104,14 @@ function Products() {
                       </CardTitle>
                       <CardDescription>
                         <p className="text-gray-300 text-2xl font-bold text-left h-[80px]">
-                          {product?.name}
+                          {item?.title}
                         </p>
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="mb-auto">
                       <img
-                        src={product?.image_url}
-                        alt="icon"
+                        src={item?.image_url}
+                        alt="product"
                         width={200}
                         height={200}
                         className="mx-auto opacity-[.5]"
@@ -97,27 +124,29 @@ function Products() {
                     <CardHeader>
                       <CardTitle className="text-sm">
                         <div className="flex flex-row justify-between items-center">
-                          <div>Inventory: {product?.id}</div>
-                          {product.sale == "yes" && (<div className="bg-amber-400 p-1">ON SALE</div>)}
+                          <div>Inventory: {item?._id}</div>
+                          {item?.sale == "yes" && (
+                            <div className="bg-amber-400 p-1">ON SALE</div>
+                          )}
                         </div>
                       </CardTitle>
                       <CardDescription>
                         <p className="text-gray-900 text-2xl font-bold text-left h-[80px]">
-                          {product?.name}
+                          {item?.title}
                         </p>
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="mb-auto">
                       <img
-                        src={product?.image_url}
-                        alt="icon"
+                        src={item?.image_url}
+                        alt="product"
                         width={200}
                         height={200}
                         className="mx-auto"
                       />
                     </CardContent>
                     <CardFooter className="text-center w-full mt-auto">
-                      <Link href={`/products/${product.id}`}>
+                      <Link href={`/products/${item?._id}`}>
                         <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
                           Details
                         </Button>
@@ -126,7 +155,7 @@ function Products() {
                   </Card>
                 )}
               </div>
-            ))}
+)}
           </div>
         </div>
       </div>
