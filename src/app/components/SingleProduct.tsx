@@ -1,5 +1,5 @@
 "use client";
-// import { TCoffee } from "../types";
+import { TProduct } from "../types";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
@@ -18,7 +18,7 @@ import {
 import Link from "next/link";
 
 const SingleProduct = ({ id }: { id: string }) => {
-  const [singleProduct, setSingleProduct] = useState<TCoffee>();
+  const [singleProduct, setSingleProduct] = useState<TProduct>();
 
   // const ratingChanged = (newRating) => {
   //   console.log(newRating);
@@ -33,7 +33,7 @@ const SingleProduct = ({ id }: { id: string }) => {
   useEffect(() => {
     fetchProduct();
   }, [id]);
-  console.log(singleProduct);
+  // console.log(singleProduct);
 
   return (
     <>
@@ -70,7 +70,9 @@ const SingleProduct = ({ id }: { id: string }) => {
               />
             </figure>
             <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">
-              <h2 className="text-2xl font-bold mb-6">{singleProduct?.title}</h2>
+              <h2 className="text-2xl font-bold mb-6">
+                {singleProduct?.title}
+              </h2>
               <p>
                 <span className="font-bold text-gray-700">
                   Product Description:&nbsp;
@@ -95,14 +97,17 @@ const SingleProduct = ({ id }: { id: string }) => {
               </p>
             </div>
             <div className="card-actions mt-auto flex flex-row justify-between items-end">
-              <h3 className="font-bold text-3xl mr-4">${singleProduct?.price}</h3>
+              <h3 className="font-bold text-3xl mr-4">
+                ${singleProduct?.price}
+              </h3>
               <Button className="btn btn-primary">Buy Now</Button>
             </div>
           </div>
         </div>
         <div className="flex flex-col justify-center mx-auto text-center mt-8">
           <p className="font-bold">Rate this product</p>
-          <ReactStars className="ml-4"
+          <ReactStars
+            className="ml-4"
             count={5}
             // onChange={ratingChanged}
             size={24}
