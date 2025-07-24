@@ -70,7 +70,7 @@ const SingleProduct = ({ id }: { id: number }) => {
               />
             </figure>
             <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">
-              <h2 className="text-2xl font-bold mb-6">{singleProduct?.name}</h2>
+              <h2 className="text-2xl font-bold mb-6">{singleProduct?.title}</h2>
               <p>
                 <span className="font-bold text-gray-700">
                   Product Description:&nbsp;
@@ -91,7 +91,7 @@ const SingleProduct = ({ id }: { id: number }) => {
               </p>
               <p>
                 <span className="font-bold text-gray-700">Product ID: </span>
-                {singleProduct?.id}
+                {singleProduct?._id}
               </p>
             </div>
             <div className="card-actions mt-auto flex flex-row justify-between items-end">
