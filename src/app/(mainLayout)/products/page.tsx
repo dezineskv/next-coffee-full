@@ -25,9 +25,8 @@ import {
 } from "@/components/ui/breadcrumb";
 
 type TProduct = {
-  _id: number;
+  // _id: string;
   title: string;
-  completed: boolean;
   description: string;
   image_url: string;
   origin: string;
@@ -43,13 +42,12 @@ function Products() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     fetch("http://localhost:5000/api/data")
       .then((res) => res.json())
       .then((data) => {
-        setCoffees(data.products);
-        console.log(data.products);
-        
+        setCoffees(data);
+        console.log(data);
+
         setLoading(false);
       })
       .catch((err) => {
@@ -93,10 +91,9 @@ function Products() {
           {/* start cards */}
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap py-10 ">
             {/* map through data */}
-            {coffees.map((item: TProduct, index) => 
-            
-              <div key={item?.index}>
-                {item.in_stock == "false" ? (
+            {coffees.map((item: TProduct) => (
+              <div key={item?._id}>
+                {item?.in_stock == "no" ? (
                   <Card className="min-w-[200px] min-h-[400px] max-h-[400px] rounded-lg shadow-lg">
                     <CardHeader>
                       <CardTitle className="text-sm text-red-500">
@@ -155,7 +152,7 @@ function Products() {
                   </Card>
                 )}
               </div>
-)}
+            ))}
           </div>
         </div>
       </div>
