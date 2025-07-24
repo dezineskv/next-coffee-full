@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../images/logo2.png";
 import Subscribe from "./Subscribe";
 import "../globals.css";
 import Link from "next/link";
@@ -13,7 +12,7 @@ export default function Footer() {
           <div className="text-left pl-4 sm:mb-6">
             <Link href="/">
               <Image
-                src={Logo}
+                src="https://i.ibb.co/23GsvNz7/logo2.png"
                 alt="Logo"
                 width={180}
                 height={110}

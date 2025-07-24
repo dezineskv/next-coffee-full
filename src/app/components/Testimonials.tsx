@@ -1,12 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
-import Man from "../images/man.jpg";
-import Girl1 from "../images/girl1.png";
-import Girl2 from "../images/girl2.png";
-import Avatar1 from "../images/avatar1.jpg";
-import Avatar3 from "../images/avatar3.jpg";
-import Avatar4 from "../images/avatar4.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -28,7 +22,7 @@ function Testimonials() {
           <div className="hidden sm:block -space-x-2 overflow-hidden">
             <Image
               className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src={Avatar1}
+              src="https://i.ibb.co/YB8V5YxL/avatar1.jpg"
               width={25}
               height={25}
               alt="avatars"
@@ -36,14 +30,14 @@ function Testimonials() {
 
             <Image
               className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src={Avatar3}
+              src="https://i.ibb.co/XHKLmNB/avatar3.jpg"
               width={25}
               height={25}
               alt="avatars"
             />
             <Image
               className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-              src={Avatar4}
+              src="https://i.ibb.co/MDvsKFDv/avatar4.jpg"
               width={25}
               height={25}
               alt="avatars"
@@ -79,7 +73,7 @@ function Testimonials() {
               <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
-                    src={Girl1}
+                    src="https://i.ibb.co/bjjy4Gn4/girl1.png"
                     alt="Girl1"
                     width={350}
                     height={300}
@@ -120,7 +114,7 @@ function Testimonials() {
               <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
-                    src={Girl2}
+                    src="https://i.ibb.co/yBmFc1C2/girl2.png"
                     alt="Girl2"
                     width={350}
                     height={300}
@@ -161,7 +155,7 @@ function Testimonials() {
               <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
                 <div className="mx-auto p-0 h-full">
                   <Image
-                    src={Man}
+                    src="https://i.ibb.co/2Yv2xMWd/man.jpg"
                     alt="Man"
                     width={350}
                     height={250}

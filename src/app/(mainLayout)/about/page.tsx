@@ -3,9 +3,7 @@ import Explore from "../../components/Explore";
 import Footer from "../../components/Footer";
 import Testimonials from "../../components/Testimonials";
 import Menus from "../../components/Menus";
-// import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Girl from "../../images/girl0.jpg";
 import {
   Card,
   CardContent,
@@ -49,7 +47,7 @@ export default function About() {
             <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
               <div className="mx-auto p-0">
                 <Image
-                  src={Girl}
+                  src="https://i.ibb.co/HLvvv4gy/girl0.jpg"
                   alt="Girl"
                   width={2000}
                   height={200}
@@ -67,30 +65,6 @@ export default function About() {
                 </p>
               </CardContent>
             </Card>
-            {/* <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap py-10 ">
-            <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5">
-              <div className="mx-auto p-0 h-full">
-                <Image
-                  src={Girl1}
-                  alt="Girl1"
-                  width={350}
-                  height={300}
-                  className="md:max-h-[280px]"
-                />
-              </div>
-              <CardFooter className="flex flex-col justify-center px-8">
-                <h3 className="text-lg">CMO</h3>
-                <p className="font-bold ">Chelsea</p>
-              </CardFooter>
-              <CardContent>
-                <p className="text-gray-900 text-left max-w-2xl px-2">
-                  Chelsea is our Chief Marketing Officer and plays an important
-                  role in shaping the marketing strategy and brand identity of
-                  the company.
-                </p>
-              </CardContent>
-            </Card>
-          </div> */}
           </div>
         </div>
       </main>

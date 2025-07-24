@@ -9,10 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Icon1 from "../images/icon1.png";
-import Icon2 from "../images/icon2.png";
-import Icon3 from "../images/icon3.png";
-import Delivery from "../images/delivery.webp";
 import "../globals.css";
 import Link from "next/link";
 
@@ -40,11 +36,11 @@ function Explore() {
             </CardHeader>
             <CardContent>
               <Image
-                src={Icon1}
+                src="https://i.ibb.co/R4G4Z5pv/icon1.png"
                 alt="icon"
                 width={200}
                 height={200}
-                className="mx-auto"
+                className=""
               />
             </CardContent>
           </Card>
@@ -60,11 +56,11 @@ function Explore() {
             </CardHeader>
             <CardContent>
               <Image
-                src={Icon2}
+                src="https://i.ibb.co/hJ9QzSxx/icon2.png"
                 alt="icon"
                 width={200}
                 height={200}
-                className="mx-auto"
+                className=""
               />
             </CardContent>
           </Card>
@@ -79,11 +75,11 @@ function Explore() {
             </CardHeader>
             <CardContent>
               <Image
-                src={Icon3}
+                src="https://i.ibb.co/4n07tbZV/icon3.png"
                 alt="icon"
                 width={200}
                 height={200}
-                className="mx-auto"
+                className=""
               />
             </CardContent>
           </Card>
@@ -98,7 +94,7 @@ function Explore() {
             </CardHeader>
             <CardContent>
               <Image
-                src={Delivery}
+                src="https://i.ibb.co/B2XZ6wvS/delivery.webp"
                 alt="icon"
                 width={200}
                 height={170}

@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import HeroImg from "../images/hero1.png";
-import Cafe from "../images/cafe-1.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -28,7 +26,7 @@ export default function Hero() {
               <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
                 <span className="mt-4 inline-flex items-center text-coffee-700">
                   Coffee&nbsp;
-                  <Image src={Cafe} alt="Cafe badge" width={50} height={40} />
+                  <Image src="https://i.ibb.co/jPx6ppGN/cafe-1.png" alt="Cafe badge" width={50} height={40} />
                 </span>
               </div>
 
@@ -66,7 +64,7 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src={HeroImg}
+                src="https://i.ibb.co/1YGJRHhk/hero1.png"
                 alt="Hero image"
                 width={700}
                 height={700}

@@ -4,9 +4,6 @@ import Footer from "../../components/Footer";
 import Testimonials from "../../components/Testimonials";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Icon1 from "../../images/icon1.png";
-import Icon2 from "../../images/icon2.png";
-import Delivery from "../../images/delivery.webp";
 import {
   Card,
   CardContent,
@@ -28,8 +25,8 @@ import Link from "next/link";
 export default function Services() {
   return (
     <>
-      <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-6 gap-16">
+      <div className="bg-yellow-50 w-screen opacity-90">
+        <div className="bg-white flex flex-col md:pt-10 mb-3 gap-16">
           <Header />
         </div>
       </div>
@@ -86,7 +83,7 @@ export default function Services() {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={Icon1}
+                  src="https://i.ibb.co/R4G4Z5pv/icon1.png"
                   alt="icon"
                   width={200}
                   height={200}
@@ -111,7 +108,7 @@ export default function Services() {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={Icon2}
+                  src="https://i.ibb.co/hJ9QzSxx/icon2.png"
                   alt="icon"
                   width={200}
                   height={200}
@@ -137,7 +134,7 @@ export default function Services() {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={Delivery}
+                  src="https://i.ibb.co/B2XZ6wvS/delivery.webp"
                   alt="icon"
                   width={200}
                   height={170}

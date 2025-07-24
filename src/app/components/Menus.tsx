@@ -1,5 +1,4 @@
 import React from "react";
-import Cup from "../images/alowishus-coffee.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import "../globals.css";
@@ -56,7 +55,7 @@ function Menu() {
         <div className="my-container bg-white flex flex-col md:flex-row sm:px-6 md:mt-10">
           <div className="sm:w-full sm:min-w[300px] md:w-1/2 md:max-w-[400px] md:ml-6 md:mr-10">
             <Image
-              src={Cup}
+              src="https://i.ibb.co/kgX1NFZW/alowishus-coffee.png"
               alt="coffee cups image"
               width={400}
               height={400}

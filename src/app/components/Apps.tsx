@@ -1,7 +1,5 @@
 import React from "react";
-import Banner from "../images/coffee-banner.webp";
 import Image from "next/image";
-import Downloads from "../images/download-buttons.png";
 import { Button } from "@/components/ui/button";
 import "../globals.css";
 
@@ -37,7 +35,13 @@ function Apps() {
               Yemen. By the 16th century, the drink had reached the rest of the
               Middle East and North Africa, later spreading to Europe.
             </p>
-            <Image alt="download buttons" width={350} height={200} className="ml-5" src={Downloads}/>
+            <Image
+              alt="download buttons"
+              width={350}
+              height={200}
+              className="ml-5"
+              src="https://i.ibb.co/vvgM8T17/download-buttons.png"
+            />
             {/* <Button className="bg-gray-900 text-white sm:px-6 sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
               Download App
             </Button> */}
@@ -48,13 +52,13 @@ function Apps() {
                 width={250}
                 height={350}
                 className="border-2 rounded-2xl border-gray-100 absolute sm:top-10 top-0 left-10 z-20 "
-                src={Banner}
+                src="https://i.ibb.co/WW2QmJt7/coffee-banner.webp"
                 alt="banner"
               />
               <Image
                 className="border-2 rounded-2xl border-gray-100 -rotate-12 z-10 "
                 alt="banner"
-                src={Banner}
+                src="https://i.ibb.co/WW2QmJt7/coffee-banner.webp"
                 width={230}
                 height={350}
               />

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React from "react";
 import {
   Card,
@@ -25,7 +25,7 @@ function BestSelling() {
       description:
         "Known for its intense flavor, small serving size, and the crema, a layer of foam on top.",
       price: "4.99",
-      thumb: "/mid1.png",
+      thumb: "https://i.ibb.co/whZ6mgB3/mid1.png",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ function BestSelling() {
       description:
         "Known for its smooth, creamy texture and a balance of coffee and milk flavors. The word 'latte' itself means 'milk' in Italian.",
       price: "5.99",
-      thumb: "/mid2.png",
+      thumb: "https://i.ibb.co/VYtmkJkm/mid2.png",
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ function BestSelling() {
       description:
         "Our roaster starts with 100% Arabica coffee beans from Mexico (80%) and Colombia",
       price: "5.00",
-      thumb: "/mid3.png",
+      thumb: "https://i.ibb.co/ymZ4sKHt/mid3.png",
     },
   ];
   return (
@@ -67,40 +67,38 @@ function BestSelling() {
                 key={item.id}
                 className="sm:w-full md:w-1/3 max-w-80 shadow-lg"
               >
-                  <div className="flex flex-row mx-auto justify-center">
-                    <div className="flex flex-col justify-end ">
-                      <CardDescription>
-                        <p className="text-red-500 font-bold">
-                          #{item.id} Selling
-                        </p>
-                      </CardDescription>
-                      <CardTitle className="text-lg font-extrabold">
-                        {item.title}
-                      </CardTitle>
-                    </div>
-                    <img
-                      src={item.thumb}
-                      alt="image"
-                      width={150}
-                      height={200}
-                      className="w-[150px] h-[150px]"
-                    />
+                <div className="flex flex-row mx-auto justify-center">
+                  <div className="flex flex-col justify-end ">
+                    <CardDescription>
+                      <p className="text-red-500 font-bold">
+                        #{item.id} Selling
+                      </p>
+                    </CardDescription>
+                    <CardTitle className="text-lg font-extrabold">
+                      {item.title}
+                    </CardTitle>
                   </div>
-                  <CardContent>
-                    <p className="text-gray-900 text-left max-w-2xl">
-                      {item.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
-                    <h3 className="text-left font-bold text-lg">
-                      ${item.price}
-                    </h3>
-                    <Link href="/products">
-                      <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
-                        Order Now
-                      </Button>
-                    </Link>
-                  </CardFooter>
+                  <img
+                    src={item.thumb}
+                    alt="image"
+                    width={150}
+                    height={150}
+                    className="w-[150px] h-[150px]"
+                  />
+                </div>
+                <CardContent>
+                  <p className="text-gray-900 text-left max-w-2xl">
+                    {item.description}
+                  </p>
+                </CardContent>
+                <CardFooter className="flex flex-row justify-between items-end mt-auto gap-4 ">
+                  <h3 className="text-left font-bold text-lg">${item.price}</h3>
+                  <Link href="/products">
+                    <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all">
+                      Order Now
+                    </Button>
+                  </Link>
+                </CardFooter>
               </Card>
             ))}
           </div>

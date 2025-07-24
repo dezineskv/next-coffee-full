@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Logo from "../images/logo2.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -109,7 +108,7 @@ export default function Header() {
           <div className="flex justify-center items-center sm:pl-6">
             <Link href="/">
               <Image
-                src={Logo}
+                src="https://i.ibb.co/23GsvNz7/logo2.png"
                 alt="Logo"
                 width={300}
                 height={180}

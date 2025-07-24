@@ -1,5 +1,4 @@
 import React from "react";
-import Cups from "../images/coffee-mid.png";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import "../globals.css";
@@ -22,11 +21,11 @@ function Favorite() {
         <div className="my-container z-10 flex flex-col md:flex-row md:justify-between sm:px-6 py-20">
           <div className="sm:w-full sm:min-w[300px] md:w-1/2 z-10">
             <Image
-              src={Cups}
+              src="https://i.ibb.co/Tjgj4hh/coffee-mid.png"
               alt="coffee cups image"
               width={500}
               height={500}
-              className="min-w-80 z-30"
+              className=""
             />
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:mr-8">
