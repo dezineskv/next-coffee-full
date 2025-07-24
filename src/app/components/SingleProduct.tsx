@@ -1,5 +1,5 @@
 "use client";
-import { TCoffee } from "../types";
+// import { TCoffee } from "../types";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
 
-const SingleProduct = ({ id }: { id: number }) => {
+const SingleProduct = ({ id }: { id: string }) => {
   const [singleProduct, setSingleProduct] = useState<TCoffee>();
 
   // const ratingChanged = (newRating) => {
