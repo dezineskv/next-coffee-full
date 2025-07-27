@@ -98,7 +98,7 @@ const SingleProduct = ({ id }: { id: string }) => {
             </div>
             <div className="card-actions mt-auto flex flex-row justify-between items-end">
               <h3 className="font-bold text-3xl mr-4">
-                ${singleProduct?.price}
+                {singleProduct?.price}
               </h3>
               <Button className="btn btn-primary">Buy Now</Button>
             </div>

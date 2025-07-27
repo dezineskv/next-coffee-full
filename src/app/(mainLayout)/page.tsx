@@ -8,6 +8,7 @@ import Apps from "../components/Apps";
 import Testimonials from "../components/Testimonials";
 import Menus from "../components/Menus";
 import DataTableDemo from "../components/DataTableDemo";
+import Datas from "../components/Datas";
 
 export default function Home() {
   return (
