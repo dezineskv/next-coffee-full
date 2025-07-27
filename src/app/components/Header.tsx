@@ -21,6 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTheme } from '../context/ThemeContext'; 
 
 const menuItems = [
   {
@@ -132,7 +133,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Desktop Navigation -customized removed buttons and svg arrows*/}
+        {/* Desktop Navigation -customized */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className="flex space-x-2">
             <NavigationMenuItem>
@@ -153,7 +154,6 @@ export default function Header() {
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
                 <Link href="/about">About</Link>
@@ -290,6 +290,9 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </span>
+           {/* <Button onClick={toggleTheme}>
+      Toggle Theme {theme === 'light' ? 'Dark' : 'Light'}
+    </Button> */}
           <Button
             asChild
             className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"

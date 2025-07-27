@@ -37,8 +37,9 @@ type TProduct = {
   decaf: boolean;
   sale: string;
 };
-function Products() {
+function Inventory() {
   const [coffees, setCoffees] = useState<TProduct[]>([]);
+//   const [remove, setRemove] = useState<TProduct>()
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,6 +56,10 @@ function Products() {
         setLoading(false);
       });
   }, []);
+
+    const handleDelete = (id) => {
+      setCoffees(coffees?.filter((t) => t.id !== id));
+    };
 
   if (loading) return <p>Loading...</p>;
   if (!coffees) return <p>No data found.</p>;
@@ -94,8 +99,8 @@ function Products() {
             {coffees.map((item: TProduct) => (
               <div key={item?._id}>
                 {item?.in_stock == "no" ? (
-                  <Card className="min-w-[200px] min-h-[380px] max-h-[400px] rounded-lg shadow-lg">
-                    <CardHeader className="max-h-[100px]">
+                  <Card className="min-w-[200px] min-h-[400px] max-h-[400px] rounded-lg shadow-lg">
+                    <CardHeader>
                       <CardTitle className="text-sm text-red-500">
                         Inventory: OUT OF STOCK
                       </CardTitle>
@@ -105,25 +110,25 @@ function Products() {
                         </p>
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="mb-0">
+                    <CardContent className="mb-auto">
                       <img
                         src={item?.image_url}
                         alt="product"
                         width={200}
-                        height={125}
+                        height={200}
                         className="mx-auto opacity-[.5]"
                       />
                     </CardContent>
-                    <CardFooter className="text-center w-full mt-1"></CardFooter>
+                    <CardFooter className="text-center w-full mt-auto"></CardFooter>
                   </Card>
                 ) : (
-                  <Card className="min-w-[200px] min-h-[380px] max-h-[400px] rounded-lg shadow-lg">
-                    <CardHeader className="max-h-[100px]">
+                  <Card className="min-w-[200px] min-h-[400px] max-h-[400px] rounded-lg shadow-lg">
+                    <CardHeader>
                       <CardTitle className="text-sm">
                         <div className="flex flex-row justify-between items-center">
-                          <div>Inventory: <br></br>{item?._id}</div>
+                          <div>Inventory: {item?._id}</div>
                           {item?.sale == "yes" && (
-                            <div className="w-[90px] mb-10 mr-5"><span className="bg-amber-400 text-white p-1">ON SALE</span></div>
+                            <div className="bg-amber-400 p-1">ON SALE</div>
                           )}
                         </div>
                       </CardTitle>
@@ -133,19 +138,19 @@ function Products() {
                         </p>
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="mb-0">
+                    <CardContent className="mb-auto">
                       <img
                         src={item?.image_url}
                         alt="product"
                         width={200}
-                        height={125}
-                        className="h-[125px] mx-auto overflow-hidden"
+                        height={200}
+                        className="mx-auto"
                       />
                     </CardContent>
-                    <CardFooter className="text-center w-full mt-1 pt-1 mb-0 pb-0 px-auto mx-auto">
-                      <Link href={`/products/${item?._id}`}>
-                        <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
-                          Details
+                    <CardFooter className="text-center w-full mt-auto">
+                      <Link href={`/inventory/${item?._id}`}>
+                        <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+                          Update
                         </Button>
                       </Link>
                     </CardFooter>
@@ -161,4 +166,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Inventory;
