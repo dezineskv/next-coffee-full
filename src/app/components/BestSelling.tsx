@@ -87,7 +87,7 @@ function BestSelling() {
                   />
                 </div>
                 <CardContent>
-                  <p className="text-gray-900 text-left max-w-2xl">
+                  <p className="text-para text-left max-w-2xl">
                     {item.description}
                   </p>
                 </CardContent>

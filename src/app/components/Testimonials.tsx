@@ -103,7 +103,7 @@ function Testimonials() {
                   </div>
                 </CardFooter>
                 <CardContent>
-                  <p className="text-gray-900 text-left max-w-2xl px-2">
+                  <p className="text-para text-left max-w-2xl px-2">
                     Check out what our customers have to say about us. We are
                     rocking it.
                   </p>

@@ -41,7 +41,7 @@ export default function Hero() {
             >
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
               <Link href="/services">
-               <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+               <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">
                   Catering Services
                 </Button>
                 </Link>

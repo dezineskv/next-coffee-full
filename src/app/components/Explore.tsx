@@ -28,7 +28,7 @@ function Explore() {
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
               <CardDescription>
-                <p className="text-gray-900 text-left max-w-2xl">
+                <p className="text-para text-left max-w-2xl">
                   Make your next event a success with our fresh coffee and
                   breakfast.
                 </p>
@@ -48,7 +48,7 @@ function Explore() {
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
               <CardDescription>
-                <p className="text-gray-900 text-left max-w-2xl">
+                <p className="text-para text-left max-w-2xl">
                   Alongside delicious coffee, we offer pastries, breakfast foods
                   and more.
                 </p>
@@ -68,7 +68,7 @@ function Explore() {
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">The Cafe</CardTitle>
               <CardDescription>
-                <p className="text-gray-900 text-left max-w-2xl">
+                <p className="text-para text-left max-w-2xl">
                   Our roaster starts with 100% Arabica coffee beans from Mexico
                 </p>
               </CardDescription>
@@ -87,7 +87,7 @@ function Explore() {
             <CardHeader>
               <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
               <CardDescription>
-                <p className="text-gray-900 text-left max-w-2xl">
+                <p className="text-para text-left max-w-2xl">
                   Order beverages for delivery from your local location.
                 </p>
               </CardDescription>
@@ -105,7 +105,7 @@ function Explore() {
         </div>
         <div className="text-center">
           <Link href="/services">
-            <Button className="h-12 bg-gray-900 text-lg sm:w-auto">
+            <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">
               Services
             </Button>
           </Link>

@@ -21,6 +21,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+// import "../../global.css";
 
 export default function Services() {
   return (
@@ -52,7 +53,7 @@ export default function Services() {
           <h1 className="text-4xl text-center font-bold">
             About Kimbotic Coffee
           </h1>
-          <p className="mx-auto text-gray-900 text-center max-w-2xl text-xl">
+          <p className="mx-auto text-para text-center max-w-2xl text-xl">
             Kimbotic Coffee was established in 2025 by KimV. Since then, it has
             received rave support from local communities.
             <br></br>
@@ -75,7 +76,7 @@ export default function Services() {
                   Catering
                 </CardTitle>
                 <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
+                  <p className="text-para text-left max-w-2xl">
                     Make your next event a success with our fresh coffee and
                     breakfast.
                   </p>
@@ -100,7 +101,7 @@ export default function Services() {
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
                 <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
+                  <p className="text-para text-left max-w-2xl">
                     Alongside our delicious coffee, we also offer a variety of
                     pastries and breakfast foods and other snacks.
                   </p>
@@ -127,7 +128,7 @@ export default function Services() {
                   Delivery
                 </CardTitle>
                 <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
+                  <p className="text-para text-left max-w-2xl">
                     Order beverages for delivery.
                   </p>
                 </CardDescription>
