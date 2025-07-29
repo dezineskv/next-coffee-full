@@ -279,8 +279,8 @@ export default function DataTableDemo() {
   });
 
   return (
-    <div className="mx-auto bg-white">
-      <div className="my-container bg-white mx-auto px-10 mb-8">
+    <div className="mx-auto bg-background">
+      <div className="my-container mx-auto px-10 pb-10">
         <h1 className="font-bold text-4xl mb-4">Catering</h1>
         <p>Put in your order now while supplies last!</p>
         <div className="flex items-center py-4">

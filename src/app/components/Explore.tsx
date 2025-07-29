@@ -13,13 +13,15 @@ import "../globals.css";
 import Link from "next/link";
 
 function Explore() {
-  return (
+  
+ return (
     <>
-      <div className="my-container flex flex-col gap-6 justify-center pt-12 md:pb-18">
+    <div className="bg-secondary">
+      <div className="my-container bg-secondary flex flex-col gap-6 justify-center pt-12 md:pb-18">
         <h1 className="text-4xl text-center font-bold">
           Explore Kimbotic Coffee Services
         </h1>
-        <p className="mx-auto text-gray-900 text-center max-w-2xl">
+        <p className="mx-auto text-para text-center max-w-2xl">
           Our roaster starts with 100% Arabica coffee beans from Mexico
         </p>
         {/* start cards */}
@@ -110,6 +112,7 @@ function Explore() {
             </Button>
           </Link>
         </div>
+      </div>
       </div>
     </>
   );

@@ -7,9 +7,9 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <section className="[family-name:var(--font-geist-sans)]  bg-yellow-50 w-full sm:pt-5 md:pt-4 sm:pb-8 md:pl-2 ">
+      <section className="[family-name:var(--font-geist-sans)]  bg-secondary w-full sm:pt-5 md:pt-4 sm:pb-8 md:pl-2 ">
         {/* container */}
-        <div className="my-container mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
+        <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
           {/* TEXT SIDE */}
           <div className="w-full md:w-1/2 sm:px-10">
             {/* <div className={styles.slideIn}> */}
@@ -48,7 +48,7 @@ export default function Hero() {
                 <Link href="/products">
                   <Button
                     variant="outline"
-                    className="h-12  border-gray-900 text-lg text-gray-900 sm:w-auto bg-transparent"
+                    className="h-12  border-gray-900 text-lg text-para sm:w-auto bg-transparent"
                   >
                     Shop&nbsp;Coffee
                   </Button>

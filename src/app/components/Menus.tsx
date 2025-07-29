@@ -50,10 +50,9 @@ function Menu() {
 
   return (
     <>
-      <div className=" bg-white">
-   
-        <div className="my-container bg-white flex flex-col md:flex-row sm:px-6 md:mt-10">
-          <div className="sm:w-full sm:min-w[300px] md:w-1/2 md:max-w-[400px] md:ml-6 md:mr-10">
+      <div className="bg-background">
+        <div className="my-container flex flex-col md:flex-row sm:px-6 pb-4">
+          <div className="sm:w-full sm:min-w[300px] md:w-1/2 md:max-w-[400px] md:ml-6 md:mr-10 md:mb-6">
             <Image
               src="https://i.ibb.co/kgX1NFZW/alowishus-coffee.png"
               alt="coffee cups image"
@@ -69,9 +68,9 @@ function Menu() {
             <p className="text-center pb-6">
               Don't miss out on these seasonal specials
             </p>
-            <Table className="bg-white p-3 rounded-lg shadow-lg">
+            <Table className="bg-background p-3 rounded-lg shadow-lg">
               <TableCaption className="text-gray-700 font-xs">
-                *Prices varFy by location
+                *Prices vary by by location
               </TableCaption>
               <TableHeader>
                 <TableRow>
@@ -86,16 +85,16 @@ function Menu() {
                   </TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody className="py-6">
+              <TableBody className="py-8 text-para">
                 {products.map((product) => (
                   <TableRow key={product.product}>
-                    <TableCell className="font-bold text-gray-700 px-12">
+                    <TableCell className="font-bold px-12">
                       {product.product}
                     </TableCell>
-                    <TableCell className="font-medium text-gray-700 px-12">
+                    <TableCell className="font-medium px-12">
                       {product.sizes}
                     </TableCell>
-                    <TableCell className="font-bold text-gray-700 text-right pl-11 pr-15">
+                    <TableCell className="font-bold text-right pl-11 pr-15">
                       {product.price}
                     </TableCell>
                   </TableRow>

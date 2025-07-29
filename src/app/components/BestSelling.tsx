@@ -53,11 +53,11 @@ function BestSelling() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="my-container flex flex-col gap-6 justify-center mx-auto pt-20 md:pb-10 mt-5">
+        <div className="bg-secondary my-container flex flex-col gap-6 justify-center mx-auto pt-20 md:pb-10">
           <h1 className="text-4xl text-center font-bold ">
             Best Selling Coffee
           </h1>
-          <p className="flex justify-center mx-auto text-gray-900 text-center max-w-1/2">
+          <p className="flex justify-center mx-auto text-para text-center max-w-1/2">
             Order the best coffee in town!
           </p>
           {/* start 3 cards */}

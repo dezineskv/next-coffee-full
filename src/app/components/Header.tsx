@@ -21,7 +21,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTheme } from '../context/ThemeContext'; 
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const menuItems = [
   {
@@ -70,7 +71,6 @@ const locationItems = [
     href: "/products",
     description: "Kimbotic Coffee Products",
   },
-  
 ];
 
 const cateringItems = [
@@ -94,6 +94,7 @@ const cateringItems = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
+  const { setTheme } = useTheme();
 
   const incrementQuantity = () => setCartQuantity(cartQuantity + 1);
   const decrementQuantity = () =>
@@ -103,7 +104,7 @@ export default function Header() {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-white my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-10 px-0">
+      <div className="bg-background my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-10 px-0">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex justify-center items-center sm:pl-6">
@@ -114,6 +115,7 @@ export default function Header() {
                 width={300}
                 height={180}
                 className="w-auto max-w-[250px] sm:mx-auto sm:ml-6 md:pl-12 pb-4 pr-10 border-0"
+                priority={true}
               />
             </Link>
           </div>
@@ -290,9 +292,26 @@ export default function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
           </span>
-           {/* <Button onClick={toggleTheme}>
-      Toggle Theme {theme === 'light' ? 'Dark' : 'Light'}
-    </Button> */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setTheme("light")}>
+                Light
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("dark")}>
+                Dark
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme("system")}>
+                System
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <Button
             asChild
             className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"
