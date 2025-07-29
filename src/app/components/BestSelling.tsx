@@ -53,6 +53,8 @@ function BestSelling() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
+            <div className="bg-secondary">
+
         <div className="bg-secondary my-container flex flex-col gap-6 justify-center mx-auto pt-20 md:pb-10">
           <h1 className="text-4xl text-center font-bold ">
             Best Selling Coffee
@@ -102,6 +104,7 @@ function BestSelling() {
               </Card>
             ))}
           </div>
+        </div>
         </div>
       </motion.div>
     </>

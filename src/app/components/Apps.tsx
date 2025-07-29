@@ -6,6 +6,8 @@ import "../globals.css";
 function Apps() {
   return (
     <>
+        <div className="bg-secondary">
+
       <div className="bg-secondary my-container md:pb-2 pt-10">
         <div className="flex flex-col pl-6 md:flex-row mx-auto">
           <div className="md:w-1/2 md:px-10 md:ml-20">
@@ -65,6 +67,7 @@ function Apps() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );
