@@ -8,12 +8,12 @@ import Apps from "../components/Apps";
 import Testimonials from "../components/Testimonials";
 import Menus from "../components/Menus";
 import DataTableDemo from "../components/DataTableDemo";
-import Datas from "../components/Datas";
+// import Datas from "../components/Datas";
 
 export default function Home() {
   return (
     <>
-      <Header/>
+      <Header />
       <div className="bg-yellow-50 w-screen opacity-90 px-0 mx-0">
         <Hero />
         <Explore />
