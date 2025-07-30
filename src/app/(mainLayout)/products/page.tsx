@@ -42,7 +42,9 @@ function Products() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/data")
+    fetch(
+      "https://coffeeshop-back-3jl5o2hiw-kims-projects-e16ac285.vercel.app/api/data"
+    )
       .then((res) => res.json())
       .then((data) => {
         setCoffees(data);

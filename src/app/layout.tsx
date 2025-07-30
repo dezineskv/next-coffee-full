@@ -27,7 +27,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="px-0 mx-0">
-        {/* <ThemeProvider> */}
                   <ThemeProvider
             attribute="class"
             defaultTheme="system"
