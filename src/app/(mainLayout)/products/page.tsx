@@ -42,9 +42,7 @@ function Products() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(
-      "https://coffeeshop-back-3jl5o2hiw-kims-projects-e16ac285.vercel.app/api/data"
-    )
+    fetch("https://coffeeshop-back.vercel.app/api/data")
       .then((res) => res.json())
       .then((data) => {
         setCoffees(data);
@@ -123,9 +121,16 @@ function Products() {
                     <CardHeader className="max-h-[100px]">
                       <CardTitle className="text-sm">
                         <div className="flex flex-row justify-between items-center">
-                          <div>Inventory: <br></br>{item?._id}</div>
+                          <div>
+                            Inventory: <br></br>
+                            {item?._id}
+                          </div>
                           {item?.sale == "yes" && (
-                            <div className="w-[90px] mb-10 mr-5"><span className="bg-amber-400 text-white p-1">ON SALE</span></div>
+                            <div className="w-[90px] mb-10 mr-5">
+                              <span className="bg-amber-400 text-white p-1">
+                                ON SALE
+                              </span>
+                            </div>
                           )}
                         </div>
                       </CardTitle>

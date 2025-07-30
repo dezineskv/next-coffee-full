@@ -32,7 +32,7 @@ const SingleProduct = ({ id }: { id: string }) => {
   const fetchProduct = async () => {
     try {
       const res = await axios.get(
-        `https://coffeeshop-back-3jl5o2hiw-kims-projects-e16ac285.vercel.app/api/data/${id}`
+        `https://coffeeshop-back.vercel.app/api/data/${id}`
       );
       setSingleProduct(res.data);
     } catch (error) {}
