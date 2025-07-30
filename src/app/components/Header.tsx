@@ -94,7 +94,7 @@ const cateringItems = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const incrementQuantity = () => setCartQuantity(cartQuantity + 1);
   const decrementQuantity = () =>
@@ -110,7 +110,11 @@ export default function Header() {
           <div className="flex justify-center items-center sm:pl-6">
             <Link href="/">
               <Image
-                src="https://i.ibb.co/23GsvNz7/logo2.png"
+                src={
+                  theme == "dark"
+                    ? "https://i.ibb.co/XrBqjX0k/logo3-d.png"
+                    : "https://i.ibb.co/23GsvNz7/logo2.png"
+                }
                 alt="Logo"
                 width={300}
                 height={180}
