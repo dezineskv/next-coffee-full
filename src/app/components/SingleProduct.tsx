@@ -35,7 +35,9 @@ const SingleProduct = ({ id }: { id: string }) => {
   // };
   const fetchProduct = async () => {
     try {
-      const res = await axios.get(`${id}`);
+      const res = await axios.get(
+        `https://coffeeshop-back.onrender.com/api/data/${id}`
+      );
       setSingleProduct(res.data);
     } catch (error) {}
   };
