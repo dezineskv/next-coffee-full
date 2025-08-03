@@ -40,11 +40,6 @@ const menuItems = [
     href: "/cafe-menu",
     description: "Teas, smoothies, and cold drinks",
   },
-  {
-    title: "All Products",
-    href: "/products",
-    description: "Cakes, cookies, sweet treats and more",
-  },
 ];
 
 const aboutItems = [
@@ -65,11 +60,16 @@ const aboutItems = [
   },
 ];
 
-const locationItems = [
+const productsItems = [
   {
     title: "All Products",
     href: "/products",
-    description: "Kimbotic Coffee Products",
+    description: "Cakes, cookies, sweet treats and more",
+  },
+    {
+    title: "Product Inventory",
+    href: "/all-products",
+    description: "Add, remove products",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function Header() {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
-                  {locationItems.map((item) => (
+                  {productsItems.map((item) => (
                     <ListItem
                       key={item.title}
                       title={item.title}

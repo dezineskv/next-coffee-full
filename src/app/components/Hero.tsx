@@ -26,7 +26,12 @@ export default function Hero() {
               <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
                 <span className="mt-4 inline-flex items-center text-coffee-700">
                   Coffee&nbsp;
-                  <Image src="https://i.ibb.co/jPx6ppGN/cafe-1.png" alt="Cafe badge" width={50} height={40} />
+                  <Image
+                    src="https://i.ibb.co/jPx6ppGN/cafe-1.png"
+                    alt="Cafe badge"
+                    width={50}
+                    height={40}
+                  />
                 </span>
               </div>
 
@@ -40,10 +45,10 @@ export default function Hero() {
               transition={{ duration: 0.5 }}
             >
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-              <Link href="/services">
-               <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">
-                  Catering Services
-                </Button>
+                <Link href="/services">
+                  <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">
+                    Catering Services
+                  </Button>
                 </Link>
                 <Link href="/products">
                   <Button
@@ -57,12 +62,13 @@ export default function Hero() {
             </motion.div>
           </div>
           {/* IMAGE SIDE */}
-          <div className="flex w-full items-center justify-center sm:pt-0 sm:mt-0 md:w-1/2">
-            <motion.div
+              <motion.div
               initial={{ opacity: 0, x: 150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
+          <div className="flex w-full items-center justify-center sm:pt-0 sm:mt-0">
+        
               <Image
                 src="https://i.ibb.co/1YGJRHhk/hero1.png"
                 alt="Hero image"
@@ -72,8 +78,9 @@ export default function Hero() {
                 // sizes="50vw, 100vw"
                 className="sm:max-w-full sm:px-6 md:w-[700px]"
               />
-            </motion.div>
           </div>
+                      </motion.div>
+
         </div>
       </section>
     </>

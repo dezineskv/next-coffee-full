@@ -23,9 +23,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { getAllProducts } from "@/lib/actions";
+import Product from "@/models/Product";
 
 type TProduct = {
-  _id: string;
+  // _id: string;
   title: string;
   description: string;
   image_url: string;
@@ -37,24 +39,23 @@ type TProduct = {
   decaf: boolean;
   sale: string;
 };
-function Products() {
+export default async function Products() {
   const [coffees, setCoffees] = useState<TProduct[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("https://coffeeshop-back.onrender.com/api/data")
-      .then((res) => res.json())
-      .then((data) => {
-        setCoffees(data);
-        console.log(data);
-
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("API error:", err);
-        setLoading(false);
-      });
-  }, []);
+useEffect(() => {
+  fetch("http://localhost:5000/api/data")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      setCoffees(data);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error("Fetch error:", err);
+      setLoading(false);
+    });
+}, []);
 
   if (loading) return <p>Loading...</p>;
   if (!coffees) return <p>No data found.</p>;
@@ -168,4 +169,4 @@ function Products() {
   );
 }
 
-export default Products;
+
