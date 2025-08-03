@@ -1,8 +1,13 @@
 import Forms from "../../components/Forms";
 import GetProducts from "../../components/GetProducts";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 export default function Home() {
   return (
+    <>
+            <Header/>
+
     <div className="min-h-screen relative bg-slate-200">
       <div className="flex justify-around flex-col items-center h-1/2 ">
         <h1 className=" text-4xl font-bold mt-12 mb-12">Products Inventory</h1>
@@ -12,5 +17,7 @@ export default function Home() {
         <GetProducts />
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }

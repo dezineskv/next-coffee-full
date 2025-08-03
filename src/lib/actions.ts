@@ -11,13 +11,14 @@ export const createProducts = async (formData: FormData) => {
   const product = formData.get("product");
   const title = formData.get("title");
   const description = formData.get("description");
+  const image_url = formData.get("image_url");
   try {
     // Creating a new product using Product model
     const newProduct = await Product.create({
       product,
       title,
       description,
-      // image_url,
+      image_url,
       // origin,
       // roast_level,
       // price,
