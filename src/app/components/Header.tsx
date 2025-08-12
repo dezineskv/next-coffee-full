@@ -269,7 +269,7 @@ export default function Header() {
                           <path d="M5 12h14" />
                           <path d="M12 5v14" />
                         </svg>
-                      </button>{" "}
+                      </button>
                       <span className="font-bold text-black">1</span>
                     </div>
                     <div className="pl-2 pb-1 flex flex-row ">
@@ -298,9 +298,10 @@ export default function Header() {
           </span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+<Button className="bg-white text-black font-bold py-2 px-4 rounded-full shadow-lg hover:bg-gray-300">                   
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-black" />
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-white" />
+                
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
@@ -324,7 +325,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
+   {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t pt-4 mt-4">
             <div className="flex flex-col space-y-4 space-x-3">
@@ -366,14 +367,12 @@ export default function Header() {
                     ))}
                   </div>
                 </details>
-
                 <details className="group">
                   <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     Products
                   </summary>
                   <div className="mt-2 ml-4 space-y-2"></div>
                 </details>
-
                 <details className="group">
                   <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
                     Catering
@@ -414,7 +413,7 @@ export default function Header() {
                   className="bg-gray-900 text-white text-xl py-6 mx-6"
                 >
                   <Link
-                    href="/gift-cards"
+                    href="/products"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Buy Gift Cards
@@ -425,7 +424,6 @@ export default function Header() {
           </div>
         )}
       </div>
-      {/* </header> */}
     </>
   );
 }

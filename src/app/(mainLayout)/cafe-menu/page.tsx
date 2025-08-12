@@ -16,13 +16,9 @@ import Link from "next/link";
 export default function CafeMenu() {
   return (
     <>
-      <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16 font-[family-name:var(--font-geist-sans)]">
-          <Header />
-        </div>
-      </div>
+      <Header />
       <main className="font-[family-name:var(--font-geist-sans)]">
-        <div className="my-container bg-white md:pl-24 md:pt-0 md:mt-0">
+        <div className="my-container md:pl-24 md:pt-0 md:mt-0">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -49,8 +45,7 @@ export default function CafeMenu() {
       <div className="text-center">
         <Button>See Catering Inventory</Button>
       </div>
-
-      <div className="bg-white pt-16 mt-20">
+      <div className="bg-white mt-10">
         <Footer />
       </div>
     </>

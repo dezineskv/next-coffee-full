@@ -1,5 +1,7 @@
 "use server";
-import mongoose, { Connection } from "mongoose";
+import mongoose, { connect, Connection } from "mongoose";
+import { stringToObjectId } from "./utils";
+import  Product  from "@/models/Product";
 // variable to store the cached database connection
 let cachedConnection: Connection | null = null;
 

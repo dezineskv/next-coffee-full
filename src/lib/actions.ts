@@ -3,6 +3,7 @@ import Product from "../models/Product";
 import { Document, Model, Types } from "mongoose";
 import { revalidatePath } from "next/cache";
 import { connectToMongoDB } from "../lib/db";
+import { stringToObjectId } from "./utils";
 
 //create new products
 export const createProducts = async (formData: FormData) => {
@@ -68,3 +69,27 @@ export const getAllProducts = async (formData: FormData) => {
     return { message: "error getting products" };
   }
 };
+// get single product
+export const getSingleProduct = async (id: string) => {
+
+  try {
+         await connectToMongoDB();
+
+    const parsedId = stringToObjectId(id);
+
+    if (!parsedId) {
+      return { error: "product not found" };
+    }
+
+    const product = await Product.findById(parsedId).lean().exec();
+    if (product) {
+      return {
+        product,
+      };
+    } else {
+      return { error: "product not found" };
+    }
+  } catch (error) {
+    return { error };
+  }
+}

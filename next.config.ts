@@ -9,13 +9,12 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["ibb.co/"],
-      remotePatterns: [
-        {
-          protocol: "https",
-          hostname: "*",
-        },
-      ],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**", // "**" to match any subdomain/hostname
+      },
+    ],
   },
 };
 

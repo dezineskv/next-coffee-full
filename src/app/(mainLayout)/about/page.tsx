@@ -16,11 +16,7 @@ import {
 export default function About() {
   return (
     <>
-      <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-10 gap-16">
-          <Header />
-        </div>
-      </div>
+      <Header />
       <main className="">
         <div className="my-container flex flex-col gap-6 justify-center py-12">
           <h1 className="text-4xl text-center font-bold">
@@ -49,9 +45,9 @@ export default function About() {
                 <Image
                   src="https://i.ibb.co/HLvvv4gy/girl0.jpg"
                   alt="Girl"
-                  width={2000}
-                  height={200}
-                  className="max-h-[200px] max-w-[200px] rounded-full mt-6"
+                  width={150}
+                  height={150}
+                  className="rounded-full mt-6"
                 />
               </div>
               <CardFooter className="flex flex-col justify-center px-8">
@@ -59,7 +55,7 @@ export default function About() {
                 <p className="font-bold ">Kim</p>
               </CardFooter>
               <CardContent>
-                <p className="text-gray-900 text-left max-w-2xl px-2">
+                <p className="text-gray-300 text-left max-w-2xl px-2">
                   Kim is the CEO and COO of Kimbotic Coffee. She is the head of
                   the project and also responsible for day to day functioning.
                 </p>
@@ -68,7 +64,7 @@ export default function About() {
           </div>
         </div>
       </main>
-      <div className="bg-white pt-16 mt-20">
+      <div className="bg-white mt-10">
         <Footer />
       </div>
     </>

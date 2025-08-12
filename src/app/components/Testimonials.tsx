@@ -31,7 +31,6 @@ function Testimonials() {
                 height={25}
                 alt="avatars"
               />
-
               <Image
                 className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
                 src="https://i.ibb.co/XHKLmNB/avatar3.jpg"

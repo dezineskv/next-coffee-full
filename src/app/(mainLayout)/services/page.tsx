@@ -25,12 +25,8 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <>
-      <div className="bg-yellow-50 w-screen opacity-90">
-        <div className="bg-white flex flex-col md:pt-10 mb-3 gap-16">
-          <Header />
-        </div>
-      </div>
+    <>      
+      <Header />
       <div className="my-container md:pl-24">
         <Breadcrumb>
           <BreadcrumbList>
@@ -151,7 +147,7 @@ export default function Services() {
           </div>
         </div>
       </main>
-      <div className="bg-white pt-16 mt-20">
+      <div className="bg-white mt-10">
         <Footer />
       </div>
     </>
