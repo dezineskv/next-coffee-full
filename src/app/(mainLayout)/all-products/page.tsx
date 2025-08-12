@@ -11,7 +11,7 @@ export default function Home() {
   
       <div className="w-full bg-slate-200 text-center mx-auto min-h-screen flex flex-col items-center justify-center">
         <div className="mx-auto h-1/2 ">
-          <h1 className="text-4xl font-bold mt-12 mb-12">
+          <h1 className="text-4xl text-black font-bold mt-12 mb-12">
             Admin
           </h1>
           <Forms />

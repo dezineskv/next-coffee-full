@@ -24,14 +24,14 @@ export default function Forms() {
         Product
       </label>
       <input type="text" name="product" className="mb-2  w-62 h-10 p-2 rounded-lg border-1 border-black" /> */}
-      <label htmlFor="title" className="py-2 pl-5 text-left">
+      <label htmlFor="title" className="py-2 pl-5 text-left text-black">
         Title
       </label>
-      <input type="text" name="title" className="w-62 h-10 p-2 ml-2 rounded-lg border-1 border-black" />
-      <label htmlFor="description" className="py-2 pl-5 mt-2 text-left">
+      <input type="text" name="title" className="w-62 h-10 p-2 ml-2 rounded-lg border-1 border-black text-black" />
+      <label htmlFor="description" className="py-2 pl-5 mt-2 text-left text-black">
         Description
       </label>
-      <input type="text" name="description" className="w-62 h-10 p-2 ml-2 rounded-lg border-1 border-black" />
+      <input type="text" name="description" className="w-62 h-10 p-2 ml-2 rounded-lg border-1 border-black text-black" />
       <SubmitButton />
     </form>
     </div>

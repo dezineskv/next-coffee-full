@@ -36,7 +36,7 @@ export default async function GetProducts() {
       return (
         <>
           <div className="w-full mt-8">
-            <h1 className="text-4xl text-center font-bold">Product Inventory</h1>
+            <h1 className="text-4xl text-black text-center font-bold">Product Inventory</h1>
             <div className="grid grid-cols-3 gap-4 py-10">
               {products.map((product: any) => (
                 <Card

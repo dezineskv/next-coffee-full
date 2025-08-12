@@ -298,10 +298,9 @@ export default function Header() {
           </span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-<Button className="bg-white text-black font-bold py-2 px-4 rounded-full shadow-lg hover:bg-gray-300">                   
+              <Button className="bg-white text-black font-bold py-4 px-4 rounded-full shadow-lg shadow-gray-200 h-[40px] w-[44px] hover:scale-105 transition-all hover:bg-gray-200">
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-black" />
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-black" />
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-white" />
-                
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
@@ -325,7 +324,7 @@ export default function Header() {
           </Button>
         </div>
 
-   {/* Mobile Navigation */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t pt-4 mt-4">
             <div className="flex flex-col space-y-4 space-x-3">
