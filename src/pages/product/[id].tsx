@@ -63,7 +63,7 @@ export default function ProductPage() {
 
   return (
     <>
-      <Header />
+    <Header/>  
       <div className="my-container md:pl-24">
         <Breadcrumb>
           <BreadcrumbList>
@@ -81,6 +81,7 @@ export default function ProductPage() {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
+
       <h2 className="mx-auto text-center pt-5 text-3xl font-bold header">
        {product.title}
       </h2>
@@ -125,15 +126,15 @@ export default function ProductPage() {
               <Button className="btn btn-primary">Buy Now</Button>
             </div>
             </div>
-         
+         </div>
           </div>
-        </div>
+        
     {/* accordion */}
       <DetailAccordion/>
     {/* rating */}
       <RatingProduct/>
-    </div>
-      <Footer />
+  </div>
+  <Footer />
     </>
   );
 }

@@ -117,7 +117,7 @@ export default async function Products() {
                             </div>
                           </CardTitle>
                           <CardDescription>
-                            <p className="text-gray-300 text-2xl font-bold text-left max-w-[225px] px-4">
+                            <p className="text-foreground text-2xl font-bold text-left max-w-[225px] px-4">
                               {product?.title}
                             </p>
                           </CardDescription>

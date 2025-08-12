@@ -12,7 +12,7 @@ function DetailAccordion() {
           <Accordion
             type="single"
             collapsible
-            className="w-full px-30 mt-10"
+            className="w-4xl px-30 mt-5"
             defaultValue="item-1"
           >
             <AccordionItem value="item-1">

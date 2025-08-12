@@ -254,6 +254,7 @@ export default function Header() {
                     </div>
                     <div className="pl-2 pb-1 flex flex-row ">
                       <button onClick={incrementQuantity}>
+                        <div className="pl-2 pb-1 flex flex-row justify-between">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -269,11 +270,14 @@ export default function Header() {
                           <path d="M5 12h14" />
                           <path d="M12 5v14" />
                         </svg>
+                        <span className="font-bold text-black pl-2">1</span>
+                        </div>
                       </button>
-                      <span className="font-bold text-black">1</span>
+                
                     </div>
-                    <div className="pl-2 pb-1 flex flex-row ">
+                    <div className="pl-2 pb-1 flex flex-row justify-between">
                       <button onClick={decrementQuantity}>
+                        <div className="pl-2 pb-1 flex flex-row justify-between">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -288,8 +292,9 @@ export default function Header() {
                         >
                           <path d="M5 12h14" />
                         </svg>
+                        <span className="font-bold text-black pl-2">1</span>
+                        </div>
                       </button>
-                      <span className="font-bold text-black">1</span>
                     </div>
                   </div>
                 </DropdownMenuItem>
@@ -298,8 +303,8 @@ export default function Header() {
           </span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="bg-white text-black font-bold py-4 px-4 rounded-full shadow-lg shadow-gray-200 h-[40px] w-[44px] hover:scale-105 transition-all hover:bg-gray-200">
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-black" />
+              <Button className="bg-white font-bold py-4 px-4 rounded-full shadow-lg shadow-gray-200 h-[40px] w-[44px] hover:scale-105 transition-all hover:bg-gray-200">
+                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-background" />
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-black" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
@@ -324,7 +329,7 @@ export default function Header() {
           </Button>
         </div>
 
-        {/* Mobile Navigation */}
+    {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t pt-4 mt-4">
             <div className="flex flex-col space-y-4 space-x-3">
@@ -392,7 +397,7 @@ export default function Header() {
                 </details>
               </div>
 
-              {/* Mobile Actions */}
+        {/* Mobile Actions */}
               <div className="flex flex-col space-y-4 pt-4 border-t ">
                 <Link
                   href="/cart"
