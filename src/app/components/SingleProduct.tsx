@@ -33,7 +33,7 @@ const SingleProduct: React.FC<Product> = ({ id }) => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const response = await fetch(`https://next-coffee-full.vercel.app/api/product/${id}`); // Use your API route
+        const response = await fetch(`api/product/${id}`); // Use your API route
         if (!response.ok) {
           throw new Error("Failed to fetch item");
         }
