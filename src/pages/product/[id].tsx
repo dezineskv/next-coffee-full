@@ -88,7 +88,8 @@ export default function ProductPage() {
       <div className="flex flex-col justify-center gap-3 mx-auto w-full mt-8 mb-10 pb-10 h-full">
         <div className="card card-side bg-base-100 px-4 py-4 mx-auto text-center h-full">
           <div className="flex flex-col md:flex-row justify-center  gap-3">
-            <figure className="max-w-[480px] mx-auto">
+            <div className="flex flex-col">
+              <figure className="max-w-[480px] mx-auto">
               <img
                 src={product?.image_url}
                 alt="Product Image"
@@ -96,6 +97,8 @@ export default function ProductPage() {
                 height={300}
               />
             </figure>
+            <div className="text-left">Small | Medium | Large</div>
+            </div>
             <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">          
               <p>
                 <span className="font-bold text-gray-700">
@@ -127,8 +130,7 @@ export default function ProductPage() {
             </div>
             </div>
          </div>
-          </div>
-        
+          </div>       
     {/* accordion */}
       <DetailAccordion/>
     {/* rating */}

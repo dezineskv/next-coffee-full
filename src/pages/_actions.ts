@@ -1,21 +1,21 @@
 "use server";
 
-import { getSingleProduct, createProducts } from "@/lib/actions";
+// import { getSingleProduct, createProducts } from "@/lib/actions";
 import { revalidatePath } from "next/cache";
 
 /**
  * Server Action: Create a new todo.
  */
-export async function createProducts({
-  title,
-  path,
-}: {
-  title: string;
-  path: string;
-}) {
-  await createProducts(title);
-  revalidatePath(path);
-}
+// export async function createProducts({
+//   title,
+//   path,
+// }: {
+//   title: string;
+//   path: string;
+// }) {
+//   await createProducts(title);
+//   revalidatePath(path);
+// }
 
 /**
  * Server Action: Update an existing todo.
@@ -43,13 +43,13 @@ export async function createProducts({
 //   revalidatePath(path);
 // }
 
-export async function getSingleProduct({
-  id,
-  path,
-}: {
-  id: string;
-  path: string;
-}) {
-  await getSingleProduct(id);
-  revalidatePath(path);
-}
+// export async function getSingleProduct({
+//   id,
+//   path,
+// }: {
+//   id: string;
+//   path: string;
+// }) {
+//   await getSingleProduct(id);
+//   revalidatePath(path);
+// }

@@ -13,6 +13,13 @@ export const createProducts = async (formData: FormData) => {
   const title = formData.get("title");
   const description = formData.get("description");
   const image_url = formData.get("image_url");
+  const roast_level = formData.get("roast_level");
+  const price = formData.get("price");
+  const origin = formData.get("origin");
+  const weight_oz = formData.get("weight_oz");
+  const in_stock = formData.get("in_stock");
+  const sale = formData.get("sale");
+
   try {
     // Creating a new product using Product model
     const newProduct = await Product.create({
@@ -20,12 +27,12 @@ export const createProducts = async (formData: FormData) => {
       title,
       description,
       image_url,
-      // origin,
-      // roast_level,
-      // price,
-      // weight_oz,
-      // in_stock,
-      // sale,
+      roast_level,
+      price,
+      origin,
+      weight_oz,
+      in_stock,
+      sale,
     });
     // Saving the new product
     newProduct.save();
@@ -71,9 +78,8 @@ export const getAllProducts = async (formData: FormData) => {
 };
 // get single product
 export const getSingleProduct = async (id: string) => {
-
   try {
-         await connectToMongoDB();
+    await connectToMongoDB();
 
     const parsedId = stringToObjectId(id);
 
@@ -92,4 +98,22 @@ export const getSingleProduct = async (id: string) => {
   } catch (error) {
     return { error };
   }
-}
+};
+//update/patch product
+export const updateProduct = async (id: string) => {
+  // try {
+  //   await connectToMongoDB();
+  //   const parsedId = stringToObjectId(id);
+  //   let body = await Request.body;
+  //   const product = await Product.findByIdAndUpdate(parsedId, body);
+  //   if (product) {
+  //     return {
+  //       product,
+  //     };
+  //   } else {
+  //     return { error: "product not found" };
+  //   }
+  // } catch (error) {
+  //   return { error };
+  // }
+};

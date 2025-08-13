@@ -1,7 +1,6 @@
 
 import Product from "../../models/Product";
-import { deleteProduct } from "@/lib/actions"; 
-import { getAllProducts } from "@/lib/actions";
+import { deleteProduct, updateProduct, getAllProducts } from "@/lib/actions";
 import Link from "next/link";
 import {
   Card,
@@ -36,8 +35,10 @@ export default async function GetProducts() {
       return (
         <>
           <div className="w-full mt-8">
-            <h1 className="text-4xl text-black text-center font-bold">Product Inventory</h1>
-            <div className="grid grid-cols-3 gap-4 py-10">
+            <h1 className="text-4xl text-black text-center font-bold">
+              Product Inventory
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-10">
               {products.map((product: any) => (
                 <Card
                   className="h-auto rounded-lg w-[310px]"
@@ -66,28 +67,46 @@ export default async function GetProducts() {
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
                     {product.description as string}
                   </p>
+                  {/* <p className="text-left leading-5 px-5 w-[225px line-clamp-4">
+                    ID: {product?._id as string}
+                  </p> */}
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    ID: {product._id as string}
-                  </p>
-                    <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
                     In stock: {product.in_stock as string}
                   </p>
-                     <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                   On sale: {product.sale as string}
+                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
+                    On sale: {product.sale as string}
                   </p>
-                    <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                   Roast level: {product.roast_level as string}
+                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
+                    Roast level: {product.roast_level as string}
                   </p>
-                    <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                   Price: {product.price as string}
+                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
+                    Price: {product.price as string}
                   </p>
-                    <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                   Origin: {product.origin as string}
+                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
+                    Origin: {product.origin as string}
                   </p>
-                    <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                   Weight: {product.weight_oz as string}
+                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
+                    Weight: {product.weight_oz as string} oz.
                   </p>
-                  
+                  <div className="flex flex-row justify-between">
+                  <form
+                    className="text-left pl-5"
+                    action={async (formData: FormData) => {
+                      "use server";
+                      // await updateProduct(formData);
+                    }}
+                  >
+                    <input
+                      hidden
+                      type="text"
+                      name="product"
+                      defaultValue={product._id.toString()}
+                    />
+                    <button className="border rounded px-2 bg-blue-400">
+                      edit
+                    </button>
+                   
+                  </form>
                   <form
                     className="flex justify-end pr-5"
                     action={async (formData: FormData) => {
@@ -101,10 +120,12 @@ export default async function GetProducts() {
                       name="id"
                       defaultValue={product._id.toString()}
                     />
+              
                     <button className="border rounded px-2 bg-red-400">
                       delete
                     </button>
                   </form>
+                  </div>
                 </Card>
               ))}
             </div>

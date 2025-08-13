@@ -7,7 +7,7 @@ export default function SubmitButton() {
     <button
       type="submit"
       {...(pending && { disabled: true })}
-      className={`bg-blue-400 h-10 w-62 p-2 mt-10 ml-3 rounded text-white font-bold ${
+      className={`bg-blue-400 h-10 w-62 p-2 mt-10  rounded text-white font-bold text-center mx-auto ${
         pending ? "cursor-not-allowed" : "cursor-pointer"
       }`}
     >

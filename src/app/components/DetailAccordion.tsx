@@ -8,11 +8,11 @@ import {
 function DetailAccordion() {
     return (
 
-<div className="mx-auto">
+<div className="flex w-full md:w-4xl mx-auto">
           <Accordion
             type="single"
             collapsible
-            className="w-4xl px-30 mt-5"
+            className="px-30 mt-5"
             defaultValue="item-1"
           >
             <AccordionItem value="item-1">
