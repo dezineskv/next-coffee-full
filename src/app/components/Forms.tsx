@@ -11,6 +11,7 @@ export default function Forms() {
     <>
       <div className="w-full bg-slate-200 text-center mx-auto">
         <h2 className="text-left text-blue-500 font-bold">Add Products</h2>
+        {/* FormData async server action to add products */}
         <form
           ref={ref}
           action={async (FormData) => {

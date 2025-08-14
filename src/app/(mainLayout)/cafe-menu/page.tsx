@@ -32,6 +32,9 @@ export default function CafeMenu() {
                   <Link href="/cafe-menu">Menu</Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>
+              <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>

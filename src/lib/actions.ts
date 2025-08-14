@@ -8,7 +8,7 @@ import { stringToObjectId } from "./utils";
 //create new products
 export const createProducts = async (formData: FormData) => {
   await connectToMongoDB();
-  // Extracting Product content and time from formData
+  // Extracting Product content from formData
   const product = formData.get("product");
   const title = formData.get("title");
   const description = formData.get("description");
@@ -21,7 +21,7 @@ export const createProducts = async (formData: FormData) => {
   const sale = formData.get("sale");
 
   try {
-    // Creating a new product using Product model
+    // Creating a new product using Product model & saving to var
     const newProduct = await Product.create({
       product,
       title,
@@ -36,7 +36,7 @@ export const createProducts = async (formData: FormData) => {
     });
     // Saving the new product
     newProduct.save();
-    // Triggering revalidation of the specified path ("/")
+    // Triggering revalidation of the specified path
     revalidatePath("/");
     // Returning the string representation of the new product
     return newProduct.toString();
@@ -45,6 +45,7 @@ export const createProducts = async (formData: FormData) => {
     return { message: "error creating product" };
   }
 };
+
 // delete product
 export const deleteProduct = async (id: FormData) => {
   // Extracting Product ID from formData
@@ -52,10 +53,10 @@ export const deleteProduct = async (id: FormData) => {
   try {
     // Deleting the Product with the specified ID
     await Product.deleteOne({ _id: productId });
-    // Triggering revalidation of the specified path ("/")
+    // Triggering revalidation of the specified path
     revalidatePath("/");
     // Returning a success message after deleting the product
-    return "product deleted";
+    return "Product deleted";
   } catch (error) {
     // Returning an error message if product deletion fails
     return { message: "error deleting product" };
@@ -64,29 +65,27 @@ export const deleteProduct = async (id: FormData) => {
 // get all products
 export const getAllProducts = async (formData: FormData) => {
   await connectToMongoDB();
-
+    // sort products by time created most recent last
   try {
     const products = await Product.find().sort({ createdAt: -1 }); // -1 sorts in descending order (newest first)
-    // Triggering revalidation of the specified path ("/")
+    // Triggering revalidation of the specified path
     revalidatePath("/");
-    // Returning the string representation
+    // Returning the string representations
     return products.toString();
   } catch (error) {
     console.log(error);
     return { message: "error getting products" };
   }
 };
-// get single product
+// get single product by id
 export const getSingleProduct = async (id: string) => {
   try {
     await connectToMongoDB();
-
     const parsedId = stringToObjectId(id);
 
     if (!parsedId) {
-      return { error: "product not found" };
+      return { error: "Product not found" };
     }
-
     const product = await Product.findById(parsedId).lean().exec();
     if (product) {
       return {
