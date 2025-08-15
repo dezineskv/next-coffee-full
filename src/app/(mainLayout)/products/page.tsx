@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/breadcrumb";
 import Product from "../../../models/Product";
 import { getAllProducts } from "@/lib/actions";
+import Image from "next/image";
 
 export default async function Products() {
   try {
@@ -83,7 +84,7 @@ export default async function Products() {
                           <CardDescription></CardDescription>
                         </CardHeader>
                         <CardContent className="mb-0">
-                          <img
+                          <Image
                             src={product.image_url}
                             alt="product"
                             width={225}

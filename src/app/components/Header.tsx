@@ -407,7 +407,7 @@ export default function Header() {
         {/* Mobile Actions */}
               <div className="flex flex-col space-y-4 pt-4 border-t ">
                 <Link
-                  href="/cart"
+                  href="/login"
                   className="flex items-center space-x-3 text-xl font-medium text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
