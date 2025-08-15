@@ -3,7 +3,7 @@ import {
   deleteProduct,
   getSingleProduct,
   createProducts,
-  updateProduct,
+  editProduct,
 } from "@/lib/actions";
 import { createErrorResponse } from "@/lib/utils";
 import { NextRequest, NextResponse } from "next/server";
