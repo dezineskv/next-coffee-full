@@ -1,6 +1,6 @@
 
 import Product from "../../models/Product";
-import { deleteProduct, updateProduct, getAllProducts } from "@/lib/actions";
+import { deleteProduct } from "@/lib/actions";
 import Link from "next/link";
 import {
   Card,
@@ -11,8 +11,36 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+import EditProduct from "./EditProduct";
+
+interface Product {
+  _id: string;
+  title: string;
+  description: string;
+}
+
 
 export default async function GetProducts() {
+
+//     const [product, setProduct] = useState<Product | null>(null);
+//   const [formData, setFormData] = useState({ title: '', description: '' });
+
+//   const EditProduct = () => {
+
+//   useEffect(() => {
+//     if (id) {
+//       fetch(`/api/product/${id}`)
+//         .then((res) => res.json())
+//         .then((data) => {
+//           if (data.success) {
+//             setProduct(data.data);
+//             setFormData({ title: data.data.title, description: data.data.description });
+//           }
+//         });
+//     }
+//   }, [id]);
+// }
   try {
     const products = await Product.find();
     if (products.length === 0) {
@@ -20,18 +48,6 @@ export default async function GetProducts() {
         <h1 className="text-red-400 font-bold text-xl">You have no products</h1>
       );
     } else {
-      // const title = (title: any) => {
-      //   const deadlineDate = new Date(title);
-      //   // Extract day, month, and year components from the Date object
-      //   const day = deadlineDate.getDate();
-      //   const month = deadlineDate.getMonth() + 1; // Months are zero-based, so add 1
-      //   const year = deadlineDate.getFullYear();
-
-      //   // Format date as MM/DD/YYYY
-      //   return `${month}/${day}/${year}`;
-      // };
-
-      // Create a new Date object from the given string
       return (
         <>
           <div className="w-full mt-8">
@@ -43,7 +59,6 @@ export default async function GetProducts() {
                 <Card
                   className="h-auto rounded-lg w-[310px]"
                   key={product._id?.toString()}
-                  // className="flex flex-col items-center gap-2 p-2 border-blue-400 border-2 rounded my-4"
                 >
                   <div className="flex flex-col gap-2">
                     <CardHeader className="w-full px-4 text-left">
@@ -67,9 +82,6 @@ export default async function GetProducts() {
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
                     {product.description as string}
                   </p>
-                  {/* <p className="text-left leading-5 px-5 w-[225px line-clamp-4">
-                    ID: {product?._id as string}
-                  </p> */}
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
                     In stock: {product.in_stock as string}
                   </p>
@@ -93,7 +105,7 @@ export default async function GetProducts() {
                     className="text-left pl-5"
                     action={async (formData: FormData) => {
                       "use server";
-                      // await updateProduct(formData);
+                      // await editProduct(formData);
                     }}
                   >
                     <input
@@ -102,9 +114,9 @@ export default async function GetProducts() {
                       name="product"
                       defaultValue={product._id.toString()}
                     />
-                    <button className="border rounded px-2 bg-blue-400">
-                      edit
-                    </button>
+                    {/* <button onClick={(id) => <EditProduct id={id}/>}className="border rounded px-2 bg-blue-400">
+                     
+                    </button> */}
                    
                   </form>
                   <form

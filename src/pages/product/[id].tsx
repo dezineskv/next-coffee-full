@@ -54,13 +54,13 @@ export default function ProductPage() {
         setLoading(false);
       }
     };
-
     fetchProduct();
   }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (!product) return <p>Product not found.</p>;
 
+// single product detail page
   return (
     <>
     <Header/>  

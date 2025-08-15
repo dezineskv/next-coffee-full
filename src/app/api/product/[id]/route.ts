@@ -7,6 +7,7 @@ import {
 } from "@/lib/actions";
 import { createErrorResponse } from "@/lib/utils";
 import { NextRequest, NextResponse } from "next/server";
+import Product from "../../../../models/Product";
 
 export async function GET(
   request: NextRequest,
@@ -43,33 +44,22 @@ export async function GET(
 }
 
 // export async function PATCH(
-//   request: NextRequest,
+//   req: NextRequest,
 //   { params }: { params: { id: string } }
 // ) {
+//   await connectToMongoDB();
+
+//   const id = params.id;
+
 //   try {
-//     await connectToMongoDB();
-
-//     const id = params.id;
-//     let body = await request.json();
-
-//     const { product, error } = await updateProduct(id, body);
-
-//     if (error) {
-//       throw error;
+//     const body = await req.json();
+//     const product = await Product.findByIdAndUpdate(id, body, { new: true, runValidators: true });
+//     if (!product) {
+//       return NextResponse.json({ success: false, message: 'Product not found' }, { status: 404 });
 //     }
-
-//     let json_response = {
-//       status: "success",
-//       data: {
-//         product,
-//       },
-//     };
-//     return NextResponse.json(json_response);
-//   } catch (error: any) {
-//     if (typeof error === "string" && error.includes("Todo not found")) {
-//       return createErrorResponse("Todo not found", 404);
-//     }
-
-//     return createErrorResponse(error.message, 500);
+//     return NextResponse.json({ success: true, data: product }, { status: 200 });
+//   } catch (error) {
+//     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+//     return NextResponse.json({ success: false, message: errorMessage }, { status: 400 });
 //   }
 // }

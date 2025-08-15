@@ -99,7 +99,7 @@ export const getSingleProduct = async (id: string) => {
   }
 };
 //update/patch product
-export const updateProduct = async (id: string) => {
+// export const ... = async (id: string) => {
   // try {
   //   await connectToMongoDB();
   //   const parsedId = stringToObjectId(id);
@@ -115,4 +115,28 @@ export const updateProduct = async (id: string) => {
   // } catch (error) {
   //   return { error };
   // }
+// };
+
+// update product
+export const editProduct = async (id: FormData) => {
+try {
+await connectToMongoDB();
+// const . = stringToObject(.);
+
+    const updateProduct = await Product.findByIdAndUpdate(id);
+
+    if(updateProduct) {
+      return {
+        updateProduct,
+      }; 
+    // Saving the product
+  }
+    else {
+      return { error: "product not found" };
+    }
+   
+   } catch (error) {
+    console.log(error);
+    return { message: "error updating product" };
+  }
 };

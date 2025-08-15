@@ -298,6 +298,13 @@ export default function Header() {
                     </div>
                   </div>
                 </DropdownMenuItem>
+                <DropdownMenuItem>
+                   <div className="mx-auto border-1-top border-gray">
+                    <Link href ="/login">               
+                  Log In
+                  </Link>
+                  </div>
+                  </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </span>
