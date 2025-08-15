@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import EditProduct from "./EditProduct";
+// import EditProduct from "./EditProduct";
 
 interface Product {
   _id: string;
