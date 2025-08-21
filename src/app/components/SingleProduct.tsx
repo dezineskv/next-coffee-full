@@ -1,65 +1,134 @@
-"use client";
+// "use client";
 
-import { TProduct } from "../types";
-// import axios from "axios";
-import React, { useEffect, useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+// import Product from "@/models/Product";
+// import { connectToMongoDB } from "@/lib/db";
+import Header from "../../app/components/Header";
+import Footer from "../../app/components/Footer";
+import DetailAccordion from "../../app/components/DetailAccordion";
+import RatingProduct from "../../app/components/RatingProduct";
 import { Button } from "@/components/ui/button";
-import ReactStars from "react-stars";
-import Link from "next/link";
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Product from "@/models/Product";
-import { getSingleProduct } from "@/lib/actions";
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
-import { connectToMongoDB } from "@/lib/db";
-import { usePathname } from "next/navigation";
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-interface Product {
-  id: string;
-}
-
-const SingleProduct: React.FC<Product> = ({ id }) => {
-  const [product, setProduct] = useState<TProduct | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchItem = async () => {
-      try {
-        const response = await fetch(`api/product/${id}`); // Use your API route
-        if (!response.ok) {
-          throw new Error("Failed to fetch item");
-        }
-        const data: TProduct = await response.json();
-        setProduct(data);
-        console.log(data);
-      } catch (err: any) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchItem();
-  }, [id]);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!product) return <div>Item not found.</div>;
-
-  return (
-    <div>
-      <h1>{product.title} here</h1>
-      <p>{product.description}</p>
-    </div>
-  );
+type ProductType = {
+  _id?: string;
+  title: string;
+  description: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: string;
+  in_stock: string;
+  sale: string;
 };
 
-export default SingleProduct;
+export default function SingleProduct({ id }: { id: string }) {
+
+  const [product, setProduct] = useState<ProductType | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+   if (id) {
+    fetch(`/api/product/${id}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((data) => setProduct(data.data))
+      .catch((err) => console.error('Error fetching product:', err));
+  }
+}, [id]);
+
+  if (loading) return <p>Loading...</p>;
+  if (!product) return <p>Product not found.</p>;
+
+// single product detail page
+  return (
+    <>
+    <Header/>  
+      <div className="my-container md:pl-24">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/products">Products</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
+      <h2 className="mx-auto text-center pt-5 text-3xl font-bold header">
+       {product.title}
+      </h2>
+      <div className="flex flex-col justify-center gap-3 mx-auto w-full mt-8 mb-10 pb-10 h-full">
+        <div className="card card-side bg-base-100 px-4 py-4 mx-auto text-center h-full">
+          <div className="flex flex-col md:flex-row justify-center  gap-3">
+            <div className="flex flex-col">
+              <figure className="max-w-[480px] mx-auto">
+              <img
+                src={product?.image_url}
+                alt="Product Image"
+                width={400}
+                height={300}
+              />
+            </figure>
+            <div className="text-left">Small | Medium | Large</div>
+            </div>
+            <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">          
+              <p>
+                <span className="font-bold text-gray-700">
+                  Product Description:&nbsp;
+                </span>
+                {product?.description}
+              </p>
+              <p>
+                <span className="font-bold text-gray-700">Origin: </span>
+                {product?.origin}
+              </p>
+              <p>
+                <span className="font-bold text-gray-700">Roast Level: </span>
+                {product?.roast_level}
+              </p>
+              <p>
+                <span className="font-bold text-gray-700">Weight: </span>
+                {product?.weight_oz} oz.
+              </p>
+              <p>
+                <span className="font-bold text-gray-700">Product ID: </span>
+                {product?._id}
+              </p>
+                 <div className="card-actions flex flex-row justify-between items-center mt-6">
+              <h3 className="font-bold text-3xl mr-4">
+                {product?.price}
+              </h3>
+              <Button className="btn btn-primary">Buy Now</Button>
+            </div>
+            </div>
+         </div>
+          </div>       
+    {/* accordion */}
+      <DetailAccordion/>
+    {/* rating */}
+      <RatingProduct/>
+  </div>
+  <Footer />
+    </>
+  );
+}

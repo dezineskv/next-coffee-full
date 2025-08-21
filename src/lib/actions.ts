@@ -65,7 +65,7 @@ export const deleteProduct = async (id: FormData) => {
 // get all products
 export const getAllProducts = async (formData: FormData) => {
   await connectToMongoDB();
-    // sort products by time created most recent last
+  // sort products by time created most recent last
   try {
     const products = await Product.find().sort({ createdAt: -1 }); // -1 sorts in descending order (newest first)
     // Triggering revalidation of the specified path
@@ -99,44 +99,28 @@ export const getSingleProduct = async (id: string) => {
   }
 };
 //update/patch product
-// export const ... = async (id: string) => {
-  // try {
-  //   await connectToMongoDB();
-  //   const parsedId = stringToObjectId(id);
-  //   let body = await Request.body;
-  //   const product = await Product.findByIdAndUpdate(parsedId, body);
-  //   if (product) {
-  //     return {
-  //       product,
-  //     };
-  //   } else {
-  //     return { error: "product not found" };
-  //   }
-  // } catch (error) {
-  //   return { error };
-  // }
-// };
+export const editProduct = async (
+  id: string,
+  updateData: { title: string; description: string }
+) => {
+  await connectToMongoDB();
 
-// update product
-export const editProduct = async (id: FormData) => {
-try {
-await connectToMongoDB();
-// const . = stringToObject(.);
+  try {
+    const parsedId = stringToObjectId(id);
 
-    const updateProduct = await Product.findByIdAndUpdate(id);
+    const updatedProduct = await Product.findByIdAndUpdate(
+      parsedId,
+      { $set: updateData },
+      { new: true }
+    );
 
-    if(updateProduct) {
-      return {
-        updateProduct,
-      }; 
-    // Saving the product
-  }
-    else {
-      return { error: "product not found" };
+    if (!updatedProduct) {
+      return { success: false, error: "Product not found" };
     }
-   
-   } catch (error) {
-    console.log(error);
-    return { message: "error updating product" };
+
+    return { success: true, data: updatedProduct };
+  } catch (error) {
+    console.error("Error updating product:", error);
+    return { success: false, error: "Error updating product" };
   }
 };

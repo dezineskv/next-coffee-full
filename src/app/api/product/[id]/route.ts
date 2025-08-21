@@ -8,58 +8,57 @@ import {
 import { createErrorResponse } from "@/lib/utils";
 import { NextRequest, NextResponse } from "next/server";
 import Product from "../../../../models/Product";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { ObjectId } from "mongodb";
 
-export async function GET(
-  request: NextRequest,
-  {
-    params,
-  }: {
-    params: Promise<{ id: string }>;
-  }
-) {
-  try {
-    await connectToMongoDB();
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+      await connectToMongoDB();
 
-    const id = (await params).id;
-    const { product, error } = await getSingleProduct(id);
+      const {
+        query: { id },
+        method,
+      } = req;
 
-    if (error) {
-      throw error;
+      switch (method) {
+        case 'GET':
+          try {
+            const product = await Product.findById(id);
+            if (!product) {
+              return res.status(404).json({ success: false, message: 'product not found' });
+            }
+            res.status(200).json({ success: true, data: product });
+          } catch (error) {
+            res.status(400).json({ success: false, error });
+          }
+          break;
+        case 'PATCH':
+          try {
+            const product = await Product.findByIdAndUpdate(id, req.body, {
+              new: true,
+              runValidators: true,
+            });
+            if (!product) {
+              return res.status(404).json({ success: false, message: 'product not found' });
+            }
+            res.status(200).json({ success: true, data: product });
+          } catch (error) {
+            res.status(400).json({ success: false, error });
+          }
+          break;
+        default:
+          res.setHeader('Allow', ['GET', 'PUT']);
+          res.status(405).end(`Method ${method} Not Allowed`);
+      }
     }
 
-    let json_response = {
-      status: "success",
-      data: {
-        product,
-      },
-    };
-    return NextResponse.json(json_response);
-  } catch (error: any) {
-    if (typeof error === "string" && error.includes("product not found")) {
-      return createErrorResponse("product not found", 404);
-    }
+// export async function GET(request: Request, { params }: { params: { id: string } }) {
+//             const product = await Product.findById(id);
 
-    return createErrorResponse(error.message, 500);
-  }
-}
+//   const product = await Product.findById(id);
 
-// export async function PATCH(
-//   req: NextRequest,
-//   { params }: { params: { id: string } }
-// ) {
-//   await connectToMongoDB();
-
-//   const id = params.id;
-
-//   try {
-//     const body = await req.json();
-//     const product = await Product.findByIdAndUpdate(id, body, { new: true, runValidators: true });
-//     if (!product) {
-//       return NextResponse.json({ success: false, message: 'Product not found' }, { status: 404 });
-//     }
-//     return NextResponse.json({ success: true, data: product }, { status: 200 });
-//   } catch (error) {
-//     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
-//     return NextResponse.json({ success: false, message: errorMessage }, { status: 400 });
+//   if (!product) {
+//     return NextResponse.json({ error: 'Product not found' }, { status: 404 });
 //   }
+
+//   return NextResponse.json(product);
 // }

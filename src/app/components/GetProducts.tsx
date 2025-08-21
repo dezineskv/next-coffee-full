@@ -1,6 +1,6 @@
 
 import Product from "../../models/Product";
-import { deleteProduct } from "@/lib/actions";
+import { deleteProduct, editProduct } from "@/lib/actions";
 import Link from "next/link";
 import {
   Card,
@@ -12,7 +12,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-// import EditProduct from "./EditProduct";
+import EditProduct from "./EditProduct";
+import Image from "next/image";
 
 interface Product {
   _id: string;
@@ -20,27 +21,8 @@ interface Product {
   description: string;
 }
 
-
 export default async function GetProducts() {
 
-//     const [product, setProduct] = useState<Product | null>(null);
-//   const [formData, setFormData] = useState({ title: '', description: '' });
-
-//   const EditProduct = () => {
-
-//   useEffect(() => {
-//     if (id) {
-//       fetch(`/api/product/${id}`)
-//         .then((res) => res.json())
-//         .then((data) => {
-//           if (data.success) {
-//             setProduct(data.data);
-//             setFormData({ title: data.data.title, description: data.data.description });
-//           }
-//         });
-//     }
-//   }, [id]);
-// }
   try {
     const products = await Product.find();
     if (products.length === 0) {
@@ -70,7 +52,7 @@ export default async function GetProducts() {
                     </CardHeader>
 
                     <CardContent className="mb-0">
-                      <img
+                      <Image
                         src={product?.image_url}
                         alt="product"
                         width={225}
@@ -101,11 +83,11 @@ export default async function GetProducts() {
                     Weight: {product.weight_oz as string} oz.
                   </p>
                   <div className="flex flex-row justify-between">
-                  <form
+                  {/* <form
                     className="text-left pl-5"
                     action={async (formData: FormData) => {
                       "use server";
-                      // await editProduct(formData);
+                      await editProduct(formData);
                     }}
                   >
                     <input
@@ -113,12 +95,13 @@ export default async function GetProducts() {
                       type="text"
                       name="product"
                       defaultValue={product._id.toString()}
-                    />
-                    {/* <button onClick={(id) => <EditProduct id={id}/>}className="border rounded px-2 bg-blue-400">
-                     
-                    </button> */}
-                   
-                  </form>
+                    /> */}
+                    <Link href="/edit/${id}">
+                    <Button className="border rounded px-2 bg-blue-400 ml-5">
+                     Edit
+                    </Button>
+                   </Link>
+                  {/* </form> */}
                   <form
                     className="flex justify-end pr-5"
                     action={async (formData: FormData) => {
@@ -133,9 +116,9 @@ export default async function GetProducts() {
                       defaultValue={product._id.toString()}
                     />
               
-                    <button className="border rounded px-2 bg-red-400">
+                    <Button className="border rounded px-2 bg-red-400">
                       delete
-                    </button>
+                    </Button>
                   </form>
                   </div>
                 </Card>

@@ -11,6 +11,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import "../globals.css";
 import Link from "next/link";
+// import { CardCarousel } from "@/components/ui/card-carousel"
+/* eslint-disable no-restricted-globals */
+// eslint-disable-next-line
+import { A11y, Navigation, Pagination, Scrollbar, Mousewheel } from 'swiper/modules';
+// eslint-disable-next-line
+import { Swiper, SwiperSlide } from 'swiper/swiper-react';
+import { CardCarousel } from "@/components/ui/card-carousel"
 
 function Explore() {
   return (
@@ -43,7 +50,7 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className=""
+                  className="w-auto h-auto"
                 />
               </CardContent>
             </Card>
@@ -63,7 +70,7 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className=""
+                  className="w-auto h-auto"
                 />
               </CardContent>
             </Card>
@@ -106,7 +113,7 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={170}
-                  className="mx-auto max-h-[200px] max-w-[170px]"
+                  className="mx-auto w-auto h-auto max-h-[200px] max-w-[170px]"
                 />
               </CardContent>
             </Card>

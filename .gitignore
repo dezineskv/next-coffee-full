@@ -24,3 +24,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+MONGODB_URI=mongodb+srv://admin:VMVn80X2bUTcuvdO@cluster0.fi3ar9t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+
+
+NEXTAUTH_SECRET=1a8090fbb0d588ec664b77aac1a830fb
+
+NEXTAUTH_URL=http://localhost:5000/api/auth

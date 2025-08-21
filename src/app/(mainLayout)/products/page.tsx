@@ -76,7 +76,7 @@ export default async function Products() {
                               <p className="text-gray-300 text-2xl font-bold text-left pl-4 h-[80px] w-[75%]">
                                 {product.title}
                               </p>
-                              <div className="w-[25%] mb-10 mx-5 text-sm text-red-500">
+                              <div className="w-[35%] mb-10 mx-5 text-sm text-red-500">
                                 OUT OF STOCK
                               </div>
                             </div>

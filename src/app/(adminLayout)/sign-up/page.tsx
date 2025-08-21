@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label"
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Login() {
+export default function SignUp() {
   return (
           <div className="w-full bg-slate-200 text-center mx-auto min-h-screen flex flex-col items-center justify-center">
             <Card className="w-full max-w-sm">
@@ -28,7 +28,7 @@ export default function Login() {
               />
             </Link>
             <CardHeader>
-                <CardTitle>Login to your account</CardTitle>
+                <CardTitle>Sign Up for an account</CardTitle>
                 <CardDescription>
                 Enter email below to login
                 </CardDescription>
@@ -39,6 +39,15 @@ export default function Login() {
             <CardContent>
                 <form>
                 <div className="flex flex-col gap-6">
+                      <div className="grid gap-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                        id="name"
+                        type="text"
+                        placeholder="first name"
+                        required
+                    />
+                    </div>
                     <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
                     <Input
@@ -65,15 +74,12 @@ export default function Login() {
             </CardContent>
             <CardFooter className="flex-col gap-2">
                 <Button type="submit" className="w-full">
-                Login
+                Sign Up
                 </Button>
-                  <div className="mt-5">
-                                    Need an account?<br/>
-                                <Link href="/sign-up">Sign up here</Link>
-                                </div>
-                {/* <Button variant="outline" className="w-full">
-                Login with Google
-                </Button> */}
+                <div className="mt-5">
+                    Already have an account?<br/>
+                <Link href="/login">Login</Link>
+                </div>
             </CardFooter>
             </Card>
         </div>

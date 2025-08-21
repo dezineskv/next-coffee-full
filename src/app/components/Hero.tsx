@@ -31,6 +31,7 @@ export default function Hero() {
                     alt="Cafe badge"
                     width={50}
                     height={40}
+                    className="w-auto h-auto"
                   />
                 </span>
               </div>
@@ -76,7 +77,7 @@ export default function Hero() {
                 height={700}
                 // priority
                 // sizes="50vw, 100vw"
-                className="sm:max-w-full sm:px-6 md:w-[700px]"
+                className="sm:max-w-full sm:px-6 w-auto h-auto md:w-[700px]"
               />
           </div>
                       </motion.div>
