@@ -124,7 +124,7 @@ export default async function Products() {
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="mb-0">
-                          <img
+                          <Image
                             src={product?.image_url}
                             alt="product"
                             width={220}
@@ -136,7 +136,7 @@ export default async function Products() {
                           <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
                             {product?.description}
                           </p>
-                          <Link href={`/product/${product._id}`}>
+                          <Link href={`/products/${product._id}`}>
                             <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
                               Details
                             </Button>

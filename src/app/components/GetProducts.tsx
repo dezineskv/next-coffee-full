@@ -1,4 +1,3 @@
-
 import Product from "../../models/Product";
 import { deleteProduct, editProduct } from "@/lib/actions";
 import Link from "next/link";
@@ -22,7 +21,6 @@ interface Product {
 }
 
 export default async function GetProducts() {
-
   try {
     const products = await Product.find();
     if (products.length === 0) {
@@ -83,7 +81,7 @@ export default async function GetProducts() {
                     Weight: {product.weight_oz as string} oz.
                   </p>
                   <div className="flex flex-row justify-between">
-                  {/* <form
+                    {/* <form
                     className="text-left pl-5"
                     action={async (formData: FormData) => {
                       "use server";
@@ -96,30 +94,30 @@ export default async function GetProducts() {
                       name="product"
                       defaultValue={product._id.toString()}
                     /> */}
-                    <Link href="/products/${id}">
-                    <Button className="border rounded px-2 bg-blue-400 ml-5">
-                     Edit
-                    </Button>
-                   </Link>
-                  {/* </form> */}
-                  <form
-                    className="flex justify-end pr-5"
-                    action={async (formData: FormData) => {
-                      "use server";
-                      await deleteProduct(formData);
-                    }}
-                  >
-                    <input
-                      hidden
-                      type="text"
-                      name="id"
-                      defaultValue={product._id.toString()}
-                    />
-              
-                    <Button className="border rounded px-2 bg-red-400">
-                      delete
-                    </Button>
-                  </form>
+                    <Link href={`/products/${product._id}`}>
+                      <Button className="border rounded px-2 bg-blue-400 ml-5">
+                        Edit
+                      </Button>
+                    </Link>
+                    {/* </form> */}
+                    <form
+                      className="flex justify-end pr-5"
+                      action={async (formData: FormData) => {
+                        "use server";
+                        await deleteProduct(formData);
+                      }}
+                    >
+                      <input
+                        hidden
+                        type="text"
+                        name="id"
+                        defaultValue={product._id.toString()}
+                      />
+
+                      <Button className="border rounded px-2 bg-red-400">
+                        delete
+                      </Button>
+                    </form>
                   </div>
                 </Card>
               ))}
