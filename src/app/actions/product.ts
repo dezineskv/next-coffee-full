@@ -36,7 +36,7 @@ export async function getProductById(id: string) {
   return JSON.parse(JSON.stringify(product)); // to make it serializable
 }
 
-export async function updateProduct(id: string, updates: Partial<{ name: string; price: number; description: string }>) {
+export async function updateProduct(id: string, updates: Partial<{ title: string; description: string }>) {
   await connectToMongoDB();
 
   if (!Types.ObjectId.isValid(id)) {

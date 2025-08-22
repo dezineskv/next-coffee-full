@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 // import Product from "@/models/Product";
 // import { connectToMongoDB } from "@/lib/db";
@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type ProductType = {
   _id?: string;
@@ -33,29 +34,29 @@ type ProductType = {
 };
 
 export default function SingleProduct({ id }: { id: string }) {
-
   const [product, setProduct] = useState<ProductType | null>(null);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
-   if (id) {
-    fetch(`/api/product/${id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        return res.json();
-      })
-      .then((data) => setProduct(data.data))
-      .catch((err) => console.error('Error fetching product:', err));
-  }
-}, [id]);
+    if (id) {
+      fetch(`/products/${id}`)
+        .then((res) => {
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+          return res.json();
+        })
+        .then((data) => setProduct(data.data))
+        .catch((err) => console.error("Error fetching product:", err));
+    }
+  }, [id]);
 
   if (loading) return <p>Loading...</p>;
   if (!product) return <p>Product not found.</p>;
 
-// single product detail page
+  // single product detail page
   return (
     <>
-    <Header/>  
+      <Header />
       <div className="my-container md:pl-24">
         <Breadcrumb>
           <BreadcrumbList>
@@ -75,23 +76,24 @@ export default function SingleProduct({ id }: { id: string }) {
       </div>
 
       <h2 className="mx-auto text-center pt-5 text-3xl font-bold header">
-       {product.title}
+        {product.title}
       </h2>
       <div className="flex flex-col justify-center gap-3 mx-auto w-full mt-8 mb-10 pb-10 h-full">
         <div className="card card-side bg-base-100 px-4 py-4 mx-auto text-center h-full">
           <div className="flex flex-col md:flex-row justify-center  gap-3">
             <div className="flex flex-col">
-              <figure className="max-w-[480px] mx-auto">
-              <img
-                src={product?.image_url}
+              <Image
+                src={product?.image_url || "/placeholder.png"}
                 alt="Product Image"
                 width={400}
                 height={300}
+                className="w-auto h-auto"
+                priority
               />
-            </figure>
-            <div className="text-left">Small | Medium | Large</div>
+
+              <div className="text-left">Small | Medium | Large</div>
             </div>
-            <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">          
+            <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">
               <p>
                 <span className="font-bold text-gray-700">
                   Product Description:&nbsp;
@@ -114,21 +116,19 @@ export default function SingleProduct({ id }: { id: string }) {
                 <span className="font-bold text-gray-700">Product ID: </span>
                 {product?._id}
               </p>
-                 <div className="card-actions flex flex-row justify-between items-center mt-6">
-              <h3 className="font-bold text-3xl mr-4">
-                {product?.price}
-              </h3>
-              <Button className="btn btn-primary">Buy Now</Button>
+              <div className="card-actions flex flex-row justify-between items-center mt-6">
+                <h3 className="font-bold text-3xl mr-4">{product?.price}</h3>
+                <Button className="btn btn-primary">Buy Now</Button>
+              </div>
             </div>
-            </div>
-         </div>
-          </div>       
-    {/* accordion */}
-      <DetailAccordion/>
-    {/* rating */}
-      <RatingProduct/>
-  </div>
-  <Footer />
+          </div>
+        </div>
+        {/* accordion */}
+        <DetailAccordion />
+        {/* rating */}
+        <RatingProduct />
+      </div>
+      <Footer />
     </>
   );
 }
