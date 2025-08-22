@@ -17,15 +17,14 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-interface PageProps {
+interface Props {
   params: {
     id: string;
   };
 }
 
-export default async function ProductPage({ params }: PageProps) {
+export default async function ProductPage({ params }: Props) {
   const { id } = params;
-
   const product = await getProductById(id);
 
   if (!product) {
