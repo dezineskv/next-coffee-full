@@ -25,7 +25,6 @@ dist-ssr
 *.sln
 *.sw?
 
-MONGODB_URI=mongodb+srv://admin:VMVn80X2bUTcuvdO@cluster0.fi3ar9t.mongodb.net/?retryWrites=true&w=majority
 
 
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { createProducts } from "../../lib/actions";
+import { createProducts } from "@/app/actions/product";
 import { useRef } from "react";
 import SubmitButton from "./SubmitButton";
 

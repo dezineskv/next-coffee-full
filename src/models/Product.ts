@@ -5,14 +5,14 @@ import mongoose, { Document, Schema, Model, connect } from "mongoose";
 export type IProduct = {
   title: string;
   description: string;
-  // image_url: string;
-  // origin: string;
-  // roast_level: string;
-  // price: string;
-  // weight_oz: number;
-  // in_stock: string;
-  // decaf: boolean;
-  // sale: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: number;
+  in_stock: string;
+  decaf: boolean;
+  sale: string;
 };
 
 export interface IProductDocument extends IProduct, Document {

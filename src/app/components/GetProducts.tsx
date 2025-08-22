@@ -1,5 +1,5 @@
 import Product from "../../models/Product";
-import { deleteProduct, editProduct } from "@/lib/actions";
+import { deleteProduct, updateProduct } from "@/app/actions/product";
 import Link from "next/link";
 import {
   Card,
@@ -81,20 +81,8 @@ export default async function GetProducts() {
                     Weight: {product.weight_oz as string} oz.
                   </p>
                   <div className="flex flex-row justify-between">
-                    {/* <form
-                    className="text-left pl-5"
-                    action={async (formData: FormData) => {
-                      "use server";
-                      await editProduct(formData);
-                    }}
-                  >
-                    <input
-                      hidden
-                      type="text"
-                      name="product"
-                      defaultValue={product._id.toString()}
-                    /> */}
-                    <Link href={`/products/${product._id}`}>
+                 
+                    <Link href={`/admin/products/${product._id}`}>
                       <Button className="border rounded px-2 bg-blue-400 ml-5">
                         Edit
                       </Button>

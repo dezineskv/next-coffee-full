@@ -69,11 +69,11 @@ export default async function Products() {
                 {products.map((product: any) => (
                   <div key={product._id}>
                     {product.in_stock == "no" ? (
-                      <Card className="w-[300px] h-[480px] rounded-lg shadow-lg">
-                        <CardHeader className="max-h-[60px]">
+                      <Card className="w-[300px] h-[380px]rounded-lg shadow-lg">
+                        <CardHeader className="max-h-[30px]">
                           <CardTitle className="text-sm">
                             <div className="flex flex-row justify-start">
-                              <p className="text-gray-300 text-2xl font-bold text-left pl-4 h-[80px] w-[70%]">
+                              <p className="text-gray-300 text-2xl font-bold text-left pl-4 h-[80px] w-[75%]">
                                 {product.title}
                               </p>
                               <div className="w-[35%] mb-10 mx-5 text-sm text-red-500">
@@ -103,10 +103,9 @@ export default async function Products() {
                           </Link>
                         </CardFooter>
                       </Card>
-                      // in stock products
                     ) : (
-                      <Card className="w-[300px] h-[480px] rounded-lg shadow-lg">
-                        <CardHeader className="max-h-[60px]">
+                      <Card className="w-[300px] h-[380px]rounded-lg shadow-lg">
+                        <CardHeader className="max-h-[30px]">
                           <CardTitle className="text-sm">
                             <div className="flex flex-row justify-end items-center">
                               {product?.sale == "yes" && (
@@ -119,7 +118,7 @@ export default async function Products() {
                             </div>
                           </CardTitle>
                           <CardDescription>
-                            <p className="text-foreground text-2xl font-bold text-left max-w-[215px] px-4">
+                            <p className="text-foreground text-2xl font-bold text-left max-w-[225px] px-4">
                               {product?.title}
                             </p>
                           </CardDescription>

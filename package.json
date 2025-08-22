@@ -37,6 +37,7 @@
     "react": "^19.0.0-rc.1",
     "react-dom": "^19.0.0-rc.1",
     "react-hook-form": "^7.60.0",
+    "react-hot-toast": "^2.6.0",
     "react-stars": "^2.2.5",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1",
