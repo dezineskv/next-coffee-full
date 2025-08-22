@@ -1,9 +1,9 @@
-import Header from "../../components/Header";
-import Explore from "../../components/Explore";
-import Footer from "../../components/Footer";
-import Testimonials from "../../components/Testimonials";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Header from '../../components/Header';
+import Explore from '../../components/Explore';
+import Footer from '../../components/Footer';
+import Testimonials from '../../components/Testimonials';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,8 +11,8 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Link from "next/link";
+} from '@/components/ui/breadcrumb';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -20,13 +20,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
 export default function FindUs() {
   return (
     <>
-      <div className=" bg-yellow-50 w-screen opacity-90 ">
-        <div className="bg-white flex flex-col md:pt-10 mb-5 gap-16">
+      <div className="w-screen bg-yellow-50 opacity-90">
+        <div className="mb-5 flex flex-col gap-16 bg-white md:pt-10">
           <Header />
         </div>
       </div>
@@ -49,23 +49,19 @@ export default function FindUs() {
         </Breadcrumb>
       </div>
       <main className="">
-        <div className="my-container flex flex-col gap-6 justify-center py-12">
-          <h1 className="text-4xl text-center font-bold">
-            Kimbotic Coffee HQ Location
-          </h1>
-          <p className="mx-auto text-gray-900 text-center max-w-2xl text-xl">
-            Kimbotic Coffee was established in 2025 by KimV. Since then, it has
-            received rave support from local communities.
+        <div className="my-container flex flex-col justify-center gap-6 py-12">
+          <h1 className="text-center text-4xl font-bold">Kimbotic Coffee HQ Location</h1>
+          <p className="mx-auto max-w-2xl text-center text-xl text-gray-900">
+            Kimbotic Coffee was established in 2025 by KimV. Since then, it has received rave
+            support from local communities.
           </p>
           {/* start cards */}
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap py-10 ">
-            <Card className="sm:mx-auto md:w-1/2 max-w-100 shadow-lg">
+          <div className="flex flex-col items-center justify-center gap-4 py-10 sm:flex-wrap md:flex-row md:flex-nowrap">
+            <Card className="max-w-100 shadow-lg sm:mx-auto md:w-1/2">
               <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  Location
-                </CardTitle>
+                <CardTitle className="text-lg font-extrabold">Location</CardTitle>
                 <CardDescription>
-                  <p className="text-gray-900 text-left max-w-2xl">
+                  <p className="max-w-2xl text-left text-gray-900">
                     Our headquarters cafe is located in San Francisco, CA.
                   </p>
                 </CardDescription>
@@ -79,8 +75,8 @@ export default function FindUs() {
                   className="mx-auto"
                 />
               </CardContent>
-              <CardFooter className="text-center w-full">
-                <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-full">
+              <CardFooter className="w-full text-center">
+                <Button className="text-md w-full rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                   Contact Us
                 </Button>
               </CardFooter>
@@ -88,7 +84,7 @@ export default function FindUs() {
           </div>
         </div>
       </main>
-      <div className="bg-white pt-16 mt-20">
+      <div className="mt-20 bg-white pt-16">
         <Footer />
       </div>
     </>

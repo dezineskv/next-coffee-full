@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Card,
   CardContent,
@@ -6,41 +6,36 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import "../globals.css";
-import Link from "next/link";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+import '../globals.css';
+import Link from 'next/link';
 // import { CardCarousel } from "@/components/ui/card-carousel"
 /* eslint-disable no-restricted-globals */
 // eslint-disable-next-line
 import { A11y, Navigation, Pagination, Scrollbar, Mousewheel } from 'swiper/modules';
 // eslint-disable-next-line
 import { Swiper, SwiperSlide } from 'swiper/swiper-react';
-import { CardCarousel } from "@/components/ui/card-carousel"
+import { CardCarousel } from '@/components/ui/card-carousel';
 
 function Explore() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="my-container bg-secondary flex flex-col gap-6 justify-center pt-12 md:pb-18">
-          <h1 className="text-4xl text-center font-bold">
-            Explore Kimbotic Coffee Services
-          </h1>
-          <p className="mx-auto text-para text-center max-w-2xl">
+        <div className="my-container bg-secondary flex flex-col justify-center gap-6 pt-12 md:pb-18">
+          <h1 className="text-center text-4xl font-bold">Explore Kimbotic Coffee Services</h1>
+          <p className="text-para mx-auto max-w-2xl text-center">
             Our roaster starts with 100% Arabica coffee beans from Mexico
           </p>
           {/* start cards */}
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center sm:flex-wrap md:flex-nowrap pt-10 pb-2">
-            <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
+          <div className="flex flex-col items-center justify-center gap-4 pt-10 pb-2 sm:flex-wrap md:flex-row md:flex-nowrap">
+            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
               <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  Catering
-                </CardTitle>
+                <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
                 <CardDescription>
-                  <p className="text-para text-left max-w-2xl">
-                    Make your next event a success with our fresh coffee and
-                    breakfast.
+                  <p className="text-para max-w-2xl text-left">
+                    Make your next event a success with our fresh coffee and breakfast.
                   </p>
                 </CardDescription>
               </CardHeader>
@@ -50,17 +45,16 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="w-auto h-auto"
+                  className="h-auto w-auto"
                 />
               </CardContent>
             </Card>
-            <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
+            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
                 <CardDescription>
-                  <p className="text-para text-left max-w-2xl">
-                    Alongside delicious coffee, we offer pastries, breakfast
-                    foods and more.
+                  <p className="text-para max-w-2xl text-left">
+                    Alongside delicious coffee, we offer pastries, breakfast foods and more.
                   </p>
                 </CardDescription>
               </CardHeader>
@@ -70,19 +64,16 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="w-auto h-auto"
+                  className="h-auto w-auto"
                 />
               </CardContent>
             </Card>
-            <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
+            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
               <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  The Cafe
-                </CardTitle>
+                <CardTitle className="text-lg font-extrabold">The Cafe</CardTitle>
                 <CardDescription>
-                  <p className="text-para text-left max-w-2xl">
-                    Our roaster starts with 100% Arabica coffee beans from
-                    Mexico
+                  <p className="text-para max-w-2xl text-left">
+                    Our roaster starts with 100% Arabica coffee beans from Mexico
                   </p>
                 </CardDescription>
               </CardHeader>
@@ -96,13 +87,11 @@ function Explore() {
                 />
               </CardContent>
             </Card>
-            <Card className="sm:mx-auto md:w-1/4 max-w-70 shadow-lg">
+            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
               <CardHeader>
-                <CardTitle className="text-lg font-extrabold">
-                  Delivery
-                </CardTitle>
+                <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
                 <CardDescription>
-                  <p className="text-para text-left max-w-2xl">
+                  <p className="text-para max-w-2xl text-left">
                     Order beverages for delivery from your local location.
                   </p>
                 </CardDescription>
@@ -113,16 +102,14 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={170}
-                  className="mx-auto w-auto h-auto max-h-[200px] max-w-[170px]"
+                  className="mx-auto h-auto max-h-[200px] w-auto max-w-[170px]"
                 />
               </CardContent>
             </Card>
           </div>
           <div className="text-center">
             <Link href="/services">
-              <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">
-                Services
-              </Button>
+              <Button className="h-12 bg-gray-900 text-lg text-white sm:w-auto">Services</Button>
             </Link>
           </div>
         </div>

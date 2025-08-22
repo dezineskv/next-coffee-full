@@ -12,12 +12,12 @@ export const getAllProducts = async (formData: FormData) => {
   try {
     const products = await Product.find().sort({ createdAt: -1 }); // -1 sorts in descending order (newest first)
     // Triggering revalidation of the specified path
-    revalidatePath("/");
+    revalidatePath('/');
     // Returning the string representations
     return products.toString();
   } catch (error) {
     console.log(error);
-    return { message: "error getting products" };
+    return { message: 'error getting products' };
   }
 };
 // get single product
@@ -36,7 +36,20 @@ export async function getProductById(id: string) {
   return JSON.parse(JSON.stringify(product)); // to make it serializable
 }
 // edit single product
-export async function updateProduct(id: string, updates: Partial<{ title: string; description: string; image_url: string; price: string; sale: string; weight_oz: string; origin: string;  in_stock: string; roast_level: string}>) {
+export async function updateProduct(
+  id: string,
+  updates: Partial<{
+    title: string;
+    description: string;
+    image_url: string;
+    price: string;
+    sale: string;
+    weight_oz: string;
+    origin: string;
+    in_stock: string;
+    roast_level: string;
+  }>,
+) {
   await connectToMongoDB();
 
   if (!Types.ObjectId.isValid(id)) {
@@ -54,17 +67,17 @@ export async function updateProduct(id: string, updates: Partial<{ title: string
 // delete product
 export const deleteProduct = async (id: FormData) => {
   // Extracting Product ID from formData
-  const productId = id.get("id");
+  const productId = id.get('id');
   try {
     // Deleting the Product with the specified ID
     await Product.deleteOne({ _id: productId });
     // Triggering revalidation of the specified path
-    revalidatePath("/");
+    revalidatePath('/');
     // Returning a success message after deleting the product
-    return "Product deleted";
+    return 'Product deleted';
   } catch (error) {
     // Returning an error message if product deletion fails
-    return { message: "error deleting product" };
+    return { message: 'error deleting product' };
   }
 };
 
@@ -72,16 +85,16 @@ export const deleteProduct = async (id: FormData) => {
 export const createProducts = async (formData: FormData) => {
   await connectToMongoDB();
   // Extracting Product content from formData
-  const product = formData.get("product");
-  const title = formData.get("title");
-  const description = formData.get("description");
-  const image_url = formData.get("image_url");
-  const roast_level = formData.get("roast_level");
-  const price = formData.get("price");
-  const origin = formData.get("origin");
-  const weight_oz = formData.get("weight_oz");
-  const in_stock = formData.get("in_stock");
-  const sale = formData.get("sale");
+  const product = formData.get('product');
+  const title = formData.get('title');
+  const description = formData.get('description');
+  const image_url = formData.get('image_url');
+  const roast_level = formData.get('roast_level');
+  const price = formData.get('price');
+  const origin = formData.get('origin');
+  const weight_oz = formData.get('weight_oz');
+  const in_stock = formData.get('in_stock');
+  const sale = formData.get('sale');
 
   try {
     // Creating a new product using Product model & saving to var
@@ -100,11 +113,11 @@ export const createProducts = async (formData: FormData) => {
     // Saving the new product
     newProduct.save();
     // Triggering revalidation of the specified path
-    revalidatePath("/");
+    revalidatePath('/');
     // Returning the string representation of the new product
     return newProduct.toString();
   } catch (error) {
     console.log(error);
-    return { message: "error creating product" };
+    return { message: 'error creating product' };
   }
 };

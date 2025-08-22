@@ -1,29 +1,26 @@
-import React from "react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import Image from "next/image";
+import React from 'react';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import Image from 'next/image';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from '@/components/ui/carousel';
 
 function Testimonials() {
   return (
     <>
       <div className="bg-secondary mt-0">
-        <div className="my-container flex flex-col gap-6 justify-center pb-10">
-          <h1 className="text-4xl text-center font-bold">
-            Client Testimonials
-          </h1>
-          <p className="flex justify-center mx-auto text-para text-center max-w-1/2">
-            Check out what our customers have to say about us. We are rocking
-            it.
+        <div className="my-container flex flex-col justify-center gap-6 pb-10">
+          <h1 className="text-center text-4xl font-bold">Client Testimonials</h1>
+          <p className="text-para mx-auto flex max-w-1/2 justify-center text-center">
+            Check out what our customers have to say about us. We are rocking it.
           </p>
           {/* avatars section */}
-          <div className="my-4 flex items-center justify-center gap-x-6 ">
-            <div className="hidden sm:block -space-x-2 overflow-hidden">
+          <div className="my-4 flex items-center justify-center gap-x-6">
+            <div className="hidden -space-x-2 overflow-hidden sm:block">
               <Image
                 className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
                 src="https://i.ibb.co/YB8V5YxL/avatar1.jpg"
@@ -46,9 +43,9 @@ function Testimonials() {
                 alt="avatars"
               />
             </div>
-            <div className="boder-none sm:border-l-2 border-black sm:pl-8">
-              <div className="flex justify-center sm:justify-start items-center">
-                <h3 className="text-2xl font-semibold mr-2">4.9</h3>
+            <div className="boder-none border-black sm:border-l-2 sm:pl-8">
+              <div className="flex items-center justify-center sm:justify-start">
+                <h3 className="mr-2 text-2xl font-semibold">4.9</h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -70,11 +67,11 @@ function Testimonials() {
             </div>
           </div>
           {/* start 3 cards carousel*/}
-          <Carousel className="md:w-2xl md:mx-auto mb-8">
+          <Carousel className="mb-8 md:mx-auto md:w-2xl">
             <CarouselContent className="mx-auto">
-              <CarouselItem className="basis-full mx-auto">
-                <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
-                  <div className="mx-auto p-0 h-full">
+              <CarouselItem className="mx-auto basis-full">
+                <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
+                  <div className="mx-auto h-full p-0">
                     <Image
                       src="https://i.ibb.co/bjjy4Gn4/girl1.png"
                       alt="Girl1"
@@ -84,11 +81,9 @@ function Testimonials() {
                     />
                   </div>
                   <CardFooter className="flex flex-row justify-between gap-4 px-8">
-                    <h3 className="text-left font-bold text-lg">
-                      About Customer
-                    </h3>
-                    <div className="flex justify-center sm:justify-start items-center">
-                      <h3 className="text-2xl font-semibold mr-2">4.9</h3>
+                    <h3 className="text-left text-lg font-bold">About Customer</h3>
+                    <div className="flex items-center justify-center sm:justify-start">
+                      <h3 className="mr-2 text-2xl font-semibold">4.9</h3>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -106,16 +101,15 @@ function Testimonials() {
                     </div>
                   </CardFooter>
                   <CardContent>
-                    <p className="text-para text-left max-w-2xl px-2">
-                      Check out what our customers have to say about us. We are
-                      rocking it.
+                    <p className="text-para max-w-2xl px-2 text-left">
+                      Check out what our customers have to say about us. We are rocking it.
                     </p>
                   </CardContent>
                 </Card>
               </CarouselItem>
-              <CarouselItem className="basis-full mx-auto">
-                <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
-                  <div className="mx-auto p-0 h-full">
+              <CarouselItem className="mx-auto basis-full">
+                <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
+                  <div className="mx-auto h-full p-0">
                     <Image
                       src="https://i.ibb.co/yBmFc1C2/girl2.png"
                       alt="Girl2"
@@ -125,11 +119,9 @@ function Testimonials() {
                     />
                   </div>
                   <CardFooter className="flex flex-row justify-between gap-4 px-8">
-                    <h3 className="text-left font-bold text-lg">
-                      About Customer
-                    </h3>
-                    <div className="flex justify-center sm:justify-start items-center">
-                      <h3 className="text-2xl font-semibold mr-2">4.0</h3>
+                    <h3 className="text-left text-lg font-bold">About Customer</h3>
+                    <div className="flex items-center justify-center sm:justify-start">
+                      <h3 className="mr-2 text-2xl font-semibold">4.0</h3>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -147,30 +139,27 @@ function Testimonials() {
                     </div>
                   </CardFooter>
                   <CardContent>
-                    <p className="text-gray-900 text-left max-w-2xl px-3">
-                      Check out what our customers have to say about us. We are
-                      rocking it.
+                    <p className="max-w-2xl px-3 text-left text-gray-900">
+                      Check out what our customers have to say about us. We are rocking it.
                     </p>
                   </CardContent>
                 </Card>
               </CarouselItem>
-              <CarouselItem className="basis-full mx-auto">
-                <Card className="w-[350px] shadow-lg py-0 rounded-xl overflow-hidden pb-5 mx-auto">
-                  <div className="mx-auto p-0 h-full">
+              <CarouselItem className="mx-auto basis-full">
+                <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
+                  <div className="mx-auto h-full p-0">
                     <Image
                       src="https://i.ibb.co/2Yv2xMWd/man.jpg"
                       alt="Man"
                       width={350}
                       height={250}
-                      className="w-full min-h-[250px]"
+                      className="min-h-[250px] w-full"
                     />
                   </div>
                   <CardFooter className="flex flex-row justify-between gap-4 px-8">
-                    <h3 className="text-left font-bold text-lg">
-                      About Customer
-                    </h3>
-                    <div className="flex justify-center sm:justify-start items-center">
-                      <h3 className="text-2xl font-semibold mr-2">4.1</h3>
+                    <h3 className="text-left text-lg font-bold">About Customer</h3>
+                    <div className="flex items-center justify-center sm:justify-start">
+                      <h3 className="mr-2 text-2xl font-semibold">4.1</h3>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -187,19 +176,14 @@ function Testimonials() {
                       </svg>
                     </div>
                   </CardFooter>
-                  <p className="text-gray-900 text-left px-8">
-                    Check out what our customers have to say about us. We are
-                    rocking it.
+                  <p className="px-8 text-left text-gray-900">
+                    Check out what our customers have to say about us. We are rocking it.
                   </p>
                 </Card>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious
-              style={{ backgroundColor: "#000000", marginLeft: "64px" }}
-            />
-            <CarouselNext
-              style={{ backgroundColor: "#000000", marginRight: "64px" }}
-            />
+            <CarouselPrevious style={{ backgroundColor: '#000000', marginLeft: '64px' }} />
+            <CarouselNext style={{ backgroundColor: '#000000', marginRight: '64px' }} />
           </Carousel>
         </div>
       </div>

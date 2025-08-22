@@ -1,6 +1,6 @@
 // 'use server'
 
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Document, Schema, Model } from 'mongoose';
 
 export type IProduct = {
   title: string;
@@ -33,10 +33,9 @@ const ProductSchema = new mongoose.Schema(
     in_stock: { type: String },
     sale: { type: String },
   },
-  { timestamps: true } // createdAt, updatedAt
+  { timestamps: true }, // createdAt, updatedAt
 );
 
 const Product: Model<IProductDocument> =
-  mongoose.models?.Product ||
-  mongoose.model<IProductDocument>("Product", ProductSchema);
+  mongoose.models?.Product || mongoose.model<IProductDocument>('Product', ProductSchema);
 export default Product;

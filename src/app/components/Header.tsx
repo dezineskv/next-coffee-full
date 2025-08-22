@@ -1,10 +1,10 @@
-"use client";
-import type React from "react";
-import "../globals.css";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, ShoppingBag, X } from "lucide-react";
+'use client';
+import type React from 'react';
+import '../globals.css';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import { Menu, ShoppingBag, X } from 'lucide-react';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,82 +12,82 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/navigation-menu';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
+} from '@/components/ui/dropdown-menu';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const menuItems = [
   {
-    title: "Coffee",
-    href: "/cafe-menu",
-    description: "Espresso, cappuccino, latte and more",
+    title: 'Coffee',
+    href: '/cafe-menu',
+    description: 'Espresso, cappuccino, latte and more',
   },
   {
-    title: "Food",
-    href: "/cafe-menu",
-    description: "Sandwiches, pastries, and light meals",
+    title: 'Food',
+    href: '/cafe-menu',
+    description: 'Sandwiches, pastries, and light meals',
   },
   {
-    title: "Beverages",
-    href: "/cafe-menu",
-    description: "Teas, smoothies, and cold drinks",
+    title: 'Beverages',
+    href: '/cafe-menu',
+    description: 'Teas, smoothies, and cold drinks',
   },
 ];
 
 const aboutItems = [
   {
-    title: "Our Story",
-    href: "/about",
-    description: "Learn about our journey and mission",
+    title: 'Our Story',
+    href: '/about',
+    description: 'Learn about our journey and mission',
   },
   {
-    title: "Team",
-    href: "/about",
-    description: "Meet the people behind Kimbotic",
+    title: 'Team',
+    href: '/about',
+    description: 'Meet the people behind Kimbotic',
   },
   {
-    title: "Locations",
-    href: "/find",
-    description: "Kimbotic Coffee Headquarters",
+    title: 'Locations',
+    href: '/find',
+    description: 'Kimbotic Coffee Headquarters',
   },
 ];
 
 const productsItems = [
   {
-    title: "All Products",
-    href: "/products",
-    description: "Cakes, cookies, sweet treats and more",
+    title: 'All Products',
+    href: '/products',
+    description: 'Cakes, cookies, sweet treats and more',
   },
-    {
-    title: "Product Inventory",
-    href: "/all-products",
-    description: "Add, remove products",
+  {
+    title: 'Product Inventory',
+    href: '/all-products',
+    description: 'Add, remove products',
   },
 ];
 
 const cateringItems = [
   {
-    title: "Corporate Events",
-    href: "/services",
-    description: "Professional catering for meetings and events",
+    title: 'Corporate Events',
+    href: '/services',
+    description: 'Professional catering for meetings and events',
   },
   {
-    title: "Private Parties",
-    href: "/services",
-    description: "Custom catering for special occasions",
+    title: 'Private Parties',
+    href: '/services',
+    description: 'Custom catering for special occasions',
   },
   {
-    title: "Delivery",
-    href: "/services",
-    description: "Order online for delivery",
+    title: 'Delivery',
+    href: '/services',
+    description: 'Order online for delivery',
   },
 ];
 
@@ -97,28 +97,27 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
 
   const incrementQuantity = () => setCartQuantity(cartQuantity + 1);
-  const decrementQuantity = () =>
-    setCartQuantity(Math.max(0, cartQuantity - 1));
+  const decrementQuantity = () => setCartQuantity(Math.max(0, cartQuantity - 1));
 
   return (
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-background my-container flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 py-10 px-0">
+      <div className="bg-background my-container flex flex-col gap-4 px-0 py-10 lg:flex-row lg:items-center lg:justify-between">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
-          <div className="flex justify-center items-center sm:pl-6">
+          <div className="flex items-center justify-center sm:pl-6">
             <Link href="/">
               <Image
                 src={
-                  theme == "dark"
-                    ? "https://i.ibb.co/XrBqjX0k/logo3-d.png"
-                    : "https://i.ibb.co/23GsvNz7/logo2.png"
+                  theme == 'dark'
+                    ? 'https://i.ibb.co/XrBqjX0k/logo3-d.png'
+                    : 'https://i.ibb.co/23GsvNz7/logo2.png'
                 }
                 alt="Logo"
                 width={300}
                 height={180}
-                className="w-auto max-w-[250px] sm:mx-auto sm:ml-6 md:pl-12 pb-4 pr-10 border-0"
+                className="w-auto max-w-[250px] border-0 pr-10 pb-4 sm:mx-auto sm:ml-6 md:pl-12"
                 priority={true}
               />
             </Link>
@@ -128,14 +127,10 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="sm:border-4 sm:border-gray-400 lg:hidden mr-8"
+            className="mr-8 sm:border-4 sm:border-gray-400 lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="h-8 w-8 " />
-            ) : (
-              <Menu className="h-8 w-8 " />
-            )}
+            {isMobileMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
           </Button>
         </div>
 
@@ -149,11 +144,7 @@ export default function Header() {
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {menuItems.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
+                    <ListItem key={item.title} title={item.title} href={item.href}>
                       {item.description}
                     </ListItem>
                   ))}
@@ -167,11 +158,7 @@ export default function Header() {
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
                   {aboutItems.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
+                    <ListItem key={item.title} title={item.title} href={item.href}>
                       {item.description}
                     </ListItem>
                   ))}
@@ -185,11 +172,7 @@ export default function Header() {
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
                   {productsItems.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
+                    <ListItem key={item.title} title={item.title} href={item.href}>
                       {item.description}
                     </ListItem>
                   ))}
@@ -203,11 +186,7 @@ export default function Header() {
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
                   {cateringItems.map((item) => (
-                    <ListItem
-                      key={item.title}
-                      title={item.title}
-                      href={item.href}
-                    >
+                    <ListItem key={item.title} title={item.title} href={item.href}>
                       {item.description}
                     </ListItem>
                   ))}
@@ -217,20 +196,20 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu>
         {/* Desktop Actions */}
-        <div className="hidden lg:flex lg:flex-1 justify-end items-center gap-x-5">
+        <div className="hidden items-center justify-end gap-x-5 lg:flex lg:flex-1">
           <span className="relative text-xl font-medium text-gray-900">
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <ShoppingBag className="w-11 h-10 bg-white hover:bg-gray-100 text-black rounded-full p-2 shadow-lg shadow-gray-300 hover:scale-105 transition-all" />
+                <ShoppingBag className="h-10 w-11 rounded-full bg-white p-2 text-black shadow-lg shadow-gray-300 transition-all hover:scale-105 hover:bg-gray-100" />
                 {/* Cart badge*/}
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                   {cartQuantity}
                 </span>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <div className="flex flex-col gap-4w-full items-center">
-                    <div className="pl-2 pb-1 flex flex-row ">
+                  <div className="gap-4w-full flex flex-col items-center">
+                    <div className="flex flex-row pb-1 pl-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -248,13 +227,13 @@ export default function Header() {
                         <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                       </svg>
                       &nbsp; Items&nbsp;
-                      <span className="bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                         {cartQuantity}
                       </span>
                     </div>
-                    <div className="pl-2 pb-1 flex flex-row ">
+                    <div className="flex flex-row pb-1 pl-2">
                       <button onClick={incrementQuantity}>
-                        <div className="pl-2 pb-1 flex flex-row justify-between">
+                        <div className="flex flex-row justify-between pb-1 pl-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -270,13 +249,13 @@ export default function Header() {
                             <path d="M5 12h14" />
                             <path d="M12 5v14" />
                           </svg>
-                          <span className="font-bold text-black pl-2">1</span>
+                          <span className="pl-2 font-bold text-black">1</span>
                         </div>
                       </button>
                     </div>
-                    <div className="pl-2 pb-1 flex flex-row justify-between">
+                    <div className="flex flex-row justify-between pb-1 pl-2">
                       <button onClick={decrementQuantity}>
-                        <div className="pl-2 pb-1 flex flex-row justify-between">
+                        <div className="flex flex-row justify-between pb-1 pl-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -291,14 +270,14 @@ export default function Header() {
                           >
                             <path d="M5 12h14" />
                           </svg>
-                          <span className="font-bold text-black pl-2">1</span>
+                          <span className="pl-2 font-bold text-black">1</span>
                         </div>
                       </button>
                     </div>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <div className="mx-auto border-1-top border-gray">
+                  <div className="border-1-top border-gray mx-auto">
                     <Link href="/login">Log In</Link>&nbsp;
                     <Link href="/admin/products">Admin</Link>
                   </div>
@@ -308,27 +287,21 @@ export default function Header() {
           </span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="bg-white font-bold py-4 px-4 rounded-full shadow-lg shadow-gray-200 h-[40px] w-[44px] hover:scale-105 transition-all hover:bg-gray-200">
-                <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-background" />
-                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-black" />
+              <Button className="h-[40px] w-[44px] rounded-full bg-white px-4 py-4 font-bold shadow-lg shadow-gray-200 transition-all hover:scale-105 hover:bg-gray-200">
+                <Moon className="text-background absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+                <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 text-black transition-all dark:scale-0 dark:-rotate-90" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => setTheme("light")}>
-                Light
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("dark")}>
-                Dark
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setTheme("system")}>
-                System
-              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Button
             asChild
-            className="bg-gray-900 text-white px-6 py-6 rounded-lg text-xl shadow-lg hover:scale-105 transition-all md:mr-12"
+            className="rounded-lg bg-gray-900 px-6 py-6 text-xl text-white shadow-lg transition-all hover:scale-105 md:mr-12"
           >
             <Link href="/products">Buy Gift Cards</Link>
           </Button>
@@ -336,12 +309,12 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t pt-4 mt-4">
+          <div className="mt-4 border-t pt-4 lg:hidden">
             <div className="flex flex-col space-y-4 space-x-3">
               {/* Mobile Menu Items */}
-              <div className="space-y-3 ">
+              <div className="space-y-3">
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     Menu
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
@@ -359,7 +332,7 @@ export default function Header() {
                   </div>
                 </details>
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     About
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
@@ -377,13 +350,13 @@ export default function Header() {
                   </div>
                 </details>
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     Products
                   </summary>
                   <div className="mt-2 ml-4 space-y-2"></div>
                 </details>
                 <details className="group">
-                  <summary className="text-xl font-medium cursor-pointer list-none flex items-center justify-between pl-6">
+                  <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     Catering
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
@@ -403,28 +376,22 @@ export default function Header() {
               </div>
 
               {/* Mobile Actions */}
-              <div className="flex flex-col space-y-4 pt-4 border-t ">
+              <div className="flex flex-col space-y-4 border-t pt-4">
                 <Link
                   href="/login"
                   className="flex items-center space-x-3 text-xl font-medium text-gray-900"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <div className="relative pl-6">
-                    <ShoppingBag className="h-6 w-6 " />
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                    <ShoppingBag className="h-6 w-6" />
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                       2
                     </span>
                   </div>
                   <span>Shopping Cart</span>
                 </Link>
-                <Button
-                  asChild
-                  className="bg-gray-900 text-white text-xl py-6 mx-6"
-                >
-                  <Link
-                    href="/products"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                <Button asChild className="mx-6 bg-gray-900 py-6 text-xl text-white">
+                  <Link href="/products" onClick={() => setIsMobileMenuOpen(false)}>
                     Buy Gift Cards
                   </Link>
                 </Button>
@@ -455,15 +422,13 @@ const ListItem = ({
         <Link
           href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            'hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none',
+            className,
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">{children}</p>
         </Link>
       </NavigationMenuLink>
     </li>

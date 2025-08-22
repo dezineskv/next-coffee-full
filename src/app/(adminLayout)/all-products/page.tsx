@@ -1,22 +1,18 @@
-import Forms from "../../components/Forms";
-import GetProducts from "../../components/GetProducts";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import Link from "next/link";
+import Forms from '../../components/Forms';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <Header />  
-      <div className="w-full bg-slate-200 text-center mx-auto min-h-screen flex flex-col items-center justify-center">
-        <div className="mx-auto h-1/2 ">
-          <h1 className="text-4xl text-black font-bold mt-12 mb-12">
-            Admin
-          </h1>
-          <Forms />
-        </div>
-        <div className="flex flex-col items-center justify-around mx-auto h-1/2 ">
-          <GetProducts />
+      <Header />
+      <div className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
+        <div className="mx-auto h-1/2">
+          <h1 className="mt-10 mb-10 text-4xl font-bold text-black">Admin</h1>
+          <p>Manage product inventory
+            </p>
+            <Forms />
         </div>
       </div>
       <Footer />

@@ -1,42 +1,42 @@
-"use client";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
     <>
-      <section className="[family-name:var(--font-geist-sans)]  bg-secondary w-full sm:pt-5 md:pt-4 sm:pb-8 md:pl-2 ">
+      <section className="bg-secondary w-full [family-name:var(--font-geist-sans)] sm:pt-5 sm:pb-8 md:pt-4 md:pl-2">
         {/* container */}
         <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
           {/* TEXT SIDE */}
-          <div className="w-full md:w-1/2 sm:px-10">
+          <div className="w-full sm:px-10 md:w-1/2">
             {/* <div className={styles.slideIn}> */}
             <motion.div
               initial={{ opacity: 0, x: -150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-left text-4xl font-extrabold leading-[1.40] sm:text-5xl lg:text-6xl">
+              <h1 className="text-left text-4xl leading-[1.40] font-extrabold sm:text-5xl lg:text-6xl">
                 Delicious Kimbotic
               </h1>
 
               {/* </div> */}
-              <div className="text-left text-4xl font-extrabold leading-[1.0] sm:text-5xl lg:text-6xl">
-                <span className="mt-4 inline-flex items-center text-coffee-700">
+              <div className="text-left text-4xl leading-[1.0] font-extrabold sm:text-5xl lg:text-6xl">
+                <span className="text-coffee-700 mt-4 inline-flex items-center">
                   Coffee&nbsp;
                   <Image
                     src="https://i.ibb.co/jPx6ppGN/cafe-1.png"
                     alt="Cafe badge"
                     width={50}
                     height={40}
-                    className="w-auto h-auto"
+                    className="h-auto w-auto"
                   />
                 </span>
               </div>
 
-              <p className="mt-6 max-sm:w-full text-balance text-lg leading-relaxed sm:text-xl">
+              <p className="mt-6 text-lg leading-relaxed text-balance max-sm:w-full sm:text-xl">
                 Our roaster starts with 100% Arabica coffee beans from Mexico
               </p>
             </motion.div>
@@ -54,7 +54,7 @@ export default function Hero() {
                 <Link href="/products">
                   <Button
                     variant="outline"
-                    className="h-12  border-gray-900 text-lg text-para sm:w-auto bg-transparent"
+                    className="text-para h-12 border-gray-900 bg-transparent text-lg sm:w-auto"
                   >
                     Shop&nbsp;Coffee
                   </Button>
@@ -63,13 +63,12 @@ export default function Hero() {
             </motion.div>
           </div>
           {/* IMAGE SIDE */}
-              <motion.div
-              initial={{ opacity: 0, x: 150 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-          <div className="flex w-full items-center justify-center sm:pt-0 sm:mt-0">
-        
+          <motion.div
+            initial={{ opacity: 0, x: 150 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="flex w-full items-center justify-center sm:mt-0 sm:pt-0">
               <Image
                 src="https://i.ibb.co/1YGJRHhk/hero1.png"
                 alt="Hero image"
@@ -77,11 +76,10 @@ export default function Hero() {
                 height={700}
                 // priority
                 // sizes="50vw, 100vw"
-                className="sm:max-w-full sm:px-6 w-auto h-auto md:w-[700px]"
+                className="h-auto w-auto sm:max-w-full sm:px-6 md:w-[700px]"
               />
-          </div>
-                      </motion.div>
-
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

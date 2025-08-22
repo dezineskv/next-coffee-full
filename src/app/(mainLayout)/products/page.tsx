@@ -1,7 +1,7 @@
 // 'use server'
 
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -9,11 +9,11 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import "../../globals.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+} from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import '../../globals.css';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -21,18 +21,16 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Product from "../../../models/Product";
-import { getAllProducts, getProductById } from "@/app/actions/product";
-import Image from "next/image";
+} from '@/components/ui/breadcrumb';
+import Product from '../../../models/Product';
+import { getAllProducts, getProductById } from '@/app/actions/product';
+import Image from 'next/image';
 
 export default async function Products() {
   try {
     const products = await Product.find();
     if (products.length === 0) {
-      return (
-        <h1 className="text-red-400 font-bold text-xl">You have no products</h1>
-      );
+      return <h1 className="text-xl font-bold text-red-400">You have no products</h1>;
     } else {
       return (
         <>
@@ -54,29 +52,27 @@ export default async function Products() {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="w-screen border-b-2 border-gray-900 my-5">
-            <div className="my-container flex flex-col gap-6 justify-center py-12">
-              <h1 className="text-4xl text-center font-bold">
-                Kimbotic Coffee Products
-              </h1>
-              <p className="mx-auto text-gray-900 text-center max-w-2xl">
+          <div className="my-5 w-screen border-b-2 border-gray-900">
+            <div className="my-container flex flex-col justify-center gap-6 py-12">
+              <h1 className="text-center text-4xl font-bold">Kimbotic Coffee Products</h1>
+              <p className="mx-auto max-w-2xl text-center text-gray-900">
                 Our roaster uses the best coffee beans!
               </p>
               {/* start cards */}
-              <div className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap py-10 ">
+              <div className="flex flex-col flex-wrap items-center justify-center gap-4 py-10 md:flex-row">
                 {/* map through data */}
                 {/* out-of-stock condition */}
                 {products.map((product: any) => (
                   <div key={product._id}>
-                    {product.in_stock == "no" ? (
-                      <Card className="w-[300px] h-[480px] rounded-lg shadow-lg">
+                    {product.in_stock == 'no' ? (
+                      <Card className="h-[480px] w-[300px] rounded-lg shadow-lg">
                         <CardHeader className="max-h-[60px]">
                           <CardTitle className="text-sm">
                             <div className="flex flex-row justify-start">
-                              <p className="text-gray-300 text-2xl font-bold text-left pl-4 h-[80px] w-[70%]">
+                              <p className="h-[80px] w-[70%] pl-4 text-left text-2xl font-bold text-gray-300">
                                 {product.title}
                               </p>
-                              <div className="w-[35%] mb-10 mx-5 text-sm text-red-500">
+                              <div className="mx-5 mb-10 w-[35%] text-sm text-red-500">
                                 OUT OF STOCK
                               </div>
                             </div>
@@ -87,7 +83,7 @@ export default async function Products() {
                           <Image
                             src={
                               product?.image_url ||
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
                             }
                             alt="product"
                             width={225}
@@ -95,12 +91,12 @@ export default async function Products() {
                             className="mx-auto opacity-[.5]"
                           />
                         </CardContent>
-                        <CardFooter className="flex flex-col text-center w-full mb-0 pb-0 ">
-                          <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
+                        <CardFooter className="mb-0 flex w-full flex-col pb-0 text-center">
+                          <p className="mb-8 line-clamp-4 max-w-[225px] px-1 text-left">
                             {product?.description}
                           </p>
                           <Link href={`/edit/${product?._id}`}>
-                            <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
+                            <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                               Details
                             </Button>
                           </Link>
@@ -108,21 +104,19 @@ export default async function Products() {
                       </Card>
                     ) : (
                       // in stock products
-                      <Card className="w-[300px] h-[480px] rounded-lg shadow-lg">
+                      <Card className="h-[480px] w-[300px] rounded-lg shadow-lg">
                         <CardHeader className="max-h-[60px]">
                           <CardTitle className="text-sm">
-                            <div className="flex flex-row justify-end items-center">
-                              {product?.sale == "yes" && (
-                                <div className="w-[70px] mr-2">
-                                  <span className="bg-amber-400 text-white p-1">
-                                    ON SALE
-                                  </span>
+                            <div className="flex flex-row items-center justify-end">
+                              {product?.sale == 'yes' && (
+                                <div className="mr-2 w-[70px]">
+                                  <span className="bg-amber-400 p-1 text-white">ON SALE</span>
                                 </div>
                               )}
                             </div>
                           </CardTitle>
                           <CardDescription>
-                            <p className="text-foreground text-2xl font-bold text-left max-w-[170px] px-4">
+                            <p className="text-foreground max-w-[170px] px-4 text-left text-2xl font-bold">
                               {product?.title}
                             </p>
                           </CardDescription>
@@ -131,20 +125,20 @@ export default async function Products() {
                           <Image
                             src={
                               product?.image_url ||
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
                             }
                             alt="product"
                             width={220}
                             height={145}
-                            className="h-[145px] mx-auto overflow-hidden"
+                            className="mx-auto h-[145px] overflow-hidden"
                           />
                         </CardContent>
-                        <CardFooter className="flex flex-col text-center w-full mb-0 pb-0 ">
-                          <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
+                        <CardFooter className="mb-0 flex w-full flex-col pb-0 text-center">
+                          <p className="mb-8 line-clamp-4 max-w-[225px] px-1 text-left">
                             {product?.description}
                           </p>
                           <Link href={`/products/${product._id}`}>
-                            <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
+                            <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                               Details
                             </Button>
                           </Link>

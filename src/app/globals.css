@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -48,7 +48,7 @@
   --background: oklch(100% 0.00011 271.152);
   --secondary: oklch(0.987 0.026 102.212);
   --foreground: oklch(0.145 0 0);
-    --para: oklch(0.0507 0.00011 360);
+  --para: oklch(0.0507 0.00011 360);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -124,7 +124,7 @@
     @apply bg-background text-foreground w-screen;
   }
   .my-container {
-    @apply w-full md:w-7xl lg:w-7xl mx-auto px-3 md:px-0 py-4 md:py-12;
+    @apply mx-auto w-full px-3 py-4 md:w-7xl md:px-0 md:py-12 lg:w-7xl;
   }
 }
 /* remove button style from navigation menu*/
@@ -138,4 +138,13 @@ body {
   }
   /* overflow-x: hidden; */
   /* overflow-y: hidden; */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

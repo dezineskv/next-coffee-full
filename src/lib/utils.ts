@@ -1,10 +1,10 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-import mongoose from "mongoose";
-import { NextResponse } from "next/server";
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import mongoose from 'mongoose';
+import { NextResponse } from 'next/server';
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function stringToObjectId(id: string): mongoose.Types.ObjectId | null {
@@ -15,17 +15,14 @@ export function stringToObjectId(id: string): mongoose.Types.ObjectId | null {
   }
 }
 // add errors
-export function createErrorResponse(
-  message: string,
-  statusCode: number
-): NextResponse {
+export function createErrorResponse(message: string, statusCode: number): NextResponse {
   const errorResponse = {
-    status: statusCode >= 500 ? "error" : "fail",
+    status: statusCode >= 500 ? 'error' : 'fail',
     message,
   };
 
   return new NextResponse(JSON.stringify(errorResponse), {
     status: statusCode,
-    headers: { "Content-Type": "application/json" },
+    headers: { 'Content-Type': 'application/json' },
   });
 }

@@ -1,8 +1,8 @@
-import { getProductById, updateProduct } from "@/app/actions/product";
-import { revalidatePath } from "next/cache";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Header from "@/app/components/Header";
+import { getProductById, updateProduct } from '@/app/actions/product';
+import { revalidatePath } from 'next/cache';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import Header from '@/app/components/Header';
 import {
   Table,
   TableBody,
@@ -12,14 +12,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 // import Product from "@/app/models/Product";
 
-export default async function ProductPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default async function ProductPage({ params }: { params: { id: string } }) {
   const product = await getProductById(params.id);
 
   if (!product) {
@@ -27,18 +23,18 @@ export default async function ProductPage({
   }
   // handle form
   async function handleUpdate(formData: FormData) {
-    "use server";
+    'use server';
 
-    const title = formData.get("title") as string;
+    const title = formData.get('title') as string;
     // const price = parseFloat(formData.get("price") as string);
-    const description = formData.get("description") as string;
-    const image_url = formData.get("image_url") as string;
-    const price = formData.get("price") as string;
-    const roast_level = formData.get("roast_level") as string;
-    const sale = formData.get("sale") as string;
-    const origin = formData.get("origin") as string;
-    const in_stock = formData.get("in_Stock") as string;
-    const weight_oz = formData.get("weight_oz") as string;
+    const description = formData.get('description') as string;
+    const image_url = formData.get('image_url') as string;
+    const price = formData.get('price') as string;
+    const roast_level = formData.get('roast_level') as string;
+    const sale = formData.get('sale') as string;
+    const origin = formData.get('origin') as string;
+    const in_stock = formData.get('in_stock') as string;
+    const weight_oz = formData.get('weight_oz') as string;
 
     await updateProduct(params.id, {
       title,
@@ -60,179 +56,155 @@ export default async function ProductPage({
   return (
     <>
       <Header />
-      <div className="card card-side bg-slate-200 px-4 py-4 mx-auto text-center h-full">
-        <h1 className="text-4xl text-center font-bold mt-2 mb-6">Admin</h1>
+      <div className="card card-side mx-auto h-full bg-slate-200 px-4 py-4 text-center">
+        <h1 className="mt-2 mb-6 text-center text-4xl font-bold">Admin</h1>
+        <p className="text-center mb-10">Product Details</p>
 
-        <div className="flex flex-col md:flex-row justify-center gap-3">
+        <div className="flex flex-col justify-center gap-3 md:flex-row text-center mx-auto w-2xl">
           <div className="flex flex-col">
             <Image
               src={
                 product?.image_url ||
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
               }
               alt="Product Image"
-              width={380}
-              height={280}
+              width={280}
+              height={180}
               priority
             />
             {/* <div className="text-left">Small | Medium | Large</div> */}
           </div>
-          <div className="card-body my-10 w-[300px] text-left ml-6 mt-0">
+          <div className="card-body my-10 mt-0 ml-6 max-w-[400px] text-left">
             <p>
-              <span className="font-bold text-foreground">
-                Product Title:&nbsp;
-              </span>
-              <div className="bg-blue-400">{product?.title}</div>
+              <span className="font-bold text-blue-500">Product Title:&nbsp;</span>
+              <div className="">{product?.title}</div>
             </p>
             <p>
-              <span className="font-bold text-foreground">
-                Description:&nbsp;
-              </span>
-              <div className="bg-blue-400">{product?.description}</div>
+              <span className="font-bold text-blue-500">Description:&nbsp;</span>
+              <div className="">{product?.description}</div>
             </p>
             <p>
-              <span className="font-bold text-foreground">Origin: </span>
+              <span className="font-bold text-blue-500">Origin: </span>
               {product?.origin}
             </p>
             <p>
-              <span className="font-bold text-foreground">Roast Level: </span>
+              <span className="font-bold text-blue-500">Roast Level: </span>
               {product?.roast_level}
             </p>
             <p>
-              <span className="font-bold text-foreground">Weight: </span>
+              <span className="font-bold text-blue-500">Weight: </span>
               {product?.weight_oz} oz.
-            </p>           
-              <p>
-              <span className="font-bold text-foreground">Price: </span>
+            </p>
+            <p>
+              <span className="font-bold text-blue-500">Price: </span>
               {product?.price}
-            </p><p>
-              <span className="font-bold text-foreground">In Stock: </span>
+            </p>
+            <p>
+              <span className="font-bold text-blue-500">In Stock: </span>
               {product?.in_stock}
             </p>
             <p>
-              <span className="font-bold text-foreground">Product ID: </span>
+              <span className="text-gray font-bold">Product ID: </span>
               {product?._id}
             </p>
           </div>
         </div>
         {/* form to update products in table format */}
         <form action={handleUpdate} className="mt-6">
-          <h3 className="text-xl mb-6">Update Product Details</h3>
-          <Table className="bg-background p-3 rounded-lg shadow-lg">
-            <TableCaption className="text-foreground font-xs">
+          <h3 className="mb-6 text-xl">Update Product Details</h3>
+          <Table className="bg-background rounded-lg p-3 shadow-lg md:w-7xl">
+            <TableCaption className="font-xs text-blue-500">
               {/* *Updating non-default values */}
             </TableCaption>
             <TableHeader>
-              <TableRow>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  PRODUCT title
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Image
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Description
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Price
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Origin
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Roast Level
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Weight
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  Sale
-                </TableHead>
-                <TableHead className="text-lg mt-4 font-semibold">
-                  In Stock
-                </TableHead>
-                <TableHead className="mt-4 font-semibold text-lg">
-                  UPDATE
-                </TableHead>
+              <TableRow className="text-md font-bold">
+                <TableHead className="text-md mt-4 font-bold">PRODUCT Title</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Image</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Description</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Price</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Origin</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Roast Level</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Weight</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Sale</TableHead>
+                <TableHead className="text-md mt-4 font-bold">In Stock</TableHead>
+                <TableHead className="text-md mt-4 font-bold">UPDATE</TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody className="py-8 text-para text-left">
+            <TableBody className="text-para py-8 text-left">
               <TableRow key={product?.id}>
-                <TableCell className="font-bold ">
+                <TableCell className="font-semibold">
                   <input
                     name="title"
                     defaultValue={product?.title}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-30 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold ">
+                <TableCell className="font-semibold">
                   <input
                     name="image_url"
                     defaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-30 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="description"
                     type="string"
                     defaultValue={product?.description}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-30 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                  <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="price"
                     type="string"
                     defaultValue={product?.price}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="origin"
                     type="string"
                     defaultValue={product?.origin}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-20 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="roast_level"
                     type="string"
                     defaultValue={product?.roast_level}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="weight_oz"
                     type="string"
                     defaultValue={product?.weight_oz}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="sale"
                     type="string"
                     defaultValue={product?.sale}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-                <TableCell className="font-bold">
+                <TableCell className="font-semibold">
                   <input
                     name="in_stock"
                     type="string"
                     defaultValue={product?.in_stock}
-                    className="border-1 border-gray"
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
 
-                <TableCell className="font-bold">
-                  <Button className="border rounded px-2 bg-blue-400">
-                    UPDATE PRODUCT
-                  </Button>
+                <TableCell className="font-semibold">
+                  <Button className="rounded border  px-2">UPDATE PRODUCT</Button>
                 </TableCell>
               </TableRow>
             </TableBody>

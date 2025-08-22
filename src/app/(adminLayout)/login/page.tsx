@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardAction,
@@ -7,75 +7,69 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import Image from "next/image";
-import Link from "next/link";
+} from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Login() {
   return (
-          <div className="w-full bg-slate-200 text-center mx-auto min-h-screen flex flex-col items-center justify-center">
-            <Card className="w-full max-w-sm">
-                 <Link href="/">
-              <Image
-                src="https://i.ibb.co/23GsvNz7/logo2.png"
-                alt="Logo"
-                width={300}
-                height={180}
-                className="w-auto max-w-[250px] mx-auto pb-4 border-0"
-                priority={true}
-              />
-            </Link>
-            <CardHeader>
-                <CardTitle>Login to your account</CardTitle>
-                <CardDescription>
-                Enter email below to login
-                </CardDescription>
-                {/* <CardAction>
+    <div className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
+      <Card className="w-full max-w-sm">
+        <Link href="/">
+          <Image
+            src="https://i.ibb.co/23GsvNz7/logo2.png"
+            alt="Logo"
+            width={300}
+            height={180}
+            className="mx-auto w-auto max-w-[250px] border-0 pb-4"
+            priority={true}
+          />
+        </Link>
+        <CardHeader>
+          <CardTitle>Login to your account</CardTitle>
+          <CardDescription>Enter email below to login</CardDescription>
+          {/* <CardAction>
                 <Button variant="link">Sign Up</Button>
                 </CardAction> */}
-            </CardHeader>
-            <CardContent>
-                <form>
-                <div className="flex flex-col gap-6">
-                    <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input
-                        id="email"
-                        type="email"
-                        placeholder="m@example.com"
-                        required
-                    />
-                    </div>
-                    <div className="grid gap-2">
-                    <div className="flex items-center">
-                        <Label htmlFor="password">Password</Label>
-                        {/* <a
+        </CardHeader>
+        <CardContent>
+          <form>
+            <div className="flex flex-col gap-6">
+              <div className="grid gap-2">
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="email" placeholder="m@example.com" required />
+              </div>
+              <div className="grid gap-2">
+                <div className="flex items-center">
+                  <Label htmlFor="password">Password</Label>
+                  {/* <a
                         href="#"
                         className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                         >
                         Forgot your password?
                         </a> */}
-                    </div>
-                    <Input id="password" type="password" required />
-                    </div>
                 </div>
-                </form>
-            </CardContent>
-            <CardFooter className="flex-col gap-2">
-                <Button type="submit" className="w-full">
-                Login
-                </Button>
-                  <div className="mt-5">
-                                    Need an account?<br/>
-                                <Link href="/sign-up">Sign up here</Link>
-                                </div>
-                {/* <Button variant="outline" className="w-full">
+                <Input id="password" type="password" required />
+              </div>
+            </div>
+          </form>
+        </CardContent>
+        <CardFooter className="flex-col gap-2">
+          <Button type="submit" className="w-full">
+            Login
+          </Button>
+          <div className="mt-5">
+            Need an account?
+            <br />
+            <Link href="/sign-up">Sign up here</Link>
+          </div>
+          {/* <Button variant="outline" className="w-full">
                 Login with Google
                 </Button> */}
-            </CardFooter>
-            </Card>
-        </div>
-  )
+        </CardFooter>
+      </Card>
+    </div>
+  );
 }

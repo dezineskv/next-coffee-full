@@ -1,7 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import "../globals.css";
+import React from 'react';
+import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import '../globals.css';
 import {
   Table,
   TableBody,
@@ -11,90 +11,78 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 
 function Menu() {
   // list of items to map through
   const products = [
     {
-      product: "Drip Coffee",
-      sizes: "S, M, L, XL",
-      price: "$5.00",
-      options: "Customizable",
+      product: 'Drip Coffee',
+      sizes: 'S, M, L, XL',
+      price: '$5.00',
+      options: 'Customizable',
     },
     {
-      product: "Iced Coffee",
-      sizes: "S, M, L, XL",
-      price: "$6.00",
-      options: "Customizable",
+      product: 'Iced Coffee',
+      sizes: 'S, M, L, XL',
+      price: '$6.00',
+      options: 'Customizable',
     },
     {
-      product: "Espresso",
-      sizes: "Single, Double, Triple",
-      price: "$6.00",
-      options: "Customizable",
+      product: 'Espresso',
+      sizes: 'Single, Double, Triple',
+      price: '$6.00',
+      options: 'Customizable',
     },
     {
-      product: "Cappuccino",
-      sizes: "Single, Double",
-      price: "$4.00",
-      options: "Customizable",
+      product: 'Cappuccino',
+      sizes: 'Single, Double',
+      price: '$4.00',
+      options: 'Customizable',
     },
     {
-      product: "Donuts",
-      sizes: "N/A",
-      price: "$2.00",
-      options: "As-is",
+      product: 'Donuts',
+      sizes: 'N/A',
+      price: '$2.00',
+      options: 'As-is',
     },
   ];
 
   return (
     <>
       <div className="bg-background">
-        <div className="my-container flex flex-col md:flex-row sm:px-6 pb-4">
-          <div className="sm:w-full sm:min-w[300px] md:w-1/2 md:max-w-[400px] md:ml-6 md:mr-10 md:mb-6">
+        <div className="my-container flex flex-col pb-4 sm:px-6 md:flex-row">
+          <div className="sm:min-w[300px] sm:w-full md:mr-10 md:mb-6 md:ml-6 md:w-1/2 md:max-w-[400px]">
             <Image
               src="https://i.ibb.co/kgX1NFZW/alowishus-coffee.png"
               alt="coffee cups image"
               width={400}
               height={400}
-              className="min-w-80 z-30"
+              className="z-30 min-w-80"
             />
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:max-w-[600px]">
-            <h3 className="font-bold text-4xl pb-3 text-center">
-              This Season's Specials
-            </h3>
-            <p className="text-center pb-6">
-              Don't miss out on these seasonal specials
-            </p>
-            <Table className="bg-background p-3 rounded-lg shadow-lg">
-              <TableCaption className="text-gray-700 font-xs">
+            <h3 className="pb-3 text-center text-4xl font-bold">This Season's Specials</h3>
+            <p className="pb-6 text-center">Don't miss out on these seasonal specials</p>
+            <Table className="bg-background rounded-lg p-3 shadow-lg">
+              <TableCaption className="font-xs text-gray-700">
                 *Prices vary by by location
               </TableCaption>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="text-lg px-12 mt-4 font-semibold">
-                    PRODUCT
-                  </TableHead>
-                  <TableHead className="text-lg px-12 mt-4 font-semibold">
-                    SIZES
-                  </TableHead>
-                  <TableHead className="px-12 mt-4 font-semibold text-lg text-right">
+                  <TableHead className="mt-4 px-12 text-lg font-semibold">PRODUCT</TableHead>
+                  <TableHead className="mt-4 px-12 text-lg font-semibold">SIZES</TableHead>
+                  <TableHead className="mt-4 px-12 text-right text-lg font-semibold">
                     PRICE*
                   </TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody className="py-8 text-para">
+              <TableBody className="text-para py-8">
                 {products.map((product) => (
                   <TableRow key={product.product}>
-                    <TableCell className="font-bold px-12">
-                      {product.product}
-                    </TableCell>
-                    <TableCell className="font-medium px-12">
-                      {product.sizes}
-                    </TableCell>
-                    <TableCell className="font-bold text-right pl-11 pr-15">
+                    <TableCell className="px-12 font-bold">{product.product}</TableCell>
+                    <TableCell className="px-12 font-medium">{product.sizes}</TableCell>
+                    <TableCell className="pr-15 pl-11 text-right font-bold">
                       {product.price}
                     </TableCell>
                   </TableRow>
