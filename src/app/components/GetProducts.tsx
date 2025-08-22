@@ -96,7 +96,7 @@ export default async function GetProducts() {
                       name="product"
                       defaultValue={product._id.toString()}
                     /> */}
-                    <Link href="/edit/${id}">
+                    <Link href="/products/${id}">
                     <Button className="border rounded px-2 bg-blue-400 ml-5">
                      Edit
                     </Button>
