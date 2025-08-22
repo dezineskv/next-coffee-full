@@ -14,9 +14,12 @@ import {
   TableRow,
 } from '@/components/ui/table';
 // import Product from "@/app/models/Product";
+import { FC } from 'react';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  const product = await getProductById(params.id);
+export default async function ProductPage({ params }) {
+  const { id } = params;
+
+  const product = await getProductById(id);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -58,9 +61,9 @@ export default async function ProductPage({ params }: { params: { id: string } }
       <Header />
       <div className="card card-side mx-auto h-full bg-slate-200 px-4 py-4 text-center">
         <h1 className="mt-2 mb-6 text-center text-4xl font-bold">Admin</h1>
-        <p className="text-center mb-10">Product Details</p>
+        <p className="mb-10 text-center">Product Details</p>
 
-        <div className="flex flex-col justify-center gap-3 md:flex-row text-center mx-auto w-2xl">
+        <div className="mx-auto flex w-2xl flex-col justify-center gap-3 text-center md:flex-row">
           <div className="flex flex-col">
             <Image
               src={
@@ -204,7 +207,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
                 </TableCell>
 
                 <TableCell className="font-semibold">
-                  <Button className="rounded border  px-2">UPDATE PRODUCT</Button>
+                  <Button className="rounded border px-2">UPDATE PRODUCT</Button>
                 </TableCell>
               </TableRow>
             </TableBody>
