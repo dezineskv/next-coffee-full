@@ -28,7 +28,7 @@ const EditProducts = ({ id }: { id: string }) => {
       const res = await fetch(`/api/product/${id}`); // You can replace this with a server action too
       const data = await res.json();
       if (data.success) {
-        console.log(data.data);
+        console.log(data);
         setProduct(data.data);
       }
     };

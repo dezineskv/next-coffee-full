@@ -23,7 +23,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Product from "../../../models/Product";
-import { getAllProducts } from "@/lib/actions";
+import { getAllProducts, getProductById } from "@/app/actions/product";
 import Image from "next/image";
 
 export default async function Products() {
