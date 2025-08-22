@@ -15,9 +15,12 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
+import { FC } from 'react';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  const product = await getProductById(params.id);
+export default async function ProductPage({ params }) {
+  const { id } = params;
+
+  const product = await getProductById(id);
 
   if (!product) {
     return <div>Product not found</div>;
