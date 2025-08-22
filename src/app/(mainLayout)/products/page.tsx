@@ -65,7 +65,7 @@ export default async function Products() {
               {/* start cards */}
               <div className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap py-10 ">
                 {/* map through data */}
-{/* out-of-stock condition */}
+                {/* out-of-stock condition */}
                 {products.map((product: any) => (
                   <div key={product._id}>
                     {product.in_stock == "no" ? (
@@ -96,7 +96,7 @@ export default async function Products() {
                           <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
                             {product?.description}
                           </p>
-                          <Link href={`/product/${product?._id}`}>
+                          <Link href={`/edit/${product?._id}`}>
                             <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
                               Details
                             </Button>

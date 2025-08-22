@@ -2,7 +2,7 @@
 import Product from "../models/Product";
 import { Document, Model, Types } from "mongoose";
 import { revalidatePath } from "next/cache";
-import { connectToMongoDB } from "../lib/db";
+import connectToMongoDB from "../lib/db";
 import { stringToObjectId } from "./utils";
 
 //create new products

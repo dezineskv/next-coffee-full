@@ -5,14 +5,14 @@ import mongoose, { Document, Schema, Model, connect } from "mongoose";
 export type IProduct = {
   title: string;
   description: string;
-  image_url: string;
-  origin: string;
-  roast_level: string;
-  price: string;
-  weight_oz: number;
-  in_stock: string;
-  decaf: boolean;
-  sale: string;
+  // image_url: string;
+  // origin: string;
+  // roast_level: string;
+  // price: string;
+  // weight_oz: number;
+  // in_stock: string;
+  // decaf: boolean;
+  // sale: string;
 };
 
 export interface IProductDocument extends IProduct, Document {
@@ -27,12 +27,12 @@ const ProductSchema = new mongoose.Schema(
     },
     description: { type: String },
     image_url: { type: String },
-    origin: { type: String },
-    roast_level: { type: String },
-    price: { type: String },
-    weight_oz: { type: String },
-    in_stock: { type: String },
-    sale: { type: String },
+    // origin: { type: String },
+    // roast_level: { type: String },
+    // price: { type: String },
+    // weight_oz: { type: String },
+    // in_stock: { type: String },
+    // sale: { type: String },
   },
   { timestamps: true } // createdAt, updatedAt
 );
