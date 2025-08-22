@@ -7,16 +7,6 @@ import Footer from "@/app/components/Footer";
 import DetailAccordion from "@/app/components/DetailAccordion";
 // import RatingProduct from "@/app/components/RatingProduct";
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableFooter,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,

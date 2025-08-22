@@ -11,19 +11,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import "../../globals.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import Product from "../../../models/Product";
-import { getAllProducts, getProductById } from "@/app/actions/product";
+import "@/app/globals.css";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
+
+import Product from "@/models/Product";
+import { getAllProducts, deleteProduct, getProductById } from "@/app/actions/product";
 import Image from "next/image";
 
 export default async function Products() {
@@ -37,38 +30,18 @@ export default async function Products() {
       return (
         <>
           <Header />
-          <div className="my-container md:pl-24">
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link href="/">Home</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link href="/products">Products</Link>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
-          </div>
-          <div className="w-screen border-b-2 border-gray-900 my-5">
+
+          <div className="w-screen bg-slate-200 my-5">
             <div className="my-container flex flex-col gap-6 justify-center py-12">
-              <h1 className="text-4xl text-center font-bold">
-                Kimbotic Coffee Products
-              </h1>
-              <p className="mx-auto text-gray-900 text-center max-w-2xl">
-                Our roaster uses the best coffee beans!
-              </p>
+              <h1 className="text-4xl text-center font-bold">Admin</h1>
+
               {/* start cards */}
               <div className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap py-10 ">
                 {/* map through data */}
                 {/* out-of-stock condition */}
                 {products.map((product: any) => (
                   <div key={product._id}>
-                    {product.in_stock == "no" ? (
+                    {product?.in_stock == "no" ? (
                       <Card className="w-[300px] h-[380px]rounded-lg shadow-lg">
                         <CardHeader className="max-h-[30px]">
                           <CardTitle className="text-sm">
@@ -85,7 +58,10 @@ export default async function Products() {
                         </CardHeader>
                         <CardContent className="mb-0">
                           <Image
-                            src={product.image_url}
+                            src={
+                              (product?.image_url as string) ||
+                              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                            }
                             alt="product"
                             width={225}
                             height={120}
@@ -96,7 +72,10 @@ export default async function Products() {
                           <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
                             {product?.description}
                           </p>
-                          <Link href={`/edit/${product?._id}`}>
+                          <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
+                            {product?.price}
+                          </p>
+                          <Link href={`/admin/products/${product?._id}`}>
                             <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
                               Details
                             </Button>
@@ -109,7 +88,7 @@ export default async function Products() {
                           <CardTitle className="text-sm">
                             <div className="flex flex-row justify-end items-center">
                               {product?.sale == "yes" && (
-                                <div className="w-[90px] mb-10 mr-5">
+                                <div className="w-[70px] mb-10 mr-2">
                                   <span className="bg-amber-400 text-white p-1">
                                     ON SALE
                                   </span>
@@ -136,11 +115,36 @@ export default async function Products() {
                           <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
                             {product?.description}
                           </p>
-                          <Link href={`/products/${product._id}`}>
-                            <Button className="bg-gray-900 text-white py-4 px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-[200px] mx-auto">
-                              Details
-                            </Button>
-                          </Link>
+                          <p className="text-left mb-8 max-w-[225px] px-1 line-clamp-4">
+                            {product?.price}
+                          </p>
+
+                          <div className="flex flex-row gap-4 justify-between">
+                            {/* link to edit form */}
+                            <Link href={`/admin/products/${product._id}`}>
+                              <Button className="border rounded px-2 bg-blue-400 ml-5">
+                                Edit
+                              </Button>
+                            </Link>
+                            {/* delete */}
+                            <form
+                              className="flex justify-end pr-5"
+                              action={async (formData: FormData) => {
+                                "use server";
+                                await deleteProduct(formData);
+                              }}
+                            >
+                              <input
+                                hidden
+                                type="text"
+                                name="id"
+                                defaultValue={product._id.toString()}
+                              />
+                              <Button className="border rounded px-2 bg-red-400">
+                                delete
+                              </Button>
+                            </form>
+                          </div>
                         </CardFooter>
                       </Card>
                     )}

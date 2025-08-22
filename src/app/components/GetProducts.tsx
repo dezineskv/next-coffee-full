@@ -1,5 +1,10 @@
 import Product from "../../models/Product";
-import { deleteProduct, updateProduct } from "@/app/actions/product";
+import {
+  deleteProduct,
+  updateProduct,
+  getAllProducts, 
+  getProductById
+} from "@/app/actions/product";
 import Link from "next/link";
 import {
   Card,
@@ -10,14 +15,21 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import EditProduct from "./EditProduct";
+// import { useState, useEffect } from "react";
+// import EditProduct from "./EditProduct";
 import Image from "next/image";
 
 interface Product {
   _id: string;
   title: string;
   description: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: number;
+  in_stock: string;
+  sale: string;
 }
 
 export default async function GetProducts() {
@@ -43,15 +55,17 @@ export default async function GetProducts() {
                   <div className="flex flex-col gap-2">
                     <CardHeader className="w-full px-4 text-left">
                       <CardTitle className="w-full text-sm">
-                        <h3 className="text-xl text-center">
+                        <h3 className="text-xl text-left">
                           {product.title as string}
                         </h3>
                       </CardTitle>
                     </CardHeader>
-
                     <CardContent className="mb-0">
                       <Image
-                        src={product?.image_url}
+                        src={
+                          product?.image_url as string ||
+                          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                        }
                         alt="product"
                         width={225}
                         height={120}
@@ -59,35 +73,35 @@ export default async function GetProducts() {
                       />
                     </CardContent>
                   </div>
-                  <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    {product.description as string}
+                  <p className="w-full text-left leading-5 px-5 line-clamp-4">
+                    {product?.description as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    In stock: {product.in_stock as string}
+                    In stock: {product?.in_stock as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    On sale: {product.sale as string}
+                    On sale: {product?.sale as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    Roast level: {product.roast_level as string}
+                    Roast level: {product?.roast_level as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
                     Price: {product.price as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    Origin: {product.origin as string}
+                    Origin: {product?.origin as string}
                   </p>
                   <p className="text-left leading-5 px-5 w-[225px] line-clamp-4">
-                    Weight: {product.weight_oz as string} oz.
+                    Weight: {product?.weight_oz as string} oz.
                   </p>
                   <div className="flex flex-row justify-between">
-                 
+                    {/* link to edit form */}
                     <Link href={`/admin/products/${product._id}`}>
                       <Button className="border rounded px-2 bg-blue-400 ml-5">
                         Edit
                       </Button>
                     </Link>
-                    {/* </form> */}
+                    {/* delete form */}
                     <form
                       className="flex justify-end pr-5"
                       action={async (formData: FormData) => {
@@ -101,7 +115,6 @@ export default async function GetProducts() {
                         name="id"
                         defaultValue={product._id.toString()}
                       />
-
                       <Button className="border rounded px-2 bg-red-400">
                         delete
                       </Button>

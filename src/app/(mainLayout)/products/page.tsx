@@ -85,7 +85,10 @@ export default async function Products() {
                         </CardHeader>
                         <CardContent className="mb-0">
                           <Image
-                            src={product.image_url}
+                            src={
+                              product?.image_url ||
+                              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                            }
                             alt="product"
                             width={225}
                             height={120}
@@ -103,14 +106,14 @@ export default async function Products() {
                           </Link>
                         </CardFooter>
                       </Card>
-                      // in stock products
                     ) : (
+                      // in stock products
                       <Card className="w-[300px] h-[480px] rounded-lg shadow-lg">
                         <CardHeader className="max-h-[60px]">
                           <CardTitle className="text-sm">
                             <div className="flex flex-row justify-end items-center">
                               {product?.sale == "yes" && (
-                                <div className="w-[90px] mb-10 mr-5">
+                                <div className="w-[70px] mr-2">
                                   <span className="bg-amber-400 text-white p-1">
                                     ON SALE
                                   </span>
@@ -119,14 +122,17 @@ export default async function Products() {
                             </div>
                           </CardTitle>
                           <CardDescription>
-                            <p className="text-foreground text-2xl font-bold text-left max-w-[215px] px-4">
+                            <p className="text-foreground text-2xl font-bold text-left max-w-[170px] px-4">
                               {product?.title}
                             </p>
                           </CardDescription>
                         </CardHeader>
                         <CardContent className="mb-0">
                           <Image
-                            src={product?.image_url}
+                            src={
+                              product?.image_url ||
+                              "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                            }
                             alt="product"
                             width={220}
                             height={145}

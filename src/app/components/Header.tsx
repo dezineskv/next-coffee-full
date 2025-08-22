@@ -255,56 +255,54 @@ export default function Header() {
                     <div className="pl-2 pb-1 flex flex-row ">
                       <button onClick={incrementQuantity}>
                         <div className="pl-2 pb-1 flex flex-row justify-between">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="lucide lucide-plus-icon lucide-plus"
-                        >
-                          <path d="M5 12h14" />
-                          <path d="M12 5v14" />
-                        </svg>
-                        <span className="font-bold text-black pl-2">1</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            className="lucide lucide-plus-icon lucide-plus"
+                          >
+                            <path d="M5 12h14" />
+                            <path d="M12 5v14" />
+                          </svg>
+                          <span className="font-bold text-black pl-2">1</span>
                         </div>
                       </button>
-                
                     </div>
                     <div className="pl-2 pb-1 flex flex-row justify-between">
                       <button onClick={decrementQuantity}>
                         <div className="pl-2 pb-1 flex flex-row justify-between">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          className="lucide lucide-minus-icon lucide-minus"
-                        >
-                          <path d="M5 12h14" />
-                        </svg>
-                        <span className="font-bold text-black pl-2">1</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            className="lucide lucide-minus-icon lucide-minus"
+                          >
+                            <path d="M5 12h14" />
+                          </svg>
+                          <span className="font-bold text-black pl-2">1</span>
                         </div>
                       </button>
                     </div>
                   </div>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                   <div className="mx-auto border-1-top border-gray">
-                    <Link href ="/login">               
-                  Log In
-                  </Link>
+                  <div className="mx-auto border-1-top border-gray">
+                    <Link href="/login">Log In</Link>&nbsp;
+                    <Link href="/admin/products">Admin</Link>
                   </div>
-                  </DropdownMenuItem>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </span>
@@ -336,7 +334,7 @@ export default function Header() {
           </Button>
         </div>
 
-    {/* Mobile Navigation */}
+        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t pt-4 mt-4">
             <div className="flex flex-col space-y-4 space-x-3">
@@ -404,7 +402,7 @@ export default function Header() {
                 </details>
               </div>
 
-        {/* Mobile Actions */}
+              {/* Mobile Actions */}
               <div className="flex flex-col space-y-4 pt-4 border-t ">
                 <Link
                   href="/login"
