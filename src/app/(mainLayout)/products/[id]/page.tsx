@@ -17,15 +17,8 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-type ProductPageProps = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { id } = params;
-  const product = await getProductById(id);
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await getProductById(params.id);
 
   if (!product) {
     return <div>Product not found</div>;
@@ -37,7 +30,25 @@ export default async function ProductPage({ params }: ProductPageProps) {
     const title = formData.get('title') as string;
     // const price = parseFloat(formData.get("price") as string);
     const description = formData.get('description') as string;
-    await updateProduct(params.id, { title, description });
+    const image_url = formData.get('image_url') as string;
+    const price = formData.get('price') as string;
+    const roast_level = formData.get('roast_level') as string;
+    const sale = formData.get('sale') as string;
+    const origin = formData.get('origin') as string;
+    const in_stock = formData.get('in_stock') as string;
+    const weight_oz = formData.get('weight_oz') as string;
+
+    await updateProduct(params.id, {
+      title,
+      description,
+      image_url,
+      price,
+      roast_level,
+      origin,
+      weight_oz,
+      sale,
+      in_stock,
+    });
     revalidatePath(`/products/${params.id}`);
   }
 
