@@ -15,7 +15,7 @@ export default function Home() {
             className="mt-10 w-25 rounded border border-solid border-black p-2 text-center"
             onClick={() => {
               signOut({ redirect: false }).then(() => {
-                router.push('/admin/products');
+                router.push('/admin');
               });
             }}
           >
@@ -39,7 +39,7 @@ export default function Home() {
     }
   };
   return (
-    <main className="flex w-full flex-col h-full bg-slate-200 justify-start text-center">
+    <main className="flex h-full w-full flex-col justify-start bg-slate-200 text-center">
       <h1 className="mt-10 text-xl">Admin Home</h1>
       {showSession()}
     </main>

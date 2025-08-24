@@ -68,7 +68,7 @@ const productsItems = [
   },
   {
     title: 'Product Inventory',
-    href: '/admin/all-products',
+    href: '/login',
     description: 'Login',
   },
 ];
@@ -279,7 +279,7 @@ export default function Header() {
                 <DropdownMenuItem>
                   <div className="border-1-top border-gray mx-auto">
                     <Link href="/login">Log In</Link>&nbsp;
-                    <Link href="/admin/products">Admin</Link>
+                    <Link href="/login">Admin</Link>
                   </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>
