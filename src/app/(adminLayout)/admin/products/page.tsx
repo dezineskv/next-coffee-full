@@ -12,8 +12,6 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import '@/app/globals.css';
-import Header from '@/app/components/Header';
-import Footer from '@/app/components/Footer';
 
 import Product from '@/models/Product';
 import { getAllProducts, deleteProduct, getProductById } from '@/app/actions/product';
@@ -27,7 +25,6 @@ export default async function Products() {
     } else {
       return (
         <>
-          <Header />
           <div className="my-5 w-full bg-slate-200">
             <div className="my-container flex flex-col justify-center gap-6 py-12">
               <h1 className="text-center text-4xl font-bold">Admin</h1>
@@ -109,7 +106,6 @@ export default async function Products() {
               </div>
             </div>
           </div>
-          <Footer />
         </>
       );
     }

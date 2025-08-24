@@ -10,30 +10,37 @@ export default function Home() {
   const showSession = () => {
     if (status === 'authenticated') {
       return (
-        <button
-          className="rounded border border-solid border-black"
-          onClick={() => {
-            signOut({ redirect: false }).then(() => {
-              router.push('/admin');
-            });
-          }}
-        >
-          Sign Out
-        </button>
+        <div className="mx-auto h-screen w-full bg-slate-200 pt-10">
+          <button
+            className="mt-10 w-25 rounded border border-solid border-black p-2 text-center"
+            onClick={() => {
+              signOut({ redirect: false }).then(() => {
+                router.push('/admin/products');
+              });
+            }}
+          >
+            Sign Out
+          </button>
+        </div>
       );
     } else if (status === 'loading') {
       return <span className="mt-7 text-sm text-[#888]">Loading...</span>;
     } else {
       return (
-        <Link href="/login" className="rounded border border-solid border-black">
-          Sign In
-        </Link>
+        <div className="mx-auto h-screen w-full bg-slate-200 pt-10">
+          <Link
+            href="/login"
+            className="mt-10 w-25 rounded border border-solid border-black p-2 text-center"
+          >
+            Sign In
+          </Link>
+        </div>
       );
     }
   };
   return (
-    <main className="flex min-h-screen flex-col justify-center">
-      <h1 className="text-xl">Home</h1>
+    <main className="flex w-full flex-col h-full bg-slate-200 justify-start text-center">
+      <h1 className="mt-10 text-xl">Admin Home</h1>
       {showSession()}
     </main>
   );

@@ -95,7 +95,7 @@ export default async function Products() {
                           <p className="mb-8 line-clamp-4 max-w-[225px] px-1 text-left">
                             {product?.description}
                           </p>
-                          <Link href={`/edit/${product?._id}`}>
+                          <Link href={`/products/${product?._id}`}>
                             <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                               Details
                             </Button>

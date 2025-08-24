@@ -1,5 +1,15 @@
-import { Coffee, Home, Calendar, Edit, ChartArea, Database } from 'lucide-react';
-
+import {
+  Coffee,
+  Home,
+  Calendar,
+  LogIn,
+  ShoppingBasket,
+  Edit,
+  ChartArea,
+  Database,
+} from 'lucide-react';
+// import Image from 'next/image';
+// import Link from 'next/link';
 import {
   Sidebar,
   SidebarContent,
@@ -14,9 +24,14 @@ import {
 // Menu items.
 const items = [
   {
-    title: 'Home',
+    title: 'Admin',
     url: '/admin',
     icon: Home,
+  },
+  {
+    title: 'Login',
+    url: '/login',
+    icon: LogIn,
   },
   {
     title: 'Dashboard',
@@ -38,6 +53,11 @@ const items = [
     url: '/admin/products',
     icon: Database,
   },
+  {
+    title: 'Client Home',
+    url: '/',
+    icon: ShoppingBasket,
+  },
 ];
 
 export function AppSidebar() {
@@ -48,6 +68,15 @@ export function AppSidebar() {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
+              <>
+                <a href="/">
+                  <img
+                    src="https://i.ibb.co/XrBqjX0k/logo3-d.png"
+                    alt="Logo"
+                    className="px-auto mx-auto w-auto max-w-[220px] border-0 pb-4"
+                  />
+                </a>
+              </>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>

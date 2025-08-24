@@ -20,6 +20,7 @@ export const getAllProducts = async (formData: FormData) => {
     return { message: 'error getting products' };
   }
 };
+
 // get single product
 export async function getProductById(id: string) {
   await connectToMongoDB();
@@ -35,6 +36,7 @@ export async function getProductById(id: string) {
 
   return JSON.parse(JSON.stringify(product)); // to make it serializable
 }
+
 // edit single product
 export async function updateProduct(
   id: string,

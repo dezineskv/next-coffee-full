@@ -2,7 +2,6 @@ import { getProductById, updateProduct } from '@/app/actions/product';
 import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import Header from '@/app/components/Header';
 import {
   Table,
   TableBody,
@@ -56,7 +55,6 @@ export default async function ProductPage({ params }) {
 
   return (
     <>
-      <Header />
       <div className="card card-side mx-auto h-full bg-slate-200 px-4 py-4 text-center">
         <h1 className="mt-2 mb-6 text-center text-4xl font-bold">Admin</h1>
         <p className="mb-10 text-center">Product Details</p>
