@@ -17,19 +17,8 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-type ProductPageProps = {
-  params: {
-    id: string;
-  };
-};
-
-const ProductPage = ({ params }: ProductPageProps) => {
-  return <ProductPageContent id={params.id} />;
-};
-
-export default ProductPage;
-
-const ProductPageContent = async ({ id }: { id: string }) => {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   const product = await getProductById(id);
 
   if (!product) {
@@ -136,4 +125,4 @@ const ProductPageContent = async ({ id }: { id: string }) => {
       <Footer />
     </>
   );
-};
+}
