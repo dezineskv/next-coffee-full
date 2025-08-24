@@ -18,15 +18,14 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
-  const product = await getProductById(params.id);
+  const data = await params;
+  const product = await getProductById(data.id);
 
   if (!product) {
     return <div>Product not found</div>;
   }
   // handle form
   async function handleUpdate(formData: FormData) {
-    'use server';
-
     const title = formData.get('title') as string;
     // const price = parseFloat(formData.get("price") as string);
     const description = formData.get('description') as string;
@@ -38,7 +37,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
     const in_stock = formData.get('in_stock') as string;
     const weight_oz = formData.get('weight_oz') as string;
 
-    await updateProduct(params.id, {
+    await updateProduct(data.id, {
       title,
       description,
       image_url,
@@ -49,7 +48,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
       sale,
       in_stock,
     });
-    revalidatePath(`/products/${params.id}`);
+    revalidatePath(`/products/${data.id}`);
   }
 
   return (
