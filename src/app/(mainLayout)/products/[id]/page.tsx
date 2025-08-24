@@ -27,6 +27,7 @@ export default async function ProductPage({ params }) {
   return (
     <>
       <Header />
+      {/* breadcrumbs */}
       <div className="my-container md:pl-24">
         <Breadcrumb>
           <BreadcrumbList>
@@ -44,6 +45,7 @@ export default async function ProductPage({ params }) {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
+      {/* product details */}
       <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product.title}</h2>
       <div className="mx-auto mt-8 mb-10 flex h-full w-full flex-col justify-center gap-3 pb-10">
         <div className="card card-side bg-base-100 mx-auto h-full px-4 py-4 text-center">
@@ -55,8 +57,8 @@ export default async function ProductPage({ params }) {
                   'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
                 }
                 alt="Product Image"
-                width={400}
-                height={300}
+                width={350}
+                height={250}
                 className="h-auto w-auto"
                 priority
               />
@@ -84,14 +86,32 @@ export default async function ProductPage({ params }) {
                 {product?._id}
               </p>
               <div className="card-actions mt-6 flex flex-row items-center justify-between">
-                <h3 className="mr-4 text-3xl font-bold">{product?.price}</h3>
-                <Button className="btn btn-primary">Buy Now</Button>
+                <h3 className="mr-4 text-3xl font-bold">${product?.price}</h3>
+                {product.in_stock == 'no' ? (
+                  <div className="font-bold text-red-500">Out of stock</div>
+                ) : (
+                  ''
+                )}
+                <div>
+                  {product.sale == 'yes' ? (
+                    <>
+                      <div className="font-bold text-amber-500 pl-2">On Sale</div>
+                      <Button className="btn btn-primary">Buy Now</Button>
+                    </>
+                  ) : (
+                    <Button className="btn btn-primary">Buy Now</Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
+
         {/* other components */}
-        <DetailAccordion />
+        <div className="w-full">
+          <DetailAccordion />
+        </div>
+
         {/* <RatingProduct/>  */}
       </div>
       <Footer />

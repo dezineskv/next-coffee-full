@@ -59,25 +59,29 @@ export default async function Products() {
                 Our roaster uses the best coffee beans!
               </p>
               {/* start cards */}
-              <div className="flex flex-col flex-wrap items-center justify-center gap-4 py-10 md:flex-row">
+              <div className="flex flex-col flex-wrap items-center justify-center gap-8 py-10 md:flex-row">
                 {/* map through data */}
                 {/* out-of-stock condition */}
                 {products.map((product: any) => (
-                  <div key={product._id}>
+                  <div
+                    key={product._id}
+                    className="flex flex-wrap items-center gap-8 py-10 md:flex-row"
+                  >
                     {product.in_stock == 'no' ? (
-                      <Card className="h-[480px] w-[300px] rounded-lg shadow-lg">
+                      <Card className="h-[480px] w-[320px] rounded-lg shadow-lg">
                         <CardHeader className="max-h-[60px]">
-                          <CardTitle className="text-sm">
-                            <div className="flex flex-row justify-start">
-                              <p className="h-[80px] w-[70%] pl-4 text-left text-2xl font-bold text-gray-300">
-                                {product.title}
-                              </p>
-                              <div className="mx-5 mb-10 w-[35%] text-sm text-red-500">
+                          <CardTitle className="relative text-sm">
+                            <div className="absolute top-0 left-[-40px]">
+                              <span className="w-[120px] bg-red-400 p-2 text-white">
                                 OUT OF STOCK
-                              </div>
+                              </span>
                             </div>
                           </CardTitle>
-                          <CardDescription></CardDescription>
+                          <CardDescription>
+                            <div className="text-gray-320 mt-4 max-w-[260px] px-4 pt-4 text-left text-2xl font-bold">
+                              {product.title}
+                            </div>
+                          </CardDescription>
                         </CardHeader>
                         <CardContent className="mb-0">
                           <Image
@@ -91,35 +95,37 @@ export default async function Products() {
                             className="mx-auto opacity-[.5]"
                           />
                         </CardContent>
-                        <CardFooter className="mb-0 flex w-full flex-col pb-0 text-center">
-                          <p className="mb-8 line-clamp-4 max-w-[225px] px-1 text-left">
+                        <CardFooter className="mb-0 flex w-full flex-col justify-items-end pb-0 text-center">
+                          <p className="mb-8 line-clamp-2 max-w-[225px] px-1 text-left">
                             {product?.description}
                           </p>
-                          <Link href={`/products/${product?._id}`}>
-                            <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                              Details
-                            </Button>
-                          </Link>
+                          <div className="justify-end">
+                            <Link href={`/products/${product?._id}`}>
+                              <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+                                Details
+                              </Button>
+                            </Link>
+                          </div>
                         </CardFooter>
                       </Card>
                     ) : (
                       // in stock products
-                      <Card className="h-[480px] w-[300px] rounded-lg shadow-lg">
-                        <CardHeader className="max-h-[60px]">
+                      <Card className="flex h-[480px] w-[320px] flex-col gap-4 rounded-lg shadow-lg">
+                        <CardHeader className="relative max-h-[60px] w-[320px]">
                           <CardTitle className="text-sm">
-                            <div className="flex flex-row items-center justify-end">
+                            <div className="">
                               {product?.sale == 'yes' && (
-                                <div className="mr-2 w-[70px]">
-                                  <span className="bg-amber-400 p-1 text-white">ON SALE</span>
+                                <div className="absolute top-0 left-[-10px]">
+                                  <span className="w-[120px] bg-amber-400 p-2 text-white">
+                                    ON SALE
+                                  </span>
                                 </div>
                               )}
                             </div>
-                          </CardTitle>
-                          <CardDescription>
-                            <p className="text-foreground max-w-[170px] px-4 text-left text-2xl font-bold">
+                            <div className="text-foreground mt-4 max-w-[260px] px-4 pt-4 text-left text-2xl font-bold">
                               {product?.title}
-                            </p>
-                          </CardDescription>
+                            </div>
+                          </CardTitle>
                         </CardHeader>
                         <CardContent className="mb-0">
                           <Image
@@ -130,13 +136,13 @@ export default async function Products() {
                             alt="product"
                             width={220}
                             height={145}
-                            className="mx-auto h-[145px] overflow-hidden"
+                            className="mx-auto h-[145px]"
                           />
-                        </CardContent>
-                        <CardFooter className="mb-0 flex w-full flex-col pb-0 text-center">
-                          <p className="mb-8 line-clamp-4 max-w-[225px] px-1 text-left">
+                          <div className="text-foreground mx-auto mt-4 line-clamp-4 min-h-[60px] max-w-[220px] text-left text-base">
                             {product?.description}
-                          </p>
+                          </div>
+                        </CardContent>
+                        <CardFooter className="mb-0 flex w-full flex-col justify-end pb-0 text-center">
                           <Link href={`/products/${product._id}`}>
                             <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                               Details

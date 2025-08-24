@@ -68,7 +68,7 @@ const productsItems = [
   },
   {
     title: 'Product Inventory',
-    href: '/all-products',
+    href: '/admin/all-products',
     description: 'Add, remove products',
   },
 ];
