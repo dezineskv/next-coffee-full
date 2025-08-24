@@ -54,7 +54,7 @@ export default async function Products() {
             </Breadcrumb>
           </div>
           <div className="my-5 w-screen border-b-2 border-gray-900">
-            <div className="my-container flex flex-col justify-center gap-6 py-12">
+            <div className="my-container flex flex-col justify-center gap-6 pt-1 pb-6">
               <h1 className="text-center text-4xl font-bold">Kimbotic Coffee Products</h1>
               <p className="mx-auto max-w-2xl text-center text-gray-900">
                 Our roaster uses the best coffee beans!
@@ -65,12 +65,13 @@ export default async function Products() {
 
               {/* start cards */}
               <div className="flex flex-col flex-wrap items-center justify-center gap-8 py-10 md:flex-row">
+                <h1 className="text-xl w-6xl pl-6">All Products</h1>
                 {/* map through data */}
                 {/* out-of-stock condition */}
                 {products.map((product: any) => (
                   <div
                     key={product._id}
-                    className="flex flex-wrap items-center gap-8 py-10 md:flex-row"
+                    className="flex flex-wrap items-center gap-8 pt-2 pb-10 md:flex-row"
                   >
                     {product.in_stock == 'no' ? (
                       <Card className="h-[480px] w-[320px] rounded-lg shadow-lg">
@@ -83,7 +84,7 @@ export default async function Products() {
                             </div>
                           </CardTitle>
                           <CardDescription>
-                            <div className="text-gray-320 mt-4 max-w-[260px] px-4 pt-4 text-left text-2xl font-bold">
+                            <div className="text-gray-320 mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
                               {product.title}
                             </div>
                           </CardDescription>
@@ -104,7 +105,10 @@ export default async function Products() {
                           <p className="mb-8 line-clamp-2 max-w-[225px] px-1 text-left">
                             {product?.description}
                           </p>
-                          <div className="justify-end">
+                          <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg">
+                            ${product?.price}
+                          </div>
+                          <div className="mt-auto pt-8">
                             <Link href={`/products/${product?._id}`}>
                               <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                                 Details
@@ -127,7 +131,7 @@ export default async function Products() {
                                 </div>
                               )}
                             </div>
-                            <div className="text-foreground mt-4 max-w-[260px] px-4 pt-4 text-left text-2xl font-bold">
+                            <div className="text-foreground mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
                               {product?.title}
                             </div>
                           </CardTitle>
@@ -146,8 +150,11 @@ export default async function Products() {
                           <div className="text-foreground mx-auto mt-4 line-clamp-4 min-h-[60px] max-w-[220px] text-left text-base">
                             {product?.description}
                           </div>
+                          <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg font-bold">
+                            ${product?.price}
+                          </div>
                         </CardContent>
-                        <CardFooter className="mb-0 flex w-full flex-col justify-end pb-0 text-center">
+                        <CardFooter className="mt-auto mb-0 flex w-full flex-col pb-0 text-center">
                           <Link href={`/products/${product._id}`}>
                             <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
                               Details

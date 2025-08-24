@@ -1,7 +1,10 @@
-import React from 'react';
+// import  { Charts }  from '@/app/components/Charts';
+// import React from 'react';
 
-function page() {
-  return <div className="w-full bg-slate-200 h-screen">Charts</div>;
-}
+// function page() {
+//   return (
+//   <div className="w-full bg-slate-200 h-screen">Charts</div>
+//   <Charts/>);
+// }
 
-export default page;
+// export default page;

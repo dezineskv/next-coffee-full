@@ -46,7 +46,14 @@ export default async function ProductPage({ params }) {
         </Breadcrumb>
       </div>
       {/* product details */}
-      <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product.title}</h2>
+      {/* product title out of stock condition */}
+      {product.in_stock == 'no' ? (
+        <h2 className="bg-background header mx-auto pt-5 text-center text-3xl text-gray-400">
+          {product.title}
+        </h2>
+      ) : (
+        <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product.title}</h2>
+      )}
       <div className="mx-auto mt-8 mb-10 flex h-full w-full flex-col justify-center gap-3 pb-10">
         <div className="card card-side bg-base-100 mx-auto h-full px-4 py-4 text-center">
           <div className="flex flex-col justify-center gap-3 md:flex-row">
@@ -95,7 +102,7 @@ export default async function ProductPage({ params }) {
                 <div>
                   {product.sale == 'yes' ? (
                     <>
-                      <div className="font-bold text-amber-500 pl-2">On Sale</div>
+                      <div className="pl-2 font-bold text-amber-500">On Sale</div>
                       <Button className="btn btn-primary">Buy Now</Button>
                     </>
                   ) : (

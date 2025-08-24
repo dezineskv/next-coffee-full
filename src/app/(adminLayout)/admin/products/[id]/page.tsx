@@ -78,39 +78,39 @@ export default async function ProductPage({ params }) {
           <div className="card-body my-10 mt-0 ml-6 max-w-[400px] text-left">
             <p>
               <span className="font-bold text-blue-500">Product Title:&nbsp;</span>
-              <div className="">{product?.title}</div>
+              <div className="text-background">{product?.title}</div>
             </p>
             <p>
               <span className="font-bold text-blue-500">Description:&nbsp;</span>
-              <div className="">{product?.description}</div>
+              <div className="text-background">{product?.description}</div>
             </p>
             <p>
               <span className="font-bold text-blue-500">Origin: </span>
-              {product?.origin}
+              <span className="text-background">{product?.origin}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Roast Level: </span>
-              {product?.roast_level}
+              <span className="text-background">{product?.roast_level}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Weight: </span>
-              {product?.weight_oz} oz.
+              <span className="text-background">{product?.weight_oz} oz.</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Price: </span>
-              {product?.price}
+              <span className="text-background">{product?.price}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">In Stock: </span>
-              {product?.in_stock}
+              <span className="text-background">{product?.in_stock}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Category: </span>
-              {product?.category}
+              <span className="text-background">{product?.category}</span>
             </p>
             <p>
-              <span className="text-gray font-bold">Product ID: </span>
-              {product?._id}
+              <span className="text-background font-bold">Product ID: </span>
+              <span className="text-background">{product?._id}</span>
             </p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default async function ProductPage({ params }) {
                 <TableCell className="font-semibold">
                   <input
                     name="image_url"
-                    defaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+                    defaultValue={product?.image_url}
                     className="border-gray h-20 w-30 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
@@ -210,7 +210,14 @@ export default async function ProductPage({ params }) {
                     className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
                   />
                 </TableCell>
-
+                <TableCell className="font-semibold">
+                  <input
+                    name="category"
+                    type="string"
+                    defaultValue={product?.category}
+                    className="border-gray h-20 w-10 border-1 text-wrap wrap-break-word"
+                  />
+                </TableCell>
                 <TableCell className="font-semibold">
                   <Button className="rounded border px-2">UPDATE PRODUCT</Button>
                 </TableCell>

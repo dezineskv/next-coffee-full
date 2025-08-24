@@ -38,6 +38,7 @@ export default function Forms() {
             <input
               type="text"
               name="description"
+              defaultValue="description"
               className="ml-2 h-10 w-82 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
@@ -48,6 +49,7 @@ export default function Forms() {
             <input
               type="string"
               name="price"
+              defaultValue="6"
               className="ml-2 h-10 w-32 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
@@ -60,8 +62,8 @@ export default function Forms() {
             <input
               name="image_url"
               type="string"
-              // defaultValue="https://i.ibb.co/7xJPr5xq/coffee-6.jpg"
-              className="border-1 border-gray-700 p-2 text-black"
+              defaultValue="https://i.ibb.co/7xJPr5xq/coffee-6.jpg"
+              className="border-1 border-gray-700 p-2 text-white"
             />
           </div>
           <div>
@@ -71,7 +73,8 @@ export default function Forms() {
             <input
               name="roast_level"
               type="string"
-              className="border-1 border-gray-700 p-2 text-black"
+              defaultValue="medium"
+              className="border-1 border-gray-700 p-2 text-white"
             />
           </div>
           <div>
@@ -81,7 +84,8 @@ export default function Forms() {
             <input
               name="origin"
               type="string"
-              className="border-1 border-gray-700 p-2 text-black"
+              defaultValue="Columbia"
+              className="border-1 border-gray-700 p-2 text-white"
             />
           </div>
           <div>
@@ -91,7 +95,8 @@ export default function Forms() {
             <input
               name="in_stock"
               type="string"
-              className="border-1 border-gray-700 p-2 text-black"
+              defaultValue="yes"
+              className="border-1 border-gray-700 p-2 text-white"
             />
           </div>
           <div>
@@ -101,20 +106,35 @@ export default function Forms() {
             <input
               name="weight_oz"
               type="string"
-              className="border-1 border-gray-700 p-2 text-black"
+              defaultValue="12"
+              className="border-1 border-gray-700 p-2 text-white"
             />
           </div>
           <div>
             <label htmlFor="sale" className="mt-2 py-2 pl-5 text-left text-white">
               On Sale
             </label>
-            <input name="sale" type="string" className="border-1 border-gray-700 text-black" />
+            <input
+              name="sale"
+              type="string"
+              defaultValue="yes"
+              className="border-1 border-gray-700 text-white"
+            />
           </div>
           <div>
-            <label htmlFor="sale" className="mt-2 py-2 pl-5 text-left text-white">
+            <label
+              htmlFor="sale"
+              defaultValue="new title here"
+              className="mt-2 py-2 pl-5 text-left text-white"
+            >
               Category
             </label>
-            <input name="category" type="string" className="border-1 border-gray-700 text-black" />
+            <input
+              name="category"
+              defaultValue="other"
+              type="string"
+              className="border-1 border-gray-700 text-white"
+            />
           </div>
           <SubmitButton />
         </form>
