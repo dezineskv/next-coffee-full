@@ -37,7 +37,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     const in_stock = formData.get('in_stock') as string;
     const weight_oz = formData.get('weight_oz') as string;
 
-    await updateProduct(data.id, {
+    await updateProduct(id, {
       title,
       description,
       image_url,
@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
       sale,
       in_stock,
     });
-    revalidatePath(`/products/${data.id}`);
+    revalidatePath(`/products/${id}`);
   }
 
   return (
