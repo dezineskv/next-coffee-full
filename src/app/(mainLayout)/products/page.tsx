@@ -1,6 +1,5 @@
-// 'use server'
+// 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import {
   Card,
@@ -22,9 +21,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import Product from '../../../models/Product';
-import { getAllProducts, getProductById } from '@/app/actions/product';
+// import { useState } from 'react';
+import { getAllProducts } from '@/app/actions/product';
+import Product, { IProduct } from '@/models/Product';
 import Image from 'next/image';
+import FilterProducts from '@/app/components/FilterProds';
 
 export default async function Products() {
   try {
@@ -58,6 +59,10 @@ export default async function Products() {
               <p className="mx-auto max-w-2xl text-center text-gray-900">
                 Our roaster uses the best coffee beans!
               </p>
+
+              {/* filter products */}
+              <FilterProducts />
+
               {/* start cards */}
               <div className="flex flex-col flex-wrap items-center justify-center gap-8 py-10 md:flex-row">
                 {/* map through data */}

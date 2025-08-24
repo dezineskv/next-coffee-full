@@ -1,7 +1,7 @@
 'use server';
 
 import connectToMongoDB from '@/lib/db';
-import Product from '@/models/Product';
+import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
 
@@ -50,6 +50,7 @@ export async function updateProduct(
     origin: string;
     in_stock: string;
     roast_level: string;
+    category: string;
   }>,
 ) {
   await connectToMongoDB();
@@ -97,6 +98,7 @@ export const createProducts = async (formData: FormData) => {
   const weight_oz = formData.get('weight_oz');
   const in_stock = formData.get('in_stock');
   const sale = formData.get('sale');
+  const category = formData.get('category');
 
   try {
     // Creating a new product using Product model & saving to var
@@ -111,6 +113,7 @@ export const createProducts = async (formData: FormData) => {
       weight_oz,
       in_stock,
       sale,
+      category,
     });
     // Saving the new product
     newProduct.save();
@@ -123,3 +126,15 @@ export const createProducts = async (formData: FormData) => {
     return { message: 'error creating product' };
   }
 };
+
+// get products by getProductsByCategory
+export async function getProductsByCategory(category: string): Promise<IProduct[]> {
+  try {
+    await connectToMongoDB(); // Establish connection
+    const products = await Product.find({ category: category }).lean();
+    return JSON.parse(JSON.stringify(products)); // Serialize for client-side
+  } catch (error) {
+    console.error('Error fetching products by category:', error);
+    throw new Error('Failed to fetch products.');
+  }
+}

@@ -12,6 +12,7 @@ export type IProduct = {
   weight_oz: string;
   in_stock: string;
   sale: string;
+  category: string;
 };
 
 export interface IProductDocument extends IProduct, Document {
@@ -32,6 +33,7 @@ const ProductSchema = new mongoose.Schema(
     weight_oz: { type: String },
     in_stock: { type: String },
     sale: { type: String },
+    category: { type: String },
   },
   { timestamps: true }, // createdAt, updatedAt
 );

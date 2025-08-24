@@ -76,6 +76,9 @@ export default async function Products() {
                       <p className="line-clamp-4 w-[225px] px-5 text-left leading-5">
                         Weight: {product?.weight_oz as string} oz.
                       </p>
+                      <p className="line-clamp-4 w-[225px] px-5 text-left leading-5">
+                        Category: {product?.category as string} oz.
+                      </p>
                       <div className="flex flex-row justify-between">
                         {/* link to edit form */}
                         <Link href={`/admin/products/${product._id}`}>

@@ -69,7 +69,7 @@ const productsItems = [
   {
     title: 'Product Inventory',
     href: '/admin/all-products',
-    description: 'Add, remove products',
+    description: 'Login',
   },
 ];
 

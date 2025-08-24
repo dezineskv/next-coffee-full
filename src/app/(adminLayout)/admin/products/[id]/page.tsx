@@ -35,6 +35,7 @@ export default async function ProductPage({ params }) {
     const origin = formData.get('origin') as string;
     const in_stock = formData.get('in_stock') as string;
     const weight_oz = formData.get('weight_oz') as string;
+    const category = formData.get('category') as string;
 
     await updateProduct(id, {
       title,
@@ -46,6 +47,7 @@ export default async function ProductPage({ params }) {
       weight_oz,
       sale,
       in_stock,
+      category,
     });
 
     // await updateProduct(params.id, { title, description });
@@ -103,6 +105,10 @@ export default async function ProductPage({ params }) {
               {product?.in_stock}
             </p>
             <p>
+              <span className="font-bold text-blue-500">Category: </span>
+              {product?.category}
+            </p>
+            <p>
               <span className="text-gray font-bold">Product ID: </span>
               {product?._id}
             </p>
@@ -127,6 +133,8 @@ export default async function ProductPage({ params }) {
                 <TableHead className="text-md mt-4 font-bold">Weight</TableHead>
                 <TableHead className="text-md mt-4 font-bold">Sale</TableHead>
                 <TableHead className="text-md mt-4 font-bold">In Stock</TableHead>
+                <TableHead className="text-md mt-4 font-bold">Category</TableHead>
+
                 <TableHead className="text-md mt-4 font-bold">UPDATE</TableHead>
               </TableRow>
             </TableHeader>
