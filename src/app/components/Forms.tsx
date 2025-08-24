@@ -108,7 +108,7 @@ export default function Forms() {
             <label htmlFor="sale" className="mt-2 py-2 pl-5 text-left text-white">
               On Sale
             </label>
-            <input name="sale" type="string" className="border-gray-700 border-1 text-black" />
+            <input name="sale" type="string" className="border-1 border-gray-700 text-black" />
           </div>
           <SubmitButton />
         </form>

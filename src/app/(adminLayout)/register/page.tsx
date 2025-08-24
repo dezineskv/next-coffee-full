@@ -1,3 +1,8 @@
+'use client';
+import { FormEvent, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { register } from '@/app/actions/register';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -11,9 +16,26 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
-import Link from 'next/link';
 
-export default function SignUp() {
+export default function Signup() {
+  const [error, setError] = useState<string>();
+  const router = useRouter();
+  const ref = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (formData: FormData) => {
+    const r = await register({
+      email: formData.get('email'),
+      password: formData.get('password'),
+      name: formData.get('name'),
+    });
+    ref.current?.reset();
+    if (r?.error) {
+      setError(r.error);
+      return;
+    } else {
+      return router.push('/login');
+    }
+  };
   return (
     <div className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
       <Card className="w-full max-w-sm">
@@ -35,35 +57,47 @@ export default function SignUp() {
                 </CardAction> */}
         </CardHeader>
         <CardContent>
-          <form>
+          <form
+            ref={ref}
+            action={handleSubmit}
+            className="flex w-full max-w-[400px] flex-col items-center justify-between gap-2 rounded border border-solid border-black bg-white p-6"
+          >
+            {error && <div className="">{error}</div>}
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="name">Name</Label>
-                <Input id="name" type="text" placeholder="first name" required />
+                <Input
+                  type="text"
+                  placeholder="Full Name"
+                  className="h-8 w-full rounded border border-solid border-black px-2.5 py-1 text-[13px]"
+                  name="name"
+                />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  className="h-8 w-full rounded border border-solid border-black px-2.5 py-1"
+                  name="email"
+                />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
                   <Label htmlFor="password">Password</Label>
-                  {/* <a
-                        href="#"
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                        >
-                        Forgot your password?
-                        </a> */}
+                  <Input
+                    type="password"
+                    placeholder="Password"
+                    className="h-8 w-full rounded border border-solid border-black px-2.5 py-1"
+                    name="password"
+                  />
                 </div>
-                <Input id="password" type="password" required />
               </div>
+              <Button className="w-full">Sign Up</Button>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
-            Sign Up
-          </Button>
           <div className="mt-5">
             Already have an account?
             <br />

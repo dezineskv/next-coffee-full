@@ -1,3 +1,7 @@
+'use client';
+import { useState } from 'react';
+import { loginUser } from '@/app/actions/users';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -14,6 +18,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    try {
+      const result = await loginUser(email, password);
+      console.log('Logged in:', result);
+      // Redirect or set cookie
+      return router.push('/admin');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
       <Card className="w-full max-w-sm">
@@ -35,11 +54,16 @@ export default function Login() {
                 </CardAction> */}
         </CardHeader>
         <CardContent>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleLogin();
+            }}
+          >
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
@@ -51,19 +75,23 @@ export default function Login() {
                         Forgot your password?
                         </a> */}
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Button type="submit" className="w-full">
+                  Login
+                </Button>
               </div>
             </div>
           </form>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <Button type="submit" className="w-full">
-            Login
-          </Button>
           <div className="mt-5">
             Need an account?
             <br />
-            <Link href="/sign-up">Sign up here</Link>
+            <Link href="/register">Sign up here</Link>
           </div>
           {/* <Button variant="outline" className="w-full">
                 Login with Google

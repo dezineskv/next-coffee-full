@@ -1,5 +1,6 @@
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/app/components/AppSidebar';
+import { Provider } from '../provider';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -7,8 +8,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <AppSidebar />
       <main>
         <SidebarTrigger />
-        {children}
       </main>
+      <Provider>
+        <body>{children}</body>
+      </Provider>
     </SidebarProvider>
   );
 }
