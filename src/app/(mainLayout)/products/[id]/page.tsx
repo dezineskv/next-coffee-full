@@ -17,9 +17,15 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-export default async function ProductPage({ params }: { params: any }) {
-  const data = await params;
-  const product = await getProductById(data.id);
+type ProductPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = params;
+  const product = await getProductById(id);
 
   if (!product) {
     return <div>Product not found</div>;
