@@ -13,8 +13,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-// import Product from "@/app/models/Product";
-import { FC } from 'react';
 
 export default async function ProductPage({ params }) {
   const { id } = params;
@@ -39,7 +37,7 @@ export default async function ProductPage({ params }) {
     const in_stock = formData.get('in_stock') as string;
     const weight_oz = formData.get('weight_oz') as string;
 
-    await updateProduct(params.id, {
+    await updateProduct(id, {
       title,
       description,
       image_url,
@@ -53,7 +51,7 @@ export default async function ProductPage({ params }) {
 
     // await updateProduct(params.id, { title, description });
 
-    revalidatePath(`/products/${params.id}`);
+    revalidatePath(`/products/${id}`);
   }
 
   return (
@@ -113,7 +111,7 @@ export default async function ProductPage({ params }) {
           </div>
         </div>
 
-   {/* form to update products in table format */}
+        {/* form to update products in table format */}
         <form action={handleUpdate} className="mt-6">
           <h3 className="mb-6 text-xl">Update Product Details</h3>
           <Table className="bg-background rounded-lg p-3 shadow-lg md:w-7xl">

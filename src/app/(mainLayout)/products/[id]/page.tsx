@@ -15,14 +15,9 @@ import {
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
 
-type Params = {
-  params: {
-    id: string;
-  };
-};
-
-export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ params }) {
   const { id } = params;
+
   const product = await getProductById(id);
 
   if (!product) {
