@@ -23,8 +23,13 @@ type ProductPageProps = {
   };
 };
 
-export default async function ProductPage({ params }: ProductPageProps) {
-  const { id } = params;
+const ProductPage = ({ params }: ProductPageProps) => {
+  return <ProductPageContent id={params.id} />;
+};
+
+export default ProductPage;
+
+const ProductPageContent = async ({ id }: { id: string }) => {
   const product = await getProductById(id);
 
   if (!product) {
@@ -131,4 +136,4 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <Footer />
     </>
   );
-}
+};
