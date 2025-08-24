@@ -1,5 +1,4 @@
-import { getProductById, updateProduct } from '@/app/actions/product';
-import { revalidatePath } from 'next/cache';
+import { getProductById } from '@/app/actions/product';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Header from '@/app/components/Header';
@@ -15,7 +14,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
-import { FC } from 'react';
 
 type Params = {
   params: {
@@ -29,32 +27,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
 
   if (!product) {
     return <div>Product not found</div>;
-  }
-  // handle form
-  async function handleUpdate(formData: FormData) {
-    const title = formData.get('title') as string;
-    // const price = parseFloat(formData.get("price") as string);
-    const description = formData.get('description') as string;
-    const image_url = formData.get('image_url') as string;
-    const price = formData.get('price') as string;
-    const roast_level = formData.get('roast_level') as string;
-    const sale = formData.get('sale') as string;
-    const origin = formData.get('origin') as string;
-    const in_stock = formData.get('in_stock') as string;
-    const weight_oz = formData.get('weight_oz') as string;
-
-    await updateProduct(id, {
-      title,
-      description,
-      image_url,
-      price,
-      roast_level,
-      origin,
-      weight_oz,
-      sale,
-      in_stock,
-    });
-    revalidatePath(`/products/${id}`);
   }
 
   return (
@@ -93,7 +65,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
                 className="h-auto w-auto"
                 priority
               />
-
               <div className="text-left">Small | Medium | Large</div>
             </div>
             <div className="card-body my-10 mt-0 ml-6 w-[300px] text-left">

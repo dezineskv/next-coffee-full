@@ -112,7 +112,8 @@ export default async function ProductPage({ params }) {
             </p>
           </div>
         </div>
-        {/* form to update products in table format */}
+
+   {/* form to update products in table format */}
         <form action={handleUpdate} className="mt-6">
           <h3 className="mb-6 text-xl">Update Product Details</h3>
           <Table className="bg-background rounded-lg p-3 shadow-lg md:w-7xl">

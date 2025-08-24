@@ -1,3 +1,11 @@
-export default function NewSidebar() {
-  return <div>admin</div>;
+import React from 'react';
+
+function Dashboard() {
+  return (
+    <>
+      <h1>page</h1>
+    </>
+  );
 }
+
+export default Dashboard;
