@@ -17,7 +17,7 @@ import {
 import Link from 'next/link';
 import { FC } from 'react';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ params }: { params: any }) {
   const data = await params;
   const product = await getProductById(data.id);
 
