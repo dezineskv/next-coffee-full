@@ -18,8 +18,8 @@ export default function Home() {
         <Hero />
         <Explore />
         <Favorite />
-        <Apps />
         <BestSelling />
+        <Apps />
         <Menus />
         <Testimonials />
       </div>

@@ -16,7 +16,7 @@ function Explore() {
   return (
     <>
       <div className="bg-background">
-        <div className="my-container flex flex-col justify-center gap-6 pt-12 md:pb-18">
+        <div className="my-container flex flex-col justify-center gap-6 pt-18 md:pb-18">
           <h1 className="text-center text-4xl font-bold">Explore Kimbotic Coffee Services</h1>
           <p className="text-para mx-auto max-w-2xl text-center">
             Our roaster starts with 100% Arabica coffee beans from Mexico

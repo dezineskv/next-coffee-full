@@ -48,7 +48,7 @@ function BestSelling() {
         transition={{ duration: 0.5 }}
       >
         <div className="bg-background">
-          <div className="my-container mx-auto mt-10 flex flex-col justify-center gap-6 pt-10 md:pb-4">
+          <div className="my-container mx-auto pt-20 flex flex-col justify-center gap-6 md:pb-4">
             <h1 className="text-center text-4xl font-bold">Best Selling Coffee</h1>
             <p className="text-para mx-auto flex max-w-1/2 justify-center text-center">
               Order the best coffee in town!
@@ -89,7 +89,7 @@ function BestSelling() {
           </div>
         </div>
       </motion.div>
-      <div className="bg-background mx-auto pb-8 text-center">
+      <div className="bg-background mx-auto pb-12 text-center">
         <Link href="/products">
           <Button className="text-md rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
             All Products
