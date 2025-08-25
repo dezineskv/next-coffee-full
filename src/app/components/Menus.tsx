@@ -51,7 +51,7 @@ function Menu() {
   return (
     <>
       <div className="bg-background">
-        <div className="my-container flex flex-col pb-4 sm:px-6 md:flex-row">
+        <div className="my-container flex flex-col pb-10 sm:px-6 md:flex-row">
           <div className="sm:min-w[300px] sm:w-full md:mr-10 md:mb-6 md:ml-6 md:w-1/2 md:max-w-[400px]">
             <Image
               src="https://i.ibb.co/kgX1NFZW/alowishus-coffee.png"

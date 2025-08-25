@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 import Apps from '../components/Apps';
 import Testimonials from '../components/Testimonials';
 import Menus from '../components/Menus';
-import DataTableDemo from '../components/DataTableDemo';
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
         <Apps />
         <BestSelling />
         <Menus />
-        <DataTableDemo />
         <Testimonials />
       </div>
       <Footer />

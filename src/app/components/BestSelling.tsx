@@ -47,8 +47,8 @@ function BestSelling() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="bg-secondary">
-          <div className="bg-secondary my-container mx-auto flex flex-col justify-center gap-6 pt-20 md:pb-10">
+        <div className="bg-background">
+          <div className="my-container mx-auto mt-10 flex flex-col justify-center gap-6 pt-10 md:pb-4">
             <h1 className="text-center text-4xl font-bold">Best Selling Coffee</h1>
             <p className="text-para mx-auto flex max-w-1/2 justify-center text-center">
               Order the best coffee in town!
@@ -64,7 +64,7 @@ function BestSelling() {
                       </CardDescription>
                       <CardTitle className="text-lg font-extrabold">{item.title}</CardTitle>
                     </div>
-                    <img
+                    <Image
                       src={item.thumb}
                       alt="image"
                       width={150}
@@ -89,6 +89,13 @@ function BestSelling() {
           </div>
         </div>
       </motion.div>
+      <div className="bg-background mx-auto pb-8 text-center">
+        <Link href="/products">
+          <Button className="text-md rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+            All Products
+          </Button>
+        </Link>
+      </div>
     </>
   );
 }

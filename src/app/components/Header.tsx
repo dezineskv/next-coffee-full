@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import SearchBar from '../components/SearchBar';
 
 const menuItems = [
   {
@@ -91,7 +92,13 @@ const cateringItems = [
   },
 ];
 
-export default function Header() {
+const Header: React.FC = () => {
+  const handleSearch = (query: string) => {
+    console.log('Search query:', query);
+    // Implement your search logic here (e.g., API calls, data filtering)
+  };
+
+  // export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
   const { theme, setTheme } = useTheme();
@@ -196,6 +203,12 @@ export default function Header() {
           </NavigationMenuList>
         </NavigationMenu>
         {/* Desktop Actions */}
+
+        <div className="">
+          <SearchBar onSearch={handleSearch} />
+          {/* Display search results or other content here */}
+        </div>
+
         <div className="hidden items-center justify-end gap-x-5 lg:flex lg:flex-1">
           <span className="relative text-xl font-medium text-gray-900">
             <DropdownMenu>
@@ -402,7 +415,7 @@ export default function Header() {
       </div>
     </>
   );
-}
+};
 
 const ListItem = ({
   className,
@@ -434,3 +447,4 @@ const ListItem = ({
     </li>
   );
 };
+export default Header;

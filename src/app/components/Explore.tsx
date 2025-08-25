@@ -11,19 +11,12 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import '../globals.css';
 import Link from 'next/link';
-// import { CardCarousel } from "@/components/ui/card-carousel"
-/* eslint-disable no-restricted-globals */
-// eslint-disable-next-line
-import { A11y, Navigation, Pagination, Scrollbar, Mousewheel } from 'swiper/modules';
-// eslint-disable-next-line
-import { Swiper, SwiperSlide } from 'swiper/swiper-react';
-import { CardCarousel } from '@/components/ui/card-carousel';
 
 function Explore() {
   return (
     <>
-      <div className="bg-secondary">
-        <div className="my-container bg-secondary flex flex-col justify-center gap-6 pt-12 md:pb-18">
+      <div className="bg-background">
+        <div className="my-container flex flex-col justify-center gap-6 pt-12 md:pb-18">
           <h1 className="text-center text-4xl font-bold">Explore Kimbotic Coffee Services</h1>
           <p className="text-para mx-auto max-w-2xl text-center">
             Our roaster starts with 100% Arabica coffee beans from Mexico
