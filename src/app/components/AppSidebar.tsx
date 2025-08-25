@@ -20,6 +20,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
+import Image from 'next/image';
 
 // Menu items.
 const items = [
@@ -50,7 +51,7 @@ const items = [
   },
   {
     title: 'Inventory',
-    url: '/admin/products',
+    url: '/inventory',
     icon: Database,
   },
   {
@@ -70,9 +71,11 @@ export function AppSidebar() {
             <SidebarMenu>
               <>
                 <a href="/">
-                  <img
+                  <Image
                     src="https://i.ibb.co/XrBqjX0k/logo3-d.png"
                     alt="Logo"
+                    width={220}
+                    height={180}
                     className="px-auto mx-auto w-auto max-w-[220px] border-0 pb-4"
                   />
                 </a>

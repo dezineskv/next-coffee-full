@@ -12,7 +12,6 @@ import {
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import '@/app/globals.css';
-
 import Product from '@/models/Product';
 import { getAllProducts, deleteProduct, getProductById } from '@/app/actions/product';
 import Image from 'next/image';
@@ -32,6 +31,7 @@ export default async function Products() {
               {/* start cards */}
               <div className="flex flex-col flex-wrap items-center justify-center gap-4 py-10 md:flex-row">
                 {/* map through data */}
+
                 {/* out-of-stock condition */}
                 {products.map((product: any) => (
                   <div key={product._id?.toString()}>
@@ -79,30 +79,30 @@ export default async function Products() {
                       <p className="line-clamp-4 w-[225px] px-5 text-left leading-5">
                         Category: {product?.category as string} oz.
                       </p>
-                        <div className="flex flex-row justify-between mt-auto">
-                          {/* link to edit form */}
-                          <Link href={`/admin/products/${product._id}`}>
-                            <Button className="ml-5 w-20 rounded border bg-blue-400 px-2">
-                              Edit
-                            </Button>
-                          </Link>
-                          {/* delete form */}
-                          <form
-                            className="flex justify-end pr-5"
-                            action={async (formData: FormData) => {
-                              'use server';
-                              await deleteProduct(formData);
-                            }}
-                          >
-                            <input
-                              hidden
-                              type="text"
-                              name="id"
-                              defaultValue={product._id.toString()}
-                            />
-                            <Button className="w-20 rounded border bg-red-400 px-2">delete</Button>
-                          </form>
-                        </div>
+                      <div className="mt-auto flex flex-row justify-between">
+                        {/* link to edit form */}
+                        <Link href={`/admin/products/${product._id}`}>
+                          <Button className="ml-5 w-20 rounded border bg-blue-400 px-2">
+                            Edit
+                          </Button>
+                        </Link>
+                        {/* delete form */}
+                        <form
+                          className="flex justify-end pr-5"
+                          action={async (formData: FormData) => {
+                            'use server';
+                            await deleteProduct(formData);
+                          }}
+                        >
+                          <input
+                            hidden
+                            type="text"
+                            name="id"
+                            defaultValue={product._id.toString()}
+                          />
+                          <Button className="w-20 rounded border bg-red-400 px-2">delete</Button>
+                        </form>
+                      </div>
                     </Card>
                   </div>
                 ))}

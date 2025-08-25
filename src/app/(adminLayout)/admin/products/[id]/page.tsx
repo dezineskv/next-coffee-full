@@ -12,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+// import EditButton from '@/app/components/EditButton';
 
 export default async function ProductPage({ params }) {
   const { id } = params;

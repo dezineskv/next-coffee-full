@@ -26,6 +26,7 @@ import { getAllProducts } from '@/app/actions/product';
 import Product, { IProduct } from '@/models/Product';
 import Image from 'next/image';
 import FilterProducts from '@/app/components/FilterProds';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export default async function Products() {
   try {
@@ -64,107 +65,119 @@ export default async function Products() {
               <FilterProducts />
 
               {/* start cards */}
-              <div className="flex flex-col flex-wrap items-center justify-center gap-8 py-10 md:flex-row">
-                <h1 className="text-xl w-6xl pl-6">All Products</h1>
+              <div className="flex flex-row flex-wrap items-center justify-center gap-8 py-10">
+                <h1 className="w-6xl pl-6 text-xl">Enjoy Our Product Selection</h1>
                 {/* map through data */}
-                {/* out-of-stock condition */}
-                {products.map((product: any) => (
-                  <div
-                    key={product._id}
-                    className="flex flex-wrap items-center gap-8 pt-2 pb-10 md:flex-row"
-                  >
-                    {product.in_stock == 'no' ? (
-                      <Card className="h-[480px] w-[320px] rounded-lg shadow-lg">
-                        <CardHeader className="max-h-[60px]">
-                          <CardTitle className="relative text-sm">
-                            <div className="absolute top-0 left-[-40px]">
-                              <span className="w-[120px] bg-red-400 p-2 text-white">
-                                OUT OF STOCK
-                              </span>
-                            </div>
-                          </CardTitle>
-                          <CardDescription>
-                            <div className="text-gray-320 mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
-                              {product.title}
-                            </div>
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent className="mb-0">
-                          <Image
-                            src={
-                              product?.image_url ||
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
-                            }
-                            alt="product"
-                            width={225}
-                            height={120}
-                            className="mx-auto opacity-[.5]"
-                          />
-                        </CardContent>
-                        <CardFooter className="mb-0 flex w-full flex-col justify-items-end pb-0 text-center">
-                          <p className="mb-8 line-clamp-2 max-w-[225px] px-1 text-left">
-                            {product?.description}
-                          </p>
-                          <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg">
-                            ${product?.price}
-                          </div>
-                          <div className="mt-auto pt-8">
-                            <Link href={`/products/${product?._id}`}>
-                              <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                                Details
-                              </Button>
-                            </Link>
-                          </div>
-                        </CardFooter>
-                      </Card>
-                    ) : (
-                      // in stock products
-                      <Card className="flex h-[480px] w-[320px] flex-col gap-4 rounded-lg shadow-lg">
-                        <CardHeader className="relative max-h-[60px] w-[320px]">
-                          <CardTitle className="text-sm">
-                            <div className="">
-                              {product?.sale == 'yes' && (
-                                <div className="absolute top-0 left-[-10px]">
-                                  <span className="w-[120px] bg-amber-400 p-2 text-white">
-                                    ON SALE
-                                  </span>
+
+                <Tabs defaultValue="account" className="w-6xl">
+                  <TabsList className="ml-6">
+                    <TabsTrigger value="account">All Products</TabsTrigger>
+                    <TabsTrigger value="password">On Sale</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="account">
+                    <div className="mx-auto mt-6 ml-4 flex w-6xl flex-row justify-between gap-4">
+                      {/* out-of-stock condition */}
+                      {products.map((product: any) => (
+                        <div
+                          key={product._id}
+                          className="flex flex-wrap items-center gap-8 pt-2 pb-10 md:flex-row"
+                        >
+                          {product.in_stock == 'no' ? (
+                            <Card className="h-[480px] w-[320px] rounded-lg shadow-lg">
+                              <CardHeader className="max-h-[60px]">
+                                <CardTitle className="relative text-sm">
+                                  <div className="absolute top-0 left-[-40px]">
+                                    <span className="w-[120px] bg-red-400 p-2 text-white">
+                                      OUT OF STOCK
+                                    </span>
+                                  </div>
+                                </CardTitle>
+                                <CardDescription>
+                                  <div className="text-gray-320 mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
+                                    {product.title}
+                                  </div>
+                                </CardDescription>
+                              </CardHeader>
+                              <CardContent className="mb-0">
+                                <Image
+                                  src={
+                                    product?.image_url ||
+                                    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
+                                  }
+                                  alt="product"
+                                  width={225}
+                                  height={120}
+                                  className="mx-auto opacity-[.5]"
+                                />
+                              </CardContent>
+                              <CardFooter className="mb-0 flex w-full flex-col justify-items-end pb-0 text-center">
+                                <p className="mb-8 line-clamp-2 max-w-[225px] px-1 text-left">
+                                  {product?.description}
+                                </p>
+                                <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg">
+                                  ${product?.price}
                                 </div>
-                              )}
-                            </div>
-                            <div className="text-foreground mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
-                              {product?.title}
-                            </div>
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="mb-0">
-                          <Image
-                            src={
-                              product?.image_url ||
-                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
-                            }
-                            alt="product"
-                            width={220}
-                            height={145}
-                            className="mx-auto h-[145px]"
-                          />
-                          <div className="text-foreground mx-auto mt-4 line-clamp-4 min-h-[60px] max-w-[220px] text-left text-base">
-                            {product?.description}
-                          </div>
-                          <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg font-bold">
-                            ${product?.price}
-                          </div>
-                        </CardContent>
-                        <CardFooter className="mt-auto mb-0 flex w-full flex-col pb-0 text-center">
-                          <Link href={`/products/${product._id}`}>
-                            <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                              Details
-                            </Button>
-                          </Link>
-                        </CardFooter>
-                      </Card>
-                    )}
-                  </div>
-                ))}
+                                <div className="mt-auto pt-8">
+                                  <Link href={`/products/${product?._id}`}>
+                                    <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+                                      Details
+                                    </Button>
+                                  </Link>
+                                </div>
+                              </CardFooter>
+                            </Card>
+                          ) : (
+                            // in stock products
+                            <Card className="flex h-[480px] w-[320px] flex-col gap-4 rounded-lg shadow-lg">
+                              <CardHeader className="relative max-h-[60px] w-[320px]">
+                                <CardTitle className="text-sm">
+                                  <div className="">
+                                    {product?.sale == 'yes' && (
+                                      <div className="absolute top-0 left-[-10px]">
+                                        <span className="w-[120px] bg-amber-400 p-2 text-white">
+                                          ON SALE
+                                        </span>
+                                      </div>
+                                    )}
+                                  </div>
+                                  <div className="text-foreground mt-4 max-w-[260px] px-4 pt-4 text-left text-xl font-bold">
+                                    {product?.title}
+                                  </div>
+                                </CardTitle>
+                              </CardHeader>
+                              <CardContent className="mb-0">
+                                <Image
+                                  src={
+                                    product?.image_url ||
+                                    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
+                                  }
+                                  alt="product"
+                                  width={220}
+                                  height={145}
+                                  className="mx-auto h-[145px]"
+                                />
+                                <div className="text-foreground mx-auto mt-4 line-clamp-4 min-h-[60px] max-w-[220px] text-left text-base">
+                                  {product?.description}
+                                </div>
+                                <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg font-bold">
+                                  ${product?.price}
+                                </div>
+                              </CardContent>
+                              <CardFooter className="mt-auto mb-0 flex w-full flex-col pb-0 text-center">
+                                <Link href={`/products/${product._id}`}>
+                                  <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+                                    Details
+                                  </Button>
+                                </Link>
+                              </CardFooter>
+                            </Card>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="password" className="pl-6 pt-6">Items here.</TabsContent>
+                </Tabs>
               </div>
             </div>
           </div>

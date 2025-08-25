@@ -1,16 +1,20 @@
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from '@/app/components/AppSidebar';
 import { Provider } from '../provider';
+import { Toaster } from '@/components/ui/sonner';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <main className="mx-auto bg-slate-200">
+      <main className="bg-slate-200">
         <SidebarTrigger />
       </main>
       <Provider>
-        <body>{children}</body>
+        <body>
+          {children}
+          <Toaster />
+        </body>
       </Provider>
     </SidebarProvider>
   );
