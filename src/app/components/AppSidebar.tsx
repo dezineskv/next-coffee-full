@@ -49,11 +49,11 @@ const items = [
     url: '/admin/products',
     icon: Edit,
   },
-  {
-    title: 'Inventory',
-    url: '/inventory',
-    icon: Database,
-  },
+  // {
+  //   title: 'Inventory',
+  //   url: '/inventory',
+  //   icon: Database,
+  // },
   {
     title: 'Client Home',
     url: '/',
