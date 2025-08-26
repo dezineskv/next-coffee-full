@@ -67,11 +67,11 @@ const productsItems = [
     href: '/products',
     description: 'Cakes, cookies, sweet treats and more',
   },
-  {
-    title: 'Product Inventory',
-    href: '/login',
-    description: 'Login',
-  },
+  // {
+  //   title: 'Product Inventory',
+  //   href: '/login',
+  //   description: 'Login',
+  // },
 ];
 
 const cateringItems = [
