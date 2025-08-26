@@ -2,7 +2,7 @@ import React from 'react';
 import DetailsPage from './_components/DetailsPage';
 
 const page = async ({ params }: { params: { id: string } }) => {
-  const { id } = await params;
+  const { id } = params;
   return (
     <>
       <DetailsPage id={id} />
