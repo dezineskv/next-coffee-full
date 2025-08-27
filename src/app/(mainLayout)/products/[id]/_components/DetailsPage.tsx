@@ -16,10 +16,15 @@ import {
 import Link from 'next/link';
 
 export default async function DetailsPage({ id }: { id: string }) {
-  const product = await getProductById(id);
+  try {
+    const product = await getProductById(id);
 
-  if (!product) {
-    return <div>Product not found</div>;
+    if (!product) {
+      return <div>Product not found</div>;
+    }
+  } catch (error) {
+    // Returning an error message if product deletion fails
+    return { message: 'error deleting product' };
   }
 
   return (
