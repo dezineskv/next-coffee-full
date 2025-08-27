@@ -15,18 +15,35 @@ import {
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
 
-export default async function DetailsPage({ id }: { id: string }) {
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await getProductById(params.id);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
   try {
-    const product = await getProductById(id);
+    const product = await getProductById(params.id);
 
     if (!product) {
       return <div>Product not found</div>;
     }
-    return JSON.parse(JSON.stringify(product));
+    return product.toString();
   } catch (error) {
     // Returning an error message if product deletion fails
     return { message: 'error deleting product' };
   }
+  // export default async function DetailsPage({ id }: { id: string }) {
+  //   try {
+  //     const product = await getProductById(id);
+
+  //     if (!product) {
+  //       return <div>Product not found</div>;
+  //     }
+  //     return product.toString();
+  //   } catch (error) {
+  //     // Returning an error message if product deletion fails
+  //     return { message: 'error deleting product' };
+  //   }
 
   return (
     <>
