@@ -29,7 +29,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
     }
     return product.toString();
   } catch (error) {
-    // Returning an error message if product deletion fails
     return { message: 'error deleting product' };
   }
   // export default async function DetailsPage({ id }: { id: string }) {
@@ -41,7 +40,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
   //     }
   //     return product.toString();
   //   } catch (error) {
-  //     // Returning an error message if product deletion fails
   //     return { message: 'error deleting product' };
   //   }
 
