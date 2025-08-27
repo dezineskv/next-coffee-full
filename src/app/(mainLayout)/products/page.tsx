@@ -118,11 +118,11 @@ export default async function Products() {
                                   ${product?.price}
                                 </div>
                                 <div className="mt-auto pt-8">
-                                  <Link href={`/products/${product?._id}`}>
-                                    <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                                      Details
-                                    </Button>
-                                  </Link>
+                                  {/* <Link href={`/products/${product?._id}`}> */}
+                                  <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+                                    Details
+                                  </Button>
+                                  {/* </Link> */}
                                 </div>
                               </CardFooter>
                             </Card>
@@ -176,7 +176,9 @@ export default async function Products() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="password" className="pl-6 pt-6">Items here.</TabsContent>
+                  <TabsContent value="password" className="pt-6 pl-6">
+                    Items here.
+                  </TabsContent>
                 </Tabs>
               </div>
             </div>
