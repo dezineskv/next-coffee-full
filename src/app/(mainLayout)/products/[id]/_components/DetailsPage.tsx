@@ -22,6 +22,7 @@ export default async function DetailsPage({ id }: { id: string }) {
     if (!product) {
       return <div>Product not found</div>;
     }
+    return JSON.parse(JSON.stringify(product));
   } catch (error) {
     // Returning an error message if product deletion fails
     return { message: 'error deleting product' };
