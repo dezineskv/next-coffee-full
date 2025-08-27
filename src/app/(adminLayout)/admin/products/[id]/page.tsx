@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/table';
 // import EditButton from '@/app/components/EditButton';
 
-export default async function ProductPage({ params }) {
+  export default async function ProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const product = await getProductById(id);
