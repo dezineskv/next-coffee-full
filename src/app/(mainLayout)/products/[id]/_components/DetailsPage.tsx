@@ -15,15 +15,21 @@ import {
 } from '@/components/ui/breadcrumb';
 import Link from 'next/link';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
+type ProductPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductById(params.id);
+
   if (!product) {
     return <div>Product not found</div>;
   }
 
-  //   if (!product) {
-  //     return <div>Product not found</div>;
-  //   }
+  // export default async function ProductPage({ params }: { params: { id: string } }) {
+
   //   try {
   //     const product = await getProductById(params.id);
 
