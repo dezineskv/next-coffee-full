@@ -16,7 +16,7 @@ import {
 import Link from 'next/link';
 import Product, { IProduct } from '@/models/Product';
 
-export default async function CoffeePage({ params }) {
+export default async function ProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const product = await getProductById(id);
