@@ -17,23 +17,15 @@ import Link from 'next/link';
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
   const product = await getProductById(params.id);
-
   if (!product) {
     return <div>Product not found</div>;
   }
-  try {
-    const product = await getProductById(params.id);
 
-    if (!product) {
-      return <div>Product not found</div>;
-    }
-    return product.toString();
-  } catch (error) {
-    return { message: 'error deleting product' };
-  }
-  // export default async function DetailsPage({ id }: { id: string }) {
+  //   if (!product) {
+  //     return <div>Product not found</div>;
+  //   }
   //   try {
-  //     const product = await getProductById(id);
+  //     const product = await getProductById(params.id);
 
   //     if (!product) {
   //       return <div>Product not found</div>;
@@ -42,6 +34,15 @@ export default async function ProductPage({ params }: { params: { id: string } }
   //   } catch (error) {
   //     return { message: 'error deleting product' };
   //   }
+
+  // export default async function DetailsPage({ id }: { id: string }) {
+  //   try {
+  //     const product = await getProductById(id);
+  //     console.log(product);
+  // if (!product) {
+  //   return <div>Product not found</div>;
+  // }
+  // res.send(product).toString();
 
   return (
     <>
@@ -142,5 +143,8 @@ export default async function ProductPage({ params }: { params: { id: string } }
       </div>
       <Footer />
     </>
+    //      } catch (error) {
+    //     return { message: 'error deleting product' };
+    //   }
   );
 }

@@ -1,6 +1,6 @@
 'use server';
 
-import connectToMongoDB from '@/lib/db';
+import { connectToMongoDB } from '@/lib/db';
 import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
