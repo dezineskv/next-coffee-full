@@ -16,7 +16,7 @@ import {
 import Link from 'next/link';
 import Product, { IProduct } from '@/models/Product';
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function CoffeePage({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const product = await getProductById(id);
@@ -25,14 +25,14 @@ export default async function ProductPage({ params }: { params: { id: string } }
     return <div>Product not found</div>;
   }
 
-  // testing: type ProductPageProps = {
+  // testing: type CoffeePageProps = {
   //   params: {
   //     id: string;
   //   };
   // };
 
   // test: export default async function CoffeePage() {
-  // export default async function ProductPage({ params }: ProductPageProps) {
+  // export default async function CoffeePage({ params }: CoffeePageProps) {
   // try {
   //   const product = await Product.findById(id);
   //   if (!product) {
@@ -43,7 +43,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
   //   }
 
   // 1 test
-  // export default async function ProductPage({ params }: { params: { id: string } }) {
+  // export default async function CoffeePage({ params }: { params: { id: string } }) {
 
   //   try {
   //     const product = await getProductById(params.id);
@@ -56,7 +56,7 @@ export default async function ProductPage({ params }: { params: { id: string } }
   //     return { message: 'error deleting product' };
   //   }
 
-  // 2 test export default async function DetailsPage({ id }: { id: string }) {
+  // 2 test export default async function CoffeePage({ id }: { id: string }) {
   //   try {
   //     const product = await getProductById(id);
   //     console.log(product);

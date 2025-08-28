@@ -21,14 +21,14 @@
 //   };
 // };
 
-// export default async function ProductPage({ params }: ProductPageProps) {
+// export default async function DetailsPage({ params }: ProductPageProps) {
 //   const product = await getProductById(params.id);
 
 //   if (!product) {
 //     return <div>Product not found</div>;
 //   }
 
-//   // export default async function ProductPage({ params }: { params: { id: string } }) {
+//   // export default async function DetailsPage({ params }: { params: { id: string } }) {
 
 //   //   try {
 //   //     const product = await getProductById(params.id);
