@@ -1,5 +1,5 @@
 'use server';
-import connectToMongoDB from '@/lib/db';
+import connectDB from '@/lib/db';
 import User from '@/models/Users';
 import bcrypt from 'bcryptjs';
 
@@ -7,7 +7,7 @@ export const register = async (values: any) => {
   const { email, password, name } = values;
 
   try {
-    await connectToMongoDB();
+    await connectDB();
     const userFound = await User.findOne({ email });
     if (userFound) {
       return {

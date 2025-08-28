@@ -13,15 +13,18 @@ import {
   TableHeader,
   TableRow,
 } from '@/ui/table';
+import { notFound } from 'next/navigation';
+// import CoffeeDetails from "./_components/CoffeeDetails";
 
-export default async function ProductPage({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default async function CoffeePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
+  // Now safely use `id`
   const product = await getProductById(id);
+  if (!product) return notFound();
 
-  if (!product) {
-    return <div>Product not found</div>;
-  }
+  // return <CoffeeDetails product={product} />;
+
   // handle form
   async function handleUpdate(formData: FormData) {
     'use server';

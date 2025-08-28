@@ -1,11 +1,11 @@
 'use server';
 
-import connectToMongoDB from '@/lib/db';
+import connectDB from '@/lib/db';
 import User from '@/models/Users';
 import bcrypt from 'bcryptjs';
 
 export async function loginUser(email: string, password: string) {
-  await connectToMongoDB();
+  await connectDB();
   const user = await User.findOne({ email });
   if (!user) throw new Error('User not found');
 
@@ -13,5 +13,7 @@ export async function loginUser(email: string, password: string) {
   if (!isValid) throw new Error('Invalid credentials');
 
   // TODO: Set session or JWT here
-  return { success: true, userId: user._id };
+  // return { success: true, userId: user._id };
+    return { success: true };
+
 }

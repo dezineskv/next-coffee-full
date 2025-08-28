@@ -1,34 +1,47 @@
-import connectToMongoDB from '@/lib/db';
+import connectDB from '@/lib/db';
 import User from '@/models/Users';
 import type { NextAuthOptions } from 'next-auth';
 import credentials from 'next-auth/providers/credentials';
-import bcrypt from 'bcryptjs';
+import bcrypt, { compare } from 'bcryptjs';
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    credentials({
+    CredentialsProvider({
       name: 'Credentials',
-      id: 'credentials',
       credentials: {
         email: { label: 'Email', type: 'text' },
         password: { label: 'Password', type: 'password' },
       },
       async authorize(credentials) {
-        await connectToMongoDB();
-        const user = await User.findOne({
-          email: credentials?.email,
-        }).select('+password');
+        await connectDB();
 
-        if (!user) throw new Error('Wrong Email');
+        const user = await User.findOne({ email: credentials?.email });
+        if (!user) return null;
 
-        const passwordMatch = await bcrypt.compare(credentials!.password, user.password);
+        const isValid = await compare(credentials!.password, user.password);
+        if (!isValid) return null;
 
-        if (!passwordMatch) throw new Error('Wrong Password');
-        return user;
+        // ✅ Here's where your return goes
+        return {
+          id: user._id.toString(),
+          email: user.email,
+          name: user.name,
+        };
       },
     }),
   ],
+
   session: {
     strategy: 'jwt',
   },
 };
+function CredentialsProvider(arg0: {
+  name: string;
+  credentials: {
+    email: { label: string; type: string };
+    password: { label: string; type: string };
+  };
+  authorize(credentials: any): Promise<{ id: string; email: string; name: string } | null>;
+}): import('next-auth/providers/index').Provider {
+  throw new Error('Function not implemented.');
+}

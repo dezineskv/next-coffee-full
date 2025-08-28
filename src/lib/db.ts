@@ -6,30 +6,12 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
-let cached = global as typeof global & {
-  mongoose: { conn: typeof mongoose | null; promise: Promise<typeof mongoose> | null };
+const connectDB = async () => {
+  const connectUrl = process.env.MONGODB_URI;
+  mongoose
+    .connect(connectUrl!)
+    .then(() => console.log('Database Connected Successfully'))
+    .catch((e) => console.log(e));
 };
 
-if (!cached.mongoose) {
-  cached.mongoose = { conn: null, promise: null };
-}
-
-async function connectToMongoDB() {
-  if (cached.mongoose.conn) {
-    return cached.mongoose.conn;
-  }
-
-  if (!cached.mongoose.promise) {
-    const opts = {
-      bufferCommands: false,
-    };
-
-    cached.mongoose.promise = mongoose.connect(MONGODB_URI as string, opts).then((mongoose) => {
-      return mongoose;
-    });
-  }
-  cached.mongoose.conn = await cached.mongoose.promise;
-  return cached.mongoose.conn;
-}
-
-export default connectToMongoDB;
+export default connectDB;

@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
 import { Button } from '@/ui/button';
-import '../../../app/globals.css';
+import '../../globals.css';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import {
@@ -21,7 +21,7 @@ import Image from 'next/image';
 import FilterProducts from '@/components/FilterProds';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
 
-export default async function Products() {
+export default async function CoffeeProducts() {
   try {
     const products = await Product.find();
     if (products.length === 0) {

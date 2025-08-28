@@ -5,6 +5,8 @@ export interface IUser extends Document {
   name: string;
   email: string;
   password: string;
+  _id: string;
+  id?: string; // optional or mapped
   createdAt: Date;
   updatedAt: Date;
 }
@@ -28,6 +30,10 @@ const UserSchema: Schema<IUser> = new Schema(
     password: {
       type: String,
       required: true,
+    },
+    _id: {
+      type: String,
+      required: false,
     },
   },
   {

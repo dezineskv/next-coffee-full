@@ -1,13 +1,13 @@
 'use server';
 
-import { connectToMongoDB } from '@/lib/db';
+import connectDB from '@/lib/db';
 import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
 
 // get all products
 export const getAllProducts = async (formData: FormData) => {
-  await connectToMongoDB();
+  await connectDB();
   // sort products by time created most recent last
   try {
     const products = await Product.find().sort({ createdAt: -1 }); // -1 sorts in descending order (newest first)
@@ -23,7 +23,7 @@ export const getAllProducts = async (formData: FormData) => {
 
 // get single product
 export async function getProductById(id: string) {
-  await connectToMongoDB();
+  await connectDB();
 
   if (!Types.ObjectId.isValid(id)) {
     throw new Error('Invalid product ID');
@@ -53,7 +53,7 @@ export async function updateProduct(
     category: string;
   }>,
 ) {
-  await connectToMongoDB();
+  await connectDB();
 
   if (!Types.ObjectId.isValid(id)) {
     throw new Error('Invalid product ID');
@@ -86,7 +86,7 @@ export const deleteProduct = async (id: FormData) => {
 
 //create new products
 export const createProducts = async (formData: FormData) => {
-  await connectToMongoDB();
+  await connectDB();
   // Extracting Product content from formData
   const product = formData.get('product');
   const title = formData.get('title');
@@ -130,7 +130,7 @@ export const createProducts = async (formData: FormData) => {
 // get products by getProductsByCategory
 export async function getProductsByCategory(category: string): Promise<IProduct[]> {
   try {
-    await connectToMongoDB(); // Establish connection
+    await connectDB(); // Establish connection
     const products = await Product.find({ category: category }).lean();
     return JSON.parse(JSON.stringify(products)); // Serialize for client-side
   } catch (error) {

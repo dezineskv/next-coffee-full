@@ -54,8 +54,8 @@ export default function FilterProducts() {
         </div>
         <ul>
           {products.map((product) => (
-            <li key={product._id} className="font-bold">
-              <Link href={`/products/${product._id}`}>
+            <li key={product?._id} className="font-bold">
+              <Link href={`/products/${product?._id}`}>
                 {product.title} - {product.category}
               </Link>
             </li>

@@ -91,7 +91,7 @@ export default function Login() {
           <div className="mt-5">
             Need an account?
             <br />
-            <Link href="/register">Sign up here</Link>
+            {/* <Link href="/register">Sign up here</Link> */}
           </div>
           {/* <Button variant="outline" className="w-full">
                 Login with Google

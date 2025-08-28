@@ -1,4 +1,4 @@
-import Product from '../../models/Product';
+import Product from '@/models/Product';
 import { deleteProduct, updateProduct, getAllProducts, getProductById } from '@/actions/product';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
@@ -8,7 +8,7 @@ import { Button } from '@/ui/button';
 import Image from 'next/image';
 
 interface Product {
-  _id: string;
+  _id?: string;
   title: string;
   description: string;
   image_url: string;

@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 import { SparklesIcon } from 'lucide-react';
 import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 
-import { Badge } from '@/ui/badge';
+import { Badge } from "@/ui/badge";
 
 interface CarouselProps {
   images: { src: string; alt: string }[];
