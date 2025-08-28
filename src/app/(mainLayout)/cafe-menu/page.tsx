@@ -1,8 +1,8 @@
-import Header from '../../components/Header';
-import Explore from '../../components/Explore';
-import Footer from '../../components/Footer';
-import Menus from '../../components/Menus';
-import { Button } from '@/components/ui/button';
+import Header from '../../../components/Header';
+import Explore from '../../../components/Explore';
+import Footer from '../../../components/Footer';
+import Menus from '../../../components/Menus';
+import { Button } from '@/ui/button';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,7 +10,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from '@/ui/breadcrumb';
 import Link from 'next/link';
 
 export default function CafeMenu() {

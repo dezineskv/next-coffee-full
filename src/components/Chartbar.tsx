@@ -8,7 +8,7 @@ import {
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from '@/components/ui/chart';
+} from '@/ui/chart';
 
 const chartData = [
   { month: 'January', desktop: 186, mobile: 80 },
@@ -32,7 +32,7 @@ const chartConfig = {
 
 export function Chartbar() {
   return (
-    <div className="w-full mx-auto bg-slate-200">
+    <div className="mx-auto w-full bg-slate-200">
       <ChartContainer config={chartConfig} className="h-50 min-h-[200px] w-2xl">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />

@@ -4,7 +4,7 @@
 // import React, { useEffect, useState } from "react";
 // import Header from "./Header";
 // import Footer from "./Footer";
-// import { Button } from "@/components/ui/button";
+// import { Button } from "@/ui/button";
 // import Testimonials from "./Testimonials";
 // import ReactStars from "react-stars";
 // import {
@@ -14,7 +14,7 @@
 //   BreadcrumbList,
 //   BreadcrumbPage,
 //   BreadcrumbSeparator,
-// } from "@/components/ui/breadcrumb";
+// } from "@/ui/breadcrumb";
 // import Link from "next/link";
 
 // const SingleInv = ({ id }: { id: string }) => {

@@ -1,17 +1,10 @@
-import Header from '../../components/Header';
-import Explore from '../../components/Explore';
-import Footer from '../../components/Footer';
-import Testimonials from '../../components/Testimonials';
-import Menus from '../../components/Menus';
+import Header from '../../../components/Header';
+import Explore from '../../../components/Explore';
+import Footer from '../../../components/Footer';
+import Testimonials from '../../../components/Testimonials';
+import Menus from '../../../components/Menus';
 import Image from 'next/image';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
 
 export default function About() {
   return (

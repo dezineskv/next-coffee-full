@@ -1,6 +1,6 @@
 'use client';
 
-import { createProducts } from '@/app/actions/product';
+import { createProducts } from '@/actions/product';
 import { useRef } from 'react';
 import SubmitButton from './SubmitButton';
 

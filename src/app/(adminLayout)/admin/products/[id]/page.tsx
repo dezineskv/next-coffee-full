@@ -1,7 +1,8 @@
-import { getProductById, updateProduct } from '@/app/actions/product';
+// 'use server';
+import { getProductById, updateProduct } from '@/actions/product';
 import { revalidatePath } from 'next/cache';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/ui/button';
 import {
   Table,
   TableBody,
@@ -11,9 +12,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
+} from '@/ui/table';
 
-  export default async function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const product = await getProductById(id);
@@ -48,7 +49,6 @@ import {
       in_stock,
       category,
     });
-
 
     revalidatePath(`/products/${id}`);
   }

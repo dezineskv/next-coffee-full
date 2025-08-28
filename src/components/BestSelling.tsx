@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardTitle } from '@/ui/card';
+import { Button } from '@/ui/button';
 import Image from 'next/image';
 import Mid1 from '../images/mid1.png';
 import Mid2 from '../images/mid2.png';
 import Mid3 from '../images/mid3.png';
-import '../globals.css';
+import '../../src/app/globals.css';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -48,7 +48,7 @@ function BestSelling() {
         transition={{ duration: 0.5 }}
       >
         <div className="bg-background">
-          <div className="my-container mx-auto pt-20 flex flex-col justify-center gap-6 md:pb-4">
+          <div className="my-container mx-auto flex flex-col justify-center gap-6 pt-20 md:pb-4">
             <h1 className="text-center text-4xl font-bold">Best Selling Coffee</h1>
             <p className="text-para mx-auto flex max-w-1/2 justify-center text-center">
               Order the best coffee in town!

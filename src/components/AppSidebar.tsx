@@ -19,7 +19,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/components/ui/sidebar';
+} from '@/ui/sidebar';
 import Image from 'next/image';
 
 // Menu items.

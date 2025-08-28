@@ -1,8 +1,8 @@
-import Header from '../../components/Header';
-import Explore from '../../components/Explore';
-import Footer from '../../components/Footer';
-import Testimonials from '../../components/Testimonials';
-import { Button } from '@/components/ui/button';
+import Header from '../../../components/Header';
+import Explore from '../../../components/Explore';
+import Footer from '../../../components/Footer';
+import Testimonials from '../../../components/Testimonials';
+import { Button } from '@/ui/button';
 import Image from 'next/image';
 import {
   Breadcrumb,
@@ -11,16 +11,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from '@/ui/breadcrumb';
 import Link from 'next/link';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
 
 export default function FindUs() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/ui/card';
 import Image from 'next/image';
 import {
   Carousel,
@@ -7,7 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from '@/ui/carousel';
 
 function Testimonials() {
   return (

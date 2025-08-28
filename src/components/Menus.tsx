@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import '../globals.css';
+import { Button } from '@/ui/button';
+import '../../src/app/globals.css';
 import {
   Table,
   TableBody,
@@ -11,7 +11,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
+} from '@/ui/table';
 
 function Menu() {
   // list of items to map through

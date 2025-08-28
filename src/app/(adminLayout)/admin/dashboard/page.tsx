@@ -1,8 +1,8 @@
-import { Chartbar } from '@/app/components/Chartbar';
-import { Chartsmall } from '@/app/components/Chartsmall';
-import { Chartline } from '@/app/components/Chartline';
-import Chartpie from '@/app/components/Chartpie';
-// import { ChartbarTwo } from '@/app/components/ChartbarTWo';
+import { Chartbar } from '@/components/Chartbar';
+import { Chartsmall } from '@/components/Chartsmall';
+import { Chartline } from '@/components/Chartline';
+import Chartpie from '@/components/Chartpie';
+// import { ChartbarTwo } from '@/components/ChartbarTWo';
 
 import React from 'react';
 

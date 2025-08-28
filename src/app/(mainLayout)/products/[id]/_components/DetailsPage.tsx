@@ -1,10 +1,10 @@
-// import { getProductById } from '@/app/actions/product';
+// import { getProductById } from '@/actions/product';
 // import Image from 'next/image';
-// import { Button } from '@/components/ui/button';
-// import Header from '@/app/components/Header';
-// import Footer from '@/app/components/Footer';
-// import DetailAccordion from '@/app/components/DetailAccordion';
-// // import RatingProduct from "@/app/components/RatingProduct";
+// import { Button } from '@/ui/button';
+// import Header from '@/components/Header';
+// import Footer from '@/components/Footer';
+// import DetailAccordion from '@/components/DetailAccordion';
+// // import RatingProduct from "@/components/RatingProduct";
 // import {
 //   Breadcrumb,
 //   BreadcrumbItem,
@@ -12,7 +12,7 @@
 //   BreadcrumbList,
 //   BreadcrumbPage,
 //   BreadcrumbSeparator,
-// } from '@/components/ui/breadcrumb';
+// } from '@/ui/breadcrumb';
 // import Link from 'next/link';
 
 // type ProductPageProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Subscribe from './Subscribe';
-import '../globals.css';
+import '../../src/app/globals.css';
 import Link from 'next/link';
 
 export default function Footer() {

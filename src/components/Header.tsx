@@ -1,6 +1,6 @@
 'use client';
 import type React from 'react';
-import '../globals.css';
+import '../../src/app/globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -12,18 +12,18 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from '@/components/ui/navigation-menu';
-import { Button } from '@/components/ui/button';
+} from '@/ui/navigation-menu';
+import { Button } from '@/ui/button';
 import { cn } from '@/lib/utils';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from '@/ui/dropdown-menu';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '@/components/SearchBar';
 
 const menuItems = [
   {

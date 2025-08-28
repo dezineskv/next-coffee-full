@@ -1,18 +1,11 @@
 // 'use client';
 
 import Link from 'next/link';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import '../../globals.css';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
+import { Button } from '@/ui/button';
+import '../../../app/globals.css';
+import Header from '../../../components/Header';
+import Footer from '../../../components/Footer';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -20,13 +13,13 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb';
+} from '@/ui/breadcrumb';
 // import { useState } from 'react';
-import { getAllProducts } from '@/app/actions/product';
+import { getAllProducts } from '@/actions/product';
 import Product, { IProduct } from '@/models/Product';
 import Image from 'next/image';
-import FilterProducts from '@/app/components/FilterProds';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import FilterProducts from '@/components/FilterProds';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
 
 export default async function Products() {
   try {

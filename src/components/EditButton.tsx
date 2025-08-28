@@ -1,9 +1,9 @@
 'use client'; // If using App Router and this is a client component
 
-import { Input } from '@/components/ui/input';
+import { Input } from '@/ui/input';
 import React from 'react';
 import { toast } from 'sonner';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/ui/button';
 
 export default function EditButton() {
   const handleSubmit = async (event: React.FormEvent) => {

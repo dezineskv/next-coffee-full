@@ -2,10 +2,10 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import '../globals.css';
+import { Button } from '@/ui/button';
+import '../../src/app/globals.css';
 import { useState } from 'react';
-import { getProductsByCategory } from '@/app/actions/product';
+import { getProductsByCategory } from '@/actions/product';
 import Product, { IProduct } from '@/models/Product';
 
 export default function FilterProducts() {
@@ -36,7 +36,7 @@ export default function FilterProducts() {
           <input
             type="text"
             placeholder="Enter Category"
-            className="border-gray mr-4 pr-10 border-1"
+            className="border-gray mr-4 border-1 pr-10"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           />

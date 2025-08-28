@@ -2,8 +2,8 @@
 import { FormEvent, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { register } from '@/app/actions/register';
-import { Button } from '@/components/ui/button';
+import { register } from '@/actions/register';
+import { Button } from '@/ui/button';
 import {
   Card,
   CardAction,
@@ -12,9 +12,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+} from '@/ui/card';
+import { Input } from '@/ui/input';
+import { Label } from '@/ui/label';
 import Image from 'next/image';
 
 export default function Signup() {
