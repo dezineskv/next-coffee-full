@@ -4,6 +4,7 @@ import connectDB from '@/lib/db';
 import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
+import { TProduct } from '@/types';
 
 // get all products
 export const getAllProducts = async (formData: FormData) => {
@@ -22,19 +23,23 @@ export const getAllProducts = async (formData: FormData) => {
 };
 
 // get single product
-export async function getProductById(id: string) {
+export async function getProductById(id: string): Promise<IProduct | null> {
   await connectDB();
+  try {
+    if (!Types.ObjectId.isValid(id)) {
+      throw new Error('Invalid product ID');
+    }
 
-  if (!Types.ObjectId.isValid(id)) {
-    throw new Error('Invalid product ID');
+    const product = await Product.findById(id);
+    if (!product) {
+      throw new Error('Product not found');
+    }
+
+    return product.toObject();
+  } catch (error) {
+    console.error('Error finding product by ID:', error);
+    return null;
   }
-
-  const product = await Product.findById(id);
-  if (!product) {
-    throw new Error('Product not found');
-  }
-
-  return JSON.parse(JSON.stringify(product)); // to make it serializable
 }
 
 // edit single product

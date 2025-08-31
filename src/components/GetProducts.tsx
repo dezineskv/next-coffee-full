@@ -8,7 +8,7 @@ import { Button } from '@/ui/button';
 import Image from 'next/image';
 
 interface Product {
-  _id?: string;
+  _id: string;
   title: string;
   description: string;
   image_url: string;

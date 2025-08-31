@@ -1,4 +1,4 @@
-// 'use client';
+// 'use server';
 
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card';
@@ -17,6 +17,7 @@ import {
 // import { useState } from 'react';
 import { getAllProducts } from '@/actions/product';
 import Product, { IProduct } from '@/models/Product';
+import { TProduct } from '@/types/index';
 import Image from 'next/image';
 import FilterProducts from '@/components/FilterProds';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/ui/tabs';
@@ -111,11 +112,11 @@ export default async function CoffeeProducts() {
                                   ${product?.price}
                                 </div>
                                 <div className="mt-auto pt-8">
-                                  {/* <Link href={`/products/${product?._id}`}> */}
-                                  <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                                    Details
-                                  </Button>
-                                  {/* </Link> */}
+                                  <Link href={`/products/${product._id}`}>
+                                    <Button className="text-md mx-auto w-[200px] rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
+                                      Details
+                                    </Button>
+                                  </Link>
                                 </div>
                               </CardFooter>
                             </Card>

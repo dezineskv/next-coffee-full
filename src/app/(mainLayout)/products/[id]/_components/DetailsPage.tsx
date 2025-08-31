@@ -16,6 +16,8 @@ import {
 import Link from 'next/link';
 
 export default async function DetailsPage({ product }: { product: any }) {
+  console.log(product);
+
   return (
     <>
       <Header />
@@ -39,9 +41,9 @@ export default async function DetailsPage({ product }: { product: any }) {
       </div>
       {/* product details */}
       {/* product title out-of-stock condition */}
-      {product.in_stock == 'no' ? (
+      {product?.in_stock == 'no' ? (
         <h2 className="bg-background header mx-auto pt-5 text-center text-3xl text-gray-400">
-          {product.title}
+          {product?.title}
         </h2>
       ) : (
         <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product.title}</h2>

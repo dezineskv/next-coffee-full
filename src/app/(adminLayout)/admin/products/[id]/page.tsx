@@ -79,39 +79,39 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
           <div className="card-body my-10 mt-0 ml-6 max-w-[400px] text-left">
             <p>
               <span className="font-bold text-blue-500">Product Title:&nbsp;</span>
-              <div className="text-background">{product?.title}</div>
+              <div className="text-background text-black">{product?.title}</div>
             </p>
             <p>
               <span className="font-bold text-blue-500">Description:&nbsp;</span>
-              <div className="text-background">{product?.description}</div>
+              <div className="text-black">{product?.description}</div>
             </p>
             <p>
               <span className="font-bold text-blue-500">Origin: </span>
-              <span className="text-background">{product?.origin}</span>
+              <span className="text-black">{product?.origin}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Roast Level: </span>
-              <span className="text-background">{product?.roast_level}</span>
+              <span className="text-black">{product?.roast_level}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Weight: </span>
-              <span className="text-background">{product?.weight_oz} oz.</span>
+              <span className="text-black">{product?.weight_oz} oz.</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Price: </span>
-              <span className="text-background">{product?.price}</span>
+              <span className="text-black">{product?.price}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">In Stock: </span>
-              <span className="text-background">{product?.in_stock}</span>
+              <span className="text-black">{product?.in_stock}</span>
             </p>
             <p>
               <span className="font-bold text-blue-500">Category: </span>
-              <span className="text-background">{product?.category}</span>
+              <span className="text-black">{product?.category}</span>
             </p>
             <p>
-              <span className="text-background font-bold">Product ID: </span>
-              <span className="text-background">{product?._id}</span>
+              <span className="text-black">Product ID: </span>
+              <span className="text-background text-gray-500">{product?._id}</span>
             </p>
           </div>
         </div>

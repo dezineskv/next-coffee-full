@@ -1,13 +1,11 @@
 export type TProduct = {
-  _id: string;
   title: string;
   description: string;
   image_url: string;
   origin: string;
   roast_level: string;
   price: string;
-  weight_oz: number;
+  weight_oz: string;
   in_stock: string;
-  decaf: boolean;
   sale: string;
 };
