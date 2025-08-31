@@ -1,9 +1,21 @@
-// 'use server'
+import mongoose, { Document, Schema, Model, Types, isValidObjectId } from 'mongoose';
 
-import mongoose, { Document, Schema, Model } from 'mongoose';
+export interface IProductClient {
+  _id: string;
+  title: string;
+  description: string;
+  image_url: string;
+  origin: string;
+  roast_level: string;
+  price: string;
+  weight_oz: string;
+  in_stock: string;
+  sale: string;
+  category: string;
+}
 
 export type IProduct = {
-  // id?: string; // optional or mapped
+  _id: string;
   title: string;
   description: string;
   image_url: string;
@@ -16,13 +28,15 @@ export type IProduct = {
   category: string;
 };
 
-export interface IProductDocument extends IProduct, Document {
-  createdAt: Date;
-  updatedAt: Date;
-}
+// export interface IProductDocument extends IProduct, Document {
 
-const ProductSchema = new mongoose.Schema(
+//   createdAt: Date;
+//   updatedAt: Date;
+// }
+
+const ProductSchema = new Schema<IProductClient>(
   {
+    // id: { type: String },
     title: {
       type: String,
     },
@@ -39,6 +53,6 @@ const ProductSchema = new mongoose.Schema(
   { timestamps: true }, // createdAt, updatedAt
 );
 
-const Product: Model<IProductDocument> =
-  mongoose.models?.Product || mongoose.model<IProductDocument>('Product', ProductSchema);
+const Product: Model<IProductClient> =
+  mongoose.models?.Product || mongoose.model<IProductClient>('Product', ProductSchema);
 export default Product;

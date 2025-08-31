@@ -140,7 +140,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
               </TableRow>
             </TableHeader>
             <TableBody className="text-para py-8 text-left">
-              <TableRow key={product?.id}>
+              <TableRow key={product?._id}>
                 <TableCell className="font-semibold">
                   <input
                     name="title"
