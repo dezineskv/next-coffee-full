@@ -24,24 +24,9 @@ import {
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import SearchBar from '@/components/SearchBar';
-
-const menuItems = [
-  {
-    title: 'Coffee',
-    href: '/cafe-menu',
-    description: 'Espresso, cappuccino, latte and more',
-  },
-  {
-    title: 'Food',
-    href: '/cafe-menu',
-    description: 'Sandwiches, pastries, and light meals',
-  },
-  {
-    title: 'Beverages',
-    href: '/cafe-menu',
-    description: 'Teas, smoothies, and cold drinks',
-  },
-];
+import Product from '@/models/Product';
+import connectDB from '@/lib/db';
+import ProductLIst from './ProductList';
 
 const aboutItems = [
   {
@@ -67,11 +52,11 @@ const productsItems = [
     href: '/products',
     description: 'Cakes, cookies, sweet treats and more',
   },
-  // {
-  //   title: 'Product Inventory',
-  //   href: '/login',
-  //   description: 'Login',
-  // },
+  {
+    title: 'Menu',
+    href: '/cafe-menu',
+    description: 'Espresso, cappuccino, latte and more',
+  },
 ];
 
 const cateringItems = [
@@ -93,7 +78,10 @@ const cateringItems = [
 ];
 
 const Header: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   const handleSearch = (query: string) => {
+    setSearchQuery(query);
     console.log('Search query:', query);
     // Implement your search logic here (e.g., API calls, data filtering)
   };
@@ -110,10 +98,10 @@ const Header: React.FC = () => {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-background my-container flex flex-col gap-4 px-0 py-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="bg-background my-container flex flex-col gap-3 px-0 py-10 lg:flex-row lg:items-center lg:justify-between">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-center sm:pl-6">
+          <div className="flex items-center justify-start sm:pl-6 md:pl-0">
             <Link href="/">
               <Image
                 src={
@@ -122,9 +110,9 @@ const Header: React.FC = () => {
                     : 'https://i.ibb.co/23GsvNz7/logo2.png'
                 }
                 alt="Logo"
-                width={300}
-                height={180}
-                className="w-auto max-w-[250px] border-0 pr-10 pb-4 sm:mx-auto sm:ml-6 md:pl-12"
+                width={200}
+                height={80}
+                className="w-auto max-w-[200px] border-0 pr-4 pb-4 sm:mx-auto sm:ml-6 md:pl-0"
                 priority={true}
               />
             </Link>
@@ -144,20 +132,6 @@ const Header: React.FC = () => {
         {/* Desktop Navigation -customized */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList className="flex space-x-2">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-xl font-medium">
-                <Link href="/cafe-menu">Menu</Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {menuItems.map((item) => (
-                    <ListItem key={item.title} title={item.title} href={item.href}>
-                      {item.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-xl font-medium">
                 <Link href="/about">About</Link>
@@ -204,9 +178,9 @@ const Header: React.FC = () => {
         </NavigationMenu>
         {/* Desktop Actions */}
 
-        <div className="">
+        <div className="sm:mx-6 sm:px-4">
           <SearchBar onSearch={handleSearch} />
-          {/* Display search results or other content here */}
+          {/* <ProductLIst query={searchQuery} /> */}
         </div>
 
         <div className="hidden items-center justify-end gap-x-5 lg:flex lg:flex-1">
@@ -328,28 +302,10 @@ const Header: React.FC = () => {
               <div className="space-y-3">
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
-                    Menu
-                    <span className="transition group-open:rotate-180">▼</span>
-                  </summary>
-                  <div className="mt-2 ml-4 space-y-2">
-                    {menuItems.map((item) => (
-                      <Link
-                        key={item.title}
-                        href={item.href}
-                        className="block text-gray-600 hover:text-gray-900"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.title}
-                      </Link>
-                    ))}
-                  </div>
-                </details>
-                <details className="group">
-                  <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     About
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="mt-2 ml-4 space-y-2">
+                  <div className="mt-2 ml-6 space-y-2">
                     {aboutItems.map((item) => (
                       <Link
                         key={item.title}
@@ -364,16 +320,27 @@ const Header: React.FC = () => {
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
-                    Products
+                    Products <span className="transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="mt-2 ml-4 space-y-2"></div>
+                  <div className="mt-2 ml-6 space-y-2">
+                    {productsItems.map((item) => (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        className="block text-gray-600 hover:text-gray-900"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
                     Catering
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="mt-2 ml-4 space-y-2">
+                  <div className="mt-2 ml-6 space-y-2">
                     {cateringItems.map((item) => (
                       <Link
                         key={item.title}

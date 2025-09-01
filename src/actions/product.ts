@@ -5,6 +5,7 @@ import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
 import { TProduct } from '@/types';
+import { ToastContainer, toast } from 'react-toastify';
 
 // get all products
 export const getAllProducts = async (formData: FormData) => {
@@ -68,7 +69,6 @@ export async function updateProduct(
   if (!updated) {
     throw new Error('Product not found or update failed');
   }
-
   return JSON.parse(JSON.stringify(updated));
 }
 
@@ -82,10 +82,9 @@ export const deleteProduct = async (id: FormData) => {
     // Triggering revalidation of the specified path
     revalidatePath('/');
     // Returning a success message after deleting the product
-    return 'Product deleted';
+    return { success: true, message: 'Item deleted successfully!' };
   } catch (error) {
-    // Returning an error message if product deletion fails
-    return { message: 'error deleting product' };
+    return { success: false, message: 'Error deleting item' };
   }
 };
 
@@ -125,6 +124,7 @@ export const createProducts = async (formData: FormData) => {
     // Triggering revalidation of the specified path
     revalidatePath('/');
     // Returning the string representation of the new product
+
     return newProduct.toString();
   } catch (error) {
     console.log(error);

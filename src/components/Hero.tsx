@@ -7,11 +7,11 @@ import Link from 'next/link';
 export default function Hero() {
   return (
     <>
-      <section className="bg-secondary w-full [family-name:var(--font-geist-sans)] sm:pt-5 sm:pb-8 md:pt-4 md:pl-2">
+      <section className="bg-secondary w-full [family-name:var(--font-geist-sans)] sm:pt-5 sm:pb-8 md:pt-4">
         {/* container */}
-        <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-10 px-6 md:flex-row md:gap-16 md:px-12">
+        <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-10 pr-6 pl-0 md:flex-row md:gap-6">
           {/* TEXT SIDE */}
-          <div className="w-full sm:px-10 md:w-1/2">
+          <div className="w-full sm:ml-6 sm:px-10 md:w-1/2 md:px-5">
             {/* <div className={styles.slideIn}> */}
             <motion.div
               initial={{ opacity: 0, x: -150 }}
@@ -36,7 +36,7 @@ export default function Hero() {
                 </span>
               </div>
 
-              <p className="mt-6 text-lg leading-relaxed text-balance max-sm:w-full sm:text-xl">
+              <p className="mt-6 text-lg leading-relaxed text-balance sm:w-full sm:text-xl md:ml-0 md:w-full md:pl-0">
                 Our roaster starts with 100% Arabica coffee beans from Mexico
               </p>
             </motion.div>

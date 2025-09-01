@@ -1,7 +1,7 @@
 import { SidebarProvider, SidebarTrigger } from '@/ui/sidebar';
 import { AppSidebar } from '@/components/AppSidebar';
 import { Provider } from '../provider';
-import { Toaster } from '@/ui/sonner';
+import { ToastContainer } from 'react-toastify';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,8 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
       <Provider>
         <body>
-          {children}
-          <Toaster />
+          {children} <ToastContainer />
         </body>
       </Provider>
     </SidebarProvider>

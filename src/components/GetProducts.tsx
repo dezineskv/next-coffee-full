@@ -6,6 +6,7 @@ import { Button } from '@/ui/button';
 // import { useState, useEffect } from "react";
 // import EditProduct from "./EditProduct";
 import Image from 'next/image';
+import { toast, ToastContainer } from 'react-toastify';
 
 interface Product {
   _id: string;
@@ -21,6 +22,8 @@ interface Product {
 }
 
 export default async function GetProducts() {
+  // const notify = () => console.log('successfully deleted');
+
   try {
     const products = await Product.find();
     if (products.length === 0) {
@@ -90,7 +93,12 @@ export default async function GetProducts() {
                       }}
                     >
                       <input hidden type="text" name="id" defaultValue={product._id.toString()} />
-                      <Button className="rounded border bg-red-400 px-2">delete</Button>
+                      <Button
+                        // onClick={() => toast('Operation completed successfully!')}
+                        className="rounded border bg-red-400 px-2"
+                      >
+                        delete
+                      </Button>
                     </form>
                   </div>
                 </Card>

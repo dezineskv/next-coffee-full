@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import Product from '@/models/Product';
+import connectDB from '@/lib/db';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [input, setInput] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(event.target.value);
+    setInput(event.target.value);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onSearch(searchQuery);
+    onSearch(input);
   };
 
   return (
@@ -21,7 +23,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       <input
         type="text"
         placeholder="Search..."
-        value={searchQuery}
+        value={input}
         onChange={handleChange}
         className="flex-grow rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
       />

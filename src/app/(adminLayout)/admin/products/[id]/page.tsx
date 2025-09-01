@@ -14,7 +14,7 @@ import {
   TableRow,
 } from '@/ui/table';
 import { notFound } from 'next/navigation';
-// import CoffeeDetails from "./_components/CoffeeDetails";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default async function CoffeePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -52,8 +52,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
       in_stock,
       category,
     });
-
-    revalidatePath(`/products/${id}`);
+   revalidatePath(`/products/${id}`);
   }
 
   return (
@@ -61,7 +60,6 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
       <div className="card card-side mx-auto h-full bg-slate-200 px-4 py-4 text-center">
         <h1 className="mt-2 mb-6 text-center text-4xl font-bold">Admin</h1>
         <p className="mb-10 text-center">Product Details</p>
-
         <div className="mx-auto flex w-2xl flex-col justify-center gap-3 text-center md:flex-row">
           <div className="flex flex-col">
             <Image
@@ -79,7 +77,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
           <div className="card-body my-10 mt-0 ml-6 max-w-[400px] text-left">
             <p>
               <span className="font-bold text-blue-500">Product Title:&nbsp;</span>
-              <div className="text-background text-black">{product?.title}</div>
+              <div className=" text-black">{product?.title}</div>
             </p>
             <p>
               <span className="font-bold text-blue-500">Description:&nbsp;</span>
@@ -111,11 +109,10 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
             </p>
             <p>
               <span className="text-black">Product ID: </span>
-              <span className="text-background text-gray-500">{product?._id}</span>
+              <span className="text-gray-400">{product?._id}</span>
             </p>
           </div>
         </div>
-
         {/* form to update products in table format */}
         <form action={handleUpdate} className="mt-6">
           <h3 className="mb-6 text-xl">Update Product Details</h3>
@@ -226,6 +223,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
             </TableBody>
           </Table>
         </form>
+        {/* <ToastContainer /> */}
       </div>
     </>
   );

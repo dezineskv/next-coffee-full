@@ -7,6 +7,7 @@ import '../../src/app/globals.css';
 import { useState } from 'react';
 import { getProductsByCategory } from '@/actions/product';
 import Product, { IProduct } from '@/models/Product';
+import SearchBar from './SearchBar';
 
 export default function FilterProducts() {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
