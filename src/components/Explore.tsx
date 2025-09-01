@@ -16,7 +16,7 @@ function Explore() {
           </p>
           {/* start cards */}
           <div className="flex flex-col items-center justify-center gap-4 pt-10 pb-2 sm:flex-wrap md:flex-row md:flex-nowrap">
-            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
+            <Card className="w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
                 <CardDescription>
@@ -35,7 +35,7 @@ function Explore() {
                 />
               </CardContent>
             </Card>
-            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
+            <Card className="w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
                 <CardDescription>
@@ -54,7 +54,7 @@ function Explore() {
                 />
               </CardContent>
             </Card>
-            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
+            <Card className="w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">The Cafe</CardTitle>
                 <CardDescription>
@@ -73,7 +73,7 @@ function Explore() {
                 />
               </CardContent>
             </Card>
-            <Card className="max-w-70 shadow-lg sm:mx-auto md:w-1/4">
+            <Card className="w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
                 <CardDescription>
