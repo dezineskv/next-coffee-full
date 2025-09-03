@@ -2,8 +2,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 function DetailAccordion() {
   return (
-    <div className="mx-auto sm:px-10 md:w-3xl">
-      <Accordion type="single" collapsible className="mt-5" defaultValue="item-1">
+    <div className="mx-auto md:w-4xl">
+      <Accordion type="single" collapsible className="mt-5 sm:mx-6 sm:px-6 sm:w-[350px]" defaultValue="item-1">
         <AccordionItem value="item-1">
           <AccordionTrigger>Product Information</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">

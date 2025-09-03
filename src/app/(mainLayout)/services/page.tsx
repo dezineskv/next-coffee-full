@@ -55,7 +55,7 @@ export default function Services() {
           </p>
           {/* start cards */}
           <div className="flex flex-col items-center justify-center gap-4 py-10 sm:flex-wrap md:flex-row md:flex-nowrap">
-            <Card className="max-w-80 shadow-lg sm:mx-auto md:w-1/3">
+            <Card className="w-[300px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
                 <CardDescription>
@@ -70,7 +70,7 @@ export default function Services() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="mx-auto"
+                  className="mx-auto h-[200px] w-[200px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">
@@ -79,11 +79,11 @@ export default function Services() {
                 </Button>
               </CardFooter>
             </Card>
-            <Card className="max-w-100 shadow-lg sm:mx-auto md:w-1/2">
+            <Card className="w-[300px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
                 <CardDescription>
-                  <p className="text-para max-w-2xl text-left">
+                  <p className="text-para max-w-2xl text-left line-clamp-2">
                     Alongside our delicious coffee, we also offer a variety of pastries and
                     breakfast foods and other snacks.
                   </p>
@@ -95,7 +95,7 @@ export default function Services() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="mx-auto"
+                  className="mx-auto h-[200px] w-[200px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">
@@ -104,7 +104,7 @@ export default function Services() {
                 </Button>
               </CardFooter>
             </Card>
-            <Card className="max-w-80 shadow-lg sm:mx-auto md:w-1/3">
+            <Card className="w-[300px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
                 <CardDescription>
@@ -116,8 +116,8 @@ export default function Services() {
                   src="https://i.ibb.co/B2XZ6wvS/delivery.webp"
                   alt="icon"
                   width={200}
-                  height={170}
-                  className="mx-auto max-h-[200px] max-w-[170px]"
+                  height={200}
+                  className="h-[200px] w-[200px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">

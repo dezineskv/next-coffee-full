@@ -30,48 +30,6 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
 
   if (!product) return notFound();
 
-  //   return <DetailsPage product={product} />;
-  // }
-  // testing: type CoffeePageProps = {
-  //   params: {
-  //     id: string;
-  //   };
-  // };
-
-  // test: export default async function CoffeePage() {
-  // export default async function CoffeePage({ params }: CoffeePageProps) {
-  // try {
-  //   const product = await Product.findById(id);
-  //   if (!product) {
-  //     return <h1 className="text-xl font-bold text-red-400">You have no products</h1>;
-  //   } else {
-  //   if (!product) {
-  //     return <div>Product not found</div>;
-  //   }
-
-  // 1 test
-  // export default async function CoffeePage({ params }: { params: { id: string } }) {
-
-  //   try {
-  //     const product = await getProductById(params.id);
-
-  //     if (!product) {
-  //       return <div>Product not found</div>;
-  //     }
-  //     return product.toString();
-  //   } catch (error) {
-  //     return { message: 'error deleting product' };
-  //   }
-
-  // 2 test export default async function CoffeePage({ id }: { id: string }) {
-  //   try {
-  //     const product = await getProductById(id);
-  //     console.log(product);
-  // if (!product) {
-  //   return <div>Product not found</div>;
-  // }
-  // res.send(product).toString();
-
   return (
     <>
       <Header />
@@ -107,10 +65,10 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
           <div className="flex flex-col justify-center gap-3 md:flex-row">
             <div className="flex flex-col">
               <Image
-                src={
-                  product?.image_url ||
-                  'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
-                }
+                src={product?.image_url}
+                  //  ||
+                  // 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
+                
                 alt="Product Image"
                 width={350}
                 height={250}
@@ -163,7 +121,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
         </div>
 
         {/* other components */}
-        <div className="w-full">
+        <div className="">
           <DetailAccordion />
         </div>
 

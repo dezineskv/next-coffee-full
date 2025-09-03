@@ -98,7 +98,7 @@ const Header: React.FC = () => {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-background my-container flex flex-col gap-3 px-0 py-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="bg-background my-container flex flex-col gap-3 px-0 py-10 lg:flex-row lg:items-center lg:justify-between sm:w-[90%] sm:mx-3 sm:px-3">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start sm:pl-6 md:pl-0">

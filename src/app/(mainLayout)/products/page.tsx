@@ -59,7 +59,7 @@ export default async function CoffeeProducts() {
               <FilterProducts />
 
               {/* start cards */}
-              <div className="flex flex-row flex-wrap items-center justify-center gap-8 py-10">
+              <div className="flex flex-row flex-wrap items-center justify-center gap-8 py-10 sm:flex-col">
                 <h1 className="w-6xl pl-6 text-xl">Enjoy Our Product Selection</h1>
                 {/* map through data */}
 
@@ -69,7 +69,7 @@ export default async function CoffeeProducts() {
                     <TabsTrigger value="password">On Sale</TabsTrigger>
                   </TabsList>
                   <TabsContent value="account">
-                    <div className="mx-auto mt-6 ml-4 flex w-6xl flex-row justify-between gap-4">
+                    <div className="mx-auto mt-6 mx-auto flex md:flex-row flex-wrap items-center justify-center gap-8 py-10 sm:flex-col md:w-6xl">
                       {/* out-of-stock condition */}
                       {products.map((product: any) => (
                         <div

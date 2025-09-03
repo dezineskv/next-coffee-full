@@ -22,7 +22,7 @@ export default async function AdminProducts() {
               <h1 className="text-center text-4xl font-bold">Admin</h1>
               <p className="text-center">Update product(s)</p>
               {/* start cards */}
-              <div className="flex flex-col flex-wrap items-center justify-center gap-4 py-10 md:flex-row">
+              <div className="flex flex-wrap items-center justify-center gap-4 py-10 sm:flex-col md:flex-row">
                 {/* map through data */}
 
                 {/* out-of-stock condition */}

@@ -15,8 +15,8 @@ function Explore() {
             Our roaster starts with 100% Arabica coffee beans from Mexico
           </p>
           {/* start cards */}
-          <div className="flex flex-col items-center justify-center gap-4 pt-10 pb-2 sm:flex-wrap md:flex-row md:flex-nowrap">
-            <Card className="w-[250px] shadow-lg sm:mx-auto">
+          <div className="flex flex-col items-center justify-center gap-2 pt-10 pb-2 sm:flex-wrap md:flex-row md:flex-nowrap">
+            <Card className="h-[370px] w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Catering</CardTitle>
                 <CardDescription>
@@ -31,11 +31,11 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="h-auto w-auto"
+                  className="mx-auto h-[200px] w-[200px]"
                 />
               </CardContent>
             </Card>
-            <Card className="w-[250px] shadow-lg sm:mx-auto">
+            <Card className="h-[370px] w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Menu</CardTitle>
                 <CardDescription>
@@ -50,11 +50,11 @@ function Explore() {
                   alt="icon"
                   width={200}
                   height={200}
-                  className="h-auto w-auto"
+                  className="mx-auto h-[200px] w-[200px]"
                 />
               </CardContent>
             </Card>
-            <Card className="w-[250px] shadow-lg sm:mx-auto">
+            <Card className="h-[370px] w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">The Cafe</CardTitle>
                 <CardDescription>
@@ -69,11 +69,11 @@ function Explore() {
                   alt="icon"
                   width={150}
                   height={150}
-                  className="mx-auto"
+                  className="mx-auto h-[200px] w-[200px]"
                 />
               </CardContent>
             </Card>
-            <Card className="w-[250px] shadow-lg sm:mx-auto">
+            <Card className="h-[370px] w-[250px] shadow-lg sm:mx-auto">
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
                 <CardDescription>
@@ -87,8 +87,8 @@ function Explore() {
                   src="https://i.ibb.co/TMGmgXkB/delivery-icon-21.png"
                   alt="icon"
                   width={200}
-                  height={170}
-                  className="mx-auto h-auto max-h-[200px] w-auto max-w-[170px]"
+                  height={200}
+                  className="mx-auto h-auto max-h-[200px] w-auto max-w-[200px]"
                 />
               </CardContent>
             </Card>
