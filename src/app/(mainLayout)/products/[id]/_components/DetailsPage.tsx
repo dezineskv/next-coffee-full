@@ -67,7 +67,7 @@ export default async function DetailsPage({ product }: { product: any }) {
             </div>
             <div className="card-body my-10 mt-0 ml-6 w-[300px] text-left">
               <p>
-                <span className="font-bold text-gray-700">Product Description:&nbsp;</span>
+                <span className="font-bold text-white">Product Description:&nbsp;</span>
                 {product?.description}
               </p>
               <p className="mt-5">

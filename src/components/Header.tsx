@@ -23,7 +23,7 @@ import {
 } from '@/ui/dropdown-menu';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import SearchBar from '@/components/SearchBar';
+import Searches from '@/components/Searches';
 import Product from '@/models/Product';
 import connectDB from '@/lib/db';
 import ProductLIst from './ProductList';
@@ -80,11 +80,7 @@ const cateringItems = [
 const Header: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
-  const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    console.log('Search query:', query);
-    // Implement your search logic here (e.g., API calls, data filtering)
-  };
+
 
   // export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -179,7 +175,7 @@ const Header: React.FC = () => {
         {/* Desktop Actions */}
 
         <div className="sm:mx-6 sm:px-4">
-          <SearchBar onSearch={handleSearch} />
+          <Searches />
           {/* <ProductLIst query={searchQuery} /> */}
         </div>
 
