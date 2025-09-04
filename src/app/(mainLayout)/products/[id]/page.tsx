@@ -18,7 +18,7 @@ import Link from 'next/link';
 import Product, { IProduct } from '@/models/Product';
 import { TProduct } from '@/types/index';
 import { notFound } from 'next/navigation';
-import DetailsPage from './_components/DetailsPage';
+// import DetailsPage from '@/components/DetailsPage';
 
 export default async function CoffeePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -34,7 +34,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
     <>
       <Header />
       {/* breadcrumbs */}
-      <div className="pt-10 md:pl-24 bg-secondary">
+      <div className="bg-secondary pt-10 md:pl-24">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -53,82 +53,81 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
       </div>
       {/* product details */}
       {/* product title out of stock condition */}
-            <div className="md:pl-24 bg-secondary">
-
-      {product?.in_stock == 'no' ? (
-        <h2 className="header mx-auto pt-5 text-center text-3xl text-gray-400">
-          {product?.title}
-        </h2>
-      ) : (
-        <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product?.title}</h2>
-      )}
-      <div className="mx-auto mt-8 mb-10 flex h-full w-full flex-col justify-center gap-3 pb-10">
-        <div className="card card-side bg-base-100 mx-auto h-full px-4 py-4 text-center">
-          <div className="flex flex-col justify-center gap-3 md:flex-row">
-            <div className="flex flex-col">
-              <Image
-                src={product?.image_url}
+      <div className="bg-secondary md:pl-24">
+        {product?.in_stock == 'no' ? (
+          <h2 className="header mx-auto pt-5 text-center text-3xl text-gray-400">
+            {product?.title}
+          </h2>
+        ) : (
+          <h2 className="header mx-auto pt-5 text-center text-3xl font-bold">{product?.title}</h2>
+        )}
+        <div className="mx-auto mt-8 mb-10 flex h-full w-full flex-col justify-center gap-3 pb-10">
+          <div className="card card-side bg-base-100 mx-auto h-full px-4 py-4 text-center">
+            <div className="flex flex-col justify-center gap-3 md:flex-row">
+              <div className="flex flex-col">
+                <Image
+                  src={product?.image_url}
                   //  ||
                   // 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
-                
-                alt="Product Image"
-                width={350}
-                height={250}
-                className="h-auto w-auto"
-                priority
-              />
-              <div className="text-left">Small | Medium | Large</div>
-            </div>
-            <div className="card-body my-10 mt-0 ml-6 w-[300px] text-left">
-              <p>
-                <span className="font-bold text-foreground">Product Description:&nbsp;</span>
-                {product?.description}
-              </p>
-              <p className="mt-5">
-                <span className="font-bold text-foreground">Origin: </span>
-                {product?.origin}
-              </p>
-              <p className="mt-5">
-                <span className="font-bold text-foreground">Roast Level: </span>
-                {product?.roast_level}
-              </p>
-              <p className="mt-5">
-                <span className="font-bold text-foreground">Weight: </span>
-                {product?.weight_oz} oz.
-              </p>
-              <p className="mt-5">
-                <span className="font-bold text-foreground">Product ID: </span>
-                {id}
-              </p>
-              <div className="card-actions mt-6 flex flex-row items-center justify-between">
-                <h3 className="mr-4 text-3xl font-bold">${product?.price}</h3>
-                {product?.in_stock == 'no' ? (
-                  <div className="font-bold text-red-500">Out of stock</div>
-                ) : (
-                  ''
-                )}
-                <div>
-                  {product?.sale == 'yes' ? (
-                    <>
-                      <div className="pl-2 font-bold text-amber-500">On Sale</div>
-                      <Button className="btn btn-primary">Buy Now</Button>
-                    </>
+
+                  alt="Product Image"
+                  width={350}
+                  height={250}
+                  className="h-auto w-auto"
+                  priority
+                />
+                <div className="text-left">Small | Medium | Large</div>
+              </div>
+              <div className="card-body my-10 mt-0 ml-6 w-[300px] text-left">
+                <p>
+                  <span className="text-foreground font-bold">Product Description:&nbsp;</span>
+                  {product?.description}
+                </p>
+                <p className="mt-5">
+                  <span className="text-foreground font-bold">Origin: </span>
+                  {product?.origin}
+                </p>
+                <p className="mt-5">
+                  <span className="text-foreground font-bold">Roast Level: </span>
+                  {product?.roast_level}
+                </p>
+                <p className="mt-5">
+                  <span className="text-foreground font-bold">Weight: </span>
+                  {product?.weight_oz} oz.
+                </p>
+                <p className="mt-5">
+                  <span className="text-foreground font-bold">Product ID: </span>
+                  {id}
+                </p>
+                <div className="card-actions mt-6 flex flex-row items-center justify-between">
+                  <h3 className="mr-4 text-3xl font-bold">${product?.price}</h3>
+                  {product?.in_stock == 'no' ? (
+                    <div className="font-bold text-red-500">Out of stock</div>
                   ) : (
-                    <Button className="btn btn-primary">Buy Now</Button>
+                    ''
                   )}
+                  <div>
+                    {product?.sale == 'yes' ? (
+                      <>
+                        <div className="pl-2 font-bold text-amber-500">On Sale</div>
+                        <Button className="btn btn-primary">Buy Now</Button>
+                      </>
+                    ) : (
+                      <Button className="btn btn-primary">Buy Now</Button>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* other components */}
-        <div className="md:w-3xl mx-auto">
-          <DetailAccordion />
-        </div>
+          {/* other components */}
+          <div className="mx-auto md:w-3xl">
+            <DetailAccordion />
+          </div>
 
-        {/* <RatingProduct/>  */}
-      </div>
+          {/* <RatingProduct/>  */}
+        </div>
       </div>
       <Footer />
     </>
