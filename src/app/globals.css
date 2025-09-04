@@ -140,6 +140,11 @@ body {
   /* overflow-y: hidden; */
 }
 
+.my-global-toast {
+  background-color: #af4c87 !important; /* Override default background */
+  color: white;
+  border-radius: 8px;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 import Apps from '@/components/Apps';
 import Testimonials from '@/components/Testimonials';
 import Menus from '@/components/Menus';
-import GetProducts from '@/components/GetProducts';
+// import GetProducts from '@/components/GetProducts';
 
 export default function Home() {
   return (

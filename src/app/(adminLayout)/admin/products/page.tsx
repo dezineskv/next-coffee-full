@@ -9,6 +9,7 @@ import Product from '@/models/Product';
 import { getAllProducts, deleteProduct, getProductById } from '@/actions/product';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
+import ProdDeleteBut from '@/components/ProdDeleteBut';
 
 export default async function AdminProducts() {
   try {
@@ -81,26 +82,27 @@ export default async function AdminProducts() {
                           </Button>
                         </Link>
                         {/* delete form */}
-                        <form
+                        {/* <form
                           className="flex justify-end pr-5"
                           action={async (formData: FormData) => {
                             'use server';
                             const result = await deleteProduct(formData);
                             if (result.success) {
-                              toast.success('Item deleted successfully!');
+                              toast.success('Product deleted successfully');
                             } else {
-                              toast.error(result.message);
+                              toast.error('Error deleting product');
                             }
                           }}
-                        >
-                          <input
+                        > */}
+                        {/* <input
                             hidden
                             type="text"
                             name="id"
                             defaultValue={product._id.toString()}
                           />
                           <Button className="w-20 rounded border bg-red-400 px-2">delete</Button>
-                        </form>
+                        </form> */}
+                        <ProdDeleteBut productId={product._id.toString()} />
                       </div>
                     </Card>
                   </div>

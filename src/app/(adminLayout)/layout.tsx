@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </main>
       <Provider>
         <body>
-          {children} <ToastContainer />
+          {children} <ToastContainer className="my-global-toast" />
         </body>
       </Provider>
     </SidebarProvider>

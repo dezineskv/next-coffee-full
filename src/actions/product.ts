@@ -62,16 +62,24 @@ export async function updateProduct(
   await connectDB();
 
   if (!Types.ObjectId.isValid(id)) {
-    throw new Error('Invalid product ID');
+    return { success: false, message: 'Invalid product ID' };
   }
 
-  const updated = await Product.findByIdAndUpdate(id, updates, { new: true });
-  if (!updated) {
-    throw new Error('Product not found or update failed');
+  try {
+    const updated = await Product.findByIdAndUpdate(id, updates, { new: true });
+    if (!updated) {
+      return { success: false, message: 'Product not found or update failed' };
+    }
+    return {
+      success: true,
+      message: 'Product updated successfully!',
+      product: JSON.parse(JSON.stringify(updated)),
+    };
+  } catch (error) {
+    return { success: false, message: 'Error updating product' };
   }
-  return JSON.parse(JSON.stringify(updated));
 }
-
+ 
 // delete product
 export const deleteProduct = async (id: FormData) => {
   // Extracting Product ID from formData
@@ -79,8 +87,7 @@ export const deleteProduct = async (id: FormData) => {
   try {
     // Deleting the Product with the specified ID
     await Product.deleteOne({ _id: productId });
-    // Triggering revalidation of the specified path
-    revalidatePath('/');
+    // revalidatePath('/');
     // Returning a success message after deleting the product
     return { success: true, message: 'Item deleted successfully!' };
   } catch (error) {
@@ -88,11 +95,6 @@ export const deleteProduct = async (id: FormData) => {
   }
 };
 
-// export async function DELETE(request: NextRequest) {
-//   const id = request.nextUrl.searchParams.get('id');
-//   await EmailModel.findByIdAndDelete(id);
-//   return NextResponse.json({ success: true, msg: 'Email deleted' });
-// }
 
 //create new products
 export const createProducts = async (formData: FormData) => {
@@ -125,17 +127,9 @@ export const createProducts = async (formData: FormData) => {
       sale,
       category,
     });
-    // Saving the new product
-    newProduct.save();
-    // Triggering revalidation of the specified path
-    revalidatePath('/');
-    // Returning the string representation of the new product
-
-    return newProduct.toString();
-    //fix for toast message
+    return { success: true, message: 'Product created successfully!', product: newProduct };
   } catch (error) {
-    console.log(error);
-    return { success: false, message: 'error creating product' };
+    return { success: false, message: 'Error creating product' };
   }
 };
 

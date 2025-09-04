@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <ToastContainer />
+          <ToastContainer className="my-global-toast" />
         </ThemeProvider>
       </body>
     </html>

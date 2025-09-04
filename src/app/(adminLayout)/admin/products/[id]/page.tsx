@@ -14,7 +14,7 @@ import {
   TableRow,
 } from '@/ui/table';
 import { notFound } from 'next/navigation';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export default async function CoffeePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
