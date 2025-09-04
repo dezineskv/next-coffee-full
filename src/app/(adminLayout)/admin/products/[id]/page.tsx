@@ -117,7 +117,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
         <h3 className="mb-6 text-xl font-semibold">Update Product Details</h3>
 
         <form action={handleUpdate} className="mx-auto mt-6">
-          <div key={product?._id} className="flex flex-row sm:flex-col sm:w-full md:w-3xl">
+          <div key={product?._id} className="flex flex-col sm:w-full md:w-3xl">
             <div className="flex flex-col sm:w-full">
               <h3 className="text-lg font-semibold">Product Title</h3>
               <input
