@@ -68,9 +68,9 @@ export default function Services() {
                 <Image
                   src="https://i.ibb.co/R4G4Z5pv/icon1.png"
                   alt="icon"
-                  width={200}
+                  width={230}
                   height={200}
-                  className="mx-auto h-[200px] w-[200px]"
+                  className="mx-auto h-[200px] w-[230px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">
@@ -93,9 +93,9 @@ export default function Services() {
                 <Image
                   src="https://i.ibb.co/hJ9QzSxx/icon2.png"
                   alt="icon"
-                  width={200}
+                  width={230}
                   height={200}
-                  className="mx-auto h-[200px] w-[200px]"
+                  className="mx-auto h-[200px] w-[230px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">
@@ -115,9 +115,9 @@ export default function Services() {
                 <Image
                   src="https://i.ibb.co/B2XZ6wvS/delivery.webp"
                   alt="icon"
-                  width={200}
+                  width={230}
                   height={200}
-                  className="h-[200px] w-[200px]"
+                  className="h-[200px] w-[230px]"
                 />
               </CardContent>
               <CardFooter className="w-full text-center">

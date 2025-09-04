@@ -2,11 +2,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 
 function DetailAccordion() {
   return (
-    <div className="mx-auto md:w-4xl">
+    <div className="w-full">
       <Accordion
         type="single"
         collapsible
-        className="mt-5 w-[350px] sm:mx-6 sm:px-6"
+        className="mt-5 sm:mx-8 sm:px-8"
         defaultValue="item-1"
       >
         <AccordionItem value="item-1">

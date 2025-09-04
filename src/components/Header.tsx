@@ -21,7 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/ui/dropdown-menu';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Lock } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Searches from '@/components/Searches';
 import Product from '@/models/Product';
@@ -56,6 +56,11 @@ const productsItems = [
     title: 'Menu',
     href: '/cafe-menu',
     description: 'Espresso, cappuccino, latte and more',
+  },
+  {
+    title: 'Admin Login',
+    href: '/login',
+    description: 'Inventory management',
   },
 ];
 
@@ -94,10 +99,10 @@ const Header: React.FC = () => {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-background my-container flex flex-col gap-3 px-0 py-10 lg:flex-row lg:items-center lg:justify-between sm:w-[90%] sm:mx-3 sm:px-3">
+      <div className="bg-background flex flex-col gap-4 px-auto py-10 sm:mx-3 sm:w-[90%] sm:px-3 md:flex-row md:items-center md:justify-between mx-auto max-w-7xl">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center justify-start sm:pl-6 md:pl-0">
+          <div className="flex items-center justify-start pl-6">
             <Link href="/">
               <Image
                 src={
@@ -108,7 +113,7 @@ const Header: React.FC = () => {
                 alt="Logo"
                 width={200}
                 height={80}
-                className="w-auto max-w-[200px] border-0 pr-4 pb-4 sm:mx-auto sm:ml-6 md:pl-0"
+                className="w-auto max-w-[200px] border-0 pr-4 pb-4 sm:mx-auto sm:ml-6 md:pl-4"
                 priority={true}
               />
             </Link>
@@ -126,10 +131,10 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation -customized */}
-        <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="flex space-x-2">
+        <NavigationMenu className="hidden lg:flex pl-20">
+          <NavigationMenuList className="flex space-x-1 ml-8 pl-8">
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-xl font-medium">
+              <NavigationMenuTrigger className="text-lg font-medium">
                 <Link href="/about">About</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -143,7 +148,7 @@ const Header: React.FC = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-xl font-medium">
+              <NavigationMenuTrigger className="text-lg font-medium">
                 <Link href="/products">Products</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -157,7 +162,7 @@ const Header: React.FC = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-xl font-medium">
+              <NavigationMenuTrigger className="text-lg font-medium">
                 <Link href="/services">Services</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -174,25 +179,25 @@ const Header: React.FC = () => {
         </NavigationMenu>
         {/* Desktop Actions */}
 
-        <div className="sm:mx-6 sm:px-4">
+        <div className="sm:mx-6 sm:px-4 md:mb-4 md:ml-10 md:pl-10 md:mr-0">
           <Searches />
           {/* <ProductLIst query={searchQuery} /> */}
         </div>
 
         <div className="hidden items-center justify-end gap-x-5 lg:flex lg:flex-1">
-          <span className="relative text-xl font-medium text-gray-900">
+          <span className="relative mt-[4px] pt-1 text-xl font-medium text-gray-900">
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <ShoppingBag className="h-10 w-11 rounded-full bg-white p-2 text-black shadow-lg shadow-gray-300 transition-all hover:scale-105 hover:bg-gray-100" />
+                <ShoppingBag className="h-10 w-11 rounded-full bg-white p-2 text-black shadow-md shadow-gray-300 transition-all hover:scale-105 hover:bg-gray-100" />
                 {/* Cart badge*/}
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
+                <span className="absolute -top-1 -right-1 mt-[4px] flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                   {cartQuantity}
                 </span>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem>
-                  <div className="gap-4w-full flex flex-col items-center">
-                    <div className="flex flex-row pb-1 pl-2">
+                  <div className="flex w-full flex-col items-center gap-4">
+                    <div className="flex flex-row pt-[4px] pl-2">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -270,7 +275,7 @@ const Header: React.FC = () => {
           </span>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button className="h-[40px] w-[44px] rounded-full bg-white px-4 py-4 font-bold shadow-lg shadow-gray-200 transition-all hover:scale-105 hover:bg-gray-200">
+              <Button className="h-[40px] w-[44px] rounded-full bg-white px-4 py-4 font-bold shadow-md shadow-gray-200 transition-all hover:scale-105 hover:bg-gray-200">
                 <Moon className="text-background absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                 <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 text-black transition-all dark:scale-0 dark:-rotate-90" />
                 <span className="sr-only">Toggle theme</span>
@@ -282,12 +287,6 @@ const Header: React.FC = () => {
               <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button
-            asChild
-            className="rounded-lg bg-gray-900 px-6 py-6 text-xl text-white shadow-lg transition-all hover:scale-105 md:mr-12"
-          >
-            <Link href="/products">Buy Gift Cards</Link>
-          </Button>
         </div>
 
         {/* Mobile Navigation */}

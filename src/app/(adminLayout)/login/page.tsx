@@ -34,7 +34,7 @@ export default function Login() {
   };
 
   return (
-    <div className="mx-auto flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
+    <div className=" flex min-h-screen flex-col items-center justify-center bg-slate-200 text-center w-full">
       <Card className="w-full max-w-sm">
         <Link href="/">
           <Image

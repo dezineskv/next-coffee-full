@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
+import { Search } from 'lucide-react';
 
 export default function Footer() {
   const [query, setQuery] = useState('');
@@ -27,16 +28,18 @@ export default function Footer() {
 
   return (
     <>
-      <form onSubmit={handleSearch} className="mt-4 flex items-center gap-2">
+      <form onSubmit={handleSearch} className="mt-4 flex items-center gap-2 sm:ml-6 sm:pl-6">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search..."
-          className="rounded border px-2 py-1"
+          className="rounded border px-2 py-1 w-[300px]"
         />
         <button type="submit" className="rounded bg-blue-500 px-3 py-1 text-white">
-          Search
+          <span className="text-xs">
+            <Search />
+          </span>
         </button>
       </form>
       {loading && <div>Loading...</div>}

@@ -31,7 +31,7 @@ export default async function CoffeeProducts() {
       return (
         <>
           <Header />
-          <div className="my-container md:pl-24">
+          <div className="bg-secondary pt-10 md:pl-24">
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -48,10 +48,10 @@ export default async function CoffeeProducts() {
               </BreadcrumbList>
             </Breadcrumb>
           </div>
-          <div className="my-5 w-screen border-b-2 border-gray-900">
-            <div className="my-container flex flex-col justify-center gap-6 pt-1 pb-6">
+          <div className="bg-secondary mb-5 w-screen border-b-2 border-gray-900">
+            <div className="my-container flex flex-col justify-center gap-6 py-6">
               <h1 className="text-center text-4xl font-bold">Kimbotic Coffee Products</h1>
-              <p className="mx-auto max-w-2xl text-center text-gray-900">
+              <p className="mx-auto max-w-2xl text-center text-foreground">
                 Our roaster uses the best coffee beans!
               </p>
 

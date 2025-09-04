@@ -13,7 +13,7 @@ export default function About() {
       <main className="">
         <div className="my-container flex flex-col justify-center gap-6 py-12">
           <h1 className="text-center text-4xl font-bold">About Kimbotic Coffee</h1>
-          <p className="mx-auto max-w-2xl text-center text-xl text-gray-900">
+          <p className="mx-auto max-w-2xl text-center text-xl text-foreground">
             Kimbotic Coffee was established in 2025 by KimV. Since then, it has received rave
             support from local communities.
             <br></br>

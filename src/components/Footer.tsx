@@ -38,7 +38,7 @@ export default function Footer() {
             <Subscribe />
           </div>
         </div>
-        <div className="my-container flex items-center justify-center border-t-2 border-gray-200 pt-4 pb-8 text-sm text-gray-900">
+        <div className="my-container flex items-center justify-center border-t-2 border-gray-200 pt-4 pb-8 text-sm text-foreground">
           Copyright &copy; 2025 KimV
         </div>
       </div>

@@ -29,9 +29,9 @@ function Explore() {
                 <Image
                   src="https://i.ibb.co/R4G4Z5pv/icon1.png"
                   alt="icon"
-                  width={200}
+                  width={220}
                   height={200}
-                  className="mx-auto h-[200px] w-[200px]"
+                  className="mx-auto h-[200px] w-[220px]"
                 />
               </CardContent>
             </Card>
@@ -48,9 +48,9 @@ function Explore() {
                 <Image
                   src="https://i.ibb.co/hJ9QzSxx/icon2.png"
                   alt="icon"
-                  width={200}
+                  width={220}
                   height={200}
-                  className="mx-auto h-[200px] w-[200px]"
+                  className="mx-auto h-[200px] w-[220px]"
                 />
               </CardContent>
             </Card>
@@ -69,7 +69,7 @@ function Explore() {
                   alt="icon"
                   width={150}
                   height={150}
-                  className="mx-auto h-[200px] w-[200px]"
+                  className="mx-auto h-[200px] w-[220px]"
                 />
               </CardContent>
             </Card>
@@ -86,9 +86,9 @@ function Explore() {
                 <Image
                   src="https://i.ibb.co/TMGmgXkB/delivery-icon-21.png"
                   alt="icon"
-                  width={200}
+                  width={220}
                   height={200}
-                  className="mx-auto h-auto max-h-[200px] w-auto max-w-[200px]"
+                  className="mx-auto h-auto max-h-[200px] w-auto max-w-[220px]"
                 />
               </CardContent>
             </Card>

@@ -7,7 +7,6 @@ import '../../src/app/globals.css';
 import { useState } from 'react';
 import { getProductsByCategory } from '@/actions/product';
 import Product, { IProduct } from '@/models/Product';
-import SearchBar from './SearchBar';
 
 export default function FilterProducts() {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -31,7 +30,7 @@ export default function FilterProducts() {
 
   return (
     <>
-      <div className="w-6xl border-b-2 border-gray-600 py-5 md:px-24">
+      <div className="w-6xl py-5 md:px-24">
         <h1 className="mb-4 text-xl">Filter Products by Category</h1>
         <form onSubmit={handleFilter}>
           <input

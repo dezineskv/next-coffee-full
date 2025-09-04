@@ -34,7 +34,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
     <>
       <Header />
       {/* breadcrumbs */}
-      <div className="my-container md:pl-24">
+      <div className="pt-10 md:pl-24 bg-secondary">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -53,8 +53,10 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
       </div>
       {/* product details */}
       {/* product title out of stock condition */}
+            <div className="md:pl-24 bg-secondary">
+
       {product?.in_stock == 'no' ? (
-        <h2 className="bg-background header mx-auto pt-5 text-center text-3xl text-gray-400">
+        <h2 className="header mx-auto pt-5 text-center text-3xl text-gray-400">
           {product?.title}
         </h2>
       ) : (
@@ -79,23 +81,23 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
             </div>
             <div className="card-body my-10 mt-0 ml-6 w-[300px] text-left">
               <p>
-                <span className="font-bold text-gray-700">Product Description:&nbsp;</span>
+                <span className="font-bold text-foreground">Product Description:&nbsp;</span>
                 {product?.description}
               </p>
               <p className="mt-5">
-                <span className="font-bold text-gray-700">Origin: </span>
+                <span className="font-bold text-foreground">Origin: </span>
                 {product?.origin}
               </p>
               <p className="mt-5">
-                <span className="font-bold text-gray-700">Roast Level: </span>
+                <span className="font-bold text-foreground">Roast Level: </span>
                 {product?.roast_level}
               </p>
               <p className="mt-5">
-                <span className="font-bold text-gray-700">Weight: </span>
+                <span className="font-bold text-foreground">Weight: </span>
                 {product?.weight_oz} oz.
               </p>
               <p className="mt-5">
-                <span className="font-bold text-gray-700">Product ID: </span>
+                <span className="font-bold text-foreground">Product ID: </span>
                 {id}
               </p>
               <div className="card-actions mt-6 flex flex-row items-center justify-between">
@@ -121,11 +123,12 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
         </div>
 
         {/* other components */}
-        <div className="">
+        <div className="md:w-3xl mx-auto">
           <DetailAccordion />
         </div>
 
         {/* <RatingProduct/>  */}
+      </div>
       </div>
       <Footer />
     </>

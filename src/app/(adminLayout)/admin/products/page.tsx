@@ -17,10 +17,10 @@ export default async function AdminProducts() {
     } else {
       return (
         <>
-          <div className="my-5 w-full bg-slate-200">
+          <div className="py-5 w-full bg-slate-200">
             <div className="my-container flex flex-col justify-center gap-6 py-12">
-              <h1 className="text-center text-4xl font-bold">Admin</h1>
-              <p className="text-center">Update product(s)</p>
+              <h1 className="text-center text-4xl font-bold text-black">Admin</h1>
+              <p className="text-center text-black">Update product(s)</p>
               {/* start cards */}
               <div className="flex flex-wrap items-center justify-center gap-4 py-10 sm:flex-col md:flex-row">
                 {/* map through data */}
