@@ -88,6 +88,12 @@ export const deleteProduct = async (id: FormData) => {
   }
 };
 
+// export async function DELETE(request: NextRequest) {
+//   const id = request.nextUrl.searchParams.get('id');
+//   await EmailModel.findByIdAndDelete(id);
+//   return NextResponse.json({ success: true, msg: 'Email deleted' });
+// }
+
 //create new products
 export const createProducts = async (formData: FormData) => {
   await connectDB();
@@ -126,9 +132,10 @@ export const createProducts = async (formData: FormData) => {
     // Returning the string representation of the new product
 
     return newProduct.toString();
+    //fix for toast message
   } catch (error) {
     console.log(error);
-    return { message: 'error creating product' };
+    return { success: false, message: 'error creating product' };
   }
 };
 

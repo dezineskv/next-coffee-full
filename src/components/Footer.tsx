@@ -22,9 +22,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="text-md flex flex-row items-start justify-between gap-4 font-medium sm:py-10 sm:pl-1 md:px-20 md:pb-20">
-            <Link href="/cafe-menu">
-              <p>Menu</p>
-            </Link>
+            
             <Link href="/about">
               <p>About</p>
             </Link>

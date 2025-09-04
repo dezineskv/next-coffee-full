@@ -8,6 +8,7 @@ import '@/app/globals.css';
 import Product from '@/models/Product';
 import { getAllProducts, deleteProduct, getProductById } from '@/actions/product';
 import Image from 'next/image';
+import { toast } from 'react-toastify';
 
 export default async function AdminProducts() {
   try {
@@ -17,7 +18,7 @@ export default async function AdminProducts() {
     } else {
       return (
         <>
-          <div className="py-5 w-full bg-slate-200">
+          <div className="w-full bg-slate-200 py-5">
             <div className="my-container flex flex-col justify-center gap-6 py-12">
               <h1 className="text-center text-4xl font-bold text-black">Admin</h1>
               <p className="text-center text-black">Update product(s)</p>
@@ -84,7 +85,12 @@ export default async function AdminProducts() {
                           className="flex justify-end pr-5"
                           action={async (formData: FormData) => {
                             'use server';
-                            await deleteProduct(formData);
+                            const result = await deleteProduct(formData);
+                            if (result.success) {
+                              toast.success('Item deleted successfully!');
+                            } else {
+                              toast.error(result.message);
+                            }
                           }}
                         >
                           <input

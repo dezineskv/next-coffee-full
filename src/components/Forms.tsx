@@ -3,6 +3,7 @@
 import { createProducts } from '@/actions/product';
 import { useRef } from 'react';
 import SubmitButton from './SubmitButton';
+import { toast } from 'react-toastify';
 
 export default function Forms() {
   // using useRef to reset the form after submission
@@ -15,7 +16,21 @@ export default function Forms() {
           ref={ref}
           action={async (FormData) => {
             ref.current?.reset();
-            await createProducts(FormData);
+            const result = await createProducts(FormData);
+            if (
+              typeof result === 'object' &&
+              result !== null &&
+              'success' in result &&
+              'message' in result
+            ) {
+              if (result.success) {
+                toast.success('Product created successfully!');
+              } else {
+                toast.error('Error creating product');
+              }
+            } else if (typeof result === 'string') {
+              toast.error(result);
+            }
           }}
           className="mx-auto mt-8 flex w-[85%] flex-col justify-center gap-4 rounded-lg border-1 border-black bg-black p-6 shadow-lg md:w-3xl"
         >

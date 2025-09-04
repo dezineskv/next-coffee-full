@@ -37,7 +37,7 @@ function Apps() {
                 alt="download buttons"
                 width={350}
                 height={200}
-                className="ml-5"
+                className="ml-5 cursor-pointer"
                 src="https://i.ibb.co/vvgM8T17/download-buttons.png"
               />
               {/* <Button className="bg-gray-900 text-white sm:px-6 sm:mx-6 py-6 md:px-5 rounded-md text-md shadow-lg hover:scale-105 transition-all w-1/2">
@@ -49,7 +49,7 @@ function Apps() {
                 <Image
                   width={250}
                   height={350}
-                  className="absolute top-0 left-10 z-20 rounded-2xl border-2 border-gray-100 sm:top-10"
+                  className="cursor-pointer absolute top-0 left-10 z-20 rounded-2xl border-2 border-gray-100 sm:top-10"
                   src="https://i.ibb.co/WW2QmJt7/coffee-banner.webp"
                   alt="banner"
                 />
