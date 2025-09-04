@@ -64,7 +64,7 @@ const productsItems = [
   },
 ];
 
-const cateringItems = [
+const servicesItems = [
   {
     title: 'Corporate Events',
     href: '/services',
@@ -167,7 +167,7 @@ const Header: React.FC = () => {
               </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[600px]">
-                  {cateringItems.map((item) => (
+                  {servicesItems.map((item) => (
                     <ListItem key={item.title} title={item.title} href={item.href}>
                       {item.description}
                     </ListItem>
@@ -332,11 +332,11 @@ const Header: React.FC = () => {
                 </details>
                 <details className="group">
                   <summary className="flex cursor-pointer list-none items-center justify-between pl-6 text-xl font-medium">
-                    Catering
+                    Services
                     <span className="transition group-open:rotate-180">▼</span>
                   </summary>
                   <div className="mt-2 ml-6 space-y-2">
-                    {cateringItems.map((item) => (
+                    {servicesItems.map((item) => (
                       <Link
                         key={item.title}
                         href={item.href}

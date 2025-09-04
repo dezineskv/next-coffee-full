@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Subscribe from './Subscribe';
 import '../../src/app/globals.css';
 import Link from 'next/link';
+import Emails from './Emails';
 
 export default function Footer() {
   return (
@@ -35,7 +36,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-col items-center justify-center text-xl font-medium sm:pb-10 sm:pl-1 md:flex-row md:px-10">
-            <Subscribe />
+            <Emails/>
           </div>
         </div>
         <div className="my-container flex items-center justify-center border-t-2 border-gray-200 pt-4 pb-8 text-sm text-foreground">
