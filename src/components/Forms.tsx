@@ -43,7 +43,7 @@ export default function Forms() {
               type="text"
               name="title"
               className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
-              defaultValue="new title here"
+              defaultValue="House Blend"
             />
           </div>
           <div>
@@ -53,8 +53,8 @@ export default function Forms() {
             <input
               type="text"
               name="description"
-              defaultValue="description"
-              className="ml-2 h-10 w-82 rounded-lg border-1 border-white p-2 text-white"
+              defaultValue="A bold and balanced blend perfect for espresso lovers, with a caramel crema."
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -64,8 +64,8 @@ export default function Forms() {
             <input
               type="string"
               name="price"
-              defaultValue="6"
-              className="ml-2 h-10 w-32 rounded-lg border-1 border-white p-2 text-white"
+              defaultValue="5"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           {/* <div className="flex flex-col mx-auto text-left p-6 bg-gray-300 w-[75%]">
@@ -77,8 +77,8 @@ export default function Forms() {
             <input
               name="image_url"
               type="string"
-              defaultValue="https://i.ibb.co/7xJPr5xq/coffee-6.jpg"
-              className="border-1 border-gray-700 p-2 text-white"
+              defaultValue="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -88,8 +88,8 @@ export default function Forms() {
             <input
               name="roast_level"
               type="string"
-              defaultValue="medium"
-              className="border-1 border-gray-700 p-2 text-white"
+              defaultValue="dark"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -100,7 +100,7 @@ export default function Forms() {
               name="origin"
               type="string"
               defaultValue="Columbia"
-              className="border-1 border-gray-700 p-2 text-white"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -111,7 +111,7 @@ export default function Forms() {
               name="in_stock"
               type="string"
               defaultValue="yes"
-              className="border-1 border-gray-700 p-2 text-white"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -122,7 +122,7 @@ export default function Forms() {
               name="weight_oz"
               type="string"
               defaultValue="12"
-              className="border-1 border-gray-700 p-2 text-white"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -133,7 +133,7 @@ export default function Forms() {
               name="sale"
               type="string"
               defaultValue="yes"
-              className="border-1 border-gray-700 text-white"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <div>
@@ -148,7 +148,7 @@ export default function Forms() {
               name="category"
               defaultValue="other"
               type="string"
-              className="border-1 border-gray-700 text-white"
+              className="ml-2 h-10 w-62 rounded-lg border-1 border-white p-2 text-white"
             />
           </div>
           <SubmitButton />

@@ -33,6 +33,7 @@ const chartConfig = {
 export function Chartbar() {
   return (
     <div className="mx-auto w-full bg-slate-200">
+      <h3 className="font-bold">Sales</h3>
       <ChartContainer config={chartConfig} className="h-50 min-h-[200px] w-2xl">
         <BarChart accessibilityLayer data={chartData}>
           <CartesianGrid vertical={false} />

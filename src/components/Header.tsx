@@ -57,11 +57,6 @@ const productsItems = [
     href: '/cafe-menu',
     description: 'Espresso, cappuccino, latte and more',
   },
-  {
-    title: 'Admin Login',
-    href: '/login',
-    description: 'Inventory management',
-  },
 ];
 
 const servicesItems = [
@@ -85,8 +80,6 @@ const servicesItems = [
 const Header: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
-
-
   // export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
@@ -99,7 +92,7 @@ const Header: React.FC = () => {
     <>
       {/* <header className=" bg-gray-200/90 w-full sm:pt-5 md:pt-10 sm:pb-8 md:pl-2 mb-5"> */}
 
-      <div className="bg-background flex flex-col gap-4 px-auto py-10 sm:mx-3 sm:w-[90%] sm:px-3 md:flex-row md:items-center md:justify-between mx-auto max-w-7xl">
+      <div className="bg-background px-auto mx-auto flex max-w-7xl flex-col gap-4 py-10 sm:mx-3 sm:w-[90%] sm:px-3 md:flex-row md:items-center md:justify-between">
         {/* Logo and Mobile Menu Toggle */}
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start pl-6">
@@ -131,8 +124,8 @@ const Header: React.FC = () => {
         </div>
 
         {/* Desktop Navigation -customized */}
-        <NavigationMenu className="hidden lg:flex pl-20">
-          <NavigationMenuList className="flex space-x-1 ml-8 pl-8">
+        <NavigationMenu className="hidden pl-20 lg:flex">
+          <NavigationMenuList className="ml-8 flex space-x-1 pl-8">
             <NavigationMenuItem>
               <NavigationMenuTrigger className="text-lg font-medium">
                 <Link href="/about">About</Link>
@@ -179,7 +172,7 @@ const Header: React.FC = () => {
         </NavigationMenu>
         {/* Desktop Actions */}
 
-        <div className="sm:mx-6 sm:px-4 md:mb-4 md:ml-10 md:pl-10 md:mr-0">
+        <div className="sm:mx-6 sm:px-4 md:mr-0 md:mb-4 md:ml-10 md:pl-10">
           <Searches />
           {/* <ProductLIst query={searchQuery} /> */}
         </div>
@@ -266,8 +259,23 @@ const Header: React.FC = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <div className="border-1-top border-gray mx-auto">
-                    <Link href="/login">Log In</Link>&nbsp;
-                    <Link href="/login">Admin</Link>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-lock-icon lucide-lock"
+                    >
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    &nbsp;
+                    <Link href="/login">Admin Login</Link>
                   </div>
                 </DropdownMenuItem>
               </DropdownMenuContent>

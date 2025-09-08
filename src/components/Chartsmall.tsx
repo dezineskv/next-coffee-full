@@ -28,8 +28,8 @@ export function Chartsmall() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Bar Chart</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Product Inventory</CardTitle>
+        <CardDescription>January - June 2025</CardDescription>
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig}>
@@ -52,7 +52,7 @@ export function Chartsmall() {
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
+          Showing total products for the last 6 months
         </div>
       </CardFooter>
     </Card>

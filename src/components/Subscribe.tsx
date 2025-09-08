@@ -4,7 +4,7 @@ const Subscribe = () => {
   return (
     <div className="mx-auto mt-6 flex flex-col items-center justify-center sm:max-w-60 md:max-w-90">
       <form className="sm:pl-6">
-        <h1 className="text-lg font-bold sm:ml-4">Subscribe to our Newsletter</h1>
+        <h1 className="text-lg font-bold sm:mx-auto">Subscribe to our Newsletter</h1>
         <div className="mb-4 ml-4">
           <input
             type="email"

@@ -50,7 +50,7 @@ function Menu() {
 
   return (
     <>
-      <div className="bg-background">
+      <div className="bg-background sm:flex-col">
         <div className="my-container flex sm:flex-col pb-10 sm:px-6 md:flex-row">
           <div className="sm:w-[300px] md:mr-10 md:mb-6 md:ml-6 md:w-1/2 md:max-w-[400px]">
             <Image

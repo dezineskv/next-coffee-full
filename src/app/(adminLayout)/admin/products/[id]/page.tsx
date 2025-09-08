@@ -116,7 +116,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
         {/* form to update products in table format */}
         <h3 className="mb-6 text-xl font-semibold">Update Product Details</h3>
 
-        <form action={handleUpdate} className="mx-auto mt-6">
+        <form action={handleUpdate} className="mx-auto mt-6 bg-background p-4 rounded-lg">
           <div key={product?._id} className="flex flex-col sm:w-full md:w-3xl">
             <div className="flex flex-col sm:w-full">
               <h3 className="text-lg font-semibold">Product Title</h3>
@@ -216,7 +216,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
               />
             </div>
 
-            <div className="flex mt-6 sm:w-full">
+            <div className="flex mt-6 sm:w-full mx-auto align-middle justify-center ">
               <Button className="rounded border py-4">UPDATE PRODUCT</Button>
             </div>
           </div>
