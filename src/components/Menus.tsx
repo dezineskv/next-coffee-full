@@ -51,14 +51,14 @@ function Menu() {
   return (
     <>
       <div className="bg-background sm:flex-col">
-        <div className="my-container flex sm:flex-col pb-10 sm:px-6 md:flex-row">
+        <div className="my-container flex pb-10 sm:flex-col sm:px-6 md:flex-row">
           <div className="sm:w-[300px] md:mr-10 md:mb-6 md:ml-6 md:w-1/2 md:max-w-[400px]">
             <Image
-              src="https://i.ibb.co/kgX1NFZW/alowishus-coffee.png"
+              src="https://i.ibb.co/TMKxH1Yf/to-go-coffee-mug-premium-14916-1.png"
               alt="coffee cups image"
               width={400}
               height={400}
-              className="z-30 min-w-80"
+              className="z-30 min-w-80 rotate-6"
             />
           </div>
           <div className="flex flex-col justify-center md:w-1/2 md:max-w-[600px]">

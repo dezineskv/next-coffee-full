@@ -25,8 +25,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
 
   // safely use `id`
   const product = await getProductById(id);
-  console.log(id);
-  console.log(product);
+  // console.log(id);
 
   if (!product) return notFound();
 

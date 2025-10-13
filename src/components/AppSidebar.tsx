@@ -8,8 +8,6 @@ import {
   ChartArea,
   Database,
 } from 'lucide-react';
-// import Image from 'next/image';
-// import Link from 'next/link';
 import {
   Sidebar,
   SidebarContent,
@@ -21,6 +19,7 @@ import {
   SidebarMenuItem,
 } from '@/ui/sidebar';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Menu items.
 const items = [
@@ -41,7 +40,7 @@ const items = [
   },
   {
     title: 'Add Products',
-    url: '/all-products',
+    url: '/admin/all-products',
     icon: Coffee,
   },
   {
@@ -49,11 +48,6 @@ const items = [
     url: '/admin/products',
     icon: Edit,
   },
-  // {
-  //   title: 'Inventory',
-  //   url: '/inventory',
-  //   icon: Database,
-  // },
   {
     title: 'Client Home',
     url: '/',
@@ -70,7 +64,7 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               <>
-                <a href="/">
+                <Link href="/">
                   <Image
                     src="https://i.ibb.co/XrBqjX0k/logo3-d.png"
                     alt="Logo"
@@ -78,7 +72,7 @@ export function AppSidebar() {
                     height={180}
                     className="px-auto mx-auto w-auto max-w-[220px] border-0 pb-4"
                   />
-                </a>
+                </Link>
               </>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>

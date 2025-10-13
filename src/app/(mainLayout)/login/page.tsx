@@ -16,25 +16,39 @@ import { Input } from '@/ui/input';
 import { Label } from '@/ui/label';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAuth } from '@/lib/hooks/useAuth';
+import Cookies from 'js-cookie';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+  const { login } = useAuth();
 
-  const handleLogin = async () => {
-    try {
-      const result = await loginUser(email, password);
-      console.log('Logged in:', result);
-      // Redirect or set cookie
-      return router.push('/admin');
-    } catch (err) {
-      console.error(err);
-    }
+  const handleLogin = () => {
+    // login logic
+
+    const userData = { id: '123', name: 'Admin' };
+    login(userData);
+
+    Cookies.set('auth', '123', { expires: 1 }); // expires in 1 day
+    // saves user to localStorage
+    return router.push('/admin/dashboard'); // Redirect to protected page
   };
 
+  // const handleLogin = async () => {
+  //   try {
+  //     const result = await loginUser(email, password);
+  //     console.log('Logged in:', result);
+  //     // Redirect or set cookie
+  //     return router.push('/admin');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
   return (
-    <div className=" flex min-h-screen flex-col items-center justify-center bg-slate-200 text-center w-full">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
       <Card className="w-full max-w-sm">
         <Link href="/">
           <Image
@@ -96,6 +110,7 @@ export default function Login() {
           {/* <Button variant="outline" className="w-full">
                 Login with Google
                 </Button> */}
+          {/* Cookies.remove('auth'); on logout */}
         </CardFooter>
       </Card>
     </div>

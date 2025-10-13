@@ -9,21 +9,21 @@ export default function Hero() {
     <>
       <section className="bg-secondary w-full [family-name:var(--font-geist-sans)] sm:pt-5 sm:pb-8 md:pt-4">
         {/* container */}
-        <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-10 pr-6 pl-0 md:flex-row md:gap-6">
+        <div className="my-container bg-secondary mx-auto flex flex-col-reverse items-center justify-center gap-4 pr-6 pl-0 md:flex-row md:gap-6">
           {/* TEXT SIDE */}
-          <div className="w-full sm:ml-6 sm:px-10 md:w-1/2 md:px-5">
+          <div className="w-full ml-6 pl-20 md:w-1/2">
             {/* <div className={styles.slideIn}> */}
             <motion.div
               initial={{ opacity: 0, x: -150 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-left text-4xl leading-[1.40] font-extrabold sm:text-5xl lg:text-6xl">
+              <h1 className="text-left text-4xl leading-[1.40] font-extrabold sm:text-5xl lg:text-5xl">
                 Delicious Kimbotic
               </h1>
 
               {/* </div> */}
-              <div className="text-left text-4xl leading-[1.0] font-extrabold sm:text-5xl lg:text-6xl">
+              <div className="text-left text-4xl leading-[1.0] font-extrabold sm:text-5xl lg:text-5xl">
                 <span className="text-coffee-700 mt-4 inline-flex items-center">
                   Coffee&nbsp;
                   <Image
@@ -68,15 +68,15 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex w-full items-center justify-center sm:mt-0 sm:pt-0">
+            <div className="flex w-full items-center justify-center sm:mt-0 sm:pt-0 md:max-w-[450px]">
               <Image
-                src="https://i.ibb.co/1YGJRHhk/hero1.png"
+                src="https://i.ibb.co/TMKxH1Yf/to-go-coffee-mug-premium-14916-1.png"
                 alt="Hero image"
-                width={700}
-                height={700}
+                width={600}
+                height={600}
                 // priority
                 // sizes="50vw, 100vw"
-                className="h-auto w-auto sm:max-w-full sm:px-6 md:w-[700px]"
+                className="h-auto w-auto sm:max-w-full sm:px-6 md:w-[600px]"
               />
             </div>
           </motion.div>

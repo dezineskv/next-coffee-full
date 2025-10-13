@@ -21,7 +21,7 @@ function Favorite() {
         <div className="my-container z-10 flex flex-col py-20 sm:px-6 md:flex-row md:justify-between">
           <div className="sm:min-w[300px] z-10 sm:w-full md:w-1/2">
             <Image
-              src="https://i.ibb.co/Tjgj4hh/coffee-mid.png"
+              src="https://i.ibb.co/TMKxH1Yf/to-go-coffee-mug-premium-14916-1.png"
               alt="coffee cups image"
               width={500}
               height={500}
