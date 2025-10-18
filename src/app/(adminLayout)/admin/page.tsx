@@ -29,10 +29,10 @@ export default function Home() {
       return (
         <div className="mx-auto h-screen w-full bg-slate-200 pt-10">
           <Link
-            href="/login"
+            href="/"
             className="mt-10 w-25 rounded border border-solid border-black p-2 text-center"
           >
-            Sign In
+            Back home
           </Link>
         </div>
       );

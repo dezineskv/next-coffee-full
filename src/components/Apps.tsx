@@ -21,18 +21,9 @@ function Apps() {
                 roasted beans, which are typically steeped in hot water before being filtered out.
               </p>
               <p className="text-para py-4 text-base sm:mx-6 md:pl-1">
-                Though coffee is now a global commodity, it has a long history tied closely to food
-                traditions around the Red Sea. Credible evidence of coffee drinking as the modern
-                beverage subsequently appears in modern-day Yemen in southern Arabia in the middle
-                of the 15th century in Sufi shrines, where coffee seeds were first roasted and
-                brewed in a manner similar to how it is now prepared for drinking.
+                Start using the app today!
               </p>
-              <p className="text-para py-4 text-base sm:mx-6 md:pl-1">
-                The coffee beans were procured by the Yemenis from the Ethiopian Highlands via
-                coastal Somali intermediaries, and cultivated in Yemen. By the 16th century, the
-                drink had reached the rest of the Middle East and North Africa, later spreading to
-                Europe.
-              </p>
+             
               <Image
                 alt="download buttons"
                 width={350}
@@ -45,21 +36,15 @@ function Apps() {
             </Button> */}
             </div>
             <div className="mb-10 flex flex-row pt-10 pb-10 sm:w-full sm:justify-center sm:pt-10 md:w-1/2 md:items-center">
-              <div className="InstantCoffee_col aos-init aos-animate relative order-2 mx-auto md:flex">
+              <div className="mx-auto md:flex">
                 <Image
-                  width={250}
-                  height={350}
-                  className="cursor-pointer absolute top-0 left-10 z-20 rounded-2xl border-2 border-gray-100 sm:top-10"
-                  src="https://i.ibb.co/WW2QmJt7/coffee-banner.webp"
+                  width={350}
+                  height={280}
+                  className="rounded-2xl border-2 border-gray-100"
+                  src="https://i.ibb.co/3m60M6wm/coffeecups-nobg.png"
                   alt="banner"
                 />
-                <Image
-                  className="z-10 -rotate-12 rounded-2xl border-2 border-gray-100"
-                  alt="banner"
-                  src="https://i.ibb.co/WW2QmJt7/coffee-banner.webp"
-                  width={230}
-                  height={350}
-                />
+    
               </div>
             </div>
           </div>

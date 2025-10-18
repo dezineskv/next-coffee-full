@@ -1,7 +1,9 @@
 'use client';
+
 import { useState } from 'react';
-import { loginUser } from '@/actions/users';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/lib/hooks/useAuth';
+import toast from 'react-hot-toast';
 import { Button } from '@/ui/button';
 import {
   Card,
@@ -12,40 +14,59 @@ import {
   CardHeader,
   CardTitle,
 } from '@/ui/card';
-import { Input } from '@/ui/input';
-import { Label } from '@/ui/label';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useAuth } from '@/lib/hooks/useAuth';
-import Cookies from 'js-cookie';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
-  const { login } = useAuth();
+  const { login, logout } = useAuth(); // single hook call
 
-  const handleLogin = () => {
-    // login logic
+  const handleLogin = async () => {
+    setError(null);
+    if (!email || !password) {
+      toast.error('Please enter email and password');
+      return;
+    }
 
-    const userData = { id: '123', name: 'Admin' };
-    login(userData);
+    setLoading(true);
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ email, password }),
+      });
 
-    Cookies.set('auth', '123', { expires: 1 }); // expires in 1 day
-    // saves user to localStorage
-    return router.push('/admin/dashboard'); // Redirect to protected page
+      const data = await res.json().catch(() => ({ success: false, message: 'Invalid response' }));
+
+      if (!res.ok) {
+        toast.error(data?.message || 'Login failed');
+        return;
+      }
+
+      if (data.user) {
+        toast.success(`Welcome back, ${data.user.name}`);
+        login(data.user);
+        router.push('/admin');
+      } else {
+        toast.error(data?.message || 'Login failed');
+      }
+    } catch (err) {
+      toast.error('Network or server error');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  // const handleLogin = async () => {
-  //   try {
-  //     const result = await loginUser(email, password);
-  //     console.log('Logged in:', result);
-  //     // Redirect or set cookie
-  //     return router.push('/admin');
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  // };
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    logout();
+    router.push('/login');
+  };
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-slate-200 text-center">
@@ -61,56 +82,31 @@ export default function Login() {
           />
         </Link>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
-          <CardDescription>Enter email below to login</CardDescription>
-          {/* <CardAction>
-                <Button variant="link">Sign Up</Button>
-                </CardAction> */}
+          <CardTitle>Log in as admin</CardTitle>
         </CardHeader>
         <CardContent>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleLogin();
-            }}
-          >
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
-                <Label htmlFor="email">Email</Label>
-                <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-              </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  {/* <a
-                        href="#"
-                        className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                        >
-                        Forgot your password?
-                        </a> */}
-                </div>
-                <Input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button type="submit" className="w-full">
-                  Login
-                </Button>
-              </div>
-            </div>
-          </form>
+          <div>
+            {/* simplified login UI */}
+            <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email" />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="password"
+            />
+            <Button onClick={handleLogin} disabled={loading} className="mt-6 w-full">
+              {loading ? 'Logging in...' : 'Login'}
+            </Button>
+            {error && <div className="text-sm text-red-500">{error}</div>}
+          </div>
         </CardContent>
         <CardFooter className="flex-col gap-2">
-          <div className="mt-5">
-            Need an account?
-            <br />
-            {/* <Link href="/register">Sign up here</Link> */}
+          <div className="my-4">
+            Need an admin account?&nbsp;
+            <Link href="/register">Sign up here</Link>
           </div>
-          {/* <Button variant="outline" className="w-full">
-                Login with Google
-                </Button> */}
-          {/* Cookies.remove('auth'); on logout */}
+          <Button variant="outline" className="w-full" onClick={handleLogout}>
+            Logout
+          </Button>
         </CardFooter>
       </Card>
     </div>

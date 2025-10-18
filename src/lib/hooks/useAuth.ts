@@ -1,6 +1,7 @@
-// hooks/useAuth.ts
+'use client';
+
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 interface User {
   id: string;
@@ -13,28 +14,37 @@ export const useAuth = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Simulate fetching user from a session or token
-    const fetchUser = async () => {
-      // Replace with your actual authentication logic
-      const storedUser = localStorage.getItem('user');
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
+    const fetchMe = async () => {
+      try {
+        const res = await fetch('/api/auth/me');
+        if (!res.ok) {
+          setUser(null);
+        } else {
+          const data = await res.json();
+          setUser(data.user ?? null);
+        }
+      } catch {
+        setUser(null);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
-    fetchUser();
+    fetchMe();
   }, []);
 
   const login = (userData: User) => {
+    // server sets HttpOnly cookie; keep local state for UI
     setUser(userData);
-    localStorage.setItem('user', JSON.stringify(userData));
+    // optional persistence for UI: localStorage.setItem('user', JSON.stringify(userData));
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
     setUser(null);
-    localStorage.removeItem('user');
+    // optional: localStorage.removeItem('user');
     router.push('/login');
   };
 
   return { user, loading, login, logout };
 };
+

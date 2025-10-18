@@ -24,28 +24,23 @@ import Link from 'next/link';
 // Menu items.
 const items = [
   {
-    title: 'Admin',
-    url: '/admin',
-    icon: Home,
-  },
-  {
     title: 'Login',
     url: '/login',
     icon: LogIn,
   },
   {
     title: 'Dashboard',
-    url: '/admin/dashboard',
+    url: '/dashboard',
     icon: ChartArea,
   },
   {
     title: 'Add Products',
-    url: '/admin/all-products',
+    url: '/all-products',
     icon: Coffee,
   },
   {
     title: 'Edit Products',
-    url: '/admin/products',
+    url: '/user-products',
     icon: Edit,
   },
   {

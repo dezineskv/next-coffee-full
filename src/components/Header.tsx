@@ -21,7 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/ui/dropdown-menu';
-import { Moon, Sun, Lock } from 'lucide-react';
+import { Moon, Sun, Lock, LayoutDashboard } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Searches from '@/components/Searches';
 import Product from '@/models/Product';
@@ -107,7 +107,7 @@ const Header: React.FC = () => {
                   width={200}
                   height={80}
                   className="w-auto max-w-[200px] border-0 pr-4 pb-4 sm:mx-auto sm:ml-6 md:pl-4"
-                  priority={true}
+                  // priority={true}
                 />
               </Link>
             </div>
@@ -177,7 +177,7 @@ const Header: React.FC = () => {
             {/* <ProductLIst query={searchQuery} /> */}
           </div>
 
-          <div className="hidden items-center justify-end gap-x-5 lg:flex lg:flex-1">
+          <div className="hidden w-[200px] items-center justify-end gap-x-5 lg:flex lg:flex-1">
             <span className="relative mt-[4px] pt-1 text-xl font-medium text-gray-900">
               <DropdownMenu>
                 <DropdownMenuTrigger>
@@ -187,10 +187,10 @@ const Header: React.FC = () => {
                     {cartQuantity}
                   </span>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-[200px]">
                   <DropdownMenuItem>
                     <div className="flex w-full flex-col items-center gap-4">
-                      <div className="flex flex-row pt-[4px] pl-2">
+                      <div className="flex flex-row pt-[4px] pl-2 text-xs">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -258,7 +258,7 @@ const Header: React.FC = () => {
                     </div>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <div className="border-1-top border-gray mx-auto">
+                    <div className="border-1-top mx-auto flex flex-row border-black text-xs">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -276,6 +276,18 @@ const Header: React.FC = () => {
                       </svg>
                       &nbsp;
                       <Link href="/login">Admin Login</Link>
+                    </div>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <div className="border-1-top mx-auto flex flex-row flex-wrap border-black text-xs">
+                      <div>
+                        <Link href="/login">
+                          <LayoutDashboard />
+                        </Link>
+                      </div>
+                      <div>
+                        <Link href="/login">&nbsp;Admin Pages</Link>
+                      </div>
                     </div>
                   </DropdownMenuItem>
                 </DropdownMenuContent>

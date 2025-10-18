@@ -51,10 +51,12 @@ export default function Signup() {
         </Link>
         <CardHeader>
           <CardTitle>Sign Up for an account</CardTitle>
-          <CardDescription>Enter email below to login</CardDescription>
-          {/* <CardAction>
-                <Button variant="link">Sign Up</Button>
-                </CardAction> */}
+          <CardDescription className="text-red-600">
+            Not taking new admins - see designated admin pages{' '}
+            <Link href="/users/dashboard" className="underline decoration-red-600">
+              here
+            </Link>
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <form
@@ -64,7 +66,7 @@ export default function Signup() {
           >
             {error && <div className="">{error}</div>}
             <div className="flex flex-col gap-6">
-              <div className="grid gap-2">
+              <div className="grid gap-2 text-gray-500">
                 <Label htmlFor="name">Name</Label>
                 <Input
                   type="text"
@@ -73,7 +75,7 @@ export default function Signup() {
                   name="name"
                 />
               </div>
-              <div className="grid gap-2">
+              <div className="grid gap-2 text-gray-500">
                 <Label htmlFor="email">Email</Label>
                 <Input
                   type="email"
@@ -82,18 +84,16 @@ export default function Signup() {
                   name="email"
                 />
               </div>
-              <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <Input
-                    type="password"
-                    placeholder="Password"
-                    className="h-8 w-full rounded border border-solid border-black px-2.5 py-1"
-                    name="password"
-                  />
-                </div>
+              <div className="grid gap-2 text-gray-500">
+                <Label htmlFor="password">Password</Label>
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  className="h-8 w-full rounded border border-solid border-black px-2.5 py-1"
+                  name="password"
+                />
               </div>
-              <Button className="w-full">Sign Up</Button>
+              <Button className="w-full bg-gray-200">Sign Up</Button>
             </div>
           </form>
         </CardContent>
