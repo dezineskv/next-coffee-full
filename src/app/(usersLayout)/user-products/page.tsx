@@ -76,7 +76,7 @@ export default async function AdminProducts() {
                       </p>
                       <div className="mt-auto flex flex-row justify-between">
                         {/* link to edit form */}
-                        <Link href={`/admin/products/${product._id}`}>
+                        <Link href={`/user-products/${product._id}`}>
                           <Button className="ml-5 w-20 rounded border bg-blue-400 px-2">
                             Edit
                           </Button>
