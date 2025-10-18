@@ -53,7 +53,7 @@ export default function Signup() {
           <CardTitle>Sign Up for an account</CardTitle>
           <CardDescription className="text-red-600">
             Not taking new admins - see designated admin pages{' '}
-            <Link href="/users/dashboard" className="underline decoration-red-600">
+            <Link href="/dashboard" className="underline decoration-red-600">
               here
             </Link>
           </CardDescription>
