@@ -7,7 +7,7 @@ function Apps() {
   return (
     <>
       <div className="bg-secondary">
-        <div className="bg-secondary my-container pt-10 md:pb-20">
+        <div className="bg-secondary my-container py-10 md:py-30">
           <div className="mx-auto flex flex-col pl-6 md:flex-row">
             <div className="md:ml-20 md:w-1/2 md:px-10">
               <h1 className="mt-8 text-left text-4xl leading-11 font-bold sm:mx-auto sm:w-full sm:justify-center sm:px-6">

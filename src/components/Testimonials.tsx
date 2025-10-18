@@ -30,7 +30,7 @@ function Testimonials() {
               />
               <Image
                 className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                src="https://i.ibb.co/XHKLmNB/avatar3.jpg"
+                src="https://i.ibb.co/D333dJh/premium-photo-2icon.jpg"
                 width={25}
                 height={25}
                 alt="avatars"
@@ -73,10 +73,10 @@ function Testimonials() {
                 <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
                   <div className="mx-auto h-full p-0">
                     <Image
-                      src="https://i.ibb.co/bjjy4Gn4/girl1.png"
-                      alt="Girl1"
-                      width={350}
-                      height={300}
+                      src="https://i.ibb.co/D333dJh/premium-photo-2icon.jpg"
+                      alt="Guy1"
+                      width={300}
+                      height={250}
                       className="md:max-h-[280px]"
                     />
                   </div>
@@ -102,7 +102,7 @@ function Testimonials() {
                   </CardFooter>
                   <CardContent>
                     <p className="text-para max-w-2xl px-2 text-left">
-                      Check out what our customers have to say about us. We are rocking it.
+                      What our customers have to say about us? We are rocking it.
                     </p>
                   </CardContent>
                 </Card>
@@ -111,8 +111,8 @@ function Testimonials() {
                 <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
                   <div className="mx-auto h-full p-0">
                     <Image
-                      src="https://i.ibb.co/yBmFc1C2/girl2.png"
-                      alt="Girl2"
+                      src="https://i.ibb.co/v4fkhr63/premium-photo-icon.jpg"
+                      alt="Man2"
                       width={350}
                       height={300}
                       className="w-full md:max-h-[280px]"
@@ -140,7 +140,7 @@ function Testimonials() {
                   </CardFooter>
                   <CardContent>
                     <p className="max-w-2xl px-3 text-left text-gray-900">
-                      Check out what our customers have to say about us. We are rocking it.
+                      What our customers have to say about us? We are rocking it.
                     </p>
                   </CardContent>
                 </Card>
@@ -149,7 +149,7 @@ function Testimonials() {
                 <Card className="mx-auto w-[350px] overflow-hidden rounded-xl py-0 pb-5 shadow-lg">
                   <div className="mx-auto h-full p-0">
                     <Image
-                      src="https://i.ibb.co/2Yv2xMWd/man.jpg"
+                      src="https://i.ibb.co/pvWVbVHd/photo-3icon.jpg"
                       alt="Man"
                       width={350}
                       height={250}
@@ -177,7 +177,7 @@ function Testimonials() {
                     </div>
                   </CardFooter>
                   <p className="px-8 text-left text-gray-900">
-                    Check out what our customers have to say about us. We are rocking it.
+                    What our customers have to say about us? We are rocking it.
                   </p>
                 </Card>
               </CarouselItem>
