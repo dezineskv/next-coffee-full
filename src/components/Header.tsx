@@ -286,7 +286,7 @@ const Header: React.FC = () => {
                         </Link>
                       </div>
                       <div>
-                        <Link href="/login">&nbsp;Admin Pages</Link>
+                        <Link href="/dashboard">&nbsp;Admin Pages</Link>
                       </div>
                     </div>
                   </DropdownMenuItem>
