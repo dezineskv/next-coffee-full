@@ -26,7 +26,6 @@ import { useTheme } from 'next-themes';
 import Searches from '@/components/Searches';
 import Product from '@/models/Product';
 import connectDB from '@/lib/db';
-import ProductLIst from './ProductList';
 
 const aboutItems = [
   {
@@ -173,9 +172,7 @@ const Header: React.FC = () => {
           {/* Desktop Actions */}
 
           <div className="sm:mx-auto sm:px-4 md:mr-0 md:mb-4 md:ml-10 md:pl-10">
-            <Searches />
-            {/* <ProductLIst query={searchQuery} /> */}
-          </div>
+            <Searches />          </div>
 
           <div className="hidden w-[200px] items-center justify-end gap-x-5 lg:flex lg:flex-1">
             <span className="relative mt-[4px] pt-1 text-xl font-medium text-gray-900">

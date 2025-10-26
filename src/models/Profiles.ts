@@ -1,18 +1,17 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-// Define the User interface
-export interface IUser extends Document {
+// Define the Profile  interface
+export interface IProfile extends Document {
   name: string;
   email: string;
   password: string;
   _id: string;
-  id?: string; 
   createdAt: Date;
   updatedAt: Date;
 }
 
-// Create the User schema
-const UserSchema: Schema<IUser> = new Schema(
+// Create the Profile  schema
+const ProfileSchema: Schema<IProfile> = new Schema(
   {
     name: {
       type: String,
@@ -29,12 +28,12 @@ const UserSchema: Schema<IUser> = new Schema(
     },
     password: {
       type: String,
-      required: true,
-    },
-   _id: {
-      type: String,
       required: false,
     },
+    //  _id: {
+    //     type: String,
+    //     required: false,
+    //   },
   },
   {
     timestamps: true,
@@ -42,6 +41,7 @@ const UserSchema: Schema<IUser> = new Schema(
 );
 
 // Prevent model overwrite in development
-const User: Model<IUser> = mongoose.models.User || mongoose.model<IUser>('User', UserSchema);
+const Profile: Model<IProfile> =
+  mongoose.models.Profile || mongoose.model<IProfile>('Profile', ProfileSchema);
 
-export default User;
+export default Profile;

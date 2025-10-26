@@ -4,8 +4,6 @@ import connectDB from '@/lib/db';
 import Product, { IProduct } from '@/models/Product';
 import { Types } from 'mongoose';
 import { revalidatePath } from 'next/cache';
-import { TProduct } from '@/types';
-import { ToastContainer, toast } from 'react-toastify';
 
 // get all products
 export const getAllProducts = async (formData: FormData) => {
