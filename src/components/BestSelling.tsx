@@ -78,9 +78,16 @@ function BestSelling() {
                   <CardFooter className="mt-auto flex flex-row items-end justify-between gap-4">
                     <h3 className="text-left text-lg font-bold">${item.price}</h3>
                     <Link href="/products">
-                      <Button className="text-md rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105">
-                        Order Now
-                      </Button>
+                      {/* <Button className="text-md rounded-md bg-gray-900 px-5 py-4 text-white shadow-lg transition-all hover:scale-105"> */}
+                      <Link
+                        href="https://www.doordash.com/store/30146563"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded bg-yellow-500 px-4 py-2 text-white hover:bg-yellow-600"
+                      >
+                        Order on DoorDash
+                      </Link>
+                      {/* </Button> */}
                     </Link>
                   </CardFooter>
                 </Card>

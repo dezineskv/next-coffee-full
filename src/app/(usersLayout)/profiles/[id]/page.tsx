@@ -39,7 +39,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ id: st
                     />
                     <div className="py-2">
                       <h3 className="mb-1 text-2xl font-bold text-gray-800 dark:text-white">
-                        Kim V
+                        {profile?.name}
                       </h3>
                       <div className="inline-flex items-center text-gray-700 dark:text-gray-300">
                         {profile?.email}

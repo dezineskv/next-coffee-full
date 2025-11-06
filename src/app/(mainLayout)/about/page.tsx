@@ -44,7 +44,7 @@ export default function About() {
                 <p className="font-bold">Kim</p>
               </CardFooter>
               <CardContent>
-                <p className="max-w-2xl px-2 text-left text-gray-300">
+                <p className="max-w-2xl px-2 text-left text-foreground">
                   Kim is the CEO and COO of Kimbotic Coffee. She is the head of the project and also
                   responsible for day to day functioning.
                 </p>

@@ -108,7 +108,7 @@ export default function Services() {
               <CardHeader>
                 <CardTitle className="text-lg font-extrabold">Delivery</CardTitle>
                 <CardDescription>
-                  <p className="text-para max-w-2xl text-left">Order beverages for delivery.</p>
+                  <p className="text-para max-w-2xl text-left">Order beverages for delivery on Doordash.</p>
                 </CardDescription>
               </CardHeader>
               <CardContent>

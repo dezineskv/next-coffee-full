@@ -78,6 +78,7 @@ function Testimonials() {
                       width={300}
                       height={250}
                       className="md:max-h-[280px]"
+                      unoptimized
                     />
                   </div>
                   <CardFooter className="flex flex-row justify-between gap-4 px-8">
@@ -116,6 +117,7 @@ function Testimonials() {
                       width={350}
                       height={300}
                       className="w-full md:max-h-[280px]"
+                      unoptimized
                     />
                   </div>
                   <CardFooter className="flex flex-row justify-between gap-4 px-8">
@@ -176,7 +178,7 @@ function Testimonials() {
                       </svg>
                     </div>
                   </CardFooter>
-                  <p className="px-8 text-left text-gray-900">
+                  <p className="px-8 text-left text-foreground">
                     What our customers have to say about us? We are rocking it.
                   </p>
                 </Card>

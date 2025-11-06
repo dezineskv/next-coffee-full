@@ -108,7 +108,7 @@ export default async function CoffeeProducts() {
                                 <p className="mb-8 line-clamp-2 max-w-[225px] px-1 text-left">
                                   {product?.description}
                                 </p>
-                                <div className="text-foreground mx-auto mt-4 max-w-[220px] text-left text-lg">
+                                <div className="text-foreground mt-4 mr-auto ml-6 max-w-[220px] text-left text-lg">
                                   ${product?.price}
                                 </div>
                                 <div className="mt-auto pt-8">

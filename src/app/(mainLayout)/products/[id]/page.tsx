@@ -65,9 +65,7 @@ export default async function CoffeePage({ params }: { params: Promise<{ id: str
             <div className="flex flex-col justify-center gap-3 md:flex-row">
               <div className="flex flex-col">
                 <Image
-                  src={product?.image_url}
-                  //  ||
-                  // 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'
+                  src={product?.image_url || 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/800px-Placeholder_view_vector.svg.png'}
 
                   alt="Product Image"
                   width={350}

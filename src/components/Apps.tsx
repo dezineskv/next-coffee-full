@@ -20,10 +20,8 @@ function Apps() {
                 roasted and then ground into fine particles. Coffee is brewed from the ground
                 roasted beans, which are typically steeped in hot water before being filtered out.
               </p>
-              <p className="text-para py-4 text-base sm:mx-6 md:pl-1">
-                Start using the app today!
-              </p>
-             
+              <p className="text-para py-4 text-base sm:mx-6 md:pl-1">Start using the app today!</p>
+
               <Image
                 alt="download buttons"
                 width={350}
@@ -40,11 +38,11 @@ function Apps() {
                 <Image
                   width={350}
                   height={280}
-                  className="rounded-2xl border-2 border-gray-100"
+                  className="rounded-2xl"
                   src="https://i.ibb.co/3m60M6wm/coffeecups-nobg.png"
                   alt="banner"
+                  unoptimized
                 />
-    
               </div>
             </div>
           </div>
